@@ -1,0 +1,57 @@
+# Competition bundles and submissions
+bundle.zip
+sample_code_submission.zip
+*.zip
+*.tgz
+*.tar.gz
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data files
+# bundle/feedback_phase/input_data/
+# bundle/feedback_phase/reference_data/
+# bundle/final_phase/input_data/
+# bundle/final_phase/reference_data/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and outputs
+*.log
+output/
+results/
