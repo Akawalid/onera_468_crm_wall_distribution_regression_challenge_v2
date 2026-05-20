@@ -36,12 +36,12 @@ ENV/
 *.ipynb
 
 # Data files
-bundle/feedback_phase/input_data/
-bundle/feedback_phase/reference_data/
-bundle/final_phase/input_data/
-bundle/final_phase/reference_data/
+#bundle/feedback_phase/input_data/
+#bundle/feedback_phase/reference_data/
+#bundle/final_phase/input_data/
+#bundle/final_phase/reference_data/
 bundle/starting_kit/*.npy
-
+feedback_phase/
 # OS
 .DS_Store
 Thumbs.db
