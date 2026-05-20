@@ -1,0 +1,2 @@
+- Le fichier 'traintest_splitting1_MinfAoAPi_with_scores' est calculé sur les données en précision 64
+contrairement au fichier 'fullfiles_PiMinfAoA_with_scores' qui a été calculé sur les données 32

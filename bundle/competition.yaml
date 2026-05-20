@@ -1,15 +1,11 @@
-# This file contains the main settings of the benchmark
-# Learn more here: https://docs.codabench.org/latest/Organizers/Benchmark_Creation/Yaml-Structure/
-
 # Main settings
-title: Mini-AutoML
+title: Onera-468-crm-wall-distribution-regression-v2
 version: 2 # this means that it is a Codabench bundle
-description: AutoML Benchmark template with submission to multiple datasets
+description: Alpha type ScientificML Benchmark
 image: logo.png
 registration_auto_approve: True  # do not require approval from organizers to join
 docker_image: codalab/codalab-legacy:py312 # the Docker image in which submissions are run
 enable_detailed_results: True
-
 # Documentation web pages
 terms: pages/terms.md
 pages:
@@ -19,114 +15,89 @@ pages:
     file: pages/data.md
   - title: Evaluation
     file: pages/evaluation.md
-
 # Definition of the tasks
 tasks:
-- index: 0
-  name: Development Task
-  description: 'Development phase: create models and submit them to obtain feedback.'
-  is_public: false
-  input_data: feedback_phase/input_data         # Input data is given to the submitted code (X)
-  reference_data: feedback_phase/reference_data # Reference data is the ground truth (y)
-  scoring_program: scoring_program              # The scoring program compares predictions and ground truth
-  ingestion_program: ingestion_program          # The ingestion program takes a code submission and generates predictions
-- index: 1
-  name: Final Task
-  description: 'Final phase: submissions from the previous phase are automatically
-    cloned and used to compute the final score. The results on the test set will be
-    revealed when the organizers make them available.'
-  is_public: false
-  input_data: final_phase/input_data
-  reference_data: final_phase/reference_data
-  scoring_program: scoring_program
-  ingestion_program: ingestion_program
-solutions: []
-
-# Sample code submission
-# /!\ Solution is an example submission, NOT the ground truth /!\
-solutions:
   - index: 0
-    tasks:
-    - 0
-    - 1
-    path: solution/
-
+    name: Development Task
+    description: 'Development phase: create models and submit them to obtain feedback.'
+    is_public: false
+    input_data: feedback_phase/input_data
+    reference_data: feedback_phase/reference_data
+    scoring_program: scoring_program
+    # ingestion_program: ingestion_program
+# - index: 1
+#   name: Final Task
+#   description: 'Final phase: submissions from the previous phase are automatically
+#     cloned and used to compute the final score. The results on the test set will be
+#     revealed when the organizers make them available.'
+#   is_public: false
+#   input_data: final_phase/input_data
+#   reference_data: final_phase/reference_data
+#   scoring_program: scoring_program
+#   ingestion_program: ingestion_program
+# /!\ Solution is an example submission, NOT the ground truth /!\
+# solutions:
+#   - index: 0
+#     tasks:
+#       - 0
+#     # - 1
+#     path: solution/
 # There are 2 phases: development phase and final phase
 # Each one is linked to a task
 phases:
-- index: 0
-  name: Development
-  description: 'Development phase: create models and submit them to obtain feedback.
+  - index: 0
+    name: Development
+    description: 'Development phase: create models and submit them to obtain feedback.
       You can make 5 submissions per day and 100 submissions in total.'
-  start: 1-1-2024 # Month/Day/Year
-  end: 1-30-2026
-  max_submissions_per_day: 5
-  max_submissions: 100
-  execution_time_limit: 600
-  tasks:
-  - 0
-  solutions: []
-  starting_kit: starting_kit
-  public_data: feedback_phase/input_data
-- index: 1
-  name: Final
-  description: 'Final phase: submissions from the previous phase are automatically
-    cloned and used to compute the final score. The results on the test set will be
-    revealed when the organizers make them available.'
-  start: 2-1-2026 # Never ends
-  max_submissions_per_day: 0
-  max_submissions: 0
-  execution_time_limit: 600
-  tasks:
-  - 1
-  solutions: []
-
+    start: 1-1-2024 # Month/Day/Year
+    end: 1-30-2026
+    max_submissions_per_day: 5
+    max_submissions: 100
+    execution_time_limit: 600
+    tasks:
+      - 0
+    solutions: []
+    starting_kit: starting_kit
+    public_data: feedback_phase/input_data
+# - index: 1
+#   name: Final
+#   description: 'Final phase: submissions from the previous phase are automatically
+#     cloned and used to compute the final score. The results on the test set will be
+#     revealed when the organizers make them available.'
+#   start: 2-1-2026 # Never ends
+#   max_submissions_per_day: 0
+#   max_submissions: 0
+#   execution_time_limit: 600
+#   tasks:
+#     - 1
+#   solutions: []
 # Fact sheets to add more information in the leaderboard
 fact_sheet: {
-    "method_name": {
-        "key": "method_name",
-        "type": "text",
-        "title": "Method name",
-        "selection": "",
-        "is_required": "false",
-        "is_on_leaderboard": "true"
-    }
+  "method_name": {
+    "key": "method_name",
+    "type": "text",
+    "title": "Method name",
+    "selection": "",
+    "is_required": "false",
+    "is_on_leaderboard": "false"
+  }
 }
-
 # Leaderboard
 leaderboards:
-- index: 0
-  title: Results
-  key: Results
-  submission_rule: "Force_Last"
-  columns:
-      - title: Average Accuracy
-        key: avg_accuracy
+  - index: 0
+    title: Results
+    key: Results
+    submission_rule: "Force_Last"
+    columns:
+      - title: Score
+        key: score
         index: 0
         sorting: desc
-        computation: avg
-        computation_indexes:
-          - 1
-          - 2
-          - 3
-          - 4
-      - title: Dataset 1
-        key: dataset1
+      - title: R2
+        key: R2
         index: 1
         sorting: desc
-      - title: Dataset 2
-        key: dataset2
+      - title: wrMAE
+        key: wrMAE
         index: 2
-        sorting: desc
-      - title: Dataset 3
-        key: dataset3
-        index: 3
-        sorting: desc
-      - title: Dataset 4
-        key: dataset4
-        index: 4
-        sorting: desc
-      - title: Duration
-        key: duration
-        index: 5
         sorting: asc
