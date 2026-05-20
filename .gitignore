@@ -42,6 +42,7 @@ ENV/
 #bundle/final_phase/reference_data/
 bundle/starting_kit/*.npy
 feedback_phase/
+
 # OS
 .DS_Store
 Thumbs.db

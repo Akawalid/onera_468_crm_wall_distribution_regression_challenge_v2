@@ -1,1 +1,1 @@
-command: python3 ingestion.py
+command: pip install -r /app/program/requirements.txt && python3 ingestion.py

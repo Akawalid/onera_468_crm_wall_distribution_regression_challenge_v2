@@ -24,7 +24,7 @@ tasks:
     input_data: feedback_phase/input_data
     reference_data: feedback_phase/reference_data
     scoring_program: scoring_program
-    # ingestion_program: ingestion_program
+    ingestion_program: ingestion_program
 # - index: 1
 #   name: Final Task
 #   description: 'Final phase: submissions from the previous phase are automatically
@@ -36,14 +36,14 @@ tasks:
 #   scoring_program: scoring_program
 #   ingestion_program: ingestion_program
 # /!\ Solution is an example submission, NOT the ground truth /!\
-# solutions:
-#   - index: 0
-#     tasks:
-#       - 0
-#     # - 1
-#     path: solution/
-# There are 2 phases: development phase and final phase
-# Each one is linked to a task
+solutions:
+  - index: 0
+    tasks:
+      - 0
+    # - 1
+    path: solution/
+There are 2 phases: development phase and final phase
+Each one is linked to a task
 phases:
   - index: 0
     name: Development
@@ -53,7 +53,7 @@ phases:
     end: 1-30-2026
     max_submissions_per_day: 5
     max_submissions: 100
-    execution_time_limit: 600
+    execution_time_limit: 3600
     tasks:
       - 0
     solutions: []
