@@ -58,7 +58,7 @@ phases:
       - 0
     solutions: []
     starting_kit: starting_kit
-    public_data: feedback_phase/input_data
+    public_data: feedback_phase/input_data  # COMMENTED: empty folder causes infinite hang
 # - index: 1
 #   name: Final
 #   description: 'Final phase: submissions from the previous phase are automatically
@@ -72,6 +72,7 @@ phases:
 #     - 1
 #   solutions: []
 # Fact sheets to add more information in the leaderboard
+# Fact sheets to add more information in the leaderboard
 fact_sheet: {
   "method_name": {
     "key": "method_name",
@@ -81,7 +82,7 @@ fact_sheet: {
     "is_required": "false",
     "is_on_leaderboard": "false"
   }
-}
+ }
 # Leaderboard
 leaderboards:
   - index: 0
