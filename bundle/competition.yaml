@@ -21,8 +21,8 @@ tasks:
     name: Development Task
     description: 'Development phase: create models and submit them to obtain feedback.'
     is_public: false
-    input_data: feedback_phase/input_data
-    reference_data: feedback_phase/reference_data
+    # input_data: feedback_phase/input_data
+    # reference_data: feedback_phase/reference_data
     scoring_program: scoring_program
     # ingestion_program: ingestion_program
 # - index: 1
@@ -58,7 +58,7 @@ phases:
       - 0
     solutions: []
     starting_kit: starting_kit
-    public_data: feedback_phase/input_data  # COMMENTED: empty folder causes infinite hang
+#    public_data: feedback_phase/input_data  # COMMENTED: empty folder causes infinite hang
 # - index: 1
 #   name: Final
 #   description: 'Final phase: submissions from the previous phase are automatically
