@@ -80,7 +80,7 @@ def main():
     print_bar()
     print('Scoring program - ONERA 468 CRM challenge rho.')
 
-    write_file(html_file, '<h1>ONERA 468 CRM &mdash; Challenge &rho;</h1>\n')
+    write_file(html_file, '<h1>ONERA 468 CRM, Challenge &rho;</h1>\n')
 
     scores = {}
 
