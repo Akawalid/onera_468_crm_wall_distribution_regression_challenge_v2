@@ -3,10 +3,10 @@ import os
 import numpy as np
 import pandas as pd
 
-# input_dir      = '/app/input'
-# output_dir     = '/app/output/'
-input_dir  = '/tmp/test_bundle/input'
-output_dir = '/tmp/test_bundle/output/'
+input_dir      = '/app/input'
+output_dir     = '/app/output/'
+# input_dir  = '/tmp/test_bundle/input'
+# output_dir = '/tmp/test_bundle/output/'
 
 reference_dir  = os.path.join(input_dir, 'ref')
 prediction_dir = os.path.join(input_dir, 'res')

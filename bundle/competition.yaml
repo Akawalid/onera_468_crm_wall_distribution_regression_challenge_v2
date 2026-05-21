@@ -21,8 +21,8 @@ tasks:
     name: Development Task
     description: 'Development phase: create models and submit them to obtain feedback.'
     is_public: false
-    input_data: feedback_phase/input_data
-    reference_data: feedback_phase/reference_data
+    # input_data: feedback_phase/input_data
+    # reference_data: feedback_phase/reference_data
     scoring_program: scoring_program
     ingestion_program: ingestion_program
 # - index: 1
@@ -42,15 +42,15 @@ solutions:
       - 0
     # - 1
     path: solution/
-There are 2 phases: development phase and final phase
-Each one is linked to a task
+# There are 2 phases: development phase and final phase
+# Each one is linked to a task
 phases:
   - index: 0
     name: Development
     description: 'Development phase: create models and submit them to obtain feedback.
       You can make 5 submissions per day and 100 submissions in total.'
     start: 1-1-2024 # Month/Day/Year
-    end: 1-30-2026
+    end: 12-30-2026
     max_submissions_per_day: 5
     max_submissions: 100
     execution_time_limit: 3600
@@ -58,7 +58,7 @@ phases:
       - 0
     solutions: []
     starting_kit: starting_kit
-    public_data: feedback_phase/input_data
+    # public_data: feedback_phase/input_data
 # - index: 1
 #   name: Final
 #   description: 'Final phase: submissions from the previous phase are automatically
@@ -81,7 +81,7 @@ fact_sheet: {
     "is_required": "false",
     "is_on_leaderboard": "false"
   }
-}
+ }
 # Leaderboard
 leaderboards:
   - index: 0
