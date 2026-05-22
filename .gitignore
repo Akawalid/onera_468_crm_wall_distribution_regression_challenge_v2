@@ -62,3 +62,4 @@ results/
 pages2/
 FILES*.tgz
 FILES*/
+bundle/test_local.sh

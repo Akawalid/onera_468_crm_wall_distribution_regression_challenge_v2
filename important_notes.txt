@@ -1,2 +1,7 @@
 - Le fichier 'traintest_splitting1_MinfAoAPi_with_scores' est calculé sur les données en précision 64
 contrairement au fichier 'fullfiles_PiMinfAoA_with_scores' qui a été calculé sur les données 32
+https://www.codabench.org/competitions/edit/16584/#/phases
+
+
+des papier ou des idées sur comment séparer les données
+nombre de soumissions..parametres de yaml

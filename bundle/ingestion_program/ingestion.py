@@ -9,6 +9,8 @@ import os
 import sys
 import subprocess
 import importlib
+import resource
+import threading
 import numpy as np
 from datetime import datetime as dt
 
@@ -87,10 +89,42 @@ def is_oom(e):
     return any(k in msg for k in ('memory', 'alloc', 'oom', 'out of mem', 'cannot allocate'))
 
 
+def check_memory_usage():
+    """ Return current process RAM usage in GB. """
+    usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    if sys.platform == 'darwin':
+        return usage / 1e9
+    return usage / 1e6
+
+
+def get_total_memory_gb():
+    """ Get total system RAM in GB from /proc/meminfo. """
+    try:
+        with open('/proc/meminfo') as f:
+            for line in f:
+                if line.startswith('MemTotal'):
+                    return int(line.split()[1]) / 1e6
+    except:
+        pass
+    return float('nan')
+
+
+def memory_monitor(interval=30):
+    """ Background thread that logs memory usage every 30s. """
+    total_gb = get_total_memory_gb()
+    while True:
+        used = check_memory_usage()
+        print(f'[MEM] RAM usage: {used:.2f} GB / {total_gb:.2f} GB total', flush=True)
+        threading.Event().wait(interval)
+
+
 def main():
     """ The ingestion program. """
     print_bar()
     print('Ingestion program - ONERA 468 CRM challenge rho.')
+
+    monitor = threading.Thread(target=memory_monitor, daemon=True)
+    monitor.start()
 
     check_and_install_dependencies(submission_dir)
 
