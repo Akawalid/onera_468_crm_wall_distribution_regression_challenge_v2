@@ -2,11 +2,13 @@ import json
 import os
 import numpy as np
 import pandas as pd
+from datetime import datetime as dt
 
 input_dir      = '/app/input'
 output_dir     = '/app/output/'
-# input_dir  = '/tmp/test_bundle/input'
-# output_dir = '/tmp/test_bundle/output/'
+
+# input_dir      = '/tmp/test_bundle/input_data/'
+# output_dir     = '/tmp/test_bundle/output/'
 
 reference_dir  = os.path.join(input_dir, 'ref')
 prediction_dir = os.path.join(input_dir, 'res')
@@ -31,20 +33,40 @@ def print_bar():
 
 def get_data():
     """ Get ground truth (y_test) and predictions (y_pred). """
-    y_test = np.load(os.path.join(reference_dir, 'rho_test_fl32.npy'))[:, 0]
-    y_pred = np.load(os.path.join(prediction_dir, 'Yhat.npy'))[:, 0]
+    print('[*] Reading reference data from {}'.format(reference_dir))
+    try:
+        y_test = np.load(os.path.join(reference_dir, 'rho_test_fl32.npy'))[:, 0]
+        print('[+] Loaded {} reference values.'.format(len(y_test)))
+    except Exception as e:
+        print('[-] Error loading reference data: {}'.format(e))
+        raise
+
+    print('[*] Reading predictions from {}'.format(prediction_dir))
+    try:
+        y_pred = np.load(os.path.join(prediction_dir, 'Yhat.npy'))[:, 0]
+        print('[+] Loaded {} predictions.'.format(len(y_pred)))
+    except Exception as e:
+        print('[-] Error loading predictions: {}'.format(e))
+        raise
+
     return y_test, y_pred
 
 
 def get_confidence():
     """ Get confidence score per test condition from the CSV. """
-    df = pd.read_csv(
-        os.path.join(reference_dir, 'fullfiles_PiMinfAoA_with_scores.csv')
-    )
-    df_test = df.loc[~df['Train']]
-    confidence_per_case = df_test['confidence_score_simple_4'].values
-    confidence_pointwise   = np.repeat(confidence_per_case, nwallp)
-    return confidence_per_case, confidence_pointwise, df_test.reset_index(drop=True)
+    print('[*] Reading confidence weights from {}'.format(reference_dir))
+    try:
+        df = pd.read_csv(
+            os.path.join(reference_dir, 'fullfiles_PiMinfAoA_with_scores.csv')
+        )
+        df_test = df.loc[~df['Train']]
+        confidence_per_case  = df_test['confidence_score_simple_4'].values
+        confidence_pointwise = np.repeat(confidence_per_case, nwallp)
+        print('[+] Loaded confidence for {} test conditions.'.format(len(confidence_per_case)))
+        return confidence_per_case, confidence_pointwise, df_test.reset_index(drop=True)
+    except Exception as e:
+        print('[-] Error loading confidence data: {}'.format(e))
+        raise
 
 
 def compute_R2(y, yhat, confidence_pointwise):
@@ -80,13 +102,16 @@ def main():
     print_bar()
     print('Scoring program - ONERA 468 CRM challenge rho.')
 
-    write_file(html_file, '<h1>ONERA 468 CRM &mdash; Challenge &rho;</h1>\n')
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    write_file(html_file, '<h1>ONERA 468 CRM, Challenge &rho;</h1>\n')
 
     scores = {}
+    start_time = dt.now()
 
     try:
         print_bar()
-        print('Reading data.')
         y_test, y_pred = get_data()
 
         if y_test.shape != y_pred.shape:
@@ -94,9 +119,14 @@ def main():
                 'Shape mismatch: prediction {} != reference {}.'.format(
                     y_pred.shape, y_test.shape))
 
-        print('Reading confidence weights.')
         confidence_per_case, confidence_pointwise, df_test = get_confidence()
 
+        if len(confidence_pointwise) != len(y_test):
+            raise ValueError(
+                'Confidence array length {} != reference length {}.'.format(
+                    len(confidence_pointwise), len(y_test)))
+
+        print_bar()
         print('Computing R2.')
         R2 = compute_R2(y_test, y_pred, confidence_pointwise)
 
@@ -136,6 +166,10 @@ def main():
         scores['wrMAE'] = 1.0
         scores['score'] = 0.0
 
+    end_time  = dt.now()
+    duration  = (end_time - start_time).total_seconds()
+    scores['scoring_duration'] = duration
+
     try:
         with open(os.path.join(prediction_dir, 'metadata.json')) as f:
             scores['duration'] = json.load(f).get('duration', -1)
@@ -145,7 +179,8 @@ def main():
     print_bar()
     print('Scoring program finished. Writing scores.')
     print(scores)
-    write_file(score_file, json.dumps(scores))
+    with open(score_file, 'w') as f:
+        json.dump(scores, f, indent=4)
 
 
 if __name__ == '__main__':
