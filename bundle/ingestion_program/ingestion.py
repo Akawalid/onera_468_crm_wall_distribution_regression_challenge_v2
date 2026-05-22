@@ -40,6 +40,8 @@ def check_and_install_dependencies(submission_dir):
     with open(req_path, 'r') as f:
         requirements = [line.strip() for line in f if line.strip() and not line.startswith('#')]
 
+    #====================== time can be factorized here, but checking the libraries in the environement
+    # instead of doing it with exceptions =============================================================
     to_install = []
     for req in requirements:
         package_name = req.split('==')[0].split('>=')[0].split('>')[0].strip().replace('-', '_')
@@ -83,6 +85,7 @@ def print_bar():
     print('-' * 10)
 
 
+#To be reviewed, we can maybe use OOP conepts to accelerate the process
 def is_oom(e):
     """ Check if an exception looks like an out-of-memory error. """
     msg = str(e).lower()
@@ -91,10 +94,7 @@ def is_oom(e):
 
 def check_memory_usage():
     """ Return current process RAM usage in GB. """
-    usage = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-    if sys.platform == 'darwin':
-        return usage / 1e9
-    return usage / 1e6
+    return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1e6
 
 
 def get_total_memory_gb():

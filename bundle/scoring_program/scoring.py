@@ -114,18 +114,15 @@ def main():
         print_bar()
         y_test, y_pred = get_data()
 
+        # assert that y_test.shape==confidence_pointwise
+
         if y_test.shape != y_pred.shape:
             raise ValueError(
                 'Shape mismatch: prediction {} != reference {}.'.format(
                     y_pred.shape, y_test.shape))
 
         confidence_per_case, confidence_pointwise, df_test = get_confidence()
-
-        if len(confidence_pointwise) != len(y_test):
-            raise ValueError(
-                'Confidence array length {} != reference length {}.'.format(
-                    len(confidence_pointwise), len(y_test)))
-
+        
         print_bar()
         print('Computing R2.')
         R2 = compute_R2(y_test, y_pred, confidence_pointwise)
