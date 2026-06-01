@@ -45,6 +45,7 @@ ENV/
 feedback_phase/
 *.cgns
 *.blk
+FILES*
 
 # OS
 .DS_Store
