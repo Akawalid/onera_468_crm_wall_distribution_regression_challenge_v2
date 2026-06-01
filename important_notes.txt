@@ -5,3 +5,54 @@ https://www.codabench.org/competitions/edit/16584/#/phases
 
 des papier ou des idées sur comment séparer les données
 nombre de soumissions..parametres de yaml
+
+===== 
+instructions to create codalab-env
+
+mkdir codalab-env
+cd codalab-env
+uv init
+uv python pin 3.x.x      # exact version from step 1
+uv add $(cat requirements.txt)
+# or if that's too many packages at once:
+uv pip install -r requirements.txt
+uv lock                   # generates uv.lock
+
+======
+Instructions to handle heavy packages: 
+Paste the output of these two commands run inside your Docker container and I'll generate the `environment.yml` for you:
+
+```bash
+python --version
+pip freeze
+```
+give list to claude to generate the yml file 
+after that just:
+
+conda env create -f environment.yml
+conda activate codabench-env
+python --version  # should say 3.12.13
+
+======================================
+Séparation des données: https://dpw.larc.nasa.gov/DPW6/CFSE_Charbonnier/
+Idée de type de challenge: autoML...?
+
+
+bug: sometimes when we modify a task, the fields disappear (scoring prog..)
+
+Use cross validation to compute confidence intervals
+standard error is actually the std of the means (istribution of a distribution)
+
+
+- train everything and test on 4 parts separatly
+ (transfert learning?)
+- information leakage about splitting into parts the body of the plane
+
+
+ inquiries:
+Analyse why the naive models are doing very well??? what is the difference between 
+linear model and your model (why is working so well)
+
+Maybe the easy part of the bdy dominates...? So check this 
+Which part of the features rely on?
+Explainable AI for xyz features for example...

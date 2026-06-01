@@ -1,200 +1,204 @@
-# The ingestion program is the program that:
-# 1. Take participant's code submission
-# 2. Train the given model on the training data
-# 3. Make predictions on the test data, and save them to forward them to the scoring program
+# ingestion.py
+# 1. Imports participant's model
+# 2. Trains it on training data
+# 3. Saves predictions for the scoring program
 
-# Imports
 import json
 import os
 import sys
-import subprocess
-import importlib
-import resource
-import threading
 import numpy as np
 from datetime import datetime as dt
+# --- for RAM handling ---
+import signal
+import threading
+import psutil
 
-# Paths
+# --- Paths ---
 input_dir      = '/app/input_data/'
 output_dir     = '/app/output/'
 program_dir    = '/app/program'
 submission_dir = '/app/ingested_program'
 
+# Register paths once, at module level
+for p in (output_dir, program_dir, submission_dir):
+    if p not in sys.path:
+        sys.path.append(p)
 
-sys.path.append(output_dir)
-sys.path.append(program_dir)
-sys.path.append(submission_dir)
+packages_dir = os.path.join(submission_dir, 'python_packages')
+if os.path.isdir(packages_dir) and packages_dir not in sys.path:
+    sys.path.insert(0, packages_dir)
+
+# --- Config ---
+RAM_LIMIT_PERCENT    = 95.0  # Kill early if RAM hits this threshold
+RAM_POLL_INTERVAL    = 2.0  # Seconds between RAM checks
 
 
-def check_and_install_dependencies(submission_dir):
+def ram_watchdog(stop_event: threading.Event):
     """
-    Installs missing dependencies from requirements.txt only if not already present.
+    Background thread: polls RAM usage every RAM_POLL_INTERVAL seconds.
+    Sends SIGTERM to the main thread if usage exceeds RAM_LIMIT_PERCENT.
     """
-    req_path = os.path.join(submission_dir, 'requirements.txt')
+    last_reported = -1
+    while not stop_event.is_set():
+        usage = psutil.virtual_memory().percent
+        bracket = int(usage // 10) * 10
+        if bracket != last_reported:
+            print(f'[RAM] Usage: {usage:.1f}%')
+            last_reported = bracket
+        if usage >= RAM_LIMIT_PERCENT:
+            print(
+                f'\n[WATCHDOG] RAM usage critical: {usage:.1f}% >= {RAM_LIMIT_PERCENT}%.'
+                f' Sending SIGTERM to main thread.'
+            )
+            os.kill(os.getpid(), signal.SIGTERM)
+            break
+        stop_event.wait(RAM_POLL_INTERVAL)
 
-    if not os.path.exists(req_path):
-        print('[*] No requirements.txt found. Using default environment.')
-        return
 
-    print('[*] Checking requirements.txt for missing libraries...')
-    with open(req_path, 'r') as f:
-        requirements = [line.strip() for line in f if line.strip() and not line.startswith('#')]
-
-    #====================== time can be factorized here, but checking the libraries in the environement
-    # instead of doing it with exceptions =============================================================
-    to_install = []
-    for req in requirements:
-        package_name = req.split('==')[0].split('>=')[0].split('>')[0].strip().replace('-', '_')
-        try:
-            importlib.import_module(package_name)
-        except ImportError:
-            to_install.append(req)
-
-    if to_install:
-        print(f'[*] Installing missing dependencies: {", ".join(to_install)}...')
-        try:
-            subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--no-cache-dir', *to_install])
-            print('[OK] Installation complete.')
-        except Exception as e:
-            print(f'[!] Pip installation failed: {e}')
-    else:
-        print('[OK] All requirements are already met. Skipping installation.')
+def handle_sigterm(signum, frame):
+    """Converts SIGTERM into a clean Python RuntimeError on the main thread."""
+    usage = psutil.virtual_memory().percent
+    raise RuntimeError(
+        f'[OOM-WATCHDOG] Ingestion aborted: RAM at {usage:.1f}% '
+        f'(threshold: {RAM_LIMIT_PERCENT}%). '
+        f'Yhat.npy was NOT saved.'
+    )
 
 
 def get_data():
-    """ Get X_train, y_train and X_test. """
-    train_path = os.path.join(input_dir, 'X9_train_fl32.npy')
-    label_path = os.path.join(input_dir, 'rho_fl32.npy')
-    test_path  = os.path.join(input_dir, 'X9_test_fl32.npy')
+    """Load X_train, y_train, and X_test from disk."""
+    paths = {
+        'train':  os.path.join(input_dir, 'X9_train_fl32.npy'),
+        'labels': os.path.join(input_dir, 'rho_fl32.npy'),
+        'test':   os.path.join(input_dir, 'X9_test_fl32.npy'),
+    }
+    for name, path in paths.items():
+        if not os.path.exists(path):
+            raise FileNotFoundError(f'Missing {name} file: {path}')
 
-    if not os.path.exists(train_path):
-        raise FileNotFoundError(f'Training data not found: {train_path}')
-    if not os.path.exists(label_path):
-        raise FileNotFoundError(f'Training labels not found: {label_path}')
-    if not os.path.exists(test_path):
-        raise FileNotFoundError(f'Test data not found: {test_path}')
-
-    X_train = np.load(train_path)
-    y_train = np.load(label_path)[:, 0]
-    X_test  = np.load(test_path)
+    X_train = np.load(paths['train'])
+    y_train = np.load(paths['labels'])[:, 0]
+    X_test  = np.load(paths['test'])
     return X_train, y_train, X_test
 
 
+def validate_predictions(y_pred, expected_len):
+    """Raise if predictions are malformed, wrong length, or non-finite."""
+    if not isinstance(y_pred, np.ndarray):
+        raise TypeError(f'predict() must return np.ndarray, got {type(y_pred)}')
+    # ===== To check later, not exhaustive, to check later
+    if y_pred.ndim == 0 or y_pred.shape[0] != expected_len:
+        raise ValueError(
+            f'predict() returned shape {y_pred.shape}, '
+            f'expected first dim = {expected_len}'
+        )
+    if not np.all(np.isfinite(y_pred)):
+        n_bad = np.sum(~np.isfinite(y_pred))
+        raise ValueError(f'predict() returned {n_bad} NaN/Inf values.')
+
+
 def print_bar():
-    """ Display a bar ('----------') """
-    print('-' * 10)
-
-
-#To be reviewed, we can maybe use OOP conepts to accelerate the process
-def is_oom(e):
-    """ Check if an exception looks like an out-of-memory error. """
-    msg = str(e).lower()
-    return any(k in msg for k in ('memory', 'alloc', 'oom', 'out of mem', 'cannot allocate'))
-
-
-def check_memory_usage():
-    """ Return current process RAM usage in GB. """
-    return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1e6
-
-
-def get_total_memory_gb():
-    """ Get total system RAM in GB from /proc/meminfo. """
-    try:
-        with open('/proc/meminfo') as f:
-            for line in f:
-                if line.startswith('MemTotal'):
-                    return int(line.split()[1]) / 1e6
-    except:
-        pass
-    return float('nan')
-
-
-def memory_monitor(interval=30):
-    """ Background thread that logs memory usage every 30s. """
-    total_gb = get_total_memory_gb()
-    while True:
-        used = check_memory_usage()
-        print(f'[MEM] RAM usage: {used:.2f} GB / {total_gb:.2f} GB total', flush=True)
-        threading.Event().wait(interval)
+    print('-' * 40)
 
 
 def main():
-    """ The ingestion program. """
     print_bar()
-    print('Ingestion program - ONERA 468 CRM challenge rho.')
+    print('Ingestion program. ONERA 468 CRM challenge rho.')
 
-    monitor = threading.Thread(target=memory_monitor, daemon=True)
-    monitor.start()
+    # Register SIGTERM handler so the watchdog can interrupt cleanly
+    signal.signal(signal.SIGTERM, handle_sigterm)
 
-    check_and_install_dependencies(submission_dir)
-
+    # --- Load model ---
     print_bar()
-    print('Importing model.')
-    sys.path.append(submission_dir)
+    print('Importing participant model...')
     try:
         from model import Model
         model = Model()
-        print('[OK] Model initialized successfully.')
+        print('[OK] Model initialised.')
     except ImportError as e:
-        print(f'[-] Could not import Model from submission: {e}')
+        print(f'[ERR] Could not import Model: {e}')
         raise
 
     start_time = dt.now()
 
+    # --- Load data ---
     print_bar()
-    print('Reading data.')
+    print('Loading data...')
     X_train, y_train, X_test = get_data()
-    print(f'X_train : {X_train.shape}')
-    print(f'y_train : {y_train.shape}')
-    print(f'X_test  : {X_test.shape}')
+    print(f'  X_train : {X_train.shape}  dtype={X_train.dtype}')
+    print(f'  y_train : {y_train.shape}  dtype={y_train.dtype}')
+    print(f'  X_test  : {X_test.shape}  dtype={X_test.dtype}')
 
-    print_bar()
-    if X_train is not None and y_train is not None:
-        print(f'Training the model on {len(X_train)} samples.')
+    # --- Start RAM watchdog ---
+    stop_watchdog = threading.Event()
+    watchdog_thread = threading.Thread(
+        target=ram_watchdog, args=(stop_watchdog,), daemon=True
+    )
+    watchdog_thread.start()
+    print(f'[OK] RAM watchdog started (limit: {RAM_LIMIT_PERCENT}%, poll: {RAM_POLL_INTERVAL}s).')
+
+    try:
+        # --- Train ---
+        print_bar()
+        print(f'Training on {len(X_train)} samples...')
+        train_start = dt.now()
         try:
             model.fit(X_train, y_train)
         except MemoryError:
-            print('[ERR] OOM during fit: not enough RAM to train on this data.')
+            print('[ERR] Out of memory during fit().')
             raise
         except Exception as e:
-            if is_oom(e):
-                print(f'[ERR] OOM during fit (caught as generic exception): {e}')
-            else:
-                print(f'[ERR] fit() failed: {e}')
+            print(f'[ERR] fit() raised: {e}')
             raise
-    else:
-        print('[!] Skipping fit: training data missing.')
 
-    print_bar()
-    print(f'Making predictions on {len(X_test)} test samples.')
-    try:
-        y_pred = model.predict(X_test)
-    except MemoryError:
-        print('[ERR] OOM during predict: not enough RAM to run inference.')
-        raise
-    except Exception as e:
-        if is_oom(e):
-            print(f'[ERR] OOM during predict (caught as generic exception): {e}')
-        else:
-            print(f'[ERR] predict() failed: {e}')
-        raise
-    print(f'y_pred shape : {y_pred.shape}')
+        elapsed = (dt.now() - train_start).total_seconds()
+        print(f'[OK] Training done in {elapsed:.2f}s.')
 
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+        # --- Predict ---
+        print_bar()
+        print(f'Running inference on {len(X_test)} samples...')
+        try:
+            y_pred = model.predict(X_test)
+        except MemoryError:
+            print('[ERR] Out of memory during predict().')
+            raise
+        except Exception as e:
+            print(f'[ERR] predict() raised: {e}')
+            raise
 
-    y_pred = y_pred.reshape(-1, 1).astype(np.float32)
-    np.save(os.path.join(output_dir, 'Yhat.npy'), y_pred)
-    print(f'[OK] Yhat.npy saved : {y_pred.shape}')
+        validate_predictions(y_pred, expected_len=len(X_test))
+        print(f'[OK] Predictions shape: {y_pred.shape}')
 
+        # --- Save outputs ---
+        os.makedirs(output_dir, exist_ok=True)
+
+        y_pred = y_pred.reshape(-1, 1).astype(np.float32)
+        np.save(os.path.join(output_dir, 'Yhat.npy'), y_pred)
+        print(f'[OK] Yhat.npy saved: {y_pred.shape}')
+
+    finally:
+        # Always stop the watchdog, whether we succeeded or crashed
+        stop_watchdog.set()
+        watchdog_thread.join(timeout=5)
+        print('[OK] RAM watchdog stopped.')
+
+    # --- Save metadata ---
     end_time = dt.now()
-    duration = end_time - start_time
-    print(f'[OK] Total duration: {duration}')
+    duration = (end_time - start_time).total_seconds()
+    print(f'[OK] Total duration: {duration:.2f}s')
 
+    metadata = {
+        'duration_seconds': duration,
+        'X_train_shape':    list(X_train.shape),
+        'X_test_shape':     list(X_test.shape),
+        'y_pred_shape':     list(y_pred.shape),
+        'success':          True,
+    }
     with open(os.path.join(output_dir, 'metadata.json'), 'w') as f:
-        json.dump({'duration': duration.total_seconds()}, f)
+        json.dump(metadata, f, indent=2)
 
-    print('Ingestion program finished. Moving on to scoring.')
+    print(f'[OK] Total duration: {duration:.2f}s')
+    print('Ingestion complete. Handing off to scorer.')
     print_bar()
 
 
