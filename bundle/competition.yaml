@@ -59,7 +59,6 @@ phases:
       - 0
     solutions: []
     starting_kit: starting_kit
-    # public_data: feedback_phase/input_data
   - index: 1
     name: Final
     description: 'Final phase: submissions from the previous phase are automatically
@@ -101,4 +100,8 @@ leaderboards:
       - title: wrMAE
         key: wrMAE
         index: 2
+        sorting: asc
+      - title: Duration
+        key: duration
+        index: 3
         sorting: asc

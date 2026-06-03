@@ -68,9 +68,9 @@ def handle_sigterm(signum, frame):
 def get_data():
     """Load X_train, y_train, and X_test from disk."""
     paths = {
-        'train':  os.path.join(input_dir, 'X9_train_fl32.npy'),
-        'labels': os.path.join(input_dir, 'rho_fl32.npy'),
-        'test':   os.path.join(input_dir, 'X9_test_fl32.npy'),
+        'train':  os.path.join(input_dir, 'train_data.npy'),
+        'labels': os.path.join(input_dir, 'train_labels.npy'),
+        'test':   os.path.join(input_dir, 'test_data.npy'),
     }
     for name, path in paths.items():
         if not os.path.exists(path):
