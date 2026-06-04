@@ -48,6 +48,15 @@ From the **Files** tab, one can download:
     - `codalab-env`
     - `environment.yml`
 
+<!-- - `starting_kit/`
+  - `solution/` — template model to use as a base for your submission
+    - `model.py` — edit this file with your model and submit it as a zip
+  - `starting_kit.ipynb` — notebook showing how to load the data, train a baseline model and generate the `Yhat.npy` submission file
+  - `using_extra_packages/` — if your model depends on packages not available by default on Codabench (e.g. LightGBM, PyTorch, etc.), this folder shows you how to bundle them with your submission so they are available at runtime
+    - `environement.yml` — conda environment file reproducing the Codabench environment locally
+    - `codalab-env/` — uv-based environment setup, an alternative to conda
+    - `conda_submission_example.py` — example showing how to install extra packages into a `python_packages/` folder using conda, and include them in your submission zip
+    - `uv_submission_example.py` — same as above but using uv instead of conda -->
 
 Each is a numpy array with type float32 (single precision). A starting kit is also available, providing a model template and demonstrating how to generate the submission file.
 

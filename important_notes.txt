@@ -56,3 +56,8 @@ linear model and your model (why is working so well)
 Maybe the easy part of the bdy dominates...? So check this 
 Which part of the features rely on?
 Explainable AI for xyz features for example...
+
+
+====================================
+/app/input/ref Where the reference data should live (Not available to submissions. Only available on scoring step.)
+.... so we can use internet..
