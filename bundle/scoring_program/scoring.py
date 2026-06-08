@@ -1,15 +1,11 @@
 import json
 import os
-# import sys
 import numpy as np
-import pandas as pd
 from datetime import datetime as dt
 
+input_data      = '/app/input/input_data/'
 input_dir      = '/app/input'
 output_dir     = '/app/output/'
-
-# input_dir      = '/tmp/test_bundle/input_data/'
-# output_dir     = '/tmp/test_bundle/output/'
 
 reference_dir  = os.path.join(input_dir, 'ref')
 prediction_dir = os.path.join(input_dir, 'res')
@@ -51,18 +47,18 @@ def get_data():
     return y_test, y_pred
 
 def get_confidence():
-    print('[*] Reading confidence weights from {}'.format(reference_dir))
+    print('[*] Reading confidence weights from {}'.format(input_data))
     try:
-        confidence_per_case  = np.load(os.path.join(reference_dir, 'test_weights.npy'))
+        confidence_per_case  = np.load(os.path.join(input_data, 'test_weights.npy'))
         confidence_pointwise = np.repeat(confidence_per_case, nwallp)
         print('[+] Loaded confidence for {} test conditions.'.format(len(confidence_per_case)))
     except Exception as e:
         print('[-] Error loading confidence data: {}'.format(e))
         raise
 
-    print('[*] Reading test data from {}'.format(reference_dir))
+    print('[*] Reading test data from {}'.format(input_data))
     try:
-        X_test = np.load(os.path.join(reference_dir, 'test_data.npy'))
+        X_test = np.load(os.path.join(input_data, 'test_data.npy'))
         X_conditions = X_test[::nwallp]
         print('[+] Loaded {} test conditions.'.format(len(X_conditions)))
     except Exception as e:
@@ -116,8 +112,6 @@ def main():
     try:
         print_bar()
         y_test, y_pred = get_data()
-
-        # assert that y_test.shape==confidence_pointwise
 
         if y_test.shape != y_pred.shape:
             raise ValueError(

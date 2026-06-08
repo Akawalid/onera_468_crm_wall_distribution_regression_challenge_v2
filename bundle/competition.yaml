@@ -15,6 +15,8 @@ pages:
     file: pages/data.md
   - title: Evaluation
     file: pages/evaluation.md
+  - title: Extra packages
+    file: pages/extra_packages.md
 # Definition of the tasks
 tasks:
   - index: 0
@@ -36,15 +38,13 @@ tasks:
     scoring_program: scoring_program
     ingestion_program: ingestion_program
 
-# /!\ Solution is an example submission, NOT the ground truth /!\
 solutions:
   - index: 0
     tasks:
       - 0
       - 1
     path: solution/
-# There are 2 phases: development phase and final phase
-# Each one is linked to a task
+
 phases:
   - index: 0
     name: Development
@@ -64,7 +64,7 @@ phases:
     description: 'Final phase: submissions from the previous phase are automatically
       cloned and used to compute the final score. The results on the test set will be
       revealed when the organizers make them available.'
-    start: 2-1-2030 # Never ends
+    start: 2-1-2030
     max_submissions_per_day: 500
     max_submissions: 5000
     execution_time_limit: 3600

@@ -14,9 +14,9 @@ The volumetric density rho has been selected as the output quantity of interest 
 
 The split is done along the Mach number axis, in order to test the model's ability to generalize and extrapolate to unseen Mach values:
 
-- Mach numbers 0.50, 0.70, 0.75, 0.80, 0.82, 0.84, 0.86, 0.88, 0.90 belong to the **train set**
-- Mach numbers 0.85 and 0.93 belong to the **test set of phase 1** (interpolation)
-- Mach numbers 0.30 and 0.96 belong to the **test set of phase 2** (extrapolation)
+- Mach numbers 0.50, 0.70, 0.75, 0.80, 0.82, 0.84, 0.85, 0.86, 0.88 belong to the **train set**
+- Mach numbers 0.90 and 0.93 belong to the **test set of phase 1**
+- Mach numbers 0.30 and 0.96 belong to the **test set of phase 2**
 
 ## Input format
 
@@ -43,20 +43,16 @@ From the **Files** tab, one can download:
 - `starting_kit/`
   - `solution/` provides a template of a dummy model to use when submitting
     - `model.py`
-  - `baseline.ipynb` a notebook showing how to load the data and reproduce the baseline results
-  - `using_extra_packages/` a demonstration of how to use extra packages not available on Codabench
-    - `codalab-env`
-    - `environment.yml`
-
-<!-- - `starting_kit/`
-  - `solution/` — template model to use as a base for your submission
-    - `model.py` — edit this file with your model and submit it as a zip
-  - `starting_kit.ipynb` — notebook showing how to load the data, train a baseline model and generate the `Yhat.npy` submission file
-  - `using_extra_packages/` — if your model depends on packages not available by default on Codabench (e.g. LightGBM, PyTorch, etc.), this folder shows you how to bundle them with your submission so they are available at runtime
-    - `environement.yml` — conda environment file reproducing the Codabench environment locally
-    - `codalab-env/` — uv-based environment setup, an alternative to conda
-    - `conda_submission_example.py` — example showing how to install extra packages into a `python_packages/` folder using conda, and include them in your submission zip
-    - `uv_submission_example.py` — same as above but using uv instead of conda -->
+  - `starting_kit.ipynb` a notebook showing how to load the data and reproduce the baseline results
+  - `using_extra_packages/` if your model depends on packages not available by default on Codabench (e.g. LightGBM, etc.), this folder shows you how to bundle them with your submission so they are available at runtime
+    - `environement.yml`
+    - `codalab-env/`
+    - `submission_example.zip` Example of a file that can be submitted on Codabench
+    - `submission_example` 
+      - `python_packages/` 
+      - `model.py`
+      - `conda_tuto.txt` tutorial showing how to install extra packages using conda
+      - `uv_tuto.txt` tutorial as above but using uv instead of conda
 
 Each is a numpy array with type float32 (single precision). A starting kit is also available, providing a model template and demonstrating how to generate the submission file.
 
