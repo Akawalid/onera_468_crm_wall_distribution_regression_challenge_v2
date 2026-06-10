@@ -1,0 +1,570 @@
+Ouverture de : CFSE.Charbonnier.WBNP.ae2.75deg.Structured.T.cgns
+
+=== STRUCTURE RACINE (3 niveaux) ===
+├──  format  []  shape=(15,) dtype=int8
+├──  hdf5version  []  shape=(33,) dtype=int8
+├── BASE#1  [CGNSBase_t]
+│   ├──  data  []  shape=(2,) dtype=int32
+│   ├── FLUID 1  [Zone_t]
+│   │   ├──  data  []  shape=(3, 3) dtype=int32
+│   │   ├── GridCoordinates  [GridCoordinates_t]
+│   │   │   ├── CoordinateX  [DataArray_t]
+│   │   │   ├── CoordinateY  [DataArray_t]
+│   │   │   └── CoordinateZ  [DataArray_t]
+│   │   ├── ZoneBC  [ZoneBC_t]
+│   │   │   ├── FAR_180  [BC_t]
+│   │   │   └── SYMM_181  [BC_t]
+│   │   ├── ZoneGridConnectivity  [ZoneGridConnectivity_t]
+│   │   │   ├── SF144 (domains 1 & 3)  [GridConnectivity1to1_t]
+│   │   │   ├── SF172 (domains 1 & 90)  [GridConnectivity1to1_t]
+│   │   │   ├── SF177 (domains 1 & 2)  [GridConnectivity1to1_t]
+│   │   │   └── SF482 (domains 1 & 147)  [GridConnectivity1to1_t]
+│   │   └── ZoneType  [ZoneType_t]
+│   │       └──  data  []  shape=(10,) dtype=int8
+│   ├── FLUID 10  [Zone_t]
+│   │   ├──  data  []  shape=(3, 3) dtype=int32
+│   │   ├── GridCoordinates  [GridCoordinates_t]
+│   │   │   ├── CoordinateX  [DataArray_t]
+│   │   │   ├── CoordinateY  [DataArray_t]
+│   │   │   └── CoordinateZ  [DataArray_t]
+│   │   ├── ZoneGridConnectivity  [ZoneGridConnectivity_t]
+│   │   │   ├── SF1026 (domains 10 & 12)  [GridConnectivity1to1_t]
+│   │   │   ├── SF1159 (domains 10 & 138)  [GridConnectivity1to1_t]
+│   │   │   ├── SF423 (domains 10 & 144)  [GridConnectivity1to1_t]
+│   │   │   ├── SF424 (domains 10 & 7)  [GridConnectivity1to1_t]
+│   │   │   ├── SF425 (domains 10 & 9)  [GridConnectivity1to1_t]
+│   │   │   └── SF427 (domains 10 & 11)  [GridConnectivity1to1_t]
+│   │   └── ZoneType  [ZoneType_t]
+│   │       └──  data  []  shape=(10,) dtype=int8
+│   ├── FLUID 100  [Zone_t]
+│   │   ├──  data  []  shape=(3, 3) dtype=int32
+│   │   ├── GridCoordinates  [GridCoordinates_t]
+│   │   │   ├── CoordinateX  [DataArray_t]
+│   │   │   ├── CoordinateY  [DataArray_t]
+│   │   │   └── CoordinateZ  [DataArray_t]
+│   │   ├── ZoneBC  [ZoneBC_t]
+│   │   │   └── SYMM_165  [BC_t]
+│   │   ├── ZoneGridConnectivity  [ZoneGridConnectivity_t]
+│   │   │   ├── SF163 (domains 100 & 13)  [GridConnectivity1to1_t]
+│   │   │   ├── SF164 (domains 100 & 101)  [GridConnectivity1to1_t]
+│   │   │   ├── SF166 (domains 100 & 89)  [GridConnectivity1to1_t]
+│   │   │   ├── SF202 (domains 100 & 109)  [GridConnectivity1to1_t]
+│   │   │   └── SF463 (domains 100 & 104)  [GridConnectivity1to1_t]
+│   │   └── ZoneType  [ZoneType_t]
+│   │       └──  data  []  shape=(10,) dtype=int8
+│   ├── FLUID 101  [Zone_t]
+│   │   ├──  data  []  shape=(3, 3) dtype=int32
+│   │   ├── GridCoordinates  [GridCoordinates_t]
+│   │   │   ├── CoordinateX  [DataArray_t]
+│   │   │   ├── CoordinateY  [DataArray_t]
+│   │   │   └── CoordinateZ  [DataArray_t]
+│   │   ├── ZoneBC  [ZoneBC_t]
+│   │   │   ├── FAR_189  [BC_t]
+│   │   │   └── SYMM_188  [BC_t]
+│   │   ├── ZoneGridConnectivity  [ZoneGridConnectivity_t]
+│   │   │   ├── SF164 (domains 101 & 100)  [GridConnectivity1to1_t]
+│   │   │   ├── SF187 (domains 101 & 89)  [GridConnectivity1to1_t]
+│   │   │   ├── SF203 (domains 101 & 110)  [GridConnectivity1to1_t]
+│   │   │   └── SF466 (domains 101 & 151)  [GridConnectivity1to1_t]
+│   │   └── ZoneType  [ZoneType_t]
+│   │       └──  data  []  shape=(10,) dtype=int8
+│   └── FLUID 102  [Zone_t]
+│       ├──  data  []  shape=(3, 3) dtype=int32
+│       ├── GridCoordinates  [GridCoordinates_t]
+│       │   ├── CoordinateX  [DataArray_t]
+│       │   ├── CoordinateY  [DataArray_t]
+│       │   └── CoordinateZ  [DataArray_t]
+│       ├── ZoneBC  [ZoneBC_t]
+│       │   ├── FAR_184  [BC_t]
+│       │   └── SYMM_183  [BC_t]
+│       ├── ZoneGridConnectivity  [ZoneGridConnectivity_t]
+│       │   ├── SF154 (domains 102 & 99)  [GridConnectivity1to1_t]
+│       │   ├── SF182 (domains 102 & 6)  [GridConnectivity1to1_t]
+│       │   ├── SF195 (domains 102 & 111)  [GridConnectivity1to1_t]
+│       │   └── SF491 (domains 102 & 149)  [GridConnectivity1to1_t]
+│       └── ZoneType  [ZoneType_t]
+│           └──  data  []  shape=(10,) dtype=int8
+│       ... (328 autres clés)
+└── CGNSLibraryVersion  [CGNSLibraryVersion_t]
+    └──  data  []  shape=(1,) dtype=float32
+
+
+=== RECHERCHE DE TOUTES LES ZONES (Zone_t) ===
+Total : 333 zones
+
+Liste des 30 premières zones :
+  [  0] path=/BASE#1/FLUID 1  label=Zone_t
+  [  1] path=/BASE#1/FLUID 10  label=Zone_t
+  [  2] path=/BASE#1/FLUID 100  label=Zone_t
+  [  3] path=/BASE#1/FLUID 101  label=Zone_t
+  [  4] path=/BASE#1/FLUID 102  label=Zone_t
+  [  5] path=/BASE#1/FLUID 103  label=Zone_t
+  [  6] path=/BASE#1/FLUID 104  label=Zone_t
+  [  7] path=/BASE#1/FLUID 105  label=Zone_t
+  [  8] path=/BASE#1/FLUID 106  label=Zone_t
+  [  9] path=/BASE#1/FLUID 107  label=Zone_t
+  [ 10] path=/BASE#1/FLUID 108  label=Zone_t
+  [ 11] path=/BASE#1/FLUID 109  label=Zone_t
+  [ 12] path=/BASE#1/FLUID 11  label=Zone_t
+  [ 13] path=/BASE#1/FLUID 110  label=Zone_t
+  [ 14] path=/BASE#1/FLUID 111  label=Zone_t
+  [ 15] path=/BASE#1/FLUID 112  label=Zone_t
+  [ 16] path=/BASE#1/FLUID 113  label=Zone_t
+  [ 17] path=/BASE#1/FLUID 114  label=Zone_t
+  [ 18] path=/BASE#1/FLUID 115  label=Zone_t
+  [ 19] path=/BASE#1/FLUID 116  label=Zone_t
+  [ 20] path=/BASE#1/FLUID 117  label=Zone_t
+  [ 21] path=/BASE#1/FLUID 118  label=Zone_t
+  [ 22] path=/BASE#1/FLUID 119  label=Zone_t
+  [ 23] path=/BASE#1/FLUID 12  label=Zone_t
+  [ 24] path=/BASE#1/FLUID 120  label=Zone_t
+  [ 25] path=/BASE#1/FLUID 121  label=Zone_t
+  [ 26] path=/BASE#1/FLUID 122  label=Zone_t
+  [ 27] path=/BASE#1/FLUID 123  label=Zone_t
+  [ 28] path=/BASE#1/FLUID 124  label=Zone_t
+  [ 29] path=/BASE#1/FLUID 125  label=Zone_t
+  ... (303 zones supplémentaires)
+
+
+=== INSPECTION DÉTAILLÉE DES 5 PREMIÈRES ZONES ===
+
+============================================================
+ZONE [0] : 'FLUID 1'
+  Attributs : {'flags': [1], 'label': 'Zone_t', 'name': 'FLUID 1', 'type': 'I4'}
+  Clés directes : [' data', 'GridCoordinates', 'ZoneBC', 'ZoneGridConnectivity', 'ZoneType']
+
+  []  data
+
+  [GridCoordinates_t] GridCoordinates
+    [DataArray_t] CoordinateX  shape= dtype=
+      []  data  shape=(33, 17, 21) dtype=float64
+    [DataArray_t] CoordinateY  shape= dtype=
+      []  data  shape=(33, 17, 21) dtype=float64
+    [DataArray_t] CoordinateZ  shape= dtype=
+      []  data  shape=(33, 17, 21) dtype=float64
+
+  [ZoneBC_t] ZoneBC
+    [BC_t] FAR_180  shape= dtype=
+      []  data  shape=(11,) dtype=int8
+        valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+      [FamilyName_t] FamilyName  shape= dtype=
+      ["int[IndexDimension]"] InwardNormalIndex  shape= dtype=
+      [IndexRange_t] PointRange  shape= dtype=
+    [BC_t] SYMM_181  shape= dtype=
+      []  data  shape=(11,) dtype=int8
+        valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+      [FamilyName_t] FamilyName  shape= dtype=
+      ["int[IndexDimension]"] InwardNormalIndex  shape= dtype=
+      [IndexRange_t] PointRange  shape= dtype=
+
+  [ZoneGridConnectivity_t] ZoneGridConnectivity
+    [GridConnectivity1to1_t] SF144 (domains 1 & 3)  shape= dtype=
+      []  data  shape=(7,) dtype=int8
+        valeur = [70 76 85 73 68 32 51]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF172 (domains 1 & 90)  shape= dtype=
+      []  data  shape=(8,) dtype=int8
+        valeur = [70 76 85 73 68 32 57 48]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF177 (domains 1 & 2)  shape= dtype=
+      []  data  shape=(7,) dtype=int8
+        valeur = [70 76 85 73 68 32 50]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF482 (domains 1 & 147)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 52 55]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+
+  [ZoneType_t] ZoneType
+    []  data  shape=(10,) dtype=int8
+
+============================================================
+ZONE [1] : 'FLUID 10'
+  Attributs : {'flags': [1], 'label': 'Zone_t', 'name': 'FLUID 10', 'type': 'I4'}
+  Clés directes : [' data', 'GridCoordinates', 'ZoneGridConnectivity', 'ZoneType']
+
+  []  data
+
+  [GridCoordinates_t] GridCoordinates
+    [DataArray_t] CoordinateX  shape= dtype=
+      []  data  shape=(97, 165, 33) dtype=float64
+    [DataArray_t] CoordinateY  shape= dtype=
+      []  data  shape=(97, 165, 33) dtype=float64
+    [DataArray_t] CoordinateZ  shape= dtype=
+      []  data  shape=(97, 165, 33) dtype=float64
+
+  [ZoneGridConnectivity_t] ZoneGridConnectivity
+    [GridConnectivity1to1_t] SF1026 (domains 10 & 12)  shape= dtype=
+      []  data  shape=(8,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 50]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF1159 (domains 10 & 138)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 51 56]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF423 (domains 10 & 144)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 52 52]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF424 (domains 10 & 7)  shape= dtype=
+      []  data  shape=(7,) dtype=int8
+        valeur = [70 76 85 73 68 32 55]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF425 (domains 10 & 9)  shape= dtype=
+      []  data  shape=(7,) dtype=int8
+        valeur = [70 76 85 73 68 32 57]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF427 (domains 10 & 11)  shape= dtype=
+      []  data  shape=(8,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 49]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+
+  [ZoneType_t] ZoneType
+    []  data  shape=(10,) dtype=int8
+
+============================================================
+ZONE [2] : 'FLUID 100'
+  Attributs : {'flags': [1], 'label': 'Zone_t', 'name': 'FLUID 100', 'type': 'I4'}
+  Clés directes : [' data', 'GridCoordinates', 'ZoneBC', 'ZoneGridConnectivity', 'ZoneType']
+
+  []  data
+
+  [GridCoordinates_t] GridCoordinates
+    [DataArray_t] CoordinateX  shape= dtype=
+      []  data  shape=(33, 33, 17) dtype=float64
+    [DataArray_t] CoordinateY  shape= dtype=
+      []  data  shape=(33, 33, 17) dtype=float64
+    [DataArray_t] CoordinateZ  shape= dtype=
+      []  data  shape=(33, 33, 17) dtype=float64
+
+  [ZoneBC_t] ZoneBC
+    [BC_t] SYMM_165  shape= dtype=
+      []  data  shape=(11,) dtype=int8
+        valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+      [FamilyName_t] FamilyName  shape= dtype=
+      ["int[IndexDimension]"] InwardNormalIndex  shape= dtype=
+      [IndexRange_t] PointRange  shape= dtype=
+
+  [ZoneGridConnectivity_t] ZoneGridConnectivity
+    [GridConnectivity1to1_t] SF163 (domains 100 & 13)  shape= dtype=
+      []  data  shape=(8,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 51]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF164 (domains 100 & 101)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 48 49]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF166 (domains 100 & 89)  shape= dtype=
+      []  data  shape=(8,) dtype=int8
+        valeur = [70 76 85 73 68 32 56 57]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF202 (domains 100 & 109)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 48 57]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF463 (domains 100 & 104)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 48 52]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+
+  [ZoneType_t] ZoneType
+    []  data  shape=(10,) dtype=int8
+
+============================================================
+ZONE [3] : 'FLUID 101'
+  Attributs : {'flags': [1], 'label': 'Zone_t', 'name': 'FLUID 101', 'type': 'I4'}
+  Clés directes : [' data', 'GridCoordinates', 'ZoneBC', 'ZoneGridConnectivity', 'ZoneType']
+
+  []  data
+
+  [GridCoordinates_t] GridCoordinates
+    [DataArray_t] CoordinateX  shape= dtype=
+      []  data  shape=(21, 17, 33) dtype=float64
+    [DataArray_t] CoordinateY  shape= dtype=
+      []  data  shape=(21, 17, 33) dtype=float64
+    [DataArray_t] CoordinateZ  shape= dtype=
+      []  data  shape=(21, 17, 33) dtype=float64
+
+  [ZoneBC_t] ZoneBC
+    [BC_t] FAR_189  shape= dtype=
+      []  data  shape=(11,) dtype=int8
+        valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+      [FamilyName_t] FamilyName  shape= dtype=
+      ["int[IndexDimension]"] InwardNormalIndex  shape= dtype=
+      [IndexRange_t] PointRange  shape= dtype=
+    [BC_t] SYMM_188  shape= dtype=
+      []  data  shape=(11,) dtype=int8
+        valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+      [FamilyName_t] FamilyName  shape= dtype=
+      ["int[IndexDimension]"] InwardNormalIndex  shape= dtype=
+      [IndexRange_t] PointRange  shape= dtype=
+
+  [ZoneGridConnectivity_t] ZoneGridConnectivity
+    [GridConnectivity1to1_t] SF164 (domains 101 & 100)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 48 48]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF187 (domains 101 & 89)  shape= dtype=
+      []  data  shape=(8,) dtype=int8
+        valeur = [70 76 85 73 68 32 56 57]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF203 (domains 101 & 110)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 49 48]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF466 (domains 101 & 151)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 53 49]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+
+  [ZoneType_t] ZoneType
+    []  data  shape=(10,) dtype=int8
+
+============================================================
+ZONE [4] : 'FLUID 102'
+  Attributs : {'flags': [1], 'label': 'Zone_t', 'name': 'FLUID 102', 'type': 'I4'}
+  Clés directes : [' data', 'GridCoordinates', 'ZoneBC', 'ZoneGridConnectivity', 'ZoneType']
+
+  []  data
+
+  [GridCoordinates_t] GridCoordinates
+    [DataArray_t] CoordinateX  shape= dtype=
+      []  data  shape=(21, 17, 33) dtype=float64
+    [DataArray_t] CoordinateY  shape= dtype=
+      []  data  shape=(21, 17, 33) dtype=float64
+    [DataArray_t] CoordinateZ  shape= dtype=
+      []  data  shape=(21, 17, 33) dtype=float64
+
+  [ZoneBC_t] ZoneBC
+    [BC_t] FAR_184  shape= dtype=
+      []  data  shape=(11,) dtype=int8
+        valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+      [FamilyName_t] FamilyName  shape= dtype=
+      ["int[IndexDimension]"] InwardNormalIndex  shape= dtype=
+      [IndexRange_t] PointRange  shape= dtype=
+    [BC_t] SYMM_183  shape= dtype=
+      []  data  shape=(11,) dtype=int8
+        valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+      [FamilyName_t] FamilyName  shape= dtype=
+      ["int[IndexDimension]"] InwardNormalIndex  shape= dtype=
+      [IndexRange_t] PointRange  shape= dtype=
+
+  [ZoneGridConnectivity_t] ZoneGridConnectivity
+    [GridConnectivity1to1_t] SF154 (domains 102 & 99)  shape= dtype=
+      []  data  shape=(8,) dtype=int8
+        valeur = [70 76 85 73 68 32 57 57]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF182 (domains 102 & 6)  shape= dtype=
+      []  data  shape=(7,) dtype=int8
+        valeur = [70 76 85 73 68 32 54]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF195 (domains 102 & 111)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 49 49]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+    [GridConnectivity1to1_t] SF491 (domains 102 & 149)  shape= dtype=
+      []  data  shape=(9,) dtype=int8
+        valeur = [70 76 85 73 68 32 49 52 57]
+      [IndexRange_t] PointRange  shape= dtype=
+      [IndexRange_t] PointRangeDonor  shape= dtype=
+      ["int[IndexDimension]"] Transform  shape= dtype=
+
+  [ZoneType_t] ZoneType
+    []  data  shape=(10,) dtype=int8
+
+
+=== RECHERCHE DE NOEUDS GridCoordinates_t ===
+GridCoordinates_t trouvés : 333
+  /BASE#1/FLUID 1/GridCoordinates
+    CoordinateX  label=DataArray_t  shape=  dtype=
+       data  shape=(33, 17, 21)  dtype=float64
+    CoordinateY  label=DataArray_t  shape=  dtype=
+       data  shape=(33, 17, 21)  dtype=float64
+    CoordinateZ  label=DataArray_t  shape=  dtype=
+       data  shape=(33, 17, 21)  dtype=float64
+  /BASE#1/FLUID 10/GridCoordinates
+    CoordinateX  label=DataArray_t  shape=  dtype=
+       data  shape=(97, 165, 33)  dtype=float64
+    CoordinateY  label=DataArray_t  shape=  dtype=
+       data  shape=(97, 165, 33)  dtype=float64
+    CoordinateZ  label=DataArray_t  shape=  dtype=
+       data  shape=(97, 165, 33)  dtype=float64
+  /BASE#1/FLUID 100/GridCoordinates
+    CoordinateX  label=DataArray_t  shape=  dtype=
+       data  shape=(33, 33, 17)  dtype=float64
+    CoordinateY  label=DataArray_t  shape=  dtype=
+       data  shape=(33, 33, 17)  dtype=float64
+    CoordinateZ  label=DataArray_t  shape=  dtype=
+       data  shape=(33, 33, 17)  dtype=float64
+  /BASE#1/FLUID 101/GridCoordinates
+    CoordinateX  label=DataArray_t  shape=  dtype=
+       data  shape=(21, 17, 33)  dtype=float64
+    CoordinateY  label=DataArray_t  shape=  dtype=
+       data  shape=(21, 17, 33)  dtype=float64
+    CoordinateZ  label=DataArray_t  shape=  dtype=
+       data  shape=(21, 17, 33)  dtype=float64
+  /BASE#1/FLUID 102/GridCoordinates
+    CoordinateX  label=DataArray_t  shape=  dtype=
+       data  shape=(21, 17, 33)  dtype=float64
+    CoordinateY  label=DataArray_t  shape=  dtype=
+       data  shape=(21, 17, 33)  dtype=float64
+    CoordinateZ  label=DataArray_t  shape=  dtype=
+       data  shape=(21, 17, 33)  dtype=float64
+
+
+=== RECHERCHE DE NOEUDS BC_t ===
+BC_t trouvés : 294
+  /BASE#1/FLUID 1/ZoneBC/FAR_180
+    attrs = {'flags': [1], 'label': 'BC_t', 'name': 'FAR_180', 'type': 'C1'}
+     data  label=  shape=(11,)
+      valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+    FamilyName  label=FamilyName_t  shape=
+       data = [70 65 82]
+    InwardNormalIndex  label="int[IndexDimension]"  shape=
+       data = [1 0 0]
+    PointRange  label=IndexRange_t  shape=
+       data = [[ 1  1  1]
+ [ 1 17 33]]
+  /BASE#1/FLUID 1/ZoneBC/SYMM_181
+    attrs = {'flags': [1], 'label': 'BC_t', 'name': 'SYMM_181', 'type': 'C1'}
+     data  label=  shape=(11,)
+      valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+    FamilyName  label=FamilyName_t  shape=
+       data = [83 89 77 77]
+    InwardNormalIndex  label="int[IndexDimension]"  shape=
+       data = [0 1 0]
+    PointRange  label=IndexRange_t  shape=
+       data = [[ 1  1  1]
+ [21  1 33]]
+  /BASE#1/FLUID 100/ZoneBC/SYMM_165
+    attrs = {'flags': [1], 'label': 'BC_t', 'name': 'SYMM_165', 'type': 'C1'}
+     data  label=  shape=(11,)
+      valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+    FamilyName  label=FamilyName_t  shape=
+       data = [83 89 77 77]
+    InwardNormalIndex  label="int[IndexDimension]"  shape=
+       data = [1 0 0]
+    PointRange  label=IndexRange_t  shape=
+       data = [[ 1  1  1]
+ [ 1 33 33]]
+  /BASE#1/FLUID 101/ZoneBC/FAR_189
+    attrs = {'flags': [1], 'label': 'BC_t', 'name': 'FAR_189', 'type': 'C1'}
+     data  label=  shape=(11,)
+      valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+    FamilyName  label=FamilyName_t  shape=
+       data = [70 65 82]
+    InwardNormalIndex  label="int[IndexDimension]"  shape=
+       data = [0 0 1]
+    PointRange  label=IndexRange_t  shape=
+       data = [[ 1  1  1]
+ [33 17  1]]
+  /BASE#1/FLUID 101/ZoneBC/SYMM_188
+    attrs = {'flags': [1], 'label': 'BC_t', 'name': 'SYMM_188', 'type': 'C1'}
+     data  label=  shape=(11,)
+      valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+    FamilyName  label=FamilyName_t  shape=
+       data = [83 89 77 77]
+    InwardNormalIndex  label="int[IndexDimension]"  shape=
+       data = [0 1 0]
+    PointRange  label=IndexRange_t  shape=
+       data = [[ 1  1  1]
+ [33  1 21]]
+  /BASE#1/FLUID 102/ZoneBC/FAR_184
+    attrs = {'flags': [1], 'label': 'BC_t', 'name': 'FAR_184', 'type': 'C1'}
+     data  label=  shape=(11,)
+      valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+    FamilyName  label=FamilyName_t  shape=
+       data = [70 65 82]
+    InwardNormalIndex  label="int[IndexDimension]"  shape=
+       data = [0 0 1]
+    PointRange  label=IndexRange_t  shape=
+       data = [[ 1  1  1]
+ [33 17  1]]
+  /BASE#1/FLUID 102/ZoneBC/SYMM_183
+    attrs = {'flags': [1], 'label': 'BC_t', 'name': 'SYMM_183', 'type': 'C1'}
+     data  label=  shape=(11,)
+      valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+    FamilyName  label=FamilyName_t  shape=
+       data = [83 89 77 77]
+    InwardNormalIndex  label="int[IndexDimension]"  shape=
+       data = [0 1 0]
+    PointRange  label=IndexRange_t  shape=
+       data = [[ 1  1  1]
+ [33  1 21]]
+  /BASE#1/FLUID 105/ZoneBC/FAR_1273
+    attrs = {'flags': [1], 'label': 'BC_t', 'name': 'FAR_1273', 'type': 'C1'}
+     data  label=  shape=(11,)
+      valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+    FamilyName  label=FamilyName_t  shape=
+       data = [70 65 82]
+    InwardNormalIndex  label="int[IndexDimension]"  shape=
+       data = [1 0 0]
+    PointRange  label=IndexRange_t  shape=
+       data = [[ 1  1  1]
+ [ 1 33 33]]
+  /BASE#1/FLUID 106/ZoneBC/FAR_1265
+    attrs = {'flags': [1], 'label': 'BC_t', 'name': 'FAR_1265', 'type': 'C1'}
+     data  label=  shape=(11,)
+      valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+    FamilyName  label=FamilyName_t  shape=
+       data = [70 65 82]
+    InwardNormalIndex  label="int[IndexDimension]"  shape=
+       data = [1 0 0]
+    PointRange  label=IndexRange_t  shape=
+       data = [[ 1  1  1]
+ [ 1 33 97]]
+  /BASE#1/FLUID 107/ZoneBC/FAR_1279
+    attrs = {'flags': [1], 'label': 'BC_t', 'name': 'FAR_1279', 'type': 'C1'}
+     data  label=  shape=(11,)
+      valeur = [ 85 115 101 114  68 101 102 105 110 101 100]
+    FamilyName  label=FamilyName_t  shape=
+       data = [70 65 82]
+    InwardNormalIndex  label="int[IndexDimension]"  shape=
+       data = [1 0 0]
+    PointRange  label=IndexRange_t  shape=
+       data = [[ 1  1  1]
+ [ 1 33 33]]

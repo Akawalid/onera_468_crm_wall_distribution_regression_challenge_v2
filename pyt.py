@@ -1,71 +1,102 @@
-import h5py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.gridspec as gridspec
+import matplotlib.patches as mpatches
+import json
 
-family_map = {
-    'AIRCRAFT_BODY:FUSE':      0,
-    'AIRCRAFT_BODY:TAILU':     1,
-    'AIRCRAFT_BODY:TAILL':     1,
-    'AIRCRAFT_BODY:TAILTE':    1,
-    'AIRCRAFT_BODY:WINGU':     2,
-    'AIRCRAFT_BODY:WINGL':     2,
-    'AIRCRAFT_BODY:WINGTE':    2,
-    'AIRCRAFT_BODY:WINGU2':    2,
-    'AIRCRAFT_BODY:NACELLEOU': 3,
-    'AIRCRAFT_BODY:NACELLEIN': 3,
-    'AIRCRAFT_BODY:NACELLETE': 3,
-    'AIRCRAFT_BODY:PYLON':     4,
-    'AIRCRAFT_BODY:PYLON2':    4,
+N_WALL = 260_774
+
+cameraSettings = {
+    'elevation': 20.,
+    'azimuth': 120.,
+    'zoom': 1.,
+    'xlim': [None, None],
+    'ylim': [None, 5.],
+    'zlim': [None, None],
+    'xoffsets': [10., -14.],
+    'yoffsets': [0., 0.],
+    'zoffsets': [0., 0.]
 }
 
-label_names = {0: 'Fuselage', 1: 'Empennage', 2: 'Aile', 3: 'Nacelle', 4: 'Pylone'}
+plotSettings = {
+    'dpi': 400,
+    'fileName': 'fig_components_CRM.png',
+    'title': 'CRM WBPN — Classification par composant géométrique',
+    'title_fontsize': 12,
+}
 
-all_xyz    = []
-all_labels = []
+COMP_COLORS = {
+    'fuselage': '#4878CF',
+    'wing':     '#6ACC65',
+    'pylon':    '#D65F5F',
+    'nacelle':  '#F5C518',
+    'unknown':  '#999999',
+}
 
-with h5py.File("CFSE.Charbonnier.WBNP.ae2.75deg.Structured.T.cgns", 'r') as f:
-    base = f['BASE#1']
+X = np.load('.FILES_RHO_ALL_POINTS_reduitfloat32/COORDINATES/XX.npy')
+Y = np.load('.FILES_RHO_ALL_POINTS_reduitfloat32/COORDINATES/YY.npy')
+Z = np.load('.FILES_RHO_ALL_POINTS_reduitfloat32/COORDINATES/ZZ.npy')
 
-    for zone_name in base.keys():
-        zone = base[zone_name]
-        if 'ZoneBC' not in zone:
-            continue
+labels_int = np.load('./output/component_labels_unique.npy')
+with open('./output/component_map.json') as f:
+    code_map = json.load(f)
+int_to_name = {int(k): v for k, v in code_map.items()}
 
-        coords = zone['GridCoordinates']
-        X = np.array(coords['CoordinateX'][' data'])
-        Y = np.array(coords['CoordinateY'][' data'])
-        Z = np.array(coords['CoordinateZ'][' data'])
+point_colors = np.array([COMP_COLORS.get(int_to_name.get(c, 'unknown'), '#999999')
+                         for c in labels_int])
 
-        for bc_name in zone['ZoneBC'].keys():
-            bc = zone['ZoneBC'][bc_name]
-            if 'FamilyName' not in bc or 'PointRange' not in bc:
-                continue
+xmin, xmax = np.min(X), np.max(X)
+ymin, ymax = np.min(Y), np.max(Y)
+zmin, zmax = np.min(Z), np.max(Z)
 
-            raw    = bc['FamilyName'][' data']
-            family = ''.join(chr(c) for c in raw).strip()
-            if family not in family_map:
-                continue
+figa = plt.figure()
+gs = gridspec.GridSpec(
+    nrows=2, ncols=3,
+    width_ratios=[1., 1., 1.],
+    height_ratios=[20, 1]
+)
 
-            zone_label = family_map[family]
+ax = figa.add_subplot(gs[0, :], projection=Axes3D.name)
 
-            pr = np.array(bc['PointRange'][' data'])
-            # shape (2, 3) → [[i1, j1, k1], [i2, j2, k2]] (1-indexed)
-            i1, j1, k1 = pr[0, 0] - 1, pr[0, 1] - 1, pr[0, 2] - 1
-            i2, j2, k2 = pr[1, 0],     pr[1, 1],     pr[1, 2]
+ax.scatter3D(X, Y, Z, c=point_colors, s=0.3, alpha=0.7,
+             clip_on=False, rasterized=True)
 
-            x_face = X[i1:i2, j1:j2, k1:k2].flatten()
-            y_face = Y[i1:i2, j1:j2, k1:k2].flatten()
-            z_face = Z[i1:i2, j1:j2, k1:k2].flatten()
+if cameraSettings['xlim'][0] is None: cameraSettings['xlim'][0] = xmin
+if cameraSettings['xlim'][1] is None: cameraSettings['xlim'][1] = xmax
+if cameraSettings['ylim'][0] is None: cameraSettings['ylim'][0] = ymin
+if cameraSettings['ylim'][1] is None: cameraSettings['ylim'][1] = ymax
+if cameraSettings['zlim'][0] is None: cameraSettings['zlim'][0] = zmin
+if cameraSettings['zlim'][1] is None: cameraSettings['zlim'][1] = zmax
 
-            xyz = np.stack([x_face, y_face, z_face], axis=1)
-            all_xyz.append(xyz)
-            all_labels.append(np.full(len(x_face), zone_label))
+ax.view_init(elev=cameraSettings['elevation'], azim=cameraSettings['azimuth'])
+ax.set(
+    xlim=(cameraSettings['xlim'][0] + cameraSettings['xoffsets'][0],
+          cameraSettings['xlim'][1] + cameraSettings['xoffsets'][1]),
+    ylim=(cameraSettings['ylim'][0] + cameraSettings['yoffsets'][0],
+          cameraSettings['ylim'][1] + cameraSettings['yoffsets'][1]),
+    zlim=(cameraSettings['zlim'][0] + cameraSettings['zoffsets'][0],
+          cameraSettings['zlim'][1] + cameraSettings['zoffsets'][1])
+)
 
-all_xyz    = np.vstack(all_xyz)
-all_labels = np.concatenate(all_labels)
+ax.set_axis_off()
+limits = np.array([getattr(ax, f'get_{axis}lim')() for axis in 'xyz'])
+ax.set_box_aspect(np.ptp(limits, axis=1), zoom=cameraSettings['zoom'])
+figa.subplots_adjust(left=0, right=1, bottom=0, top=1)
 
-print(f"Total points extraits : {len(all_xyz)}")
-for k, name in label_names.items():
-    print(f"  {name} : {(all_labels == k).sum()} points")
+legend_patches = []
+for code, name in int_to_name.items():
+    cnt = (labels_int == code).sum()
+    color = COMP_COLORS.get(name, '#999999')
+    legend_patches.append(
+        mpatches.Patch(color=color, label=f'{name} ({cnt:,} pts)')
+    )
+ax.legend(handles=legend_patches, loc='upper left', fontsize=8,
+          framealpha=0.8, markerscale=2)
 
-np.save('cgns_xyz.npy',    all_xyz)
-np.save('cgns_labels.npy', all_labels)
+figa.suptitle(plotSettings['title'], fontsize=plotSettings['title_fontsize'])
+figa.tight_layout(pad=0.)
+figa.savefig(plotSettings['fileName'], dpi=plotSettings['dpi'])
+print(f"Figure sauvegardée : {plotSettings['fileName']}")
