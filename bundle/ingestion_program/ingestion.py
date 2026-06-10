@@ -8,10 +8,6 @@ import os
 import sys
 import numpy as np
 from datetime import datetime as dt
-# # --- for RAM handling ---
-# import signal
-# import threading
-# import psutil
 
 # --- Paths ---
 input_dir      = '/app/input_data/'
@@ -64,9 +60,6 @@ def print_bar():
 def main():
     print_bar()
     print('Ingestion program. ONERA 468 CRM challenge rho.')
-
-    # # Register SIGTERM handler so the watchdog can interrupt cleanly
-    # signal.signal(signal.SIGTERM, handle_sigterm)
 
     # --- Load model ---
     print_bar()
