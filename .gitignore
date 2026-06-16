@@ -34,7 +34,7 @@ ENV/
 
 # Jupyter
 .ipynb_checkpoints/
-*.ipynb
+
 
 # Data files
 #bundle/feedback_phase/input_data/
