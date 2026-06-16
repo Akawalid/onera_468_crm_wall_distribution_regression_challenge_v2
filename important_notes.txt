@@ -147,3 +147,25 @@ A key challenge in data-centric approaches is that rare events such as high or l
 ## Bottom line for your challenge design
 
 The AirfRANS 4-task structure is your best reference. For density ρ specifically, you gain an extra dimension: the **volumetric field** means you can add a **spatial extrapolation** task (train on far-field, test on near-wall) that has no equivalent in the ONERA surface-only challenge — and that's where kNN would collapse completely, since spatial proximity in the field has no direct relation to proximity in the (M∞, AoA, pi) parameter space.
+
+
+================================================
+
+- The KNN is scoring very high even with using only the flow conditions (on the train set)
+- Modified the split to put angle of attacks -2, 0, 2 in test and sampling the geomety, didn't work, knn is still 
+scoring very high even  with including the geometric features, does this mean that the geometric features do not affect 
+the knn neighbours?
+
+- if the knn is already scoring well, does this mean the dataset is broken? what is our goal in this case if we already
+ have a model that works very well                                                                                                                                                                                  
+
+
+ ================ to see tomorrow
+ take a loot at the starting kit, 
+    talk about the confidence intervals, 
+    talk about splitting into body parts and that works good for metrics, cf exploration notebook
+    train the mlp and the decision tree and check if the proposed metric is easily growable
+    take a look at the functions and try to understand them at the exploration notebook, 
+    try to understand how the pooled metrics were computed in the starting kit (where the R2 score is 0.91)
+    talk about the talk I had with theofanis, and what is impossible to do, the split we talked about, what makes it simple
+    we directly sample the geomerical composants uniformly...
