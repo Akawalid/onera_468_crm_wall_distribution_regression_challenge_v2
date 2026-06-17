@@ -46,6 +46,8 @@ feedback_phase/
 *.cgns
 *.blk
 FILES*
+*.json
+
 # OS
 .DS_Store
 Thumbs.db
