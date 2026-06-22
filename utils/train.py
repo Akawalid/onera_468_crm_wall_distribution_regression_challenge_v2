@@ -103,7 +103,7 @@ def compute_wrMAE(y, yhat, confidence_per_case):
 def print_scores(model_name, r2, wmae):
     worst_case_idx, worst_case_val = wmae
     print(f"  {'Model':<22}: {model_name}")
-    print(f"  {'R²':<22}: {r2:.6f}")
+    print(f"  {'R2':<22}: {r2:.6f}")
     print(f"  {'wrMAE':<22}: {worst_case_val:.6f}  (worst case idx: {worst_case_idx})")
     print()
 
@@ -133,7 +133,7 @@ def print_summary(results, phase_label):
     print("=" * w)
     print(f"  SUMMARY {phase_label}")
     print("=" * w)
-    print(f"  {'Model':<24} {'R²':>10}  {'wrMAE':>12}  {'Worst idx':>10}")
+    print(f"  {'Model':<24} {'R2':>10}  {'wrMAE':>12}  {'Worst idx':>10}")
     print("-" * w)
     for name, r2, (worst_idx, worst_val) in results:
         print(f"  {name:<24} {r2:>10.6f}  {worst_val:>12.6f}  {worst_idx:>10}")
