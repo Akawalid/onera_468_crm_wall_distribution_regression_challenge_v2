@@ -1,12 +1,12 @@
 import json
 import os
+# import sys
 import numpy as np
 import pandas as pd
+from datetime import datetime as dt
 
 input_dir      = '/app/input'
 output_dir     = '/app/output/'
-# input_dir  = '/tmp/test_bundle/input'
-# output_dir = '/tmp/test_bundle/output/'
 
 reference_dir  = os.path.join(input_dir, 'ref')
 prediction_dir = os.path.join(input_dir, 'res')
@@ -23,28 +23,50 @@ def write_file(file, content):
     with open(file, 'a', encoding='utf-8') as f:
         f.write(content)
 
-
 def print_bar():
     """ Display a bar ('----------') """
     print('-' * 10)
 
-
 def get_data():
     """ Get ground truth (y_test) and predictions (y_pred). """
-    y_test = np.load(os.path.join(reference_dir, 'rho_test_fl32.npy'))[:, 0]
-    y_pred = np.load(os.path.join(prediction_dir, 'Yhat.npy'))[:, 0]
+    print('[*] Reading reference data from {}'.format(reference_dir))
+    try:
+        y_test = np.load(os.path.join(reference_dir, 'test_labels.npy'))[:, 0]
+        print('[+] Loaded {} reference values.'.format(len(y_test)))
+    except Exception as e:
+        print('[-] Error loading reference data: {}'.format(e))
+        raise
+
+    print('[*] Reading predictions from {}'.format(prediction_dir))
+    try:
+        y_pred = np.load(os.path.join(prediction_dir, 'Yhat.npy'))[:, 0]
+        print('[+] Loaded {} predictions.'.format(len(y_pred)))
+    except Exception as e:
+        print('[-] Error loading predictions: {}'.format(e))
+        raise
+
     return y_test, y_pred
 
-
 def get_confidence():
-    """ Get confidence score per test condition from the CSV. """
-    df = pd.read_csv(
-        os.path.join(reference_dir, 'fullfiles_PiMinfAoA_with_scores.csv')
-    )
-    df_test = df.loc[~df['Train']]
-    confidence_per_case = df_test['confidence_score_simple_4'].values
-    confidence_pointwise   = np.repeat(confidence_per_case, nwallp)
-    return confidence_per_case, confidence_pointwise, df_test.reset_index(drop=True)
+    print('[*] Reading confidence weights from {}'.format(reference_dir))
+    try:
+        confidence_per_case  = np.load(os.path.join(reference_dir, 'test_weights.npy'))
+        confidence_pointwise = np.repeat(confidence_per_case, nwallp)
+        print('[+] Loaded confidence for {} test conditions.'.format(len(confidence_per_case)))
+    except Exception as e:
+        print('[-] Error loading confidence data: {}'.format(e))
+        raise
+
+    print('[*] Reading test data from {}'.format(reference_dir))
+    try:
+        X_test = np.load(os.path.join(reference_dir, 'test_data.npy'))
+        X_conditions = X_test[::nwallp]
+        print('[+] Loaded {} test conditions.'.format(len(X_conditions)))
+    except Exception as e:
+        print('[-] Error loading test data: {}'.format(e))
+        raise
+
+    return confidence_per_case, confidence_pointwise, X_conditions
 
 
 def compute_R2(y, yhat, confidence_pointwise):
@@ -80,23 +102,28 @@ def main():
     print_bar()
     print('Scoring program - ONERA 468 CRM challenge rho.')
 
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     write_file(html_file, '<h1>ONERA 468 CRM, Challenge &rho;</h1>\n')
 
     scores = {}
+    start_time = dt.now()
 
     try:
         print_bar()
-        print('Reading data.')
         y_test, y_pred = get_data()
+
+        # assert that y_test.shape==confidence_pointwise
 
         if y_test.shape != y_pred.shape:
             raise ValueError(
                 'Shape mismatch: prediction {} != reference {}.'.format(
                     y_pred.shape, y_test.shape))
 
-        print('Reading confidence weights.')
-        confidence_per_case, confidence_pointwise, df_test = get_confidence()
-
+        confidence_per_case, confidence_pointwise, X_conditions = get_confidence()
+        
+        print_bar()
         print('Computing R2.')
         R2 = compute_R2(y_test, y_pred, confidence_pointwise)
 
@@ -109,14 +136,15 @@ def main():
         scores['wrMAE'] = wrMAE
         scores['score'] = score
 
-        worst_row = df_test.iloc[iworst]
+        worst_row = X_conditions[iworst]
 
         print_bar()
         print('R2    : {:.6f}'.format(R2))
         print('wrMAE : {:.6f}'.format(wrMAE))
         print('score : {:.6f}'.format(score))
+
         print('Worst case: Pi={:.1f}e5 Pa  Minf={:.2f}  AoA={:.1f}°'.format(
-            worst_row['Pi'], worst_row['Mach'], worst_row['AoA']))
+            worst_row[8], worst_row[6], worst_row[7]))
 
         write_file(html_file, '<h2>Scores</h2>\n<ul>\n')
         write_file(html_file, '  <li>R2 : {:.6f}</li>\n'.format(R2))
@@ -124,9 +152,9 @@ def main():
         write_file(html_file, '  <li>score : {:.6f}</li>\n'.format(score))
         write_file(html_file, '</ul>\n')
         write_file(html_file, '<h2>Worst predicted condition (wrMAE)</h2>\n<ul>\n')
-        write_file(html_file, '  <li>Pi = {:.1f}&times;10<sup>5</sup> Pa</li>\n'.format(worst_row['Pi']))
-        write_file(html_file, '  <li>M<sub>&infin;</sub> = {:.2f}</li>\n'.format(worst_row['Mach']))
-        write_file(html_file, '  <li>AoA = {:.1f}&deg;</li>\n'.format(worst_row['AoA']))
+        write_file(html_file, '  <li>Pi = {:.1f}&times;10<sup>5</sup> Pa</li>\n'.format(worst_row[8]))
+        write_file(html_file, '  <li>M<sub>&infin;</sub> = {:.2f}</li>\n'.format(worst_row[6]))
+        write_file(html_file, '  <li>AoA = {:.1f}&deg;</li>\n'.format(worst_row[7]))
         write_file(html_file, '</ul>\n')
 
     except Exception as inst:
@@ -135,6 +163,10 @@ def main():
         scores['R2']    = 0.0
         scores['wrMAE'] = 1.0
         scores['score'] = 0.0
+
+    end_time  = dt.now()
+    duration  = (end_time - start_time).total_seconds()
+    scores['scoring_duration'] = duration
 
     try:
         with open(os.path.join(prediction_dir, 'metadata.json')) as f:
@@ -145,7 +177,8 @@ def main():
     print_bar()
     print('Scoring program finished. Writing scores.')
     print(scores)
-    write_file(score_file, json.dumps(scores))
+    with open(score_file, 'w') as f:
+        json.dump(scores, f, indent=4)
 
 
 if __name__ == '__main__':

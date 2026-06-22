@@ -1,19 +1,23 @@
+import sys
+from pathlib import Path
 import numpy as np
-from sklearn.neighbors import KNeighborsRegressor
+
+sys.path.append(str(Path(__file__).parent / "python_packages"))
+import lightgbm as lgb
+
 
 class Model:
     def __init__(self):
         """
-        KNN regressor for volumetric density (rho) prediction.
+        LightGBM regressor for volumetric density (rho) prediction.
         Predicts rho at each point from (x, y, z, nx, ny, nz, Minf, AoA, pi).
-        k is tuned following the paper: best k found around 6-9 for surface fields.
-        Here k=7 as a reasonable default for the volumetric case.
         """
-        self.regressor = KNeighborsRegressor(
-            n_neighbors=7,
-            weights='distance',
-            algorithm='auto',
-            n_jobs=-1
+        self.model = lgb.LGBMRegressor(
+            n_estimators=100,
+            learning_rate=0.1,
+            num_leaves=31,
+            n_jobs=-1, 
+            random_state=42
         )
 
     def fit(self, X, y):
@@ -25,7 +29,7 @@ class Model:
             y: Training target vector of shape (num_samples,), type np.ndarray.
                Values: adimensional volumetric density rho
         """
-        self.regressor.fit(X, y)
+        self.model.fit(X, y)
 
     def predict(self, X):
         """
@@ -35,4 +39,4 @@ class Model:
         Returns:
             y: Predicted rho vector of shape (num_samples,), type np.ndarray.
         """
-        return self.regressor.predict(X)
+        return self.model.predict(X)

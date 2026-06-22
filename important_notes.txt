@@ -1,2 +1,171 @@
 - Le fichier 'traintest_splitting1_MinfAoAPi_with_scores' est calculé sur les données en précision 64
 contrairement au fichier 'fullfiles_PiMinfAoA_with_scores' qui a été calculé sur les données 32
+https://www.codabench.org/competitions/edit/16584/#/phases
+
+
+des papier ou des idées sur comment séparer les données
+nombre de soumissions..parametres de yaml
+
+===== 
+instructions to create codalab-env
+
+mkdir codalab-env
+cd codalab-env
+uv init
+uv python pin 3.x.x      # exact version from step 1
+uv add $(cat requirements.txt)
+# or if that's too many packages at once:
+uv pip install -r requirements.txt
+uv lock                   # generates uv.lock
+
+======
+Instructions to handle heavy packages: 
+Paste the output of these two commands run inside your Docker container and I'll generate the `environment.yml` for you:
+
+```bash
+python --version
+pip freeze
+```
+give list to claude to generate the yml file 
+after that just:
+
+conda env create -f environment.yml
+conda activate codabench-env
+python --version  # should say 3.12.13
+
+======================================
+Séparation des données: https://dpw.larc.nasa.gov/DPW6/CFSE_Charbonnier/
+Idée de type de challenge: autoML...?
+
+
+bug: sometimes when we modify a task, the fields disappear (scoring prog..)
+
+Use cross validation to compute confidence intervals
+standard error is actually the std of the means (istribution of a distribution)
+
+
+- train everything and test on 4 parts separatly
+ (transfert learning?)
+- information leakage about splitting into parts the body of the plane
+
+
+ inquiries:
+Analyse why the naive models are doing very well??? what is the difference between 
+linear model and your model (why is working so well)
+
+Maybe the easy part of the bdy dominates...? So check this 
+Which part of the features rely on?
+Explainable AI for xyz features for example...
+
+
+====================================
+/app/input/ref Where the reference data should live (Not available to submissions. Only available on scoring step.)
+.... so we can use internet..
+bugs: chalnged the scoring program through the panel then the ingestion prog disappeared
+How to put files in the shared folder on codabench
+Problem, putting python packages in the res folder on codabench
+Problem, input data is not available on the scoring step
+
+info@codabench.org
+ihsan2131@gmail.com
+
+nrmse, rrmse
+
+pyvista
+
+
+
+
+
+
+Let me search for relevant papers on this.Great findings. Here's a structured answer combining what the papers tell us and what we can reason physically.
+
+---
+
+## Papers relevant to your split strategy
+
+### 1. AirfRANS (NeurIPS 2022) — the most directly relevant
+
+This is the benchmark dataset most comparable to your situation. It proposes four distinct ML tasks with different generalization constraints: full data regime, scarce data regime, Reynolds number extrapolation, and angle of attack extrapolation.
+
+Concretely, the full data regime uses 800 simulations for training and 200 for testing, both drawn from the same distribution — defining an interpolation task. The scarce data regime uses the same test set but only 200 simulations for training. The Reynolds extrapolation regime keeps simulations with Reynolds numbers between 3 and 5 million for training, and the others for testing. The angle of attack extrapolation regime keeps simulations with AoA between −2.5° and 12.5° for training, and the others for testing.
+
+And importantly, extrapolation tasks are confirmed to be more difficult than interpolation tasks, with Spearman correlation for the lift coefficient being significantly lower for both extrapolation tasks than for the interpolation ones.
+
+**→ Direct application to your challenge:** this gives you a clean 2-phase structure: Phase 1 = interpolation (random AoA split), Phase 2 = extrapolation (entire Mach or pi level excluded).
+
+---
+
+### 2. NeurIPS 2024 ML4CFD Competition — explicit in/out-of-distribution split
+
+The competition used a training set from a scarce regime filtered to Reynolds numbers between 3×10⁶ and 5×10⁶, an in-distribution test set of 200 samples within the same Reynolds regime, and an out-of-distribution test set of 496 samples with extrapolated Reynolds ranges outside the training.
+
+**→ This is exactly a two-phase structure:** Phase 1 tests interpolation, Phase 2 tests extrapolation on Reynolds — directly applicable to your pi split idea.
+
+---
+
+### 3. Neural Fields / MARIO paper — boundary of parameter space is hardest
+
+The highest errors were observed at the boundaries of the parameter space, particularly when extrapolating to combinations of parameters not well-represented in the training data.
+
+**→ Implication for your split:** putting extreme Mach or extreme AoA in the test set for Phase 2 is physically well-motivated, not arbitrary.
+
+---
+
+## Why kNN works surprisingly well — the manifold argument
+
+This is a deep and interesting question. Several papers point to the same explanation.
+
+### The core reason: aerodynamic fields live on a very low-dimensional manifold
+
+Research has shown that nonlinear vortical flow fields over time and parameter space can be compressed to only three variables using a lift-augmented autoencoder, while retaining the essence of the original high-dimensional physics. This reveals that the fundamental physics behind aerodynamics is far simpler and lower-rank than traditionally expected.
+
+In the ONERA paper specifically, the IsoMap method confirms this: the latent space dimension is found to be r=3, **exactly matching the 3 physical input parameters** (M∞, AoA, pi). This means the manifold of flow fields is intrinsically 3-dimensional.
+
+If the manifold is 3D and well-sampled, then kNN in that 3D space is essentially **exact local interpolation** — no learning is needed, just weighted averaging of nearby snapshots.
+
+### Why it fails on wrMAE despite good R²
+
+kNN breaks down precisely when:
+- The local flow **topology changes discontinuously** (e.g. shock appears, flow separates) between two neighbors
+- The test point falls near a **boundary of the parameter space** where neighbors are only on one side
+- The mapping from conditions to fields is **locally nonlinear** — which is exactly what happens at high AoA and high M∞
+
+A key challenge in data-centric approaches is that rare events such as high or low velocities are not adequately represented in the database, and kNN-based methods struggle to extrapolate to conditions far beyond available training data.
+
+### Summary table
+
+| Why kNN works well | Why kNN fails |
+|---|---|
+| Fields lie on a ~3D manifold | Topology changes discontinuously near shocks |
+| Dense sampling → neighbors are very close | Boundary of parameter space → asymmetric neighbors |
+| Linear interpolation is locally valid for smooth regimes | High AoA/transonic → locally nonlinear |
+| No overfitting risk, no hyperparameter sensitivity | wrMAE captures exactly these failure cases |
+
+---
+
+## Bottom line for your challenge design
+
+The AirfRANS 4-task structure is your best reference. For density ρ specifically, you gain an extra dimension: the **volumetric field** means you can add a **spatial extrapolation** task (train on far-field, test on near-wall) that has no equivalent in the ONERA surface-only challenge — and that's where kNN would collapse completely, since spatial proximity in the field has no direct relation to proximity in the (M∞, AoA, pi) parameter space.
+
+
+================================================
+
+- The KNN is scoring very high even with using only the flow conditions (on the train set)
+- Modified the split to put angle of attacks -2, 0, 2 in test and sampling the geomety, didn't work, knn is still 
+scoring very high even  with including the geometric features, does this mean that the geometric features do not affect 
+the knn neighbours?
+
+- if the knn is already scoring well, does this mean the dataset is broken? what is our goal in this case if we already
+ have a model that works very well                                                                                                                                                                                  
+
+
+ ================ to see tomorrow
+ take a loot at the starting kit, 
+    talk about the confidence intervals, 
+    talk about splitting into body parts and that works good for metrics, cf exploration notebook
+    train the mlp and the decision tree and check if the proposed metric is easily growable
+    take a look at the functions and try to understand them at the exploration notebook, 
+    try to understand how the pooled metrics were computed in the starting kit (where the R2 score is 0.91)
+    talk about the talk I had with theofanis, and what is impossible to do, the split we talked about, what makes it simple
+    we directly sample the geomerical composants uniformly...

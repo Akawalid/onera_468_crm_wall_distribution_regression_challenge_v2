@@ -30,17 +30,23 @@ lib64/
 env/
 venv/
 ENV/
+*/python_packages/
 
 # Jupyter
 .ipynb_checkpoints/
-*.ipynb
+
 
 # Data files
-bundle/feedback_phase/input_data/
-bundle/feedback_phase/reference_data/
-bundle/final_phase/input_data/
-bundle/final_phase/reference_data/
-bundle/starting_kit/*.npy
+#bundle/feedback_phase/input_data/
+#bundle/feedback_phase/reference_data/
+#bundle/final_phase/input_data/
+#bundle/final_phase/reference_data/
+*.npy
+feedback_phase/
+*.cgns
+*.blk
+FILES*
+*.json
 
 # OS
 .DS_Store
@@ -61,3 +67,5 @@ results/
 pages2/
 FILES*.tgz
 FILES*/
+bundle/test_local.sh
+.FIL*
