@@ -1,4 +1,4 @@
-# ATTENTION: vérifier si les poinds ne sont pas très informatifs sur la masse volumique
+# ATTENTION: vérifier si les points ne sont pas très informatifs sur la masse volumique
 # Ce serait intéressant de laisser les candidats considère les simlulations non fiables dans leurs models
 # https://www.codabench.org/competitions/9975/ (For custom librarieso
 # croissance de mémpore entre 5 et 10% de données consimées
