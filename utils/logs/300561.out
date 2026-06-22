@@ -1,0 +1,66 @@
+Loading training data ...
+
+============================================================
+  PHASE 1
+============================================================
+  [Training]  LightGBM ...
+[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.661377 seconds.
+You can set `force_row_wise=true` to remove the overhead.
+And if memory is not enough, you can set `force_col_wise=true`.
+[LightGBM] [Info] Total Bins 1578
+[LightGBM] [Info] Number of data points in the train set: 84490776, number of used features: 9
+[LightGBM] [Info] Start training from score 0.881192
+  [Scoring]   LightGBM ...
+
+  [Training]  KNN (k=10) ...
+  [Scoring]   KNN (k=10) ...
+
+  [Training]  Ridge Regression ...
+  [Scoring]   Ridge Regression ...
+
+  [Training]  Mean Baseline ...
+  [Scoring]   Mean Baseline ...
+
+============================================================
+  SUMMARY Phase 1
+============================================================
+  Model                            R²         wrMAE   Worst idx
+------------------------------------------------------------
+  LightGBM                   0.825455      0.109477          12
+  KNN (k=10)                 0.902950      0.069428          48
+  Ridge Regression           0.062915      0.255236          60
+  Mean Baseline             -0.028692      0.277233          60
+============================================================
+
+============================================================
+  PHASE 2
+============================================================
+  [Training]  LightGBM ...
+[LightGBM] [Info] Auto-choosing row-wise multi-threading, the overhead of testing was 0.656033 seconds.
+You can set `force_row_wise=true` to remove the overhead.
+And if memory is not enough, you can set `force_col_wise=true`.
+[LightGBM] [Info] Total Bins 1578
+[LightGBM] [Info] Number of data points in the train set: 84490776, number of used features: 9
+[LightGBM] [Info] Start training from score 0.881192
+  [Scoring]   LightGBM ...
+
+  [Training]  KNN (k=10) ...
+  [Scoring]   KNN (k=10) ...
+
+  [Training]  Ridge Regression ...
+  [Scoring]   Ridge Regression ...
+
+  [Training]  Mean Baseline ...
+  [Scoring]   Mean Baseline ...
+
+============================================================
+  SUMMARY Phase 2
+============================================================
+  Model                            R²         wrMAE   Worst idx
+------------------------------------------------------------
+  LightGBM                   0.691509      0.161819          60
+  KNN (k=10)                 0.747520      0.109113          70
+  Ridge Regression           0.082767      0.317347          60
+  Mean Baseline              0.002479      0.339724          60
+============================================================
+
