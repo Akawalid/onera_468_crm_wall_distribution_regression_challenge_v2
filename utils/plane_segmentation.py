@@ -1,11 +1,8 @@
 #srun --account=tau --partition=gpu-best --nodes=1 --ntasks=1 --cpus-per-task=10 --gres=gpu:2 --mem=64G --time=01:00:00 --pty bash
 import numpy as np 
-import pandas as pd
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.gridspec as gridspec
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import StandardScaler
 
 #==================== load data
 path="/data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/"
