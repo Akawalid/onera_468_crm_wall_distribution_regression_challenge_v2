@@ -36,8 +36,8 @@ X = np.load('.FILES_RHO_ALL_POINTS_reduitfloat32/COORDINATES/XX.npy')
 Y = np.load('.FILES_RHO_ALL_POINTS_reduitfloat32/COORDINATES/YY.npy')
 Z = np.load('.FILES_RHO_ALL_POINTS_reduitfloat32/COORDINATES/ZZ.npy')
 
-labels_int = np.load('./output/component_labels_unique.npy')
-with open('./output/component_map.json') as f:
+labels_int = np.load('data/component_labels_unique.npy')
+with open('data/component_map.json') as f:
     code_map = json.load(f)
 
 int_to_name = {int(k): v for k, v in code_map.items()}
