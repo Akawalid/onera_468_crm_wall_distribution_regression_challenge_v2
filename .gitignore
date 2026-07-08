@@ -47,6 +47,7 @@ feedback_phase/
 *.blk
 FILES*
 *.json
+VISU*
 
 # OS
 .DS_Store
