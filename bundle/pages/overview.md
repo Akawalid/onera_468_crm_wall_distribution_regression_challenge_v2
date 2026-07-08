@@ -1,4 +1,56 @@
-# ONERA 468 CRM — Wall Distribution Regression Challenge
+# ONERA 468 CRM Wall Distribution Regression Challenge
+
+
+## Introduction to Aircraft Physics
+Since the Wright brothers' first powered flight in 1903, understanding how air flows around a wing has been the central problem of aeronautics.
+
+Aircraft fly thanks to **the Bernoulli effect** that occurs on the wings. The Bernoulli effect states that in a moving flow, where the air speeds up, its pressure drops.
+
+A wing is shaped and tilted so that air travels faster over its upper surface than under its lower one, therefore, the pressure above the wing becomes lower than the pressure below, according to the Bernoulli effect. Because air is a fluid, like water, it always tries to fill the void (a difference in pressure creates a void), therefore, the air pushes the wing upward, which causes the "flying". Increasing the angle of attack accentuates this asymmetry and increases the lift even more.
+
+This pressure imbalance produces the lift, but it is not the only force at play. Physically speaking, in a steady flight, four forces act on an aircraft, as shown in Figure 1:
+
+- **Weight:** gravity, pulling the aircraft down.
+- **Lift:** the aerodynamic force perpendicular to the incoming flow, balancing the weight.
+- **Thrust:** produced by the engines, pushing the aircraft forward.
+- **Drag:** the aerodynamic force parallel to the incoming flow, opposing the motion and balanced by thrust.
+
+<figure style="text-align: center;">
+<img src="figures/physics.svg" alt="Illustration of forces acting on an aircraft"/>
+<figcaption>
+<em>Figure 1: Illustration of the angle of attack and The four forces acting on an aircraft in flight, weight, lift, thrust, and drag.</em>
+</figcaption>
+</figure>
+
+When the angle of attack gets large in magitude (very positive or very negative) a flow separation phenoma appears, which is the moment when the flow above the wing struggles to meet flow below the wing as shown in Figure 2.
+
+<figure style="text-align: center;">
+<img src="figures/flow_separation.jpg" width=60% alt="Illustration of flow separation state"/>
+<figcaption>
+<em>Figure 2: Illustration of the flow separation state which occures at extrem angle of attack valuess.</em>
+</figcaption>
+</figure>
+
+lift drops sharply and drag rises. This is *flow separation* (leading to stall), one of the flow phenomena that make aerodynamic fields very hard to predict.
+
+Speed also brings its own complications. As the aircraft approaches the speed of sound, the air can no longer adjust smoothly: it gets compressed, and its density starts to vary strongly from one point of the surface to another. Where the flow locally exceeds the speed of sound, these variations become brutal — shock waves[^shock] form, thin regions where pressure and density jump abruptly. This flight regime, where subsonic and supersonic zones coexist around the aircraft, is called the *transonic regime*.
+
+<figure style="text-align: center;">
+  <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="figures/supersonic.png" style="height: 220px; object-fit: contain;" alt="Illustration of shock waves in transonic flight"/>
+    <img src="figures/aircrafspsonic.jpg" style="height: 220px; object-fit: contain;" alt="Illustration of shock waves in transonic flight"/>
+  </div>
+  <figcaption>
+    <em>Figure 3: Progression of shock waves with increasing Mach number.</em>
+  </figcaption>
+</figure>
+
+In this challenge, we are very interested in these critical conditions, since in some parts of the aircraft, unusual aerodynamic phenomena can happen. In fact, the challenge has two main goals:
+
+- Having machine learning models that can generalize well to unseen critical conditions.
+- Having models that work well across all the regions of the aircraft, not only the easy ones.
+
+## The challenge
 
 This benchmark proposes a regression problem based on a new Computational Fluid Dynamics (CFD)[^cfd]
 database, developed at ONERA, to support the advancement of machine learning techniques for
@@ -33,13 +85,13 @@ Each simulation is characterized by three flow condition parameters:
   separation*, a phenomenon where the airflow detaches from the surface, causing a
   sharp increase in drag[^drag] and a loss of lift[^drag].
   
-  <figure style="text-align: center;">
+  <!-- <figure style="text-align: center;">
     <img src="figures/Airfoil_angle_of_attack.jpg" alt="Illustration of angle of attack"/>
     <figcaption>
       <em>Figure 1: Effect of angle of attack on surface flow. Left: low AoA, flow remains
       attached. Right: high AoA, flow separation occurs near the leading edge.</em>
     </figcaption>
-  </figure>
+  </figure> -->
 
 - **Stagnation pressure (Pi)[^pi] and Reynolds number[^reynolds]:** the Reynolds number characterizes the ratio of
   inertial to viscous forces in the flow. At high Reynolds numbers the flow tends to be more
