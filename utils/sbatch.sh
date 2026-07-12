@@ -12,4 +12,4 @@
 #SBATCH --error=logs/%j.err
 
 # your commands here
-python train.py
+python train_mlp_with_kl.py

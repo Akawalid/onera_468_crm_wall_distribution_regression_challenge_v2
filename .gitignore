@@ -23,6 +23,7 @@ develop-eggs/
 .installed.cfg
 lib/
 lib64/
+*.pt 
 
 # Virtual environments
 .env
