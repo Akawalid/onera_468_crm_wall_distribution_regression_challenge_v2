@@ -1,0 +1,64 @@
+device: cuda
+Loading data...
+n_train=252  n_test1=144  n_test2=72
+global train mean = 0.8790
+sigma_ref = 1% of global mean = 0.00879
+train/val split: 227 train  25 val
+Training MLP (loss = sum of per simulation weighted KL, global reference)...
+epoch    0  train KLw mean = 9.9709  val KLw mean = 8.3337  best = 8.3337 (epoch 0)
+epoch   10  train KLw mean = 4.9070  val KLw mean = 3.9426  best = 3.9426 (epoch 10)
+epoch   20  train KLw mean = 4.3500  val KLw mean = 3.4693  best = 3.3547 (epoch 16)
+epoch   30  train KLw mean = 3.7893  val KLw mean = 3.3461  best = 3.0643 (epoch 27)
+epoch   40  train KLw mean = 3.4952  val KLw mean = 3.1680  best = 2.7474 (epoch 38)
+epoch   50  train KLw mean = 3.3703  val KLw mean = 2.8734  best = 2.6326 (epoch 43)
+epoch   60  train KLw mean = 3.3492  val KLw mean = 3.0398  best = 2.5103 (epoch 55)
+epoch   70  train KLw mean = 3.1851  val KLw mean = 2.7347  best = 2.2491 (epoch 67)
+epoch   80  train KLw mean = 2.9634  val KLw mean = 2.2862  best = 2.2491 (epoch 67)
+epoch   90  train KLw mean = 2.9231  val KLw mean = 3.0315  best = 2.1292 (epoch 82)
+epoch  100  train KLw mean = 2.7686  val KLw mean = 2.8824  best = 2.1292 (epoch 82)
+epoch  110  train KLw mean = 2.5287  val KLw mean = 2.1890  best = 2.1292 (epoch 82)
+epoch  120  train KLw mean = 2.6321  val KLw mean = 2.6015  best = 2.0997 (epoch 112)
+epoch  130  train KLw mean = 2.5018  val KLw mean = 1.9940  best = 1.9940 (epoch 130)
+epoch  140  train KLw mean = 2.2984  val KLw mean = 1.7979  best = 1.7979 (epoch 140)
+epoch  150  train KLw mean = 2.3801  val KLw mean = 2.0831  best = 1.7654 (epoch 144)
+epoch  160  train KLw mean = 2.2651  val KLw mean = 1.7344  best = 1.6704 (epoch 157)
+epoch  170  train KLw mean = 2.2900  val KLw mean = 1.6756  best = 1.6002 (epoch 163)
+epoch  180  train KLw mean = 2.0034  val KLw mean = 1.6574  best = 1.6002 (epoch 163)
+epoch  190  train KLw mean = 2.0917  val KLw mean = 1.6289  best = 1.5652 (epoch 184)
+epoch  200  train KLw mean = 2.0535  val KLw mean = 1.6765  best = 1.5652 (epoch 184)
+epoch  210  train KLw mean = 1.8959  val KLw mean = 1.7454  best = 1.5652 (epoch 184)
+epoch  220  train KLw mean = 1.9939  val KLw mean = 1.6070  best = 1.4873 (epoch 214)
+epoch  230  train KLw mean = 1.9650  val KLw mean = 1.4299  best = 1.4299 (epoch 230)
+epoch  240  train KLw mean = 1.9998  val KLw mean = 1.5681  best = 1.4134 (epoch 233)
+epoch  250  train KLw mean = 1.7960  val KLw mean = 1.4497  best = 1.4134 (epoch 233)
+epoch  260  train KLw mean = 1.7469  val KLw mean = 1.5485  best = 1.4134 (epoch 233)
+early stopping at epoch 263 (best epoch 233, val KLw mean 1.4134)
+Saved: mlp_klw_globalref.pt (best epoch 233)
+
+Phase 1 (global MLP, global ref)
+  R2 global: 0.9252
+  worst rMAE: sim 118  rMAE=0.0459  KL=5.8249  score=0.1465
+  worst KL  : sim 118  KL=5.8249  score=0.1465  rMAE=0.0459
+
+  KL by component
+  component     mean KL     max KL  mean score   mean bias  mean spread
+  wing           3.1045     9.4601      0.2919      0.0537       0.7061
+  pylon          1.5302     5.5069      0.4947     -0.0346       0.4441
+  fuselage       0.7452     2.7422      0.6025     -0.0002       0.2369
+  nacelle        0.9262     2.5396      0.5514     -0.0201       0.2400
+
+  Global weighted KL: mean=1.8085  max=5.8249  mean score=0.4024
+
+Phase 2 (global MLP, global ref)
+  R2 global: 0.8497
+  worst rMAE: sim 60  rMAE=0.0872  KL=6.5202  score=0.1330
+  worst KL  : sim 64  KL=7.6022  score=0.1162  rMAE=0.0676
+
+  KL by component
+  component     mean KL     max KL  mean score   mean bias  mean spread
+  wing           7.0536    11.8413      0.1538      0.2948       0.9842
+  pylon          5.5103     9.7233      0.1976      0.2472       0.8100
+  fuselage       1.8291     4.1054      0.4175      0.0607       0.5219
+  nacelle        3.2663    11.1774      0.2908     -0.0926       0.3834
+
+  Global weighted KL: mean=4.9013  max=7.6022  mean score=0.1951

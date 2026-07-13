@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --account=tau
-#SBATCH --partition=cpu
+#SBATCH --partition=normal-best
 #SBATCH --nodelist=marg037,marg038,marg042,marg043,marg044,marg045
 #SBATCH --nodes=1
 #SBATCH --ntasks=1

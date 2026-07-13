@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/train_mlp_with_kl.py", line 312, in <module>
+    main()
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/train_mlp_with_kl.py", line 260, in main
+    opt.step()
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/optim/lr_scheduler.py", line 166, in wrapper
+    return func.__get__(opt, opt.__class__)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/optim/optimizer.py", line 535, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/optim/optimizer.py", line 80, in _use_grad
+    ret = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/optim/adam.py", line 248, in step
+    adam(
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/optim/optimizer.py", line 148, in maybe_fallback
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/optim/adam.py", line 970, in adam
+    func(
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/optim/adam.py", line 790, in _multi_tensor_adam
+    exp_avg_sq_sqrt = torch._foreach_sqrt(device_exp_avg_sqs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 16.02 GiB. GPU 0 has a total capacity of 93.08 GiB of which 11.44 GiB is free. Including non-PyTorch memory, this process has 81.63 GiB memory in use. Of the allocated memory 80.87 GiB is allocated by PyTorch, and 33.75 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
