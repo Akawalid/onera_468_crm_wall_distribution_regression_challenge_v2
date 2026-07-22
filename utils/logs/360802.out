@@ -1,7 +1,0 @@
-device: cuda
-Loading data...
-n_train=252  n_test1=144  n_test2=72
-BETA (fitted on train) = 1.1781
-train/val split: 227 train  25 val
-Training MLP (loss = sum of per simulation weighted KL, new sigma formula)...
-epoch    0  train KLw mean = 8.3372  val KLw mean = 4.9406  best = 4.9406 (epoch 0)

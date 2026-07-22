@@ -4,7 +4,7 @@ sample_code_submission.zip
 *.zip
 *.tgz
 *.tar.gz
-
+aaa.txt
 # Python
 __pycache__/
 *.py[cod]
@@ -72,3 +72,4 @@ FILES*/
 bundle/test_local.sh
 .FIL*
 
+github.txt

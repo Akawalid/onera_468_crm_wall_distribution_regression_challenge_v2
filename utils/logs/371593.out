@@ -1,0 +1,43 @@
+Loading data...
+n_train=252  n_test1=144  n_test2=72
+global train mean = 0.8790
+Assembling training rows...
+train matrix: (5040000, 11)
+Training XGBoost with soft histogram KLw objective (Newton, GN hessian)...
+round    0  train KLw mean = 11.3268  max = 15.8096  best = 11.3268 (round 0)
+round   10  train KLw mean = 12.2995  max = 14.7705  best = 11.3268 (round 0)
+round   20  train KLw mean = 11.9622  max = 14.3501  best = 11.3268 (round 0)
+round   30  train KLw mean = 11.7985  max = 13.9389  best = 11.3268 (round 0)
+round   40  train KLw mean = 11.5669  max = 13.7187  best = 11.3268 (round 0)
+early stopping at round 40 (best round 0, KLw 11.3268)
+Predicting phase 1...
+Predicting phase 2...
+Saved: klwboost.json
+
+Phase 1 (XGBoost, KLw objective)
+  R2 global: -0.1997
+  worst rMAE: sim 39  rMAE=0.2208  KL=16.5195  score=0.0571
+  worst KL  : sim 86  KL=17.0527  score=0.0554  rMAE=0.1951
+
+  KL by component
+  component     mean KL     max KL  mean score   mean bias  mean spread
+  wing          14.4020    17.5562      0.0663      0.8710       1.6207
+  pylon         14.9212    18.4214      0.0640      0.9997       1.3068
+  fuselage      17.7091    19.2183      0.0544      1.1601       1.7928
+  nacelle       15.9628    18.2019      0.0603      1.5026       1.6468
+
+  Global weighted KL: mean=15.0321  max=17.0527  mean score=0.0630
+
+Phase 2 (XGBoost, KLw objective)
+  R2 global: -0.1489
+  worst rMAE: sim 60  rMAE=0.2981  KL=15.2451  score=0.0616
+  worst KL  : sim 54  KL=16.3077  score=0.0578  rMAE=0.1559
+
+  KL by component
+  component     mean KL     max KL  mean score   mean bias  mean spread
+  wing          15.5106    17.4552      0.0616      0.6484       1.7100
+  pylon         14.7494    17.9979      0.0649      0.7576       1.5731
+  fuselage      15.2794    16.8847      0.0625     -0.1886       2.5133
+  nacelle       13.3925    17.2960      0.0703      0.3143       1.7662
+
+  Global weighted KL: mean=14.6819  max=16.3077  mean score=0.0642

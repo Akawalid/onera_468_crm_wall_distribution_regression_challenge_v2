@@ -1,0 +1,90 @@
+Loading data...
+static feature matrix: (260774, 42)
+Assembling training set...
+train matrix: (5040000, 45)
+Training LightGBM...
+
+Feature importances (top 20):
+  AoA          46863
+  Minf         39375
+  mean_rho     26347
+  std_rho      26160
+  x            21998
+  nx           20394
+  y            19888
+  nz           17842
+  ny           16590
+  z            15533
+  Pi           13351
+  u            11242
+  v            8376
+  wmean_H0     5685
+  wstd_H0      5448
+  wmean_H1     4775
+  wstd_H1      3932
+  wmean_H3     3759
+  wstd_V0      3678
+  wmean_H2     3624
+
+Predicting phase 1...
+Predicting phase 2...
+
+Phase 1 (LightGBM + multiscale wavelet features)
+  worst rMAE: sim 118  rMAE=0.0468  KL=6.2141  score=0.1386
+  worst KL  : sim 70  KL=6.2907  score=0.1372  rMAE=0.0445
+
+  rMAE by component (worst + bootstrap CI)
+  component       worst               95% CI
+  ──────────  ─────────  ───────────────────
+  wing           0.0880  [ 0.0647,  0.0880]
+  pylon          0.0584  [ 0.0549,  0.0584]
+  fuselage       0.0302  [ 0.0230,  0.0302]
+  nacelle        0.0333  [ 0.0297,  0.0333]
+
+  R2 by component (pooled)
+  component      pooled               95% CI
+  ──────────  ─────────  ───────────────────
+  wing           0.9406  [ 0.9335,  0.9444]
+  pylon          0.9502  [ 0.9182,  0.9356]
+  fuselage       0.9601  [ 0.9570,  0.9652]
+  nacelle        0.9854  [ 0.9832,  0.9859]
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           3.8649  [ 3.5106,  4.2276]    10.5669      0.2515      0.0128       0.2222
+  pylon          2.8145  [ 2.3975,  3.2224]    10.3065      0.3693     -0.0308       0.2126
+  fuselage       0.7696  [ 0.6675,  0.8884]     3.8883      0.6145     -0.0042       0.1716
+  nacelle        1.7055  [ 1.5410,  1.8878]     5.0772      0.4209     -0.0018       0.1182
+
+  Global weighted KL: mean=2.5684  max=6.2907  mean score=0.3287
+
+Phase 2 (LightGBM + multiscale wavelet features)
+  worst rMAE: sim 70  rMAE=0.0725  KL=6.0370  score=0.1421
+  worst KL  : sim 2  KL=9.3591  score=0.0965  rMAE=0.0518
+
+  rMAE by component (worst + bootstrap CI)
+  component       worst               95% CI
+  ──────────  ─────────  ───────────────────
+  wing           0.1652  [ 0.1600,  0.1652]
+  pylon          0.1234  [ 0.1206,  0.1234]
+  fuselage       0.0402  [ 0.0339,  0.0402]
+  nacelle        0.0527  [ 0.0449,  0.0527]
+
+  R2 by component (pooled)
+  component      pooled               95% CI
+  ──────────  ─────────  ───────────────────
+  wing           0.7867  [-2.5366, -0.8940]
+  pylon          0.8659  [-4.1392, -1.5513]
+  fuselage       0.8873  [-5.3054, -2.2102]
+  nacelle        0.9533  [-1.2088, -0.0901]
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           9.3900  [ 8.8421,  9.9862]    12.3938      0.1013     -0.4784       0.9629
+  pylon          7.1949  [ 6.4366,  7.9704]    14.3193      0.1435     -0.7245       0.8908
+  fuselage       3.3044  [ 3.0709,  3.5278]     5.3216      0.2422     -1.0443       0.9018
+  nacelle        4.0123  [ 3.4265,  4.5957]     9.6795      0.2383     -0.3116       0.7604
+
+  Global weighted KL: mean=6.8340  max=9.3591  mean score=0.1301

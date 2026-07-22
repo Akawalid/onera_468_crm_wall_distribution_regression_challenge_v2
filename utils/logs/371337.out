@@ -1,0 +1,168 @@
+Phase 1 (LightGBM pointwise)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           4.6172  [ 4.3064,  4.9524]    10.2794      0.2036      0.0110       0.2401
+  pylon          3.4729  [ 3.0960,  3.8722]    10.4667      0.2933     -0.0256       0.2557
+  fuselage       0.9594  [ 0.8435,  1.0706]     4.1214      0.5612     -0.0043       0.1993
+  nacelle        2.4053  [ 2.2428,  2.5822]     4.8751      0.3230      0.0026       0.1360
+
+  Global weighted KL: mean=3.2239  max=6.9867  mean score=0.2649
+
+Phase 2 (LightGBM pointwise)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           9.8863  [ 9.1977, 10.5109]    13.5138      0.0984     -0.4816       0.9471
+  pylon          7.9699  [ 7.2234,  8.7272]    14.3178      0.1289     -0.7517       0.8788
+  fuselage       3.5263  [ 3.3727,  3.6886]     6.3403      0.2248     -1.0296       0.9428
+  nacelle        5.0743  [ 4.6222,  5.5101]     9.3808      0.1760     -0.3112       0.8105
+
+  Global weighted KL: mean=7.4455  max=9.1833  mean score=0.1210
+
+  Training CatBoost (pointwise)...
+0:      learn: 0.1567697        total: 2.29s    remaining: 19m
+100:    learn: 0.0795459        total: 3m       remaining: 11m 52s
+200:    learn: 0.0631730        total: 5m 59s   remaining: 8m 54s
+300:    learn: 0.0552701        total: 8m 57s   remaining: 5m 55s
+400:    learn: 0.0500823        total: 11m 58s  remaining: 2m 57s
+499:    learn: 0.0466879        total: 14m 55s  remaining: 0us
+Predicting phase 1...
+Predicting phase 2...
+
+Phase 1 (CatBoost pointwise)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           8.2059  [ 7.9306,  8.4873]    12.1703      0.1128      0.0065       0.3815
+  pylon          6.5687  [ 6.2135,  6.9746]    11.1102      0.1450     -0.0552       0.4853
+  fuselage       2.4541  [ 2.3189,  2.5948]     5.5462      0.3045      0.0034       0.3250
+  nacelle        5.2924  [ 5.0924,  5.4917]     8.0682      0.1644      0.0035       0.2175
+
+  Global weighted KL: mean=6.2189  max=8.5188  mean score=0.1420
+
+Phase 2 (CatBoost pointwise)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing          10.8932  [10.1079, 11.7097]    14.5091      0.0950     -0.4744       1.1988
+  pylon          9.7463  [ 8.7808, 10.7299]    14.0102      0.1159     -0.6999       1.2998
+  fuselage       4.6517  [ 4.3008,  5.0167]     8.3911      0.1909     -1.0237       1.3480
+  nacelle        8.2097  [ 8.0114,  8.4407]    10.1823      0.1093     -0.2826       1.1129
+
+  Global weighted KL: mean=9.0909  max=12.0681  mean score=0.1048
+Training DecisionTree (pointwise)...
+
+Phase 1 (DecisionTree pointwise)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           4.1489  [ 3.7009,  4.5988]    10.6020      0.2607      0.0114       0.2524
+  pylon          3.2089  [ 2.7729,  3.7213]    10.3852      0.3693     -0.0475       0.2281
+  fuselage       0.8783  [ 0.7543,  1.0137]     4.9872      0.5915     -0.0060       0.1875
+  nacelle        1.7871  [ 1.5975,  1.9890]     5.2312      0.4269     -0.0029       0.1268
+
+  Global weighted KL: mean=2.7800  max=6.8196  mean score=0.3345
+
+Phase 2 (DecisionTree pointwise)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           9.1201  [ 8.6197,  9.6304]    12.2057      0.1030     -0.4827       0.9767
+  pylon          6.9093  [ 6.1917,  7.6518]    14.7339      0.1473     -0.7278       0.8865
+  fuselage       3.1596  [ 2.9100,  3.3991]     4.9943      0.2542     -1.0315       0.8716
+  nacelle        3.7328  [ 3.1159,  4.4434]     9.7448      0.2696     -0.3134       0.7472
+
+  Global weighted KL: mean=6.5499  max=9.0446  mean score=0.1347
+
+  Training RandomForest (pointwise)...
+Predicting phase 1...
+Predicting phase 2...
+
+Phase 1 (RandomForest pointwise)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           3.9170  [ 3.5501,  4.2968]    10.5083      0.2665      0.0066       0.2347
+  pylon          3.1435  [ 2.7260,  3.5861]     9.5206      0.3692     -0.0409       0.2172
+  fuselage       0.8311  [ 0.7125,  0.9715]     4.7638      0.6013     -0.0045       0.1782
+  nacelle        1.5676  [ 1.4185,  1.7512]     5.1879      0.4557     -0.0002       0.1200
+
+  Global weighted KL: mean=2.6083  max=6.4044  mean score=0.3434
+
+Phase 2 (RandomForest pointwise)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           9.1521  [ 8.6438,  9.6736]    12.2477      0.1028     -0.4842       0.9663
+  pylon          6.9273  [ 6.1609,  7.7023]    14.7347      0.1473     -0.7280       0.8764
+  fuselage       3.1731  [ 2.9139,  3.4146]     4.7817      0.2527     -1.0332       0.8694
+  nacelle        3.7820  [ 3.0879,  4.4247]     9.7317      0.2638     -0.3147       0.7474
+
+  Global weighted KL: mean=6.5712  max=9.0886  mean score=0.1345
+
+  Training ExtraTrees (full field)...
+Predicting phase 1...
+Predicting phase 2...
+
+Phase 1 (ExtraTrees full field)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           3.5227  [ 3.2425,  3.8355]     8.4106      0.2724     -0.0238       0.2129
+  pylon          2.5663  [ 2.2373,  2.9123]     7.4060      0.4020     -0.0904       0.2041
+  fuselage       0.8851  [ 0.8003,  0.9837]     2.7476      0.5654     -0.0212       0.1449
+  nacelle        0.8751  [ 0.8033,  0.9452]     2.5581      0.5587      0.0048       0.0871
+
+  Global weighted KL: mean=2.1731  max=4.8451  mean score=0.3558
+
+Phase 2 (ExtraTrees full field)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing          10.4731  [10.0857, 10.8101]    12.7139      0.0885     -0.6064       0.8810
+  pylon          8.1352  [ 7.3111,  9.0751]    15.5669      0.1261     -0.8288       0.8175
+  fuselage       3.7027  [ 3.4836,  3.9242]     5.2154      0.2202     -1.1260       0.9287
+  nacelle        4.4547  [ 3.8452,  5.0653]    10.1504      0.2156     -0.3703       0.7624
+
+  Global weighted KL: mean=7.6575  max=10.0532  mean score=0.1170
+Training HistGradientBoosting (full field via POD)...
+POD: 100 modes, explained variance = 0.99709
+Predicting phase 1...
+Predicting phase 2...
+
+Phase 1 (HistGB full field, POD)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           4.0048  [ 3.6168,  4.4156]    10.5957      0.2631      0.0045       0.2311
+  pylon          3.0263  [ 2.6514,  3.4715]     9.5027      0.3563     -0.0365       0.2141
+  fuselage       0.8485  [ 0.7366,  0.9683]     3.9543      0.5924     -0.0084       0.1715
+  nacelle        1.6901  [ 1.5016,  1.9163]     5.8823      0.4428      0.0013       0.1190
+
+  Global weighted KL: mean=2.6530  max=6.3958  mean score=0.3410
+
+Phase 2 (HistGB full field, POD)
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           9.1458  [ 8.5934,  9.6638]    12.2153      0.1029     -0.4819       0.9705
+  pylon          6.8773  [ 6.1190,  7.7007]    14.6838      0.1487     -0.7280       0.8809
+  fuselage       3.1582  [ 2.8867,  3.3989]     4.9911      0.2539     -1.0335       0.8730
+  nacelle        3.6813  [ 3.0474,  4.3085]     9.7292      0.2755     -0.3149       0.7473
+
+  Global weighted KL: mean=6.5478  max=9.2618  mean score=0.1349
+
+  

@@ -1,0 +1,100 @@
+Loading data...
+Computing spatial gradient of the mean field...
+Computing spatial gradient of the std field...
+Assembling training set...
+train matrix: (5040000, 16)
+Training LightGBM...
+
+Feature importances:
+  AoA            61577
+  x              53268
+  Minf           51505
+  z              42954
+  std_rho        40560
+  y              39847
+  mean_rho       38497
+  nx             35838
+  nz             32875
+  ny             27346
+  Pi             18474
+  grad_std_mag   15412
+  grad_x         13611
+  grad_mag       13166
+  grad_z         12565
+  grad_y         10505
+
+Predicting phase 1...
+Predicting phase 2...
+
+Phase 1 (LightGBM pointwise + gradient features)
+  worst rMAE: sim 118  rMAE=0.0476  KL=6.3119  score=0.1368
+  worst KL  : sim 70  KL=6.4705  score=0.1339  rMAE=0.0458
+
+  rMAE by component (worst + bootstrap CI)
+  component       worst               95% CI
+  ──────────  ─────────  ───────────────────
+  wing           0.0887  [ 0.0648,  0.0887]
+  pylon          0.0583  [ 0.0538,  0.0583]
+  fuselage       0.0320  [ 0.0242,  0.0320]
+  nacelle        0.0342  [ 0.0297,  0.0342]
+
+  R2 by component (pooled)
+  component      pooled               95% CI
+  ──────────  ─────────  ───────────────────
+  wing           0.9402  [ 0.9330,  0.9449]
+  pylon          0.9504  [ 0.9190,  0.9361]
+  fuselage       0.9592  [ 0.9562,  0.9649]
+  nacelle        0.9857  [ 0.9835,  0.9864]
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           3.8279  [ 3.4560,  4.1932]    10.6244      0.2596      0.0112       0.2213
+  pylon          2.7720  [ 2.4124,  3.1733]     9.9897      0.3711     -0.0357       0.2115
+  fuselage       0.7700  [ 0.6592,  0.8880]     4.1302      0.6208     -0.0050       0.1714
+  nacelle        1.6368  [ 1.4594,  1.8024]     5.3880      0.4361     -0.0020       0.1164
+
+  Global weighted KL: mean=2.5300  max=6.4705  mean score=0.3376
+
+Phase 2 (LightGBM pointwise + gradient features)
+  worst rMAE: sim 70  rMAE=0.0724  KL=6.0202  score=0.1424
+  worst KL  : sim 2  KL=9.3776  score=0.0964  rMAE=0.0517
+
+  rMAE by component (worst + bootstrap CI)
+  component       worst               95% CI
+  ──────────  ─────────  ───────────────────
+  wing           0.1637  [ 0.1595,  0.1637]
+  pylon          0.1253  [ 0.1207,  0.1253]
+  fuselage       0.0401  [ 0.0337,  0.0401]
+  nacelle        0.0528  [ 0.0445,  0.0528]
+
+  R2 by component (pooled)
+  component      pooled               95% CI
+  ──────────  ─────────  ───────────────────
+  wing           0.7860  [-2.5556, -0.9125]
+  pylon          0.8657  [-4.2723, -1.4222]
+  fuselage       0.8872  [-5.1831, -2.1793]
+  nacelle        0.9538  [-1.1732, -0.1064]
+
+  KL by component
+  component     mean KL               95% CI     max KL  mean score   mean bias  mean spread
+  ──────────  ─────────  ───────────────────  ─────────  ──────────  ──────────  ───────────
+  wing           9.3430  [ 8.7341,  9.9436]    12.4185      0.1018     -0.4799       0.9648
+  pylon          7.1661  [ 6.4183,  7.9717]    14.1504      0.1435     -0.7265       0.8898
+  fuselage       3.2473  [ 3.0373,  3.4626]     5.3595      0.2449     -1.0357       0.9016
+  nacelle        3.8913  [ 3.3002,  4.5276]     9.7798      0.2479     -0.3142       0.7567
+
+  Global weighted KL: mean=6.7668  max=9.3776  mean score=0.1312
+
+
+
+
+
+
+How it works:
+
+1. **Gradient computation** (`compute_point_gradients`): for each of the 260,774 wall points, finds its 8 nearest neighbors in 3D and fits a local linear model by least squares to estimate ∇ρ_mean and ∇σ_ρ. Done once, since the mesh is identical across all simulations.
+2. **Feature vector per point** (16 features): coordinates (3), normals (3), mean_rho, std_rho, gradient of the mean (3 components + magnitude), gradient magnitude of the std, and the 3 flight conditions.
+3. **Target**: `rho − mean_field` rather than raw rho, so LightGBM only learns the condition-dependent deviation.
+4. **Training set**: 20,000 randomly sampled points per training simulation (~7M rows for ~350 sims) — full 91M rows would be slow and mostly redundant. A single LightGBM with 2000 trees and 255 leaves trains on this in reasonable time on 10 CPUs.
+5. **Prediction**: full field per test sim, adding the mean field back, saved to `y_pred1_gradlgbm.npy`/`y_pred2_gradlgbm.npy`, then evaluated with the same `evaluate_phase` as everything else. It also prints feature importances so you can see whether the gradient features actually get used.

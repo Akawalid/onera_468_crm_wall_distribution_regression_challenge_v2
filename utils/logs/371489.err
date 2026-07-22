@@ -1,0 +1,432 @@
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/utils/validation.py:2691: UserWarning: X does not have valid feature names, but LGBMRegressor was fitted with feature names
+  warnings.warn(
