@@ -1,1 +1,1 @@
-command: python3 /app/program/scoring.py
+command: python3 /app/program/scoring.py $input $output

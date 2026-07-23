@@ -6,14 +6,24 @@
 import json
 import os
 import sys
+import traceback
 import numpy as np
 from datetime import datetime as dt
 
 # --- Paths ---
-input_dir      = '/app/input_data/'
-output_dir     = '/app/output/'
-program_dir    = '/app/program'
-submission_dir = '/app/ingested_program'
+# Codabench invokes this program as:
+#   ingestion.py $input $output $program $submission_program
+# Fall back to local defaults when run without arguments.
+if len(sys.argv) == 1:
+    input_dir      = '/app/input_data/'
+    output_dir     = '/app/output/'
+    program_dir    = '/app/program'
+    submission_dir = '/app/ingested_program'
+else:
+    input_dir      = os.path.abspath(sys.argv[1])
+    output_dir     = os.path.abspath(sys.argv[2])
+    program_dir    = os.path.abspath(sys.argv[3])
+    submission_dir = os.path.abspath(sys.argv[4])
 
 # Register paths once, at module level
 for p in (output_dir, program_dir, submission_dir):
@@ -35,6 +45,7 @@ def get_data():
     X_train = np.load(paths['train'])
     y_train = np.load(paths['labels'])[:, 0]
     X_test  = np.load(paths['test'])
+
     return X_train, y_train, X_test
 
 
@@ -42,7 +53,6 @@ def validate_predictions(y_pred, expected_len):
     """Raise if predictions are malformed, wrong length, or non-finite."""
     if not isinstance(y_pred, np.ndarray):
         raise TypeError(f'predict() must return np.ndarray, got {type(y_pred)}')
-    # ===== To check later, not exhaustive, to check later
     if y_pred.ndim == 0 or y_pred.shape[0] != expected_len:
         raise ValueError(
             f'predict() returned shape {y_pred.shape}, '
@@ -57,9 +67,25 @@ def print_bar():
     print('-' * 40)
 
 
-def main():
+def write_metadata(extra):
+    """Best-effort metadata.json write; never raises."""
+    try:
+        os.makedirs(output_dir, exist_ok=True)
+        with open(os.path.join(output_dir, 'metadata.json'), 'w') as f:
+            json.dump(extra, f, indent=2)
+    except Exception as e:
+        print(f'[ERR] Could not write metadata.json: {e}')
+
+
+def run():
+    """Run the full ingestion pipeline. Raises on any failure; the caller
+    is responsible for catching, reporting, and writing failure metadata."""
     print_bar()
     print('Ingestion program. ONERA 468 CRM challenge rho.')
+
+    # Make sure the output dir exists up front, so a failure right after
+    # this point can still leave failure metadata behind for the scorer.
+    os.makedirs(output_dir, exist_ok=True)
 
     # --- Load model ---
     print_bar()
@@ -68,8 +94,8 @@ def main():
         from model import Model
         model = Model()
         print('[OK] Model initialised.')
-    except ImportError as e:
-        print(f'[ERR] Could not import Model: {e}')
+    except Exception as e:
+        print(f'[ERR] Could not import/initialise Model: {e}')
         raise
 
     start_time = dt.now()
@@ -114,30 +140,40 @@ def main():
     print(f'[OK] Predictions shape: {y_pred.shape}')
 
     # --- Save outputs ---
-    os.makedirs(output_dir, exist_ok=True)
-
     y_pred = y_pred.reshape(-1, 1).astype(np.float32)
     np.save(os.path.join(output_dir, 'Yhat.npy'), y_pred)
     print(f'[OK] Yhat.npy saved: {y_pred.shape}')
 
     # --- Save metadata ---
-    end_time = dt.now()
-    duration = (end_time - start_time).total_seconds()
-    print(f'[OK] Total duration: {duration:.2f}s')
-
-    metadata = {
-        'duration': duration,
-        'X_train_shape':    list(X_train.shape),
-        'X_test_shape':     list(X_test.shape),
-        'y_pred_shape':     list(y_pred.shape),
-        'success':          True,
-    }
-    with open(os.path.join(output_dir, 'metadata.json'), 'w') as f:
-        json.dump(metadata, f, indent=2)
-
+    duration = (dt.now() - start_time).total_seconds()
+    write_metadata({
+        'duration':      duration,
+        'X_train_shape': list(X_train.shape),
+        'X_test_shape':  list(X_test.shape),
+        'y_pred_shape':  list(y_pred.shape),
+        'success':       True,
+    })
     print(f'[OK] Total duration: {duration:.2f}s')
     print('Ingestion complete. Handing off to scorer.')
     print_bar()
+
+
+def main():
+    try:
+        run()
+    except Exception as e:
+        # Catch-all: never let a raw traceback be the only thing the user
+        # sees. Log full details for organizers, leave clean failure
+        # metadata for the scorer, and exit with a non-zero status.
+        print_bar()
+        print(f'[FATAL] Ingestion failed: {e}')
+        traceback.print_exc()
+        write_metadata({
+            'duration': -1,
+            'success':  False,
+            'error':    str(e),
+        })
+        sys.exit(1)
 
 
 if __name__ == '__main__':

@@ -89,19 +89,23 @@ leaderboards:
     key: Results
     submission_rule: "Force_Last"
     columns:
+      - title: Mean KL
+        key: mean_KL
+        index: 0
+        sorting: asc
       - title: Score
         key: score
-        index: 0
+        index: 1
         sorting: desc
       - title: R2
         key: R2
-        index: 1
+        index: 2
         sorting: desc
       - title: wrMAE
         key: wrMAE
-        index: 2
+        index: 3
         sorting: asc
       - title: Duration
         key: duration
-        index: 3
+        index: 4
         sorting: asc
