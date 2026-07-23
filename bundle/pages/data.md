@@ -112,6 +112,9 @@ From the **Files** tab, one can download:
 
 All `.npy` files are stored as **float32 (single precision)** numpy arrays.
 
+> The starting kit is also browsable directly on GitHub (no download needed to look
+> around first): [bundle/starting_kit](https://github.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/tree/main/bundle/starting_kit).
+
 ## Dataset Sizes
 
 | Symbol | Value | Description |

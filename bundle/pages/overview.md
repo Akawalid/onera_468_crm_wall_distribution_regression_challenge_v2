@@ -1,5 +1,8 @@
 # ONERA 468 CRM Wall Distribution Regression Challenge
 
+> 💡 **New here?** The [starting kit](https://github.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/tree/main/bundle/starting_kit)
+> walks through loading the data, training two baseline models, evaluating them with
+> the challenge's own metrics, and preparing a submission.
 
 ## Introduction to Aircraft Physics
 Since the Wright brothers' first powered flight in 1903, understanding how air flows around a wing has been the central problem of aeronautics.
