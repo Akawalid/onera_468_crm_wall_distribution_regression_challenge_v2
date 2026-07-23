@@ -16,7 +16,7 @@ This pressure imbalance produces the lift, but it is not the only force at play.
 - **Drag:** the aerodynamic force parallel to the incoming flow, opposing the motion and balanced by thrust.
 
 <figure style="text-align: center;">
-<img src="figures/physics.svg" alt="Illustration of forces acting on an aircraft"/>
+<img src="https://raw.githubusercontent.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/main/bundle/pages/figures/physics.svg" alt="Illustration of forces acting on an aircraft"/>
 <figcaption>
 <em>Figure 1: Illustration of the angle of attack and The four forces acting on an aircraft in flight, weight, lift, thrust, and drag.</em>
 </figcaption>
@@ -25,7 +25,7 @@ This pressure imbalance produces the lift, but it is not the only force at play.
 When the angle of attack gets large in magitude (very positive or very negative) a flow separation phenoma appears, which is the moment when the flow above the wing struggles to meet flow below the wing as shown in Figure 2.
 
 <figure style="text-align: center;">
-<img src="figures/flow_separation.jpg" width=60% alt="Illustration of flow separation state"/>
+<img src="https://raw.githubusercontent.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/main/bundle/pages/figures/flow_separation.jpg" width=60% alt="Illustration of flow separation state"/>
 <figcaption>
 <em>Figure 2: Illustration of the flow separation state which occures at extrem angle of attack valuess.</em>
 </figcaption>
@@ -37,8 +37,8 @@ Speed also brings its own complications. As the aircraft approaches the speed of
 
 <figure style="text-align: center;">
   <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-    <img src="figures/supersonic.png" style="height: 220px; object-fit: contain;" alt="Illustration of shock waves in transonic flight"/>
-    <img src="figures/aircrafspsonic.jpg" style="height: 220px; object-fit: contain;" alt="Illustration of shock waves in transonic flight"/>
+    <img src="https://raw.githubusercontent.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/main/bundle/pages/figures/supersonic.png" style="height: 220px; object-fit: contain;" alt="Illustration of shock waves in transonic flight"/>
+    <img src="https://raw.githubusercontent.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/main/bundle/pages/figures/aircrafspsonic.jpg" style="height: 220px; object-fit: contain;" alt="Illustration of shock waves in transonic flight"/>
   </div>
   <figcaption>
     <em>Figure 3: Progression of shock waves with increasing Mach number.</em>
@@ -86,7 +86,7 @@ Each simulation is characterized by three flow condition parameters:
   sharp increase in drag[^drag] and a loss of lift[^drag].
   
   <!-- <figure style="text-align: center;">
-    <img src="figures/Airfoil_angle_of_attack.jpg" alt="Illustration of angle of attack"/>
+    <img src="https://raw.githubusercontent.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/main/bundle/pages/figures/Airfoil_angle_of_attack.jpg" alt="Illustration of angle of attack"/>
     <figcaption>
       <em>Figure 1: Effect of angle of attack on surface flow. Left: low AoA, flow remains
       attached. Right: high AoA, flow separation occurs near the leading edge.</em>

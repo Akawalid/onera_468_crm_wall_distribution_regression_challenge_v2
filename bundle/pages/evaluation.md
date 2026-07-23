@@ -79,7 +79,7 @@ errors over the 260,774 points:
   or more contiguous regions of the aircraft as shown in Figure 1.
 
 <figure style="text-align: center;">
-<img src="figures/bimodal.svg" width=60% alt="Bimodal error distribution"/>
+<img src="https://raw.githubusercontent.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/main/bundle/pages/figures/bimodal.svg" width=60% alt="Bimodal error distribution"/>
 <figcaption>
 <em>Figure 1: Example of an error distribution we want to penalize.</em>
 </figcaption>
