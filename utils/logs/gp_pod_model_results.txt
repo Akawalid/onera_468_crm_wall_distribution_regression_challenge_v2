@@ -1,0 +1,111 @@
+gp_pod_model.py -- local sanity-check results
+==============================================
+
+Script: utils/gp_pod_model.py (Gaussian Process regression over a PCA/POD
+basis of the wall rho field -- see module docstring for the full
+methodology and rationale).
+
+Run environment: local machine, CPU only (no GPU used, none needed -- see
+notes below on why this doesn't need the cluster). venv: ~/.venvs/fpml.
+Data: mini-automl/data/ (splitv2/), full labeled dataset --
+n_train=252, n_test1=144, n_test2=72.
+
+
+Run 1 -- quick check (coarse PCA, few restarts)
+------------------------------------------------
+Command:
+  python3 gp_pod_model.py --data_dir ../data/ --variance_threshold 0.90 \
+      --max_components 30 --n_restarts 2 --n_jobs -1
+
+Wall time: 15.4s
+
+Loading data...
+n_train=252  n_test1=144  n_test2=72
+global train mean = 0.8790  sigma_scale = 0.08790
+Fitting PCA (30 components, capped by n_train-1=251)...
+Keeping 4/30 modes to reach 0.9000 explained variance (actual cumulative = 0.91763)
+Fitting 4 independent Gaussian Processes (Matern nu=2.5, 2 restarts, n_jobs=-1)...
+GP fitting done in 3.7s
+
+Phase 1 (GP + POD)
+  R2 global: 0.9557
+  worst rMAE: sim 131  rMAE=0.0358  KL=4.6523  score=0.1769
+  worst KL  : sim 123  KL=4.9437  score=0.1682  rMAE=0.0334
+  Global weighted KL: mean=3.1652  max=4.9437  mean score=0.2522
+
+Phase 2 (GP + POD)
+  R2 global: 0.8440
+  worst rMAE: sim 71  rMAE=0.0949  KL=10.2616  score=0.0888
+  worst KL  : sim 26  KL=14.6053  score=0.0641  rMAE=0.0707
+  Global weighted KL: mean=10.1092  max=14.6053  mean score=0.0983
+
+Mean predictive std (phase 1, all points): 0.006077
+Mean predictive std (phase 2, all points): 0.045336
+
+
+Run 2 -- full default config (99% variance, 5 restarts)
+---------------------------------------------------------
+Command:
+  python3 gp_pod_model.py --data_dir ../data/
+
+Wall time: 59.4s total (GP fitting itself: 40.7s, parallel across cores)
+
+Loading data...
+n_train=252  n_test1=144  n_test2=72
+global train mean = 0.8790  sigma_scale = 0.08790
+Fitting PCA (150 components, capped by n_train-1=251)...
+Keeping 44/150 modes to reach 0.9900 explained variance (actual cumulative = 0.99006)
+Fitting 44 independent Gaussian Processes (Matern nu=2.5, 5 restarts, n_jobs=-1)...
+GP fitting done in 40.7s
+(a handful of sklearn ConvergenceWarnings: a few modes' length-scale/noise-level
+hyperparameters landed on the kernel's search bounds -- harmless for a baseline,
+widen length_scale_bounds/noise_level_bounds in make_kernel() if this matters later)
+
+Phase 1 (GP + POD)
+  R2 global: 0.9656
+  worst rMAE: sim 131  rMAE=0.0331  KL=4.2099  score=0.1919
+  worst KL  : sim 131  KL=4.2099  score=0.1919  rMAE=0.0331
+
+  KL by component     mean KL   max KL   mean score  mean bias  mean spread
+    wing                4.3269   7.0855      0.2051    -0.0090       0.4566
+    pylon               2.9387   6.5011      0.3072    -0.0238       0.3057
+    fuselage            0.8063   3.6990      0.6073    -0.0220       0.1548
+    nacelle             1.1730   2.8166      0.4938    -0.0099       0.2375
+
+  Global weighted KL: mean=2.6624  max=4.2099  mean score=0.2905
+
+Phase 2 (GP + POD)
+  R2 global: 0.8568
+  worst rMAE: sim 71  rMAE=0.0862  KL=8.8912  score=0.1011
+  worst KL  : sim 26  KL=14.6088  score=0.0641  rMAE=0.0698
+
+  KL by component     mean KL   max KL   mean score  mean bias  mean spread
+    wing               11.8275  16.2732      0.0842    -0.1829       0.7790
+    pylon              10.2277  16.6000      0.1026    -0.2562       0.5138
+    fuselage            6.6479  13.4785      0.1990    -0.2326       0.4191
+    nacelle             6.3225  11.7084      0.1759    -0.1772       0.5510
+
+  Global weighted KL: mean=9.3980  max=14.6088  mean score=0.1095
+
+Mean predictive std (phase 1, all points): 0.024661
+Mean predictive std (phase 2, all points): 0.057090
+
+
+Takeaways
+---------
+- Both runs completed correctly end-to-end on the real (full) local dataset.
+- Full default config (44 modes / 99% variance) finished in under a minute
+  total on CPU -- confirms this model does NOT need the cluster/GPU. The
+  whole fit operates on compact (n_train x n_modes) matrices, nothing like
+  the full-field tensors that make the KLw-loss MLP / pointwise XGBoost
+  scripts in this repo need a GPU.
+- Predictive std tracks actual difficulty sensibly: phase 2 (harder, worse
+  R2/KLw) gets a higher self-reported std (0.057) than phase 1 (0.025) --
+  the Bayesian uncertainty is doing something meaningful, not just noise.
+- Phase 1 R2 ~0.97, phase 2 R2 ~0.86; phase 2's worse KLw (mean 9.4 vs 2.7)
+  is concentrated in wing/pylon (highest weighted components), consistent
+  with phase 2 being the harder/more OOD-like conditions.
+
+Artifacts from these runs were written to the scratchpad, not committed here
+(model.joblib, y_pred*.npy, std_pred*.npy) -- rerun the script to regenerate
+them if needed; this file is just the numbers for reference.

@@ -169,3 +169,13 @@ the knn neighbours?
     try to understand how the pooled metrics were computed in the starting kit (where the R2 score is 0.91)
     talk about the talk I had with theofanis, and what is impossible to do, the split we talked about, what makes it simple
     we directly sample the geomerical composants uniformly...
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!! Important details in here:
+    Key finding highlighted here:
+
+The hardest part was generalizing to new/unseen airfoil geometries (OOD conditions) — 
+and the methods that did well were ones that built in geometric inductive biases 
+(i.e., architectures that structurally understand mesh/shape geometry, like GNNs or mesh-morphing approaches) 
+rather than treating the data as generic tabular/image input.

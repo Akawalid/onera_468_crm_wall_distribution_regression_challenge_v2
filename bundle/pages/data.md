@@ -1,4 +1,4 @@
-# ONERA 468 CRM — Wall Distribution Regression Challenge: Data
+# ONERA 468 CRM Wall Distribution Regression Challenge: Data
 
 ## Database
 
@@ -58,19 +58,13 @@ to generalize and extrapolate[^extrapolation] to unseen compressibility regimes:
 
 | Split | Mach numbers | Size |
 |---|---|---|
-| **Train** | 0.50, 0.70, 0.75, 0.80, 0.82, 0.84, 0.85, 0.86, 0.88 | n_train = 324 |
-| **Phase 1 test** | 0.90, 0.93 | n_test_phase1 = 72 |
+| **Train** | 0.50, 0.70, 0.75, 0.80, 0.88, 0.90, 0.93 | n_train = 252 |
+| **Phase 1 test** | 0.82, 0.84, 0.85, 0.86 | n_test_phase1 = 144 |
 | **Phase 2 test** | 0.30, 0.96 | n_test_phase2 = 72 |
 
-Phase 1 tests extrapolation[^extrapolation] toward **higher Mach numbers[^mach]** and stronger transonic[^transonic] effects (shock
-waves[^shock], compressibility). Phase 2 extends the evaluation to both **lower and higher Mach** extremes,
-covering the full breadth of flow regimes present in the dataset.
-
-> ⚠️ **Note on dataset sizes:** The documentation currently states n_train = 324 (9 Mach × 3 Pi
-> × 12 AoA). However, inspection of the training data reveals **34 distinct AoA values** in total
-> across train and test sets, not 12. The total simulation count (324 train + 72 + 72 test = 468)
-> is correct, but the internal AoA breakdown and whether the dataset forms a full Cartesian product
-> of all condition combinations is to be clarified. This note will be updated once verified.
+Phase 1 tests **interpolation**: these Mach numbers fall between the train values 0.80 and 0.88.
+Phase 2 tests **extrapolation**[^extrapolation]: these Mach numbers fall outside the full train
+range, covering the lowest and highest compressibility[^transonic] regimes in the dataset.
 
 ## Different ways of using the dataset
 
@@ -87,28 +81,17 @@ Depending on your model architecture, the input matrix X can be used in two ways
 From the **Files** tab, one can download:
 
 - `input_data.zip`
-  - `train_data.npy` — train input matrix of shape [np × n_train, 9]
-  - `train_labels.npy` — train output matrix of shape [np × n_train]
-  - `train_weights.npy` — confidence weights per train simulation, shape [n_train]
-  - `test_data.npy` — test input matrix of shape [np × n_test, 9]
-  - `test_weights.npy` — confidence weights per test simulation, shape [n_test]
-- `solution.zip`
-  - `scoring_program/`
-    - `scoring.py` — main script used by the platform to score submissions
-  - `starting_kit/`
-    - `solution/` — template of a dummy model to use when submitting
-      - `model.py`
-    - `starting_kit.ipynb` — notebook showing how to load the data and reproduce baseline results
-    - `using_extra_packages/` — shows how to bundle extra packages (e.g. LightGBM) with your
-      submission if they are not available by default on Codabench
-      - `environement.yml`
-      - `codalab-env/`
-- `submission_example.zip` — example of a valid submission file for Codabench
+  - `train_data.npy`: train input matrix, shape [np * n_train, 9]
+  - `train_labels.npy`: train output matrix, shape [np * n_train]
+  - `test_data.npy`: test input matrix, shape [np * n_test, 9]
+  - `component_labels_unique.npy`: component id per wall point, shape [np]
+  - `component_map.json`: maps component id to name (wing, pylon, fuselage, nacelle)
+- `submission_example.zip`: example of a valid submission file for Codabench
   - `submission_example/`
     - `python_packages/`
     - `model.py`
-    - `conda_tuto.txt` — tutorial: installing extra packages using conda
-    - `uv_tuto.txt` — tutorial: installing extra packages using uv
+    - `conda_tuto.txt`: tutorial for installing extra packages using conda
+    - `uv_tuto.txt`: tutorial for installing extra packages using uv
 
 All `.npy` files are stored as **float32 (single precision)** numpy arrays.
 
@@ -121,12 +104,9 @@ All `.npy` files are stored as **float32 (single precision)** numpy arrays.
 |---|---|---|
 | np | 260,774 | Number of wall points per simulation |
 | nf | 468 | Total number of simulations |
-| n_train | 324 | Number of simulations in the train set |
-| n_test_phase1 | 72 | Number of simulations in the phase 1 test set |
+| n_train | 252 | Number of simulations in the train set |
+| n_test_phase1 | 144 | Number of simulations in the phase 1 test set |
 | n_test_phase2 | 72 | Number of simulations in the phase 2 test set |
-
-> ⚠️ The breakdown n_train = 9 Mach × 3 Pi × 12 AoA is inconsistent with the data (see note
-> in the Train/Test Split section above).
 
 ## Terminology
 **Surface mesh:**[^surfacemesh] a discrete representation of the aircraft surface as a collection of points
