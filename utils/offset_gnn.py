@@ -13,8 +13,10 @@ paper targets -- adapt `build_offset_gnn_models` / `build_hybrid_graph` to your 
 import torch
 import torch.nn as nn
 from sklearn.neighbors import NearestNeighbors
-from torch_geometric.nn import MessagePassing
-from torch_geometric.utils import softmax, coalesce
+from torch.utils.checkpoint import checkpoint
+from torch_geometric.utils import coalesce
+
+DEFAULT_EDGE_CHUNK_SIZE = 300_000
 
 
 def _mlp(dims, out_activation=False):
@@ -26,31 +28,59 @@ def _mlp(dims, out_activation=False):
     return nn.Sequential(*layers)
 
 
-class OffsetGraphConv(MessagePassing):
+def _edge_chunk_terms(x, pos, edge_chunk, theta_mlp):
+    """Unnormalized softmax numerator/denominator terms for one chunk of edges.
+
+    softmax(-||o_ij||^2) is expressed as exp(raw_ij) / sum_k exp(raw_ik) rather than via
+    torch_geometric.utils.softmax, so it can be accumulated chunk-by-chunk with plain
+    index_add_ instead of needing the whole edge set materialized for a single group-softmax.
+    raw_ij = -||o_ij||^2 <= 0, so exp(raw_ij) in (0, 1] -- no max-subtraction needed for stability.
+    """
+    src, dst = edge_chunk[0], edge_chunk[1]
+    offset = pos[dst] - pos[src]
+    theta = theta_mlp(offset)
+    exp_raw = torch.exp(-offset.pow(2).sum(dim=-1))
+    numerator = exp_raw.unsqueeze(-1) * theta * x[src]
+    return numerator, exp_raw
+
+
+class OffsetGraphConv(nn.Module):
     """One offset-based graph convolution layer.
 
     For each edge (j -> i): offset o_ij = pos_i - pos_j, dynamic kernel weights
     theta_ij = MLP_theta(o_ij), and inverse-distance attention
     alpha_ij = softmax_j(-||o_ij||^2). The message is alpha_ij * (theta_ij ⊙ h_j).
     Node update: MLP_out(MLP_self(h_i) ⊕ sum_j alpha_ij * (theta_ij ⊙ h_j)).
+
+    Edges are processed in chunks under gradient checkpointing so peak memory stays bounded
+    by `edge_chunk_size` regardless of total edge count or hidden_dim -- a full 260k-node,
+    k=10 graph at hidden_dim=256 would otherwise materialize O(2.6M x 256) tensors per layer.
     """
 
     def __init__(self, in_dim, out_dim, coord_dim=2):
-        super().__init__(aggr='add', flow='source_to_target')
+        super().__init__()
+        self.in_dim = in_dim
         self.theta_mlp = _mlp([coord_dim, out_dim, in_dim])
         self.self_mlp = _mlp([in_dim, out_dim, out_dim])
         self.out_mlp = _mlp([in_dim + out_dim, out_dim, out_dim])
 
-    def forward(self, x, pos, edge_index):
-        aggregated = self.propagate(edge_index, x=x, pos=pos)
-        return self.out_mlp(torch.cat([self.self_mlp(x), aggregated], dim=-1))
+    def forward(self, x, pos, edge_index, edge_chunk_size=DEFAULT_EDGE_CHUNK_SIZE):
+        n, device, dtype = x.size(0), x.device, x.dtype
+        numerator = torch.zeros(n, self.in_dim, device=device, dtype=dtype)
+        denominator = torch.zeros(n, device=device, dtype=dtype)
 
-    def message(self, x_j, pos_i, pos_j, index, ptr, size_i):
-        offset = pos_i - pos_j
-        theta = self.theta_mlp(offset)
-        raw_scores = -offset.pow(2).sum(dim=-1)
-        alpha = softmax(raw_scores, index, ptr, size_i)
-        return alpha.unsqueeze(-1) * (theta * x_j)
+        num_edges = edge_index.size(1)
+        for start in range(0, num_edges, edge_chunk_size):
+            edge_chunk = edge_index[:, start:start + edge_chunk_size]
+            chunk_num, chunk_denom = checkpoint(
+                _edge_chunk_terms, x, pos, edge_chunk, self.theta_mlp, use_reentrant=False
+            )
+            dst = edge_chunk[1]
+            numerator.index_add_(0, dst, chunk_num)
+            denominator.index_add_(0, dst, chunk_denom)
+
+        aggregated = numerator / denominator.clamp_min(1e-12).unsqueeze(-1)
+        return self.out_mlp(torch.cat([self.self_mlp(x), aggregated], dim=-1))
 
 
 class OffsetGNN(nn.Module):
@@ -64,9 +94,9 @@ class OffsetGNN(nn.Module):
 
         self.decoder = _mlp([hidden_dim] * decoder_layers + [out_dim])
 
-    def forward(self, x, pos, edge_index):
-        h1 = torch.relu(self.conv1(x, pos, edge_index) + self.skip1(x))
-        h2 = torch.relu(self.conv2(h1, pos, edge_index) + h1)
+    def forward(self, x, pos, edge_index, edge_chunk_size=DEFAULT_EDGE_CHUNK_SIZE):
+        h1 = torch.relu(self.conv1(x, pos, edge_index, edge_chunk_size) + self.skip1(x))
+        h2 = torch.relu(self.conv2(h1, pos, edge_index, edge_chunk_size) + h1)
         return self.decoder(h2)
 
 
