@@ -11,18 +11,22 @@
 #SBATCH --output=logs/%j.out
 #SBATCH --error=logs/%j.err
 
-# adjust if this venv isn't visible from margaret nodes (module load / conda activate instead)
-source ~/.venvs/fpml/bin/activate
+source /home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/bin/activate
 
-# repo root, so `utils` is importable as a package (train_offset_gnn.py does `from utils.* import`)
+# repo root, so relative paths below (out_prefix, logs/) behave predictably
 cd "$(dirname "$0")/.."
 
+# Invoke by script path, NOT `python -m utils.train_offset_gnn` -- `-m` resolves the `utils`
+# package from cwd *before* any script code runs, so it silently breaks if the job's cwd isn't
+# exactly the repo root (this bit us once already). Running the file directly sidesteps that:
+# train_offset_gnn.py inserts the repo root into sys.path itself before importing `utils.*`.
+#
 # --k 10 and --hidden_dim 256 are the paper's section 4.2 values (kNN neighbors, velocity/pressure
 # hidden width -- the 2 conv layers w/ skip connections and 3-5 layer decoder are hardcoded in
 # OffsetGNN's defaults, also matching the paper). --epochs/--lr/--time aren't given in the paper
 # excerpt -- these are reasonable starting points; watch the first few epoch timings in the log
 # and adjust --time accordingly since 260k-node / 2.6M-edge graphs at hidden_dim=256 are not cheap.
-python -m utils.train_offset_gnn \
+python utils/train_offset_gnn.py \
     --data_dir /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/ \
     --k 10 \
     --hidden_dim 256 \

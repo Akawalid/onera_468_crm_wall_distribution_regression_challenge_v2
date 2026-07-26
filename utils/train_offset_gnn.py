@@ -9,9 +9,15 @@ Adapts the architecture from paper section 4.2 to this project's actual data
     paper's velocity/pressure/turbulent-viscosity triplet -> one OffsetGNN
     head instead of three.
   - Every point is already a wall point, so the paper's surface-vs-interior
-    boundary-aware sampling doesn't apply here. Its place is taken by the
-    existing per-component weighting (utils/base_models.py KL_WEIGHTS) as the
-    "surface-specific regularization" analogue.
+    boundary-aware sampling doesn't apply here.
+
+Component (wing/pylon/fuselage/nacelle) one-hot is still fed in as a node feature so the
+model can tell them apart, but utils/base_models.py's KL_WEIGHTS is deliberately NOT used to
+weight the training loss (an earlier version of this script did that -- since every component
+gets a similar 0.2-0.3 weight, it wasn't achieving any differential emphasis, it was just
+uniformly shrinking the loss/gradient to ~25% of plain MSE, i.e. a stealth smaller learning
+rate for no benefit). KL_WEIGHTS is still used, as elsewhere in this repo, inside evaluate()'s
+KLw metric at evaluation time -- that's its actual intended purpose.
 
 The (x, y, z) coordinates and surface normals are identical across all 252
 simulations in this dataset (fixed CRM mesh, only Minf/AoA/Pi vary), so the
@@ -22,13 +28,19 @@ then reused for every simulation and every epoch.
 import argparse
 import json
 import os
+import sys
 import time
 
 import numpy as np
 import torch
 
-from utils.base_models import KL_WEIGHTS, evaluate
-from utils.offset_gnn import OffsetGNN, build_hybrid_graph, add_gaussian_noise
+# Make `utils` importable as a package regardless of the process's cwd at launch --
+# `python -m utils.train_offset_gnn` only resolves the `utils` package if the repo root
+# happens to be the current working directory, which isn't guaranteed under Slurm/sbatch.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from utils.base_models import evaluate
+from utils.offset_gnn import OffsetGNN, build_hybrid_graph, add_gaussian_noise, DEFAULT_EDGE_CHUNK_SIZE
 
 NWALLP = 260774
 COL_MINF, COL_AOA, COL_PI = 6, 7, 8
@@ -62,12 +74,8 @@ def load_static_graph(data_dir, k, cache_dir):
     for cid, cname in component_map.items():
         component_onehot[torch.from_numpy(component_labels == cid), cid] = 1.0
 
-    node_weight = torch.zeros(NWALLP)
-    for cid, cname in component_map.items():
-        node_weight[torch.from_numpy(component_labels == cid)] = KL_WEIGHTS.get(cname, 1.0)
-
     static_feats = torch.cat([normals, component_onehot], dim=1)  # (NWALLP, 3 + n_components)
-    return coords, edge_index, static_feats, node_weight, component_labels, component_map
+    return coords, edge_index, static_feats, component_labels, component_map
 
 
 def load_split(data_dir, split):
@@ -76,7 +84,10 @@ def load_split(data_dir, split):
     weights_path = data_dir + f'splitv2/{split}_weights.npy'
     weights = np.load(weights_path) if os.path.exists(weights_path) else None
     n_sims = X.shape[0] // NWALLP
-    return X, y, weights, n_sims
+    # one row per sim is enough to get (Minf, AoA, Pi) -- conditions are constant within a sim,
+    # so this avoids paging in the full 260774-row block just to read 3 numbers from it.
+    conds = np.asarray(X[::NWALLP, COL_MINF:COL_PI + 1][:n_sims])
+    return y, weights, n_sims, conds
 
 
 def make_node_features(static_feats, cond, noise_std=0.0):
@@ -85,20 +96,15 @@ def make_node_features(static_feats, cond, noise_std=0.0):
     return add_gaussian_noise(x, std=noise_std)
 
 
-def weighted_mse(pred, target, node_weight, sim_weight=1.0):
-    return sim_weight * (node_weight * (pred - target).pow(2)).mean()
-
-
-def predict_split(model, X, n_sims, coords, edge_index, static_feats, device):
+def predict_split(model, n_sims, conds, coords, edge_index, static_feats, device, edge_chunk_size, cond_mean, cond_std):
     """Run the model over every simulation in a split and return flat (n_sims*NWALLP,) predictions."""
     model.eval()
     preds = np.empty(n_sims * NWALLP, dtype=np.float32)
     with torch.no_grad():
         for i in range(n_sims):
-            block = np.asarray(X[i * NWALLP:(i + 1) * NWALLP])
-            cond = torch.from_numpy(block[0, COL_MINF:COL_PI + 1]).float().to(device)
+            cond = torch.from_numpy((conds[i] - cond_mean) / cond_std).float().to(device)
             x = make_node_features(static_feats, cond)
-            preds[i * NWALLP:(i + 1) * NWALLP] = model(x, coords, edge_index).squeeze(-1).cpu().numpy()
+            preds[i * NWALLP:(i + 1) * NWALLP] = model(x, coords, edge_index, edge_chunk_size).squeeze(-1).cpu().numpy()
     model.train()
     return preds
 
@@ -111,6 +117,9 @@ def main():
     p.add_argument('--epochs', type=int, default=20)
     p.add_argument('--lr', type=float, default=1e-3)
     p.add_argument('--noise_std', type=float, default=0.01, help='additive Gaussian noise on node features during training.')
+    p.add_argument('--edge_chunk_size', type=int, default=DEFAULT_EDGE_CHUNK_SIZE,
+                   help='edges processed per gradient-checkpointed chunk in OffsetGraphConv; '
+                        'lower this if you hit CUDA OOM, raise it (or set to a huge number) for more speed on big GPUs.')
     p.add_argument('--max_train_sims', type=int, default=None, help='cap number of training sims per epoch (for quick smoke tests).')
     p.add_argument('--eval_every', type=int, default=5)
     p.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu')
@@ -123,16 +132,22 @@ def main():
     cache_dir = os.path.join(args.data_dir, 'cache')
 
     print('Loading static graph/features...', flush=True)
-    coords, edge_index, static_feats, node_weight, component_labels, component_map = load_static_graph(
+    coords, edge_index, static_feats, component_labels, component_map = load_static_graph(
         args.data_dir, args.k, cache_dir
     )
     coords, edge_index = coords.to(device), edge_index.to(device)
-    static_feats, node_weight = static_feats.to(device), node_weight.to(device)
+    static_feats = static_feats.to(device)
     comp_masks = {cname: component_labels == cid for cid, cname in component_map.items()}
 
-    X_train, y_train, train_weights, n_train = load_split(args.data_dir, 'train')
-    X_test1, y_test1, test1_weights, n_test1 = load_split(args.data_dir, 'test_phase1')
+    y_train, train_weights, n_train, train_conds = load_split(args.data_dir, 'train')
+    y_test1, test1_weights, n_test1, test1_conds = load_split(args.data_dir, 'test_phase1')
     print(f'n_train={n_train}  n_test1={n_test1}', flush=True)
+
+    # standardize (Minf, AoA, Pi) using train statistics, same convention as the rest of this
+    # repo (gp_pod_model.py / train.py both fit a StandardScaler on train_conds).
+    cond_mean = train_conds.mean(axis=0)
+    cond_std = train_conds.std(axis=0)
+    cond_std[cond_std == 0] = 1.0
 
     sigma_ref = 0.01 * float(np.mean(y_train))
     in_dim = static_feats.shape[1] + 3  # + (Minf, AoA, Pi)
@@ -146,15 +161,14 @@ def main():
         epoch_loss = 0.0
         t0 = time.time()
         for i in sim_order:
-            block = np.asarray(X_train[i * NWALLP:(i + 1) * NWALLP])
-            cond = torch.from_numpy(block[0, COL_MINF:COL_PI + 1]).float().to(device)
+            cond = torch.from_numpy((train_conds[i] - cond_mean) / cond_std).float().to(device)
             x = make_node_features(static_feats, cond, noise_std=args.noise_std)
             target = torch.from_numpy(np.asarray(y_train[i * NWALLP:(i + 1) * NWALLP])).float().to(device)
             sim_weight = float(train_weights[i]) if train_weights is not None else 1.0
 
             optimizer.zero_grad()
-            pred = model(x, coords, edge_index).squeeze(-1)
-            loss = weighted_mse(pred, target, node_weight, sim_weight)
+            pred = model(x, coords, edge_index, args.edge_chunk_size).squeeze(-1)
+            loss = sim_weight * (pred - target).pow(2).mean()
             loss.backward()
             optimizer.step()
             epoch_loss += loss.item()
@@ -163,12 +177,14 @@ def main():
               f'({time.time() - t0:.1f}s)', flush=True)
 
         if (epoch + 1) % args.eval_every == 0 or epoch == args.epochs - 1:
-            preds1 = predict_split(model, X_test1, n_test1, coords, edge_index, static_feats, device)
+            preds1 = predict_split(model, n_test1, test1_conds, coords, edge_index, static_feats,
+                                    device, args.edge_chunk_size, cond_mean, cond_std)
             w1 = test1_weights if test1_weights is not None else np.ones(n_test1)
             res = evaluate(np.asarray(y_test1), preds1, w1, NWALLP, comp_masks, sigma_ref)
             print(f'  test_phase1  R2={res["r2"]:.4f}  worst_rMAE={res["worst_rmae"]:.4f}  '
                   f'mean_rMAE={res["mean_rmae"]:.4f}  mean_KLw={res["mean_klw"]:.4f}  '
                   f'max_KLw={res["max_klw"]:.4f}', flush=True)
+            torch.save(model.state_dict(), f'{args.out_prefix}_model.pt')
 
     torch.save(model.state_dict(), f'{args.out_prefix}_model.pt')
     print(f'Saved: {args.out_prefix}_model.pt', flush=True)
