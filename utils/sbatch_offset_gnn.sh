@@ -11,9 +11,6 @@
 #SBATCH --output=logs/%j.out
 #SBATCH --error=logs/%j.err
 
-# adjust if this venv isn't visible from margaret nodes (module load / conda activate instead)
-source ~/.venvs/fpml/bin/activate
-
 # repo root, so `utils` is importable as a package (train_offset_gnn.py does `from utils.* import`)
 cd "$(dirname "$0")/.."
 
