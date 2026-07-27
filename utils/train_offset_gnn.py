@@ -135,6 +135,9 @@ def main():
     p.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu')
     p.add_argument('--out_prefix', default='offset_gnn')
     p.add_argument('--seed', type=int, default=0)
+    p.add_argument('--resume_from', default=None,
+                   help='path to a checkpoint (saved by this script) to resume training from -- '
+                        'restores model + optimizer state and continues the epoch count.')
     args = p.parse_args()
 
     torch.manual_seed(args.seed)
@@ -167,9 +170,23 @@ def main():
                        noise_std=args.noise_std, eps=softmax_eps).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 
+    start_epoch = 0
+    if args.resume_from:
+        print(f'Resuming from {args.resume_from}...', flush=True)
+        checkpoint = torch.load(args.resume_from, map_location=device)
+        if 'model' in checkpoint:  # new checkpoint format: {'model', 'optimizer', 'epoch'}
+            model.load_state_dict(checkpoint['model'])
+            optimizer.load_state_dict(checkpoint['optimizer'])
+            start_epoch = checkpoint['epoch'] + 1
+            print(f'  restored model + optimizer, resuming at epoch {start_epoch + 1}', flush=True)
+        else:  # legacy format: a bare model state_dict, no optimizer/epoch to restore
+            model.load_state_dict(checkpoint)
+            print('  restored model only (legacy checkpoint format, no optimizer/epoch state) '
+                  '-- optimizer momentum and epoch count restart from scratch', flush=True)
+
     n_sims_per_epoch = min(args.max_train_sims, n_train) if args.max_train_sims else n_train
 
-    for epoch in range(args.epochs):
+    for epoch in range(start_epoch, args.epochs):
         sim_order = np.random.permutation(n_train)[:n_sims_per_epoch]
         epoch_loss = 0.0
         t0 = time.time()
@@ -189,6 +206,11 @@ def main():
         print(f'epoch {epoch+1}/{args.epochs}  loss={epoch_loss / len(sim_order):.5f}  '
               f'({time.time() - t0:.1f}s)', flush=True)
 
+        # Save every epoch (cheap relative to an epoch's training time) so a crash or interruption
+        # loses at most one epoch of progress, and --resume_from can pick back up from here.
+        torch.save({'model': model.state_dict(), 'optimizer': optimizer.state_dict(), 'epoch': epoch},
+                   f'{args.out_prefix}_model.pt')
+
         if (epoch + 1) % args.eval_every == 0 or epoch == args.epochs - 1:
             preds1 = predict_split(model, n_test1, test1_conds, coords, edge_index, static_feats,
                                     device, args.edge_chunk_size, cond_mean, cond_std)
@@ -197,9 +219,7 @@ def main():
             print(f'  test_phase1  R2={res["r2"]:.4f}  worst_rMAE={res["worst_rmae"]:.4f}  '
                   f'mean_rMAE={res["mean_rmae"]:.4f}  mean_KLw={res["mean_klw"]:.4f}  '
                   f'max_KLw={res["max_klw"]:.4f}', flush=True)
-            torch.save(model.state_dict(), f'{args.out_prefix}_model.pt')
 
-    torch.save(model.state_dict(), f'{args.out_prefix}_model.pt')
     print(f'Saved: {args.out_prefix}_model.pt', flush=True)
 
 
