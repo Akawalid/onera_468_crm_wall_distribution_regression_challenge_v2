@@ -1,15 +1,19 @@
-"""Train the offset-based graph convolution GNN (utils/offset_gnn.py) on the CRM wall dataset.
+"""Train the offset-based graph convolution GNN (utils/offset_gnn.py, ported from the reference
+implementation's CoordConv/CoordGNN) on the CRM wall dataset.
 
-Adapts the architecture from paper section 4.2 to this project's actual data
-(data/splitv2/*.npy), which differs from what the paper targets:
+Adapts the architecture to this project's actual data (data/splitv2/*.npy), which differs from
+what the paper targets:
   - 3D wall points (x, y, z) instead of a 2D volume mesh -> coord_dim=3.
-  - No stored mesh connectivity at all -> the graph is kNN-only (k=10), not a
+  - No stored mesh connectivity at all -> the graph is kNN-only (k=10, + self-loops), not a
     kNN augmentation of existing mesh edges.
   - A single scalar target per point (density-like field) instead of the
     paper's velocity/pressure/turbulent-viscosity triplet -> one OffsetGNN
     head instead of three.
   - Every point is already a wall point, so the paper's surface-vs-interior
     boundary-aware sampling doesn't apply here.
+  - The reference trains via DGL stochastic neighbor sampling (mini-batches of ~256 seed nodes,
+    15 neighbors/layer); this script keeps full-graph training instead, relying on
+    OffsetGraphConv's edge-chunked gradient checkpointing to stay within GPU memory.
 
 Component (wing/pylon/fuselage/nacelle) one-hot is still fed in as a node feature so the
 model can tell them apart, but utils/base_models.py's KL_WEIGHTS is deliberately NOT used to
@@ -40,7 +44,7 @@ import torch
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.base_models import evaluate
-from utils.offset_gnn import OffsetGNN, build_hybrid_graph, add_gaussian_noise, DEFAULT_EDGE_CHUNK_SIZE
+from utils.offset_gnn import OffsetGNN, build_hybrid_graph, estimate_softmax_eps, DEFAULT_EDGE_CHUNK_SIZE
 
 NWALLP = 260774
 COL_MINF, COL_AOA, COL_PI = 6, 7, 8
@@ -50,7 +54,7 @@ DATA_DIR = 'data/'
 def load_static_graph(data_dir, k, cache_dir):
     """Coordinates/normals/components are identical across all sims (fixed mesh) -- build once."""
     os.makedirs(cache_dir, exist_ok=True)
-    edge_cache = os.path.join(cache_dir, f'knn_edge_index_k{k}.pt')
+    edge_cache = os.path.join(cache_dir, f'knn_edge_index_k{k}_noselfloop.pt')
 
     X = np.load(data_dir + 'splitv2/train_data.npy', mmap_mode='r')
     coords = torch.from_numpy(np.asarray(X[:NWALLP, :3])).float()
@@ -62,7 +66,11 @@ def load_static_graph(data_dir, k, cache_dir):
         print(f'Building kNN (k={k}) graph over {NWALLP} nodes...', flush=True)
         t0 = time.time()
         mesh_edge_index = torch.zeros((2, 0), dtype=torch.long)  # no stored mesh connectivity
-        edge_index = build_hybrid_graph(coords, mesh_edge_index, k=k)
+        # add_self_loops=False: verified empirically that with this mesh's 67.5x density spread
+        # (p10 to p90 nearest-neighbor distance), a self-loop's inverse-distance score dominates
+        # the softmax for the majority of nodes regardless of how eps is calibrated -- it would
+        # zero out real spatial aggregation for most of the graph. See estimate_softmax_eps.
+        edge_index = build_hybrid_graph(coords, mesh_edge_index, k=k, add_self_loops=False)
         print(f'  done in {time.time() - t0:.1f}s, {edge_index.shape[1]} edges', flush=True)
         torch.save(edge_index, edge_cache)
 
@@ -90,10 +98,9 @@ def load_split(data_dir, split):
     return y, weights, n_sims, conds
 
 
-def make_node_features(static_feats, cond, noise_std=0.0):
+def make_node_features(static_feats, cond):
     cond_broadcast = cond.expand(static_feats.shape[0], -1)
-    x = torch.cat([static_feats, cond_broadcast], dim=1)
-    return add_gaussian_noise(x, std=noise_std)
+    return torch.cat([static_feats, cond_broadcast], dim=1)
 
 
 def predict_split(model, n_sims, conds, coords, edge_index, static_feats, device, edge_chunk_size, cond_mean, cond_std):
@@ -116,7 +123,10 @@ def main():
     p.add_argument('--hidden_dim', type=int, default=256)
     p.add_argument('--epochs', type=int, default=20)
     p.add_argument('--lr', type=float, default=1e-3)
-    p.add_argument('--noise_std', type=float, default=0.01, help='additive Gaussian noise on node features during training.')
+    p.add_argument('--noise_std', type=float, default=1e-5,
+                   help='additive Gaussian noise on node features during training, applied inside '
+                        "OffsetGNN.forward (gated by self.training) -- matches the reference "
+                        'implementation\'s noise1/noise3 defaults (1e-5), not this script\'s old ad-hoc 0.01.')
     p.add_argument('--edge_chunk_size', type=int, default=DEFAULT_EDGE_CHUNK_SIZE,
                    help='edges processed per gradient-checkpointed chunk in OffsetGraphConv; '
                         'lower this if you hit CUDA OOM, raise it (or set to a huge number) for more speed on big GPUs.')
@@ -151,7 +161,10 @@ def main():
 
     sigma_ref = 0.01 * float(np.mean(y_train))
     in_dim = static_feats.shape[1] + 3  # + (Minf, AoA, Pi)
-    model = OffsetGNN(in_dim, args.hidden_dim, out_dim=1, coord_dim=3).to(device)
+    softmax_eps = estimate_softmax_eps(coords, edge_index)
+    print(f'softmax_eps (data-calibrated, see estimate_softmax_eps docstring) = {softmax_eps:.5f}', flush=True)
+    model = OffsetGNN(in_dim, args.hidden_dim, out_dim=1, coord_dim=3,
+                       noise_std=args.noise_std, eps=softmax_eps).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 
     n_sims_per_epoch = min(args.max_train_sims, n_train) if args.max_train_sims else n_train
@@ -162,7 +175,7 @@ def main():
         t0 = time.time()
         for i in sim_order:
             cond = torch.from_numpy((train_conds[i] - cond_mean) / cond_std).float().to(device)
-            x = make_node_features(static_feats, cond, noise_std=args.noise_std)
+            x = make_node_features(static_feats, cond)
             target = torch.from_numpy(np.asarray(y_train[i * NWALLP:(i + 1) * NWALLP])).float().to(device)
             sim_weight = float(train_weights[i]) if train_weights is not None else 1.0
 
