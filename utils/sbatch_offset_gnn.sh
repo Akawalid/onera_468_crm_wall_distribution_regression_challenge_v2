@@ -11,8 +11,6 @@
 #SBATCH --output=logs/%j.out
 #SBATCH --error=logs/%j.err
 
-source /home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/bin/activate
-
 # repo root, so relative paths below (out_prefix, logs/) behave predictably
 cd "$(dirname "$0")/.."
 
