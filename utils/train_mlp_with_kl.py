@@ -33,7 +33,13 @@ def residual_kl_normal(y_true, y_pred, sigma_ref_frac=0.1, n_bins=200):
     eps       = y_pred - y_true
     sigma_s   = SIGMA_SCALE
     sigma_ref = sigma_ref_frac * sigma_s
-    lim  = 5.0 * sigma_s
+    # Histogram range must track this *simulation's* own residual/target scale (matches
+    # scoring_program/scoring.py's _residual_kl), not the global sigma_s -- same fix as
+    # utils/base_models.py's residual_kl_weighted: a global scale here is far narrower than
+    # most simulations' actual spread, so most residual mass silently falls outside [-lim, lim]
+    # and gets dropped by np.histogram instead of penalized.
+    sigma_y = float(y_true.std()) + 1e-6
+    lim  = 5.0 * sigma_y
     bins = np.linspace(-lim, lim, n_bins + 1)
     dx   = bins[1] - bins[0]
     p, _ = np.histogram(eps, bins=bins, density=True)
@@ -55,7 +61,9 @@ def residual_kl_weighted(y_true, y_pred, comp_masks, comp_weights, sigma_ref_fra
     sample_weight = np.zeros_like(eps)
     for cname, mask in comp_masks.items():
         sample_weight[mask] = comp_weights.get(cname, 0.0)
-    lim  = 5.0 * sigma_s
+    # See residual_kl_normal above: lim must track this simulation's own std, not sigma_s.
+    sigma_y = float(y_true.std()) + 1e-6
+    lim  = 5.0 * sigma_y
     bins = np.linspace(-lim, lim, n_bins + 1)
     dx   = bins[1] - bins[0]
     p, _ = np.histogram(eps, bins=bins, weights=sample_weight, density=True)
@@ -161,6 +169,7 @@ def main():
     print('Loading data...')
     X_train = np.load(DATA_DIR + 'splitv3/train_data.npy')
     y_train = np.load(DATA_DIR + 'splitv3/train_labels.npy')
+    train_weights = np.load(DATA_DIR + 'splitv3/train_weights.npy')
     X_test1 = np.load(DATA_DIR + 'splitv3/test_phase1_data.npy')
     y_test1 = np.load(DATA_DIR + 'splitv3/test_phase1_labels.npy')
     X_test2 = np.load(DATA_DIR + 'splitv3/test_phase2_data.npy')
@@ -217,6 +226,11 @@ def main():
     Y_train_t   = torch.tensor(y_train.reshape(n_train, nwallp), dtype=torch.float32, device=device)
     C_train_t   = torch.tensor(train_conds_sc, dtype=torch.float32, device=device)
     sigma_train = torch.full((n_train,), SIGMA_SCALE, dtype=torch.float32, device=device)
+    # Confidence weight (0.5 for |AoA|>=10deg, noisier/less-converged sims) -- same convention
+    # train_simple_gnn.py's sim_loss already applies, missing here before: without it, a
+    # low-confidence sim (which the official scorer excludes from wrMAE/mean_KL entirely) was
+    # trained on with exactly the same weight as a well-converged one.
+    w_train_t   = torch.tensor(train_weights, dtype=torch.float32, device=device)
 
     n_val   = max(1, int(round(VAL_FRAC * n_train)))
     perm0   = np.random.permutation(n_train)
@@ -246,7 +260,7 @@ def main():
         for i in tqdm(range(0, n_tr, BATCH), desc=f'epoch {epoch}', leave=False, unit='batch'):
             idx  = tr_idx_t[perm[i:i + BATCH]]
             pred = model(C_train_t[idx])
-            loss = klw_loss(pred, Y_train_t[idx], sigma_train[idx]).sum()
+            loss = (w_train_t[idx] * klw_loss(pred, Y_train_t[idx], sigma_train[idx])).sum()
             opt.zero_grad()
             loss.backward()
             opt.step()
@@ -259,7 +273,7 @@ def main():
             for i in range(0, n_val, BATCH):
                 idx = val_idx_t[i:i + BATCH]
                 pred = model(C_train_t[idx])
-                val_tot += klw_loss(pred, Y_train_t[idx], sigma_train[idx]).sum().item()
+                val_tot += (w_train_t[idx] * klw_loss(pred, Y_train_t[idx], sigma_train[idx])).sum().item()
         val_mean = val_tot / n_val
 
         if val_mean < best_val - 1e-4:
