@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/train_offset_gnn.py", line 47, in <module>
+    from utils.offset_gnn import OffsetGNN, build_hybrid_graph, estimate_softmax_eps, DEFAULT_EDGE_CHUNK_SIZE
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/offset_gnn.py", line 34, in <module>
+    from torch_geometric.utils import coalesce
+ModuleNotFoundError: No module named 'torch_geometric'
