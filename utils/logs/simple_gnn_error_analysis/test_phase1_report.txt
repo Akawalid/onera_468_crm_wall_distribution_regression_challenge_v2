@@ -1,0 +1,55 @@
+Loading static graph/features...
+Loaded checkpoint: utils/simple_gnn_model.pt
+
+=== test_phase1  (n_sims=144) ===
+
+--- per-component breakdown ---
+component   mean|err|     rMAE      bias     n_pts
+--------------------------------------------------
+fuselage      0.01785   0.0199  -0.00089     64839
+nacelle       0.02204   0.0233  -0.00250     56363
+pylon         0.02881   0.0341  +0.00735     37208
+wing          0.03587   0.0436  -0.00023    102364
+
+--- per-simulation / per-condition ---
+worst 10 simulations by weighted-KL:
+rank sim      Minf    AoA        Pi     rMAE      KLw
+1    58       0.82    9.0         2   0.0379   2.0194
+2    143      0.86    9.0         4   0.0411   1.9424
+3    10       0.82    9.0         1   0.0364   1.9179
+4    119      0.84    9.0         4   0.0384   1.8957
+5    23       0.84    9.0         1   0.0402   1.8921
+6    123      0.85   -3.0         4   0.0358   1.8901
+7    106      0.82    9.0         4   0.0376   1.8895
+8    47       0.86    9.0         1   0.0400   1.8698
+9    35       0.85    9.0         1   0.0386   1.8540
+10   134      0.86   -5.0         4   0.0347   1.8487
+
+condition-vs-error correlation (Pearson r, full-weight sims only):
+  Minf  rMAE r=+0.155   KLw r=+0.090
+  AoA   rMAE r=-0.186   KLw r=+0.044
+  Pi    rMAE r=+0.162   KLw r=+0.177
+
+--- error vs. local mesh density ---
+error vs. local mesh density (decile 1 = densest/finest mesh):
+density decile   mean nbr-dist   mean|err|     n_pts
+1                      0.00328     0.03413     26078
+2                      0.00883     0.03323     26077
+3                      0.01899     0.03469     26077
+4                      0.03070     0.03128     26078
+5                      0.04494     0.02809     26077
+6                      0.06371     0.02382     26077
+7                      0.08750     0.02561     26078
+8                      0.12063     0.02148     26077
+9                      0.15778     0.02091     26077
+10                     0.25285     0.02401     26078
+
+Pearson r(local mean neighbor distance, mean |error|) = -0.217
+
+--- PCA error-slice analysis ---
+components ranked by mean |error|: [('wing', 0.03622), ('pylon', 0.02927), ('nacelle', 0.02235), ('fuselage', 0.0181)]
+running slice analysis on: ['wing', 'pylon']
+[wing] worst-sim (#58) slices at u=[-18.211, 2.682, 6.164]: ['utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_wing_slice1.png', 'utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_wing_slice2.png', 'utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_wing_slice3.png']
+[wing] systematic (mean-field) slices at u=[-12.508, 8.72, 12.548]: ['utils/logs/simple_gnn_error_analysis/test_phase1_systematic_wing_slice1.png', 'utils/logs/simple_gnn_error_analysis/test_phase1_systematic_wing_slice2.png', 'utils/logs/simple_gnn_error_analysis/test_phase1_systematic_wing_slice3.png']
+[pylon] worst-sim (#58) slices at u=[-3.905, -0.058, 1.086]: ['utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_pylon_slice1.png', 'utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_pylon_slice2.png', 'utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_pylon_slice3.png']
+[pylon] systematic (mean-field) slices at u=[-3.088, -2.047, 1.907]: ['utils/logs/simple_gnn_error_analysis/test_phase1_systematic_pylon_slice1.png', 'utils/logs/simple_gnn_error_analysis/test_phase1_systematic_pylon_slice2.png', 'utils/logs/simple_gnn_error_analysis/test_phase1_systematic_pylon_slice3.png']

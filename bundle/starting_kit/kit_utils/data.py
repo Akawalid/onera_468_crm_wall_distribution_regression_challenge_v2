@@ -1,12 +1,6 @@
 """
-Data loading + cross-validation splitting, shared by every baseline in the
-starting kit.
-
-We only ever load `input_data` (train_data.npy / train_labels.npy) plus the
-small component files -- never test_data.npy or anything under
-reference_data/. Participants never have access to the test set, so all
-model selection here has to happen through cross-validation on the
-training simulations alone.
+Data loading and cross-validation splitting, shared by every baseline in
+the starting kit.
 """
 
 import json
@@ -40,9 +34,8 @@ def train_conditions(X_train, nwallp=NWALLP):
 
 
 def confidence_weights(conds):
-    """ Same rule as the official reference data: conditions with
-    |AoA| >= 10 deg count half as much (they're the noisier, separated-flow
-    cases). """
+    """ Conditions with |AoA| >= 10 deg count half as much (noisier,
+    separated-flow cases). """
     return np.where(np.abs(conds[:, 1]) < 10.0, 1.0, 0.5)
 
 
@@ -54,12 +47,23 @@ def select_sims(X, y, sim_idx, nwallp=NWALLP):
     return X_sel, y_sel
 
 
+def subsample_sims_per_mach(conds, n_per_mach, seed=0):
+    """ Randomly pick up to `n_per_mach` simulation indices for each unique
+    Mach number in `conds`, keeping every Mach value represented so
+    mach_fold_splits still covers the full range. """
+    rng = np.random.default_rng(seed)
+    mach_values = np.unique(conds[:, 0])
+    idx = []
+    for m in mach_values:
+        sims = np.flatnonzero(np.abs(conds[:, 0] - m) < EPS)
+        idx.append(rng.choice(sims, size=min(n_per_mach, len(sims)), replace=False))
+    return np.sort(np.concatenate(idx))
+
+
 def mach_fold_splits(conds, epsilon=EPS):
     """ Leave-two-consecutive-Machs-out CV folds: yields
-    (train_sim_idx, val_sim_idx, label) so that every simulation gets
-    validated on exactly once, while training folds still cover a wide
-    Mach range (a single Mach held out alone would be too little
-    validation data per fold). """
+    (train_sim_idx, val_sim_idx, label); every simulation is validated on
+    exactly once. """
     mach_values = np.unique(conds[:, 0])
     for i in range(len(mach_values) - 1):
         m0, m1 = mach_values[i], mach_values[i + 1]

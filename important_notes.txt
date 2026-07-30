@@ -179,3 +179,12 @@ The hardest part was generalizing to new/unseen airfoil geometries (OOD conditio
 and the methods that did well were ones that built in geometric inductive biases 
 (i.e., architectures that structurally understand mesh/shape geometry, like GNNs or mesh-morphing approaches) 
 rather than treating the data as generic tabular/image input.
+
+
+
+
+- don't forget to apply lisheng changes to the challenge: done but to check
+- don't forget to verify with a new environement i the stating kit works well
+- don't forget to remove the comments dedicated to developpers in the code in the starting kit: done but to check
+- don't forget to check that epsilon story with the angleof attack and the simulation weights
+- check the docker image it can be a disaster, no scipy!

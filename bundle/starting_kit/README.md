@@ -1,68 +1,74 @@
-# ONERA 468 CRM Challenge rho : Starting Kit
+# ONERA 468 CRM Challenge rho: Starting Kit
 
-## Objectif
+## Goal
 
-Prédire la densité volumique adimensionnée $\rho$ en chaque point du domaine fluide,
-pour des conditions aérodynamiques non vues à l'entraînement.
+Predict the non-dimensionalized volumetric density $\rho$ at every point of the fluid
+domain, for aerodynamic conditions not seen during training.
 
-## Structure des données (`input_data/`, téléchargé depuis Codabench)
+## Data structure (`input_data/`, downloaded from Codabench)
 
-| Fichier | Shape | Description |
+| File | Shape | Description |
 |---|---|---|
-| `train_data.npy` | (n_train × 260 774, 9) | Inputs train |
-| `train_labels.npy` | (n_train × 260 774, 1) | Cible train (ρ) |
-| `test_data.npy` | (n_test × 260 774, 9) | Inputs test (sans labels) |
-| `component_labels_unique.npy` | (260 774,) | Id de composant par point de paroi |
-| `component_map.json` | -- | `{id: nom_composant}` (wing/pylon/fuselage/nacelle) |
+| `train_data.npy` | (n_train x 260,774, 9) | Train inputs |
+| `train_labels.npy` | (n_train x 260,774, 1) | Train target (rho) |
+| `test_data.npy` | (n_test x 260,774, 9) | Test inputs (no labels) |
+| `component_labels_unique.npy` | (260,774,) | Component id per wall point |
+| `component_map.json` | -- | `{id: component_name}` (wing/pylon/fuselage/nacelle) |
 
-Les 9 colonnes de X sont : `x, y, z, nx, ny, nz, Minf, AoA, Pi`
+The 9 columns of X are: `x, y, z, nx, ny, nz, Minf, AoA, Pi`
 
-- 260 774 points de paroi par condition aérodynamique
-- `Pi` est le facteur de pression de stagnation (1, 2 ou 4)
-- **Vous n'avez jamais accès aux labels de test** (`reference_data/`) -- tout le
-  notebook évalue les modèles par validation croisée sur `train` uniquement.
+- 260,774 wall points per aerodynamic condition
+- `Pi` is the stagnation pressure factor (1, 2, or 4)
+- **You never have access to the test labels** (`reference_data/`) -- the whole
+  notebook evaluates models via cross-validation on `train` only.
 
-## Contenu du kit
+## Contents of the kit
 
-- `starting_kit.ipynb` -- le notebook principal, à lire dans l'ordre.
-- `kit_utils/` -- tout le code réutilisable (métriques, modèles, plots), importé
-  par le notebook. Regardez-y directement si vous voulez comprendre ou modifier
-  un détail d'implémentation.
-  - `metrics.py` -- R2, wrMAE, KLw (mean_KL) et leurs intervalles de confiance
-    bootstrap, formules identiques à `scoring_program/scoring.py`.
-  - `data.py` -- chargement des données train et des masques de composants,
-    découpage en folds de validation croisée (leave-two-Machs-out).
-  - `lgbm_baseline.py` -- baseline simple : LightGBM pointwise.
-  - `mlp_klw.py` -- baseline principale : MLP full-field entraîné avec une
-    perte KL différentiable (remplace l'ancienne baseline KNN).
-  - `pca_plots.py` -- diagnostics visuels (erreur sur l'avion, directions PCA
-    de l'erreur, coupes).
+- `starting_kit.ipynb` -- the main notebook, meant to be read in order.
+- `kit_utils/` -- all the reusable code (metrics, models, plots), imported by the
+  notebook. Look here directly if you want to understand or tweak an
+  implementation detail.
+  - `metrics.py` -- R2, wrMAE, KLw (mean_KL) and their bootstrap confidence
+    intervals, formulas identical to `scoring_program/scoring.py`.
+  - `data.py` -- loading the train data and component masks, splitting into
+    cross-validation folds (leave-two-Machs-out).
+  - `lgbm_baseline.py` -- pointwise LightGBM baseline, same model as `utils/base_models.py`.
+  - `pca_plots.py` -- visual diagnostics (error on the aircraft, PCA directions
+    of the error, slices).
+- `baselines/` -- heavier reference baselines, run on their own (not from the
+  notebook).
+  - `mlp_klw.py` -- production-scale full-field MLP trained with the same
+    differentiable KLw loss, see section 2.2 of the notebook.
 
-## Soumission
+## Submission
 
-Votre soumission doit être un fichier zip contenant `model.py` (à la racine du
-zip, pas dans un sous-dossier) avec une classe `Model` implémentant `fit(X, y)`
-et `predict(X)`. Le notebook génère `submission/model.py` (version autonome de
-la baseline MLP) et `submission.zip` en section 5.
+Your submission must be a zip file containing `model.py` (at the root of the
+zip, not in a subfolder) with a `Model` class implementing `fit(X, y)` and
+`predict(X)`. The notebook generates `submission/model.py` (the LightGBM
+baseline) and `submission.zip` in section 5.
 
-## Métriques (voir `bundle/scoring_program/scoring.py` pour le code officiel)
+## Metrics (see `bundle/scoring_program/scoring.py` for the official code)
 
-- **KLw** (`mean_KL`) -- **métrique principale du leaderboard**, plus proche de
-  0 est mieux. Mesure la distance (KL-divergence) entre la distribution de vos
-  résidus et une gaussienne de référence étroite, pondérée par composant
-  (wing/pylon 0.3, fuselage/nacelle 0.2). Voir section 2.2 du notebook.
-- **R^2** (pondéré par confidence score) -- plus proche de 1 est mieux.
-- **wrMAE** (worst-case relative MAE sur les cas à confidence=1) -- plus proche
-  de 0 est mieux.
-- `score` = 5 × R² + 5 × (1 − wrMAE) -- conservé pour référence, KLw reste la
-  métrique triée sur le leaderboard.
+- **KLw** (`mean_KL`) -- **the leaderboard's primary metric**, closer to 0 is
+  better. Measures the (KL-divergence) distance between the distribution of your
+  residuals and a narrow reference Gaussian, weighted per component (wing/pylon
+  0.3, fuselage/nacelle 0.2). See section 2.2 of the notebook.
+- **R^2** (confidence-weighted) -- closer to 1 is better.
+- **wrMAE** (worst-case relative MAE on confidence=1 cases) -- closer to 0 is
+  better.
+- `score` = 5 x R2 + 5 x (1 - wrMAE) -- kept for reference, KLw remains the
+  metric the leaderboard is sorted on.
 
-## Lancer le starting kit
+## Running the starting kit
 
 ```bash
 pip install -r requirements.txt
 jupyter notebook starting_kit.ipynb
 ```
 
-La cross-validation complète (les deux baselines) tourne en environ 5 minutes
-sur CPU.
+The LightGBM cross-validation trains on a subsample of simulations (a handful per
+Mach, see section 2 of the notebook) and takes roughly 10-15 minutes on CPU --
+`Model` itself uses the same full-size, production hyperparameters as
+`utils/base_models.py`, so most of that time is the 500 trees themselves, not the
+data volume. `baselines/mlp_klw.py` is heavier still (production-scale network,
+hundreds of epochs) and is meant to be run separately, ideally on a GPU.
