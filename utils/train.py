@@ -19,12 +19,12 @@ DATA_DIR         = '/data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_red
 #=========================================================
 
 print('Loading data...')
-X_train = np.load(DATA_DIR + 'splitv2/train_data.npy')
-y_train = np.load(DATA_DIR + 'splitv2/train_labels.npy')
-X_test1 = np.load(DATA_DIR + 'splitv2/test_phase1_data.npy')
-y_test1 = np.load(DATA_DIR+'splitv2/test_phase1_labels.npy')
-X_test2 = np.load(DATA_DIR + 'splitv2/test_phase2_data.npy')
-y_test2 = np.load(DATA_DIR+'splitv2/test_phase2_labels.npy')
+X_train = np.load(DATA_DIR + 'splitv3/train_data.npy')
+y_train = np.load(DATA_DIR + 'splitv3/train_labels.npy')
+X_test1 = np.load(DATA_DIR + 'splitv3/test_phase1_data.npy')
+y_test1 = np.load(DATA_DIR+'splitv3/test_phase1_labels.npy')
+X_test2 = np.load(DATA_DIR + 'splitv3/test_phase2_data.npy')
+y_test2 = np.load(DATA_DIR+'splitv3/test_phase2_labels.npy')
 
 train_conds = X_train[::nwallp, COL_MINF:COL_PI+1]
 test1_conds = X_test1[::nwallp, COL_MINF:COL_PI+1]

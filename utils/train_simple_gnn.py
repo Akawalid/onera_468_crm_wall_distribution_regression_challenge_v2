@@ -1,10 +1,9 @@
-"""Train the simple mean-aggregation GNN (utils/simple_gnn.py) on the CRM wall dataset.
+"""Train the distance-weighted GNN (utils/simple_gnn.py) on the CRM wall dataset.
 
-Structured to mirror train_offset_gnn.py (same data loading, same node features, same
-evaluate() metrics printed at the same cadence) so its results are directly comparable --
-the point of this script is to find where the much heavier OffsetGNN actually earns its cost
-over a minimal GNN baseline, and where a GNN of any kind earns its cost over the pointwise
-baselines in utils/base_models.py.
+Structured to mirror train_offset_gnn.py (same data loading, same evaluate() metrics printed at
+the same cadence) so its results are directly comparable -- the point of this script is to find
+where the much heavier OffsetGNN actually earns its cost over a minimal GNN baseline, and where
+a GNN of any kind earns its cost over the pointwise baselines in utils/base_models.py.
 """
 
 import argparse
@@ -21,23 +20,34 @@ import torch
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.base_models import evaluate
-from utils.simple_gnn import SimpleGNN, build_knn_graph
+from utils.simple_gnn import SimpleGNN, build_knn_graph, compute_inverse_distance_weights
 
 NWALLP = 260774
 COL_MINF, COL_AOA, COL_PI = 6, 7, 8
 DATA_DIR = 'data/'
 
 
-def load_static_graph(data_dir, k, cache_dir):
+def load_static_graph(data_dir, k, cache_dir, split_dir='splitv2'):
     """Coordinates/normals/components are identical across all sims (fixed mesh) -- build once.
 
     Same cache file as train_offset_gnn.py's load_static_graph (knn_edge_index_k{k}_noselfloop.pt):
-    build_knn_graph makes the identical no-self-loop kNN graph, so the two scripts can share it.
+    build_knn_graph makes the identical no-self-loop kNN graph, so the two scripts can share it
+    at a given k.
+
+    Returns standardized coordinates as part of static_feats (previously omitted): this mesh is
+    identical across all 252 sims, so raw (x, y, z) is effectively a per-node positional ID --
+    the pointwise XGBoost/LightGBM baselines in base_models.py already use it directly, so
+    withholding it from the GNN was giving up a very cheap, very informative feature.
+
+    Also precomputes and returns edge_weight (inverse-distance, see
+    simple_gnn.compute_inverse_distance_weights): a fixed geometric quantity that only depends
+    on this static mesh, not on the model or the current simulation, so it's computed once here
+    and reused for every layer/simulation/epoch rather than recomputed on every forward pass.
     """
     os.makedirs(cache_dir, exist_ok=True)
     edge_cache = os.path.join(cache_dir, f'knn_edge_index_k{k}_noselfloop.pt')
 
-    X = np.load(data_dir + 'splitv2/train_data.npy', mmap_mode='r')
+    X = np.load(data_dir + f'{split_dir}/train_data.npy', mmap_mode='r')
     coords = torch.from_numpy(np.asarray(X[:NWALLP, :3])).float()
     normals = torch.from_numpy(np.asarray(X[:NWALLP, 3:6])).float()
 
@@ -50,6 +60,13 @@ def load_static_graph(data_dir, k, cache_dir):
         print(f'  done in {time.time() - t0:.1f}s, {edge_index.shape[1]} edges', flush=True)
         torch.save(edge_index, edge_cache)
 
+    edge_weight = compute_inverse_distance_weights(coords, edge_index)
+
+    coord_mean = coords.mean(dim=0)
+    coord_std = coords.std(dim=0)
+    coord_std[coord_std == 0] = 1.0
+    coords_norm = (coords - coord_mean) / coord_std
+
     component_labels = np.load(os.path.join(data_dir, 'component_labels_unique.npy'))
     with open(os.path.join(data_dir, 'component_map.json')) as f:
         component_map = {int(k_): v for k_, v in json.load(f).items()}
@@ -58,14 +75,14 @@ def load_static_graph(data_dir, k, cache_dir):
     for cid, cname in component_map.items():
         component_onehot[torch.from_numpy(component_labels == cid), cid] = 1.0
 
-    static_feats = torch.cat([normals, component_onehot], dim=1)  # (NWALLP, 3 + n_components)
-    return coords, edge_index, static_feats, component_labels, component_map
+    static_feats = torch.cat([coords_norm, normals, component_onehot], dim=1)  # (NWALLP, 3+3+n_components)
+    return coords, edge_index, edge_weight, static_feats, component_labels, component_map
 
 
-def load_split(data_dir, split):
-    X = np.load(data_dir + f'splitv2/{split}_data.npy', mmap_mode='r')
-    y = np.load(data_dir + f'splitv2/{split}_labels.npy')
-    weights_path = data_dir + f'splitv2/{split}_weights.npy'
+def load_split(data_dir, split, split_dir='splitv2'):
+    X = np.load(data_dir + f'{split_dir}/{split}_data.npy', mmap_mode='r')
+    y = np.load(data_dir + f'{split_dir}/{split}_labels.npy')
+    weights_path = data_dir + f'{split_dir}/{split}_weights.npy'
     weights = np.load(weights_path) if os.path.exists(weights_path) else None
     n_sims = X.shape[0] // NWALLP
     conds = np.asarray(X[::NWALLP, COL_MINF:COL_PI + 1][:n_sims])
@@ -77,7 +94,7 @@ def make_node_features(static_feats, cond):
     return torch.cat([static_feats, cond_broadcast], dim=1)
 
 
-def predict_split(model, n_sims, conds, edge_index, static_feats, device, cond_mean, cond_std):
+def predict_split(model, n_sims, conds, edge_index, edge_weight, static_feats, device, cond_mean, cond_std):
     """Run the model over every simulation in a split and return flat (n_sims*NWALLP,) predictions."""
     model.eval()
     preds = np.empty(n_sims * NWALLP, dtype=np.float32)
@@ -85,20 +102,20 @@ def predict_split(model, n_sims, conds, edge_index, static_feats, device, cond_m
         for i in range(n_sims):
             cond = torch.from_numpy((conds[i] - cond_mean) / cond_std).float().to(device)
             x = make_node_features(static_feats, cond)
-            preds[i * NWALLP:(i + 1) * NWALLP] = model(x, edge_index).squeeze(-1).cpu().numpy()
+            preds[i * NWALLP:(i + 1) * NWALLP] = model(x, edge_index, edge_weight).squeeze(-1).cpu().numpy()
     model.train()
     return preds
 
 
-def sim_loss(model, edge_index, static_feats, cond, y, weight, device):
+def sim_loss(model, edge_index, edge_weight, static_feats, cond, y, weight, device):
     x = make_node_features(static_feats, cond)
     target = torch.from_numpy(np.asarray(y)).float().to(device)
-    pred = model(x, edge_index).squeeze(-1)
+    pred = model(x, edge_index, edge_weight).squeeze(-1)
     return weight * (pred - target).pow(2).mean()
 
 
-def compute_val_loss(model, val_idx, train_conds, train_weights, y_train, edge_index, static_feats,
-                      cond_mean, cond_std, device):
+def compute_val_loss(model, val_idx, train_conds, train_weights, y_train, edge_index, edge_weight,
+                      static_feats, cond_mean, cond_std, device):
     """Mean per-sim weighted MSE over the held-out validation sims -- same loss as training,
     just with dropout disabled (model.eval()) and no gradient, so it reflects the model's actual
     (non-stochastic) predictions rather than a dropout-noised training-time estimate.
@@ -109,7 +126,7 @@ def compute_val_loss(model, val_idx, train_conds, train_weights, y_train, edge_i
         for i in val_idx:
             cond = torch.from_numpy((train_conds[i] - cond_mean) / cond_std).float().to(device)
             weight = float(train_weights[i]) if train_weights is not None else 1.0
-            loss = sim_loss(model, edge_index, static_feats, cond,
+            loss = sim_loss(model, edge_index, edge_weight, static_feats, cond,
                              y_train[i * NWALLP:(i + 1) * NWALLP], weight, device)
             total += loss.item()
     model.train()
@@ -119,9 +136,11 @@ def compute_val_loss(model, val_idx, train_conds, train_weights, y_train, edge_i
 def main():
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument('--data_dir', default=DATA_DIR)
-    p.add_argument('--k', type=int, default=10, help='kNN neighbors per node.')
+    p.add_argument('--split_dir', default='splitv2',
+                   help='subfolder of data_dir holding {train,test_phase1,test_phase2}_{data,labels,weights}.npy.')
+    p.add_argument('--k', type=int, default=20, help='kNN neighbors per node.')
     p.add_argument('--hidden_dim', type=int, default=64)
-    p.add_argument('--n_layers', type=int, default=2)
+    p.add_argument('--n_layers', type=int, default=3)
     p.add_argument('--epochs', type=int, default=100)
     p.add_argument('--lr', type=float, default=1e-3)
     p.add_argument('--dropout', type=float, default=0.2,
@@ -146,15 +165,16 @@ def main():
     cache_dir = os.path.join(args.data_dir, 'cache')
 
     print('Loading static graph/features...', flush=True)
-    coords, edge_index, static_feats, component_labels, component_map = load_static_graph(
-        args.data_dir, args.k, cache_dir
+    coords, edge_index, edge_weight, static_feats, component_labels, component_map = load_static_graph(
+        args.data_dir, args.k, cache_dir, split_dir=args.split_dir
     )
     edge_index = edge_index.to(device)
+    edge_weight = edge_weight.to(device)
     static_feats = static_feats.to(device)
     comp_masks = {cname: component_labels == cid for cid, cname in component_map.items()}
 
-    y_train, train_weights, n_train, train_conds = load_split(args.data_dir, 'train')
-    y_test1, test1_weights, n_test1, test1_conds = load_split(args.data_dir, 'test_phase1')
+    y_train, train_weights, n_train, train_conds = load_split(args.data_dir, 'train', split_dir=args.split_dir)
+    y_test1, test1_weights, n_test1, test1_conds = load_split(args.data_dir, 'test_phase1', split_dir=args.split_dir)
     print(f'n_train={n_train}  n_test1={n_test1}', flush=True)
 
     # standardize (Minf, AoA, Pi) using train statistics, same convention as train_offset_gnn.py
@@ -191,14 +211,14 @@ def main():
             sim_weight = float(train_weights[i]) if train_weights is not None else 1.0
 
             optimizer.zero_grad()
-            loss = sim_loss(model, edge_index, static_feats, cond,
+            loss = sim_loss(model, edge_index, edge_weight, static_feats, cond,
                              y_train[i * NWALLP:(i + 1) * NWALLP], sim_weight, device)
             loss.backward()
             optimizer.step()
             epoch_loss += loss.item()
 
         val_loss = compute_val_loss(model, val_idx, train_conds, train_weights, y_train,
-                                     edge_index, static_feats, cond_mean, cond_std, device)
+                                     edge_index, edge_weight, static_feats, cond_mean, cond_std, device)
 
         if val_loss < best_val - 1e-6:
             best_val = val_loss
@@ -213,7 +233,7 @@ def main():
               f'({time.time() - t0:.1f}s)', flush=True)
 
         if (epoch + 1) % args.eval_every == 0 or epoch == args.epochs - 1:
-            preds1 = predict_split(model, n_test1, test1_conds, edge_index, static_feats,
+            preds1 = predict_split(model, n_test1, test1_conds, edge_index, edge_weight, static_feats,
                                     device, cond_mean, cond_std)
             w1 = test1_weights if test1_weights is not None else np.ones(n_test1)
             res = evaluate(np.asarray(y_test1), preds1, w1, NWALLP, comp_masks, sigma_ref)
@@ -228,7 +248,7 @@ def main():
     if best_state is not None:
         model.load_state_dict(best_state)
 
-    preds1 = predict_split(model, n_test1, test1_conds, edge_index, static_feats,
+    preds1 = predict_split(model, n_test1, test1_conds, edge_index, edge_weight, static_feats,
                             device, cond_mean, cond_std)
     w1 = test1_weights if test1_weights is not None else np.ones(n_test1)
     res = evaluate(np.asarray(y_test1), preds1, w1, NWALLP, comp_masks, sigma_ref)

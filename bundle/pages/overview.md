@@ -1,8 +1,13 @@
 # ONERA 468 CRM Wall Distribution Regression Challenge
 
-> 💡 **New here?** The [starting kit](https://github.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/tree/main/bundle/starting_kit)
+> **In one sentence:** given the flight conditions of an unseen simulation, Mach
+> number (Minf), angle of attack (AoA), and stagnation pressure (Pi), predict the
+> volumetric density ρ at each of the 260,774 points on the aircraft surface.
+
+> 💡 **New here?** The [starting kit](https://www.codabench.org/datasets/download/209115f6-4e98-4aad-8327-1a712560c384/)
 > walks through loading the data, training two baseline models, evaluating them with
 > the challenge's own metrics, and preparing a submission.
+
 
 ## Introduction to Aircraft Physics
 Since the Wright brothers' first powered flight in 1903, understanding how air flows around a wing has been the central problem of aeronautics.
@@ -73,10 +78,10 @@ conditions vary from one simulation to another, the observations don't include t
 Each simulation is characterized by three flow condition parameters:
 
 - **Mach number (Minf):** the ratio of the flow speed to the speed of sound. The dataset spans
-  Mach numbers from approximately 0.3 to 0.96, covering a wide range of qualitatively different
+  Mach numbers from approximately 0.3 to 0.96, covering two qualitatively different
   aerodynamic regimes:
-  - **Subsonic (Minf < 0.3):** air behaves nearly incompressibly and the flow is relatively smooth.
-  - **Transonic (0.3 < Minf < 0.96):** compressibility effects become significant as the flow
+  - **Subsonic (Minf < 0.80):** air behaves nearly incompressibly and the flow is relatively smooth.
+  - **Transonic (0.80 <= Minf < 0.96):** compressibility effects become significant as the flow
     speed approaches the speed of sound, causing the local air density to vary markedly from point
     to point. Both subsonic and supersonic flow regions can coexist around the aircraft, often
     accompanied by shock waves[^shock] that produce abrupt pressure jumps on the surface.

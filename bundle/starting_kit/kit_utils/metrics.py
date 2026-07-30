@@ -1,11 +1,9 @@
 """
-Metrics used by the starting kit -- exact same formulas as
-bundle/scoring_program/scoring.py, so the numbers you see here during
-cross-validation are directly comparable to what the leaderboard will show.
+Metrics used by the starting kit -- same formulas as the official scoring
+program, so these cross-validation numbers are directly comparable to the
+leaderboard.
 
-Primary metric: KLw (mean_KL) -- lower is better, see mlp_klw.py for an
-explanation of what it measures and why we train the MLP baseline to
-minimize it directly.
+Primary metric: KLw (mean_KL), lower is better.
 """
 
 import numpy as np
@@ -50,9 +48,8 @@ def compute_wrMAE(y, yhat, confidence_per_case, nwallp=NWALLP):
 
 
 def _residual_kl(y_true_case, y_pred_case, comp_masks, sigma_ref, n_bins=KL_N_BINS):
-    """ KL(p_eps || N(0, sigma_ref)) of one condition's residuals, pooled
-    across wall points with each point weighted by its component weight.
-    See mlp_klw.py for the plain-English explanation of what this means. """
+    """ KL divergence between one condition's residual distribution and
+    N(0, sigma_ref), pooled across wall points weighted by component. """
     eps = y_pred_case - y_true_case
     sigma_y = float(y_true_case.std()) + EPS
 

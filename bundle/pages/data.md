@@ -76,24 +76,45 @@ Depending on your model architecture, the input matrix X can be used in two ways
   flow conditions) and the model predicts the density at that individual point. The model sees
   260,774 × n_train independent input-output pairs during training.
 
-## Files
+## Starting kit & data
 
-From the **Files** tab, one can download:
-
-- `input_data.zip`
+When you run the starting kit, the data files will be automatically downloaded, and the folder organization is as the following:
+- **`input_data/`**, containing:
   - `train_data.npy`: train input matrix, shape [np * n_train, 9]
   - `train_labels.npy`: train output matrix, shape [np * n_train]
   - `test_data.npy`: test input matrix, shape [np * n_test, 9]
   - `component_labels_unique.npy`: component id per wall point, shape [np]
   - `component_map.json`: maps component id to name (wing, pylon, fuselage, nacelle)
-- `submission_example.zip`: example of a valid submission file for Codabench
-  - `submission_example/`
-    - `python_packages/`
-    - `model.py`
-    - `conda_tuto.txt`: tutorial for installing extra packages using conda
-    - `uv_tuto.txt`: tutorial for installing extra packages using uv
+
+> **The component files.**
+> tell you which aircraft part each wall point belongs to, for example, the point (x1, x_2, x_3) belongs to the wing.
+> `component_labels_unique.npy`  is of shape (260774), it maps each index to an id between 0 and 3
+> and `component_map.json` maps the id to the name of the component (id -> name: wing, pylon, fuselage, nacelle) together
+
+
+
 
 All `.npy` files are stored as **float32 (single precision)** numpy arrays.
+
+
+### The `starting_kit/` folder
+
+- `starting_kit.ipynb`: main notebook: download and load data, train, evaluate, plot, submit.
+- `kit_utils/`: code imported by the notebook.
+  - `data.py`: data loading and cross-validation splitting.
+  - `metrics.py`: R2, wrMAE, KLw, same formulas as the scoring program.
+  - `lgbm_baseline.py`: pointwise LightGBM baseline.
+  - `pca_plots.py`: visual diagnostics.
+- `baselines/`: heavier reference baselines, run on their own, not from the notebook.
+  - `mlp_klw.py`: production-scale full-field MLP with a KL-aware loss.
+- `submission/model.py`: the baseline written out by the notebook, ready to zip and submit.
+- `using_extra_packages/`: how to bundle extra Python packages in a submission.
+  - ...
+  - `submission_example/`
+    - ...
+    - `conda_tuto.txt`: tutorial for installing extra packages using conda
+    - `uv_tuto.txt`: tutorial for installing extra packages using uv
+- `README.md`: quick reference for all of the above.
 
 > The starting kit is also browsable directly on GitHub (no download needed to look
 > around first): [bundle/starting_kit](https://github.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/tree/main/bundle/starting_kit).

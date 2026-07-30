@@ -2,8 +2,9 @@ This submission file shows how to include extra Python packages in your submissi
 Here we use LightGBM, which is not available by default in the Codabench environment.
 
 To prepare your submission:
-1) Create a fresh conda environment from the environment.yml file placed at the root of the starting_kit:
-   conda env create -f environment.yml
+1) Create a fresh conda environment from using_extra_packages/environement.yml
+   (mirrors the packages already installed in the Codabench execution image):
+   conda env create -f ../environement.yml
 2) Activate the environment:
    conda activate codabench-env
 3) Create a folder named `python_packages` in the same directory as this file
