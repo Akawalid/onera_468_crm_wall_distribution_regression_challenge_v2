@@ -33,7 +33,15 @@ def residual_kl_weighted(y_true, y_pred, comp_masks, comp_weights, sigma_ref, n_
     for cname, mask in comp_masks.items():
         sample_weight[mask] = comp_weights.get(cname, 0.0)
 
-    lim = 5.0 * sigma_ref
+    # Histogram range must track this *simulation's* own residual/target scale (matches
+    # scoring_program/scoring.py's _residual_kl), not sigma_ref -- sigma_ref is only the
+    # (global, ~1% of mean density) width of the reference Q, and is far too narrow to bound
+    # the histogram: with lim=5*sigma_ref, most real residuals from any non-converged model
+    # fall outside [-lim, lim], get silently dropped by np.histogram, and the KLw this function
+    # returns ends up computed over only the best-behaved residuals -- i.e. deceptively low
+    # regardless of true model quality.
+    sigma_y = float(y_true.std()) + 1e-6
+    lim = 5.0 * sigma_y
     bins = np.linspace(-lim, lim, n_bins + 1)
     dx = bins[1] - bins[0]
 
