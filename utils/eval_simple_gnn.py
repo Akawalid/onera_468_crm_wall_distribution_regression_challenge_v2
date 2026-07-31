@@ -23,6 +23,7 @@ from utils.train_simple_gnn import NWALLP, load_split, load_static_graph, predic
 def main():
     p = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     p.add_argument('--data_dir', default='data/')
+    p.add_argument('--split_dir', default='splitv2', help='must match the split the checkpoint was trained on.')
     p.add_argument('--checkpoint', default='utils/simple_gnn_model.pt')
     p.add_argument('--k', type=int, default=20, help='must match the k the checkpoint was trained with.')
     p.add_argument('--hidden_dim', type=int, default=64)
@@ -36,14 +37,14 @@ def main():
 
     print('Loading static graph/features...', flush=True)
     coords, edge_index, edge_weight, static_feats, component_labels, component_map = load_static_graph(
-        args.data_dir, args.k, cache_dir
+        args.data_dir, args.k, cache_dir, split_dir=args.split_dir
     )
     edge_index = edge_index.to(device)
     edge_weight = edge_weight.to(device)
     static_feats = static_feats.to(device)
     comp_masks = {cname: component_labels == cid for cid, cname in component_map.items()}
 
-    y_train, _, n_train, train_conds = load_split(args.data_dir, 'train')
+    y_train, _, n_train, train_conds = load_split(args.data_dir, 'train', split_dir=args.split_dir)
     cond_mean = train_conds.mean(axis=0)
     cond_std = train_conds.std(axis=0)
     cond_std[cond_std == 0] = 1.0
@@ -56,7 +57,7 @@ def main():
     print(f'Loaded checkpoint: {args.checkpoint}', flush=True)
 
     for split in args.splits:
-        y, weights, n_sims, conds = load_split(args.data_dir, split)
+        y, weights, n_sims, conds = load_split(args.data_dir, split, split_dir=args.split_dir)
         preds = predict_split(model, n_sims, conds, edge_index, edge_weight, static_feats,
                                device, cond_mean, cond_std)
         w = weights if weights is not None else np.ones(n_sims)
