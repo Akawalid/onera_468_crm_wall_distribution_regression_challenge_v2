@@ -104,3 +104,9 @@ epoch 84/100  loss=0.00228  val_loss=0.00237  best_val=0.00148 (epoch 69)  (43.1
 early stopping at epoch 84 (best epoch 69, val_loss=0.00148)
 best model (epoch 69)  test_phase1  R2=0.9430  worst_rMAE=0.0456  mean_rMAE=0.0335  mean_KLw=4.7308  max_KLw=7.1187
 Saved: utils/simple_gnn_splitv3_model.pt
+
+mlp: phase 1 
+  meanklw=1.1 vs 4.73
+
+  phase2: 
+  meanklw=4... vs 7...

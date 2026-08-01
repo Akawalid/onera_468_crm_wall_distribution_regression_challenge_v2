@@ -1,3 +1,91 @@
 /home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/train_simple_gnn.py:51: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
   coords = torch.from_numpy(np.asarray(X[:NWALLP, :3])).float()
 [I 2026-07-31 00:58:08,814] A new study created in RDB with name: simple_gnn_splitv3
+[I 2026-07-31 01:33:00,274] Trial 0 finished with value: 0.0013504888129318715 and parameters: {'hidden_dim': 128, 'n_layers': 2, 'lr': 0.0019275421002402779, 'dropout': 0.1016918316230554, 'weight_decay': 2.316222197157632e-06}. Best is trial 0 with value: 0.0013504888129318715.
+[I 2026-07-31 02:16:53,974] Trial 1 finished with value: 0.002848564719897695 and parameters: {'hidden_dim': 32, 'n_layers': 4, 'lr': 0.00044033642221611027, 'dropout': 0.2774025696176473, 'weight_decay': 0.000660287354929861}. Best is trial 0 with value: 0.0013504888129318715.
+[I 2026-07-31 03:48:36,811] Trial 2 finished with value: 0.002236152424302418 and parameters: {'hidden_dim': 128, 'n_layers': 4, 'lr': 0.0003162844735598685, 'dropout': 0.15974920112041896, 'weight_decay': 0.0007110668539863059}. Best is trial 0 with value: 0.0013504888129318715.
+[I 2026-07-31 04:53:42,078] Trial 3 finished with value: 0.001550730858980387 and parameters: {'hidden_dim': 256, 'n_layers': 2, 'lr': 0.0008455023464151496, 'dropout': 0.07214187491093549, 'weight_decay': 9.679513572671483e-06}. Best is trial 0 with value: 0.0013504888129318715.
+[I 2026-07-31 05:50:40,519] Trial 4 finished with value: 0.0028850783437519567 and parameters: {'hidden_dim': 128, 'n_layers': 3, 'lr': 0.0007749169464769044, 'dropout': 0.21305404990991922, 'weight_decay': 0.0005623744026223275}. Best is trial 0 with value: 0.0013504888129318715.
+[I 2026-07-31 05:57:38,768] Trial 5 pruned. 
+[I 2026-07-31 07:15:40,645] Trial 6 finished with value: 0.0016416095249951468 and parameters: {'hidden_dim': 64, 'n_layers': 5, 'lr': 0.004662340152178383, 'dropout': 0.18060872317997873, 'weight_decay': 2.5909046267452375e-06}. Best is trial 0 with value: 0.0013504888129318715.
+[I 2026-07-31 07:59:00,955] Trial 7 finished with value: 0.0019609552909969352 and parameters: {'hidden_dim': 64, 'n_layers': 4, 'lr': 0.0034873814235438175, 'dropout': 0.05425738152324888, 'weight_decay': 6.704700844762462e-06}. Best is trial 0 with value: 0.0013504888129318715.
+[I 2026-07-31 08:33:51,984] Trial 8 finished with value: 0.0013314902689671726 and parameters: {'hidden_dim': 128, 'n_layers': 2, 'lr': 0.0013040840102451494, 'dropout': 0.0002022983785976984, 'weight_decay': 1.15008426882181e-06}. Best is trial 8 with value: 0.0013314902689671726.
+[W 2026-07-31 08:33:52,781] Trial 9 failed with parameters: {'hidden_dim': 128, 'n_layers': 5, 'lr': 0.006521947854536707, 'dropout': 0.23654991620082244, 'weight_decay': 3.710431256337179e-06} because of the following error: OutOfMemoryError('CUDA out of memory. Tried to allocate 2.49 GiB. GPU 0 has a total capacity of 15.89 GiB of which 2.36 GiB is free. Including non-PyTorch memory, this process has 13.52 GiB memory in use. Of the allocated memory 12.35 GiB is allocated by PyTorch, and 900.59 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)').
+Traceback (most recent call last):
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/tune_simple_gnn.py", line 136, in objective
+    return run_trial(trial, args, static, train_data, device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/tune_simple_gnn.py", line 76, in run_trial
+    loss = sim_loss(model, edge_index, edge_weight, static_feats, cond,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/train_simple_gnn.py", line 113, in sim_loss
+    pred = model(x, edge_index, edge_weight).squeeze(-1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/simple_gnn.py", line 92, in forward
+    out = self.dropout(self.act(norm(conv(h, edge_index, edge_weight))))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/simple_gnn.py", line 56, in forward
+    weighted.index_add_(0, dst, edge_weight.unsqueeze(-1) * x[src])
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.49 GiB. GPU 0 has a total capacity of 15.89 GiB of which 2.36 GiB is free. Including non-PyTorch memory, this process has 13.52 GiB memory in use. Of the allocated memory 12.35 GiB is allocated by PyTorch, and 900.59 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+[W 2026-07-31 08:33:52,800] Trial 9 failed with value None.
+Traceback (most recent call last):
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/tune_simple_gnn.py", line 153, in <module>
+    main()
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/tune_simple_gnn.py", line 141, in main
+    study.optimize(objective, n_trials=args.n_trials, timeout=args.timeout)
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/optuna/study/study.py", line 516, in optimize
+    _optimize(
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/optuna/study/_optimize.py", line 68, in _optimize
+    _optimize_sequential(
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/optuna/study/_optimize.py", line 165, in _optimize_sequential
+    frozen_trial_id = _run_trial(study, func, catch)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/optuna/study/_optimize.py", line 263, in _run_trial
+    raise func_err
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/tune_simple_gnn.py", line 136, in objective
+    return run_trial(trial, args, static, train_data, device)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/tune_simple_gnn.py", line 76, in run_trial
+    loss = sim_loss(model, edge_index, edge_weight, static_feats, cond,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/train_simple_gnn.py", line 113, in sim_loss
+    pred = model(x, edge_index, edge_weight).squeeze(-1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/simple_gnn.py", line 92, in forward
+    out = self.dropout(self.act(norm(conv(h, edge_index, edge_weight))))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/simple_gnn.py", line 56, in forward
+    weighted.index_add_(0, dst, edge_weight.unsqueeze(-1) * x[src])
+                                ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.49 GiB. GPU 0 has a total capacity of 15.89 GiB of which 2.36 GiB is free. Including non-PyTorch memory, this process has 13.52 GiB memory in use. Of the allocated memory 12.35 GiB is allocated by PyTorch, and 900.59 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
