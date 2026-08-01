@@ -1,0 +1,34 @@
+Loading static graph/features (shared across all trials, k fixed)...
+n_train=324
+trial 51: hidden_dim=64 n_layers=5 lr=6.73e-03 dropout=0.099 weight_decay=5.27e-06
+  trial 51  epoch 0  val_loss=0.01386  best=0.01386  bad_epochs=0
+  trial 51  epoch 1  val_loss=0.01092  best=0.01092  bad_epochs=0
+  trial 51  epoch 2  val_loss=0.00930  best=0.00930  bad_epochs=0
+  trial 51  epoch 3  val_loss=0.00779  best=0.00779  bad_epochs=0
+  trial 51  epoch 4  val_loss=0.00748  best=0.00748  bad_epochs=0
+  trial 51  epoch 5  val_loss=0.00565  best=0.00565  bad_epochs=0
+  trial 51  epoch 6  val_loss=0.01077  best=0.00565  bad_epochs=1
+  trial 51  epoch 7  val_loss=0.00505  best=0.00505  bad_epochs=0
+  trial 51  epoch 8  val_loss=0.00870  best=0.00505  bad_epochs=1
+  trial 51  epoch 9  val_loss=0.00438  best=0.00438  bad_epochs=0
+  trial 51  epoch 10  val_loss=0.00516  best=0.00438  bad_epochs=1
+  trial 51  epoch 11  val_loss=0.00368  best=0.00368  bad_epochs=0
+  trial 51  epoch 12  val_loss=0.00641  best=0.00368  bad_epochs=1
+  trial 51  epoch 13  val_loss=0.00370  best=0.00368  bad_epochs=2
+  trial 51  epoch 14  val_loss=0.00411  best=0.00368  bad_epochs=3
+  trial 51  epoch 15  val_loss=0.00372  best=0.00368  bad_epochs=4
+  trial 51  epoch 16  val_loss=0.00371  best=0.00368  bad_epochs=5
+  trial 51  epoch 17  val_loss=0.00737  best=0.00368  bad_epochs=6
+  trial 51  epoch 18  val_loss=0.00307  best=0.00307  bad_epochs=0
+  trial 51  epoch 19  val_loss=0.00280  best=0.00280  bad_epochs=0
+  trial 51  epoch 20  val_loss=0.00423  best=0.00280  bad_epochs=1
+  trial 51  epoch 21  val_loss=0.00270  best=0.00270  bad_epochs=0
+  trial 51  epoch 22  val_loss=0.00413  best=0.00270  bad_epochs=1
+  trial 51  epoch 23  val_loss=0.00310  best=0.00270  bad_epochs=2
+  trial 51  epoch 24  val_loss=0.00355  best=0.00270  bad_epochs=3
+  trial 51  epoch 25  val_loss=0.00520  best=0.00270  bad_epochs=4
+  trial 51  epoch 26  val_loss=0.00310  best=0.00270  bad_epochs=5
+  trial 51  epoch 27  val_loss=0.00317  best=0.00270  bad_epochs=6
+  trial 51  epoch 28  val_loss=0.00633  best=0.00270  bad_epochs=7
+  trial 51  epoch 29  val_loss=0.00258  best=0.00258  bad_epochs=0
+  trial 51  epoch 30  val_loss=0.00366  best=0.00258  bad_epochs=1

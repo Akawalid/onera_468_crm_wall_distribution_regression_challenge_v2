@@ -1,0 +1,3 @@
+device: cuda
+Loading data...
+n_train=324  n_test1=72  n_test2=72
