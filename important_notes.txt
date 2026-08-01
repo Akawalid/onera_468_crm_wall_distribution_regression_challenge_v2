@@ -188,3 +188,29 @@ rather than treating the data as generic tabular/image input.
 - don't forget to remove the comments dedicated to developpers in the code in the starting kit: done but to check
 - don't forget to check that epsilon story with the angleof attack and the simulation weights
 - check the docker image it can be a disaster, no scipy!
+
+
+ - Talk about the new train/test split and about the codabench challenge and the updates wrt to the last feedback
+ - Tomorrow i'll talk about the bug I found in the mlp
+ - Talk about the GNN
+      By raw parameter count: the MLP is dramatically bigger. I just measured it directly:
+
+        ┌──────────────────────────────────┬─────────────┐
+        │                                  │   Params    │
+        ├──────────────────────────────────┼─────────────┤
+        │ GlobalMLP (train_mlp_with_kl)    │ 133,942,182 │
+        ├──────────────────────────────────┼─────────────┤
+        │ SimpleGNN (simple_gnn, defaults) │ 18,881      │
+        └──────────────────────────────────┴─────────────┘
+
+        dataset then I use the knn to forme a graph (eah node wil be associated to 10 of it's neighbours)
+        Conv layer1 (which is just a linear layer) dropout layer, LayerNorm
+        Conv layer2 (which is also a simple linear layer)
+        Linear layer (which a decoder from the last hideen layer to rho which is a scalar)
+        Resudual connections between all the stages to avoid vanishing gradiants, we also have dropout to avoid overfitting 
+        since the gnn's are very complexe models for ou dataset
+
+
+ - Talk about the boosting method I tried but didn't work (Neurips challenge says that geometry aware models are the 
+ common pojnt between the winners)
+ - Talk about fine tunning with optuna, deephyper, local search 

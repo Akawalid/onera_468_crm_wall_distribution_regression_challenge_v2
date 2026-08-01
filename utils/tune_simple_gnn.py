@@ -28,6 +28,7 @@ budget and periodic test_phase1 evaluation train_simple_gnn.py already does).
 """
 
 import argparse
+import gc
 import os
 import sys
 
@@ -58,41 +59,52 @@ def run_trial(trial, args, static, train_data, device):
     model = SimpleGNN(in_dim, hidden_dim, out_dim=1, n_layers=n_layers, dropout=dropout).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
 
-    # Same VAL_FRAC convention as train_simple_gnn.py/train_mlp_with_kl.py: held out from TRAIN
-    # only, never test_phase1/2, and reseeded per trial off args.seed so every trial sees the
-    # same split (isolates the effect of the hyperparameters, not the split).
-    n_val = max(1, int(round(args.val_frac * n_train)))
-    rng = np.random.default_rng(args.seed)
-    perm0 = rng.permutation(n_train)
-    val_idx, tr_idx = perm0[:n_val], perm0[n_val:]
+    # Wrapped in try/finally: PyTorch's CUDA caching allocator doesn't return freed memory to the
+    # OS between trials, and consecutive trials build differently-shaped models (hidden_dim/
+    # n_layers both vary), which fragments that cached pool over a long study -- observed this
+    # crash the whole run with a CUDA OOM around trial 9. Explicitly deleting the model/optimizer
+    # and calling empty_cache() here (every exit path: normal return, pruned, or OOM) keeps each
+    # trial's memory from leaking into the next one instead of just hoping GC gets to it in time.
+    try:
+        # Same VAL_FRAC convention as train_simple_gnn.py/train_mlp_with_kl.py: held out from
+        # TRAIN only, never test_phase1/2, and reseeded per trial off args.seed so every trial
+        # sees the same split (isolates the effect of the hyperparameters, not the split).
+        n_val = max(1, int(round(args.val_frac * n_train)))
+        rng = np.random.default_rng(args.seed)
+        perm0 = rng.permutation(n_train)
+        val_idx, tr_idx = perm0[:n_val], perm0[n_val:]
 
-    best_val, bad_epochs = float('inf'), 0
-    for epoch in range(args.epochs):
-        model.train()
-        for i in rng.permutation(tr_idx):
-            cond = torch.from_numpy((train_conds[i] - cond_mean) / cond_std).float().to(device)
-            weight = float(train_weights[i]) if train_weights is not None else 1.0
-            optimizer.zero_grad()
-            loss = sim_loss(model, edge_index, edge_weight, static_feats, cond,
-                             y_train[i * NWALLP:(i + 1) * NWALLP], weight, device)
-            loss.backward()
-            optimizer.step()
+        best_val, bad_epochs = float('inf'), 0
+        for epoch in range(args.epochs):
+            model.train()
+            for i in rng.permutation(tr_idx):
+                cond = torch.from_numpy((train_conds[i] - cond_mean) / cond_std).float().to(device)
+                weight = float(train_weights[i]) if train_weights is not None else 1.0
+                optimizer.zero_grad()
+                loss = sim_loss(model, edge_index, edge_weight, static_feats, cond,
+                                 y_train[i * NWALLP:(i + 1) * NWALLP], weight, device)
+                loss.backward()
+                optimizer.step()
 
-        val_loss = compute_val_loss(model, val_idx, train_conds, train_weights, y_train,
-                                     edge_index, edge_weight, static_feats, cond_mean, cond_std, device)
+            val_loss = compute_val_loss(model, val_idx, train_conds, train_weights, y_train,
+                                         edge_index, edge_weight, static_feats, cond_mean, cond_std, device)
 
-        if val_loss < best_val - 1e-6:
-            best_val, bad_epochs = val_loss, 0
-        else:
-            bad_epochs += 1
+            if val_loss < best_val - 1e-6:
+                best_val, bad_epochs = val_loss, 0
+            else:
+                bad_epochs += 1
 
-        trial.report(val_loss, epoch)
-        if trial.should_prune():
-            raise optuna.TrialPruned()
-        if bad_epochs >= args.patience:
-            break
+            trial.report(val_loss, epoch)
+            if trial.should_prune():
+                raise optuna.TrialPruned()
+            if bad_epochs >= args.patience:
+                break
 
-    return best_val
+        return best_val
+    finally:
+        del model, optimizer
+        gc.collect()
+        torch.cuda.empty_cache()
 
 
 def main():
@@ -138,7 +150,12 @@ def main():
     pruner = optuna.pruners.MedianPruner(n_startup_trials=5, n_warmup_steps=10)
     study = optuna.create_study(direction='minimize', study_name=args.study_name,
                                  storage=args.storage, load_if_exists=True, pruner=pruner)
-    study.optimize(objective, n_trials=args.n_trials, timeout=args.timeout)
+    # catch=(...,): an individual trial hitting CUDA OOM (run_trial's finally already cleans up
+    # the memory) gets marked FAILED and the study moves on to the next trial, instead of an
+    # uncaught OutOfMemoryError propagating out of study.optimize() and killing the whole job --
+    # that's what happened at trial 9 previously, losing every trial after it.
+    study.optimize(objective, n_trials=args.n_trials, timeout=args.timeout,
+                    catch=(torch.OutOfMemoryError,))
 
     print('\nBest trial:', flush=True)
     print(f'  value (val loss): {study.best_trial.value:.5f}', flush=True)
