@@ -61,22 +61,8 @@ def run_trial(trial, args, static, train_data, device):
     dropout      = trial.suggest_float('dropout', 0.0, 0.5)
     weight_decay = trial.suggest_float('weight_decay', 1e-6, 1e-3, log=True)
 
-    # Belt-and-suspenders safety net now that the sbatch script pins --nodelist to >=24 GB nodes --
-    # this is just a fallback in case a trial ever runs outside that pinning (e.g. run manually on
-    # an arbitrary node). Rough and deliberately conservative, not a precise predictor:
-    # n_edges*hidden_dim*4 bytes is the size of SimpleGraphConv's single biggest per-layer
-    # intermediate; requiring 3x that per layer (as free memory, on top of whatever's already
-    # resident) is a margin, not a real accounting of everything torch retains for backward -- it
-    # exists to catch clearly-doomed trials before they burn several minutes reaching the same OOM
-    # anyway, not to guarantee success.
-    if device.type == 'cuda':
-        n_edges = edge_index.shape[1]
-        est_bytes_needed = 3 * n_layers * n_edges * hidden_dim * 4
-        free_bytes, _ = torch.cuda.mem_get_info()
-        if est_bytes_needed > free_bytes:
-            print(f'  [skip] hidden_dim={hidden_dim} n_layers={n_layers}: '
-                  f'need ~{est_bytes_needed / 1e9:.1f} GB, only {free_bytes / 1e9:.1f} GB free -- pruning early', flush=True)
-            raise optuna.TrialPruned()
+    print(f'trial {trial.number}: hidden_dim={hidden_dim} n_layers={n_layers} lr={lr:.2e} '
+          f'dropout={dropout:.3f} weight_decay={weight_decay:.2e}', flush=True)
 
     torch.manual_seed(args.seed)
     in_dim = static_feats.shape[1] + 3  # + (Minf, AoA, Pi)
@@ -118,8 +104,12 @@ def run_trial(trial, args, static, train_data, device):
             else:
                 bad_epochs += 1
 
+            print(f'  trial {trial.number}  epoch {epoch}  val_loss={val_loss:.5f}  '
+                  f'best={best_val:.5f}  bad_epochs={bad_epochs}', flush=True)
+
             trial.report(val_loss, epoch)
             if trial.should_prune():
+                print(f'  trial {trial.number}: pruned at epoch {epoch} (val_loss={val_loss:.5f})', flush=True)
                 raise optuna.TrialPruned()
             if bad_epochs >= args.patience:
                 break
@@ -171,7 +161,15 @@ def main():
     def objective(trial):
         return run_trial(trial, args, static, train_data, device)
 
-    pruner = optuna.pruners.MedianPruner(n_startup_trials=5, n_warmup_steps=10)
+    # MedianPruner (kills anything below the running median) turned out too aggressive once a
+    # strong trial was found early: it cut ~96% of trials in one run since most fresh random draws
+    # legitimately score worse than an already-good best. PercentilePruner's `percentile` is the
+    # fraction KEPT, not pruned (percentile=75.0 keeps the top 75%, prunes only the bottom
+    # quartile -- double-checked against optuna.pruners.PercentilePruner's own docstring, it's
+    # easy to get backwards). n_warmup_steps=15 (was 10) also gives a trial a bit more runway
+    # before it's eligible to be pruned at all, catching slower starters that would've turned out
+    # fine.
+    pruner = optuna.pruners.PercentilePruner(percentile=75.0, n_startup_trials=5, n_warmup_steps=15)
     study = optuna.create_study(direction='minimize', study_name=args.study_name,
                                  storage=args.storage, load_if_exists=True, pruner=pruner)
     # catch=(...,): an individual trial hitting CUDA OOM (run_trial's finally already cleans up
