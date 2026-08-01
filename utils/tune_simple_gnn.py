@@ -48,11 +48,36 @@ def run_trial(trial, args, static, train_data, device):
     edge_index, edge_weight, static_feats, cond_mean, cond_std = static
     y_train, train_weights, n_train, train_conds = train_data
 
-    hidden_dim   = trial.suggest_categorical('hidden_dim', [32, 64, 128, 256])
-    n_layers     = trial.suggest_int('n_layers', 2, 5)
+    # Upper bounds capped at 128 / 4 layers: every OOM observed in practice (on both a 15.89 GiB
+    # and a 10.90 GiB GPU -- margaret's gpu-best partition hands out different cards) was
+    # n_layers=5, several also hidden_dim=256. SimpleGraphConv materializes an
+    # (n_edges, hidden_dim) intermediate per layer -- at k=20 that's ~5.2M edges, so hidden_dim=256
+    # alone is a ~5 GiB tensor that autograd must keep alive for backward, and n_layers=5 needs
+    # several of those simultaneously. Given SimpleGNN only has ~19K-400K params total across this
+    # whole range anyway (see the MLP-vs-GNN parameter count comparison from earlier), there's
+    # little reason to think the excluded corner is where the useful models live.
+    hidden_dim   = trial.suggest_categorical('hidden_dim', [32, 64, 128])
+    n_layers     = trial.suggest_int('n_layers', 2, 4)
     lr           = trial.suggest_float('lr', 1e-4, 1e-2, log=True)
     dropout      = trial.suggest_float('dropout', 0.0, 0.5)
     weight_decay = trial.suggest_float('weight_decay', 1e-6, 1e-3, log=True)
+
+    # Rough, deliberately conservative pre-flight check, not a precise predictor: margaret's
+    # gpu-best partition hands out cards with very different memory (15.89 GiB vs 10.90 GiB
+    # observed so far), so whatever's free right now on whichever card this trial landed on is
+    # the only thing that actually matters. n_edges*hidden_dim*4 bytes is the size of
+    # SimpleGraphConv's single biggest per-layer intermediate; requiring 3x that per layer (as
+    # free memory, on top of whatever's already resident) is a margin, not a real accounting of
+    # everything torch retains for backward -- it exists to catch clearly-doomed trials before
+    # they burn several minutes reaching the same OOM anyway, not to guarantee success.
+    if device.type == 'cuda':
+        n_edges = edge_index.shape[1]
+        est_bytes_needed = 3 * n_layers * n_edges * hidden_dim * 4
+        free_bytes, _ = torch.cuda.mem_get_info()
+        if est_bytes_needed > free_bytes:
+            print(f'  [skip] hidden_dim={hidden_dim} n_layers={n_layers}: '
+                  f'need ~{est_bytes_needed / 1e9:.1f} GB, only {free_bytes / 1e9:.1f} GB free -- pruning early', flush=True)
+            raise optuna.TrialPruned()
 
     torch.manual_seed(args.seed)
     in_dim = static_feats.shape[1] + 3  # + (Minf, AoA, Pi)

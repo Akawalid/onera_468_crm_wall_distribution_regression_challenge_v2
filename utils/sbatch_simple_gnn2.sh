@@ -10,6 +10,11 @@
 #SBATCH --job-name=simple_gnn2_splitv3
 #SBATCH --output=logs/%j.out
 #SBATCH --error=logs/%j.err
+# gpu-best is a mixed fleet (per https://clusters-saclay.gitlabpages.inria.fr/clusters-docs/docs/margaret/hardware/),
+# some cards as small as 11 GB (2080Ti) -- riskier here than sbatch_simple_gnn.sh since the KLw
+# soft-histogram loss (O(n_points*n_bins)) is heavier than plain MSE. Pinned to the >=24 GB nodes
+# (RTX6000/V100/A40/A100/H100), same as the other two GNN sbatch scripts.
+#SBATCH --nodelist=margpu001,margpu002,margpu003,margpu004,margpu005,margpu006,margpu007,margpu008,margpu009,margpu010,margpu011,margpu012,margpu013,margpu014,margpu015,margpu016
 
 source /home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/bin/activate
 

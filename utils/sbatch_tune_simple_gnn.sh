@@ -10,6 +10,13 @@
 #SBATCH --job-name=tune_simple_gnn
 #SBATCH --output=logs/%j.out
 #SBATCH --error=logs/%j.err
+# gpu-best is a mixed fleet (per https://clusters-saclay.gitlabpages.inria.fr/clusters-docs/docs/margaret/hardware/):
+# 2080Ti/1080Ti/2080/P100 nodes have 11-16 GB, which is what caused the OOMs (a 10.90 GiB card
+# hit them even after the search-space/pre-flight fixes below). Pinned to the >=24 GB nodes
+# (RTX6000/V100/A40/A100/H100) instead of leaving the card to chance -- no gres/constraint tag
+# for GPU model is documented for this cluster, so --nodelist by hostname is the only reliable
+# lever here.
+#SBATCH --nodelist=margpu001,margpu002,margpu003,margpu004,margpu005,margpu006,margpu007,margpu008,margpu009,margpu010,margpu011,margpu012,margpu013,margpu014,margpu015,margpu016
 
 source /home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/bin/activate
 
