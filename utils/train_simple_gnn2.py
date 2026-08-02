@@ -20,7 +20,8 @@ does per batch element, so it should fit the same GPU allocation, just slower pe
 train_simple_gnn.py's MSE loss.
 
 Usage:
-    python utils/train_simple_gnn2.py --split_dir splitv3 --out_prefix utils/simple_gnn2
+    python utils/train_simple_gnn2.py --split_dir splitv3 \
+        --out_prefix /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/simple_gnn2
 """
 
 import argparse

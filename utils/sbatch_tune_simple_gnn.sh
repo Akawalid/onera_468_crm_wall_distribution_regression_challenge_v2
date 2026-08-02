@@ -50,4 +50,4 @@ python utils/tune_simple_gnn.py \
     --n_trials 200 \
     --timeout 39600 \
     --study_name simple_gnn_splitv3 \
-    --storage sqlite:///utils/optuna_simple_gnn_splitv3.db
+    --storage sqlite:////data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/optuna_simple_gnn_splitv3.db

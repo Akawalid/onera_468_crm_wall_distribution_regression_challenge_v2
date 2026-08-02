@@ -20,7 +20,7 @@ Usage:
     python utils/tune_simple_gnn.py --n_trials 50 --epochs 60 --patience 10 \
         --data_dir /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/ \
         --split_dir splitv3 --study_name simple_gnn_splitv3 \
-        --storage sqlite:///utils/optuna_simple_gnn_splitv3.db
+        --storage sqlite:////data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/optuna_simple_gnn_splitv3.db
 
 Once you have a winning trial, plug its params into sbatch_simple_gnn.sh's
 --hidden_dim/--n_layers/--lr/--dropout/--weight_decay for the real run (with the full epoch
@@ -104,8 +104,9 @@ def run_trial(trial, args, static, train_data, device):
             else:
                 bad_epochs += 1
 
-            print(f'  trial {trial.number}  epoch {epoch}  val_loss={val_loss:.5f}  '
-                  f'best={best_val:.5f}  bad_epochs={bad_epochs}', flush=True)
+            if epoch % 5 == 0:
+                print(f'  trial {trial.number}  epoch {epoch}  val_loss={val_loss:.5f}  '
+                      f'best={best_val:.5f}  bad_epochs={bad_epochs}', flush=True)
 
             trial.report(val_loss, epoch)
             if trial.should_prune():
@@ -136,7 +137,7 @@ def main():
     p.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu')
     p.add_argument('--study_name', default='simple_gnn')
     p.add_argument('--storage', default=None,
-                   help='e.g. sqlite:///utils/optuna_simple_gnn.db -- persists trials so the study survives a job timeout and can be resumed/inspected afterward.')
+                   help='e.g. sqlite:////data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/optuna_simple_gnn.db -- persists trials so the study survives a job timeout and can be resumed/inspected afterward.')
     args = p.parse_args()
 
     device = torch.device(args.device)
