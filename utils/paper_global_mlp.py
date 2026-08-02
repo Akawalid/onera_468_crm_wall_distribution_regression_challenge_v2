@@ -242,19 +242,37 @@ def main():
         y_pred1 = (model(C1).cpu().numpy() * y_std + y_mean).astype(np.float64).reshape(-1)
         y_pred2 = (model(C2).cpu().numpy() * y_std + y_mean).astype(np.float64).reshape(-1)
 
-    torch.save({'state_dict': model.state_dict(),
-                'cond_scaler_mean': cond_scaler.mean_, 'cond_scaler_scale': cond_scaler.scale_,
-                'y_mean': y_mean, 'y_std': y_std,
-                'hidden': HIDDEN, 'nwallp': NWALLP},
-               f'{OUT_PREFIX}_model.pt')
-    np.save(f'{OUT_PREFIX}_y_pred1.npy', y_pred1)
-    np.save(f'{OUT_PREFIX}_y_pred2.npy', y_pred2)
-    print(f'Saved: {OUT_PREFIX}_model.pt, {OUT_PREFIX}_y_pred1.npy, {OUT_PREFIX}_y_pred2.npy', flush=True)
-
+    # Metrics first, saving last: a save failure must not cost the hours of training already
+    # spent by crashing before these numbers ever get printed (this is what happened before --
+    # torch.save on the >16GB checkpoint raised before evaluate_phase ever ran).
     res1 = evaluate_phase(data['y_test1'], y_pred1, data['w_test1'], data['comp_masks'])
     res2 = evaluate_phase(data['y_test2'], y_pred2, data['w_test2'], data['comp_masks'])
     print_result('Global MLP', 'Phase 1 (interpolation)', res1)
     print_result('Global MLP', 'Phase 2 (extrapolation)', res2)
+
+    try:
+        np.save(f'{OUT_PREFIX}_y_pred1.npy', y_pred1)
+        np.save(f'{OUT_PREFIX}_y_pred2.npy', y_pred2)
+        print(f'\nSaved: {OUT_PREFIX}_y_pred1.npy, {OUT_PREFIX}_y_pred2.npy', flush=True)
+    except OSError as e:
+        print(f'\n[WARN] Could not save predictions to {OUT_PREFIX}_y_pred*.npy: {e}', flush=True)
+
+    # The state_dict here is >16GB (dominated by the last layer's weights) -- save it to the
+    # shared data drive, not the repo's home-directory path, since a quota'd home dir is a much
+    # more likely place to run out of room for a file this size. Non-fatal: if this still fails,
+    # the metrics above and the small prediction files were already saved/printed.
+    model_ckpt_path = os.path.join(DATA_DIR, 'paper_global_mlp_model.pt')
+    try:
+        torch.save({'state_dict': model.state_dict(),
+                    'cond_scaler_mean': cond_scaler.mean_, 'cond_scaler_scale': cond_scaler.scale_,
+                    'y_mean': y_mean, 'y_std': y_std,
+                    'hidden': HIDDEN, 'nwallp': NWALLP},
+                   model_ckpt_path)
+        print(f'Saved: {model_ckpt_path}', flush=True)
+    except (OSError, RuntimeError) as e:
+        print(f'[WARN] Could not save model checkpoint to {model_ckpt_path} '
+              f'(likely a disk quota/NFS write issue given its size, not a training problem): {e}',
+              flush=True)
 
 
 if __name__ == '__main__':
