@@ -36,4 +36,4 @@ python utils/train_simple_gnn2.py \
     --epochs 100 \
     --lr 1e-3 \
     --eval_every 5 \
-    --out_prefix utils/simple_gnn2
+    --out_prefix /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/simple_gnn2
