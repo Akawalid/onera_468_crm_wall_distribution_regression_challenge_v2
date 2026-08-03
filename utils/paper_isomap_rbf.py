@@ -27,6 +27,7 @@ import os
 import numpy as np
 from scipy.interpolate import RBFInterpolator
 from sklearn.manifold import Isomap
+from sklearn.metrics import pairwise_distances
 from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import StandardScaler
 import joblib
@@ -42,6 +43,8 @@ DATA_DIR = '/data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat
 SPLIT_DIR = 'splitv3'
 
 N_COMPONENTS = 3          # r: paper finds this matches the 3 physical flow parameters
+R_MAX_PROBE = 6            # highest r probed by the stress curve below (paper checks r=2..6ish
+                            # before settling on r=3)
 ISOMAP_K = 15              # IsoMap's own neighbor-graph size (not stated in the paper); smallest
                             # value found to keep the neighbor graph on this training set fully
                             # connected -- n_neighbors=10 leaves 2 disconnected components, which
@@ -242,15 +245,34 @@ def main():
     test1_conds_sc = cond_scaler.transform(data['test1_conds'])
     test2_conds_sc = cond_scaler.transform(data['test2_conds'])
 
-    print(f'\nIsoMap reconstruction-error curve (paper: r=3 matches the 3 physical parameters):')
-    for r in range(2, 7):
-        iso_probe = Isomap(n_neighbors=ISOMAP_K, n_components=r)
-        iso_probe.fit(Y_train)
-        print(f'  r={r}  reconstruction_error={iso_probe.reconstruction_error():.4f}', flush=True)
+    # Paper's own r-selection criterion (section 5.4): the Frobenius norm ||D_G - D_Z||_F between
+    # the geodesic distance matrix D_G (from the k-NN graph built on the raw training fields) and
+    # the Euclidean distance matrix D_Z of the r-dimensional embedding, watched as r increases --
+    # NOT sklearn's Isomap.reconstruction_error(), which computes a related but numerically
+    # different quantity (the Frobenius norm between double-centered *kernels* derived from those
+    # distance matrices, per its own docstring: "E = frobenius_norm[K(D) - K(D_fit)] / n_samples"
+    # -- not the raw distance matrices themselves).
+    #
+    # D_G only depends on the k-NN graph geodesics, not on n_components, and the embedding
+    # produced by Isomap's underlying kernel-PCA solve is nested (its top-r columns for any r are
+    # identical to fitting standalone with n_components=r, since both are just the top-r
+    # eigenvectors of the same kernel matrix). So one fit at R_MAX_PROBE components gives every
+    # r <= R_MAX_PROBE's D_Z for free by slicing columns, and that same fit's first N_COMPONENTS
+    # columns are exactly what a standalone n_components=N_COMPONENTS fit would produce -- reused
+    # below as the production embedding instead of redundantly fitting IsoMap a second time.
+    print(f'\nFitting IsoMap (n_neighbors={ISOMAP_K}, n_components={R_MAX_PROBE}) on training fields...', flush=True)
+    isomap = Isomap(n_neighbors=ISOMAP_K, n_components=R_MAX_PROBE)
+    embedding_full = isomap.fit_transform(Y_train)
+    D_G = isomap.dist_matrix_
 
-    print(f'\nFitting IsoMap (n_neighbors={ISOMAP_K}, n_components={N_COMPONENTS}) on training fields...', flush=True)
-    isomap = Isomap(n_neighbors=ISOMAP_K, n_components=N_COMPONENTS)
-    Z_train = isomap.fit_transform(Y_train)
+    print(f"\n||D_G - D_Z(r)||_F stress curve (paper's exact criterion; paper finds the drop "
+          f"levels off at r=3, matching the 3 physical flow parameters):")
+    for r in range(2, R_MAX_PROBE + 1):
+        D_Z = pairwise_distances(embedding_full[:, :r])
+        stress = np.linalg.norm(D_G - D_Z, ord='fro')
+        print(f'  r={r}  ||D_G - D_Z||_F = {stress:.4f}', flush=True)
+
+    Z_train = embedding_full[:, :N_COMPONENTS]
 
     print(f'Fitting RBFInterpolator (kernel={RBF_KERNEL}) for p -> z...', flush=True)
     rbf = RBFInterpolator(train_conds_sc, Z_train, kernel=RBF_KERNEL)
