@@ -38,14 +38,15 @@ import torch
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from utils.base_models import evaluate
 from utils.simple_gnn import SimpleGNN
-from utils.train_simple_gnn import load_static_graph, load_split, sim_loss, compute_val_loss
+from utils.train_simple_gnn import load_static_graph, load_split, sim_loss, compute_val_loss, predict_split
 
 NWALLP = 260774
 
 
 def run_trial(trial, args, static, train_data, device):
-    edge_index, edge_weight, static_feats, cond_mean, cond_std = static
+    edge_index, edge_weight, static_feats, cond_mean, cond_std, comp_masks, sigma_ref = static
     y_train, train_weights, n_train, train_conds = train_data
 
     # Full range restored (32/64/128/256, 2-4 layers) -- NOT narrowed anymore. Trials 0-9 of this
@@ -85,6 +86,7 @@ def run_trial(trial, args, static, train_data, device):
         val_idx, tr_idx = perm0[:n_val], perm0[n_val:]
 
         best_val, bad_epochs = float('inf'), 0
+        best_state = None
         for epoch in range(args.epochs):
             model.train()
             for i in rng.permutation(tr_idx):
@@ -101,6 +103,10 @@ def run_trial(trial, args, static, train_data, device):
 
             if val_loss < best_val - 1e-6:
                 best_val, bad_epochs = val_loss, 0
+                # Kept so the R2/wrMAE/KLw computed below reflect the best epoch, not whichever
+                # epoch happened to run last (which may already be overfitting by the time
+                # patience triggers).
+                best_state = {k: v.detach().clone() for k, v in model.state_dict().items()}
             else:
                 bad_epochs += 1
 
@@ -114,6 +120,28 @@ def run_trial(trial, args, static, train_data, device):
                 raise optuna.TrialPruned()
             if bad_epochs >= args.patience:
                 break
+
+        # R2/wrMAE/KLw on the internal validation split (never test_phase1/2 -- see module
+        # docstring) at the best epoch, using the exact same base_models.evaluate() that
+        # train_simple_gnn.py uses for test_phase1 and that scoring relies on. This is purely
+        # informational (attached to the trial, not the optimization objective, which stays
+        # validation MSE) so you can see how MSE tracks the actual challenge metrics without
+        # touching held-out data.
+        if best_state is not None:
+            model.load_state_dict(best_state)
+        preds_val = predict_split(model, len(val_idx), train_conds[val_idx], edge_index, edge_weight,
+                                   static_feats, device, cond_mean, cond_std)
+        y_val = np.concatenate([np.asarray(y_train[i * NWALLP:(i + 1) * NWALLP]) for i in val_idx])
+        w_val = train_weights[val_idx] if train_weights is not None else np.ones(len(val_idx))
+        res = evaluate(y_val, preds_val, w_val, NWALLP, comp_masks, sigma_ref)
+        print(f'  trial {trial.number}  [internal val]  R2={res["r2"]:.4f}  '
+              f'worst_rMAE={res["worst_rmae"]:.4f}  mean_rMAE={res["mean_rmae"]:.4f}  '
+              f'mean_KLw={res["mean_klw"]:.4f}  max_KLw={res["max_klw"]:.4f}', flush=True)
+        trial.set_user_attr('val_r2', res['r2'])
+        trial.set_user_attr('val_worst_rmae', res['worst_rmae'])
+        trial.set_user_attr('val_mean_rmae', res['mean_rmae'])
+        trial.set_user_attr('val_mean_klw', res['mean_klw'])
+        trial.set_user_attr('val_max_klw', res['max_klw'])
 
         return best_val
     finally:
@@ -144,19 +172,21 @@ def main():
     cache_dir = os.path.join(args.data_dir, 'cache')
 
     print('Loading static graph/features (shared across all trials, k fixed)...', flush=True)
-    _coords, edge_index, edge_weight, static_feats, _component_labels, _component_map = load_static_graph(
+    _coords, edge_index, edge_weight, static_feats, component_labels, component_map = load_static_graph(
         args.data_dir, args.k, cache_dir, split_dir=args.split_dir)
     edge_index = edge_index.to(device)
     edge_weight = edge_weight.to(device)
     static_feats = static_feats.to(device)
+    comp_masks = {cname: component_labels == cid for cid, cname in component_map.items()}
 
     y_train, train_weights, n_train, train_conds = load_split(args.data_dir, 'train', split_dir=args.split_dir)
     cond_mean = train_conds.mean(axis=0)
     cond_std = train_conds.std(axis=0)
     cond_std[cond_std == 0] = 1.0
-    print(f'n_train={n_train}', flush=True)
+    sigma_ref = 0.01 * float(np.mean(y_train))
+    print(f'n_train={n_train}  sigma_ref={sigma_ref:.5f}', flush=True)
 
-    static = (edge_index, edge_weight, static_feats, cond_mean, cond_std)
+    static = (edge_index, edge_weight, static_feats, cond_mean, cond_std, comp_masks, sigma_ref)
     train_data = (y_train, train_weights, n_train, train_conds)
 
     def objective(trial):
@@ -184,6 +214,13 @@ def main():
     print(f'  value (val loss): {study.best_trial.value:.5f}', flush=True)
     for name, val in study.best_trial.params.items():
         print(f'  {name}: {val}', flush=True)
+    attrs = study.best_trial.user_attrs
+    if attrs:
+        print(f'  [internal val]  R2={attrs.get("val_r2", float("nan")):.4f}  '
+              f'worst_rMAE={attrs.get("val_worst_rmae", float("nan")):.4f}  '
+              f'mean_rMAE={attrs.get("val_mean_rmae", float("nan")):.4f}  '
+              f'mean_KLw={attrs.get("val_mean_klw", float("nan")):.4f}  '
+              f'max_KLw={attrs.get("val_max_klw", float("nan")):.4f}', flush=True)
     print(f'\n{len(study.trials)} trials total '
           f'({sum(t.state == optuna.trial.TrialState.PRUNED for t in study.trials)} pruned, '
           f'{sum(t.state == optuna.trial.TrialState.COMPLETE for t in study.trials)} completed)', flush=True)

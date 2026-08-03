@@ -2,11 +2,14 @@
 file tune_simple_gnn.py has been writing to. Safe to run on a login node while a tuning job is
 still running elsewhere (Optuna's sqlite backend handles concurrent readers fine).
 
-Note: the value shown is the tuner's objective, validation MSE (see tune_simple_gnn.py's
-docstring) -- NOT the challenge's KLw metric. No trial saved a model checkpoint (memory-cleanup
-deletes it at the end of every trial), so there's no KLw for any trial yet; that only exists once
-a specific config gets retrained through train_simple_gnn.py, which does compute it. This script
-just tells you which config is worth spending that retraining run on.
+Note: the ranking/value shown is the tuner's objective, validation MSE (see tune_simple_gnn.py's
+docstring) -- NOT the challenge's KLw metric. Trials run after tune_simple_gnn.py started
+attaching R2/wrMAE/KLw as trial user_attrs (computed on the internal validation split, never
+test_phase1/2) will show those alongside the MSE below; older trials from before that change
+won't have them. Either way, no trial saves a model checkpoint (memory-cleanup deletes it at the
+end of every trial) and these val-split numbers are not the same thing as the real test_phase1/2
+metrics -- that still requires retraining the winning config through train_simple_gnn.py, which
+this script prints the command for.
 
 Usage:
     python utils/summarize_optuna_study.py --study_name simple_gnn_splitv3 \
@@ -51,6 +54,12 @@ def main():
               f'duration={t.duration}')
         for name, val in t.params.items():
             print(f'      {name}: {val}')
+        if t.user_attrs:
+            print(f'      [internal val]  R2={t.user_attrs.get("val_r2", float("nan")):.4f}  '
+                  f'worst_rMAE={t.user_attrs.get("val_worst_rmae", float("nan")):.4f}  '
+                  f'mean_rMAE={t.user_attrs.get("val_mean_rmae", float("nan")):.4f}  '
+                  f'mean_KLw={t.user_attrs.get("val_mean_klw", float("nan")):.4f}  '
+                  f'max_KLw={t.user_attrs.get("val_max_klw", float("nan")):.4f}')
 
     best = complete[0]
     print(f'\nBest trial: {best.number}  value={best.value:.6f}')
