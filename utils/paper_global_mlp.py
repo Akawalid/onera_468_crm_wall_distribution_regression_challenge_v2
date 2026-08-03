@@ -39,7 +39,10 @@ BATCH = 32
 LR = 1e-3
 SEED = 0
 
-OUT_PREFIX = 'utils/paper_global_mlp'
+OUT_NAME = 'paper_global_mlp'   # outputs saved under DATA_DIR (the shared/iceberg drive), not
+                                  # utils/ -- computed fresh in main() as os.path.join(DATA_DIR,
+                                  # OUT_NAME) so it still tracks a caller-overridden DATA_DIR
+                                  # (e.g. for local testing)
 
 
 # ---------------------------------------------------------------------------
@@ -185,6 +188,7 @@ class GlobalMLP(nn.Module):
 
 
 def main():
+    out_prefix = os.path.join(DATA_DIR, OUT_NAME)   # iceberg/shared drive, not utils/
     torch.manual_seed(SEED)
     np.random.seed(SEED)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -251,17 +255,17 @@ def main():
     print_result('Global MLP', 'Phase 2 (extrapolation)', res2)
 
     try:
-        np.save(f'{OUT_PREFIX}_y_pred1.npy', y_pred1)
-        np.save(f'{OUT_PREFIX}_y_pred2.npy', y_pred2)
-        print(f'\nSaved: {OUT_PREFIX}_y_pred1.npy, {OUT_PREFIX}_y_pred2.npy', flush=True)
+        np.save(f'{out_prefix}_y_pred1.npy', y_pred1)
+        np.save(f'{out_prefix}_y_pred2.npy', y_pred2)
+        print(f'\nSaved: {out_prefix}_y_pred1.npy, {out_prefix}_y_pred2.npy', flush=True)
     except OSError as e:
-        print(f'\n[WARN] Could not save predictions to {OUT_PREFIX}_y_pred*.npy: {e}', flush=True)
+        print(f'\n[WARN] Could not save predictions to {out_prefix}_y_pred*.npy: {e}', flush=True)
 
     # The state_dict here is >16GB (dominated by the last layer's weights) -- save it to the
     # shared data drive, not the repo's home-directory path, since a quota'd home dir is a much
     # more likely place to run out of room for a file this size. Non-fatal: if this still fails,
     # the metrics above and the small prediction files were already saved/printed.
-    model_ckpt_path = os.path.join(DATA_DIR, 'paper_global_mlp_model.pt')
+    model_ckpt_path = f'{out_prefix}_model.pt'
     try:
         torch.save({'state_dict': model.state_dict(),
                     'cond_scaler_mean': cond_scaler.mean_, 'cond_scaler_scale': cond_scaler.scale_,
