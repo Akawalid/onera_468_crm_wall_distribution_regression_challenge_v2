@@ -166,10 +166,11 @@ def main():
     pg.print_result('POD+GP (tuned)', 'Phase 1 (interpolation)', res1)
     pg.print_result('POD+GP (tuned)', 'Phase 2 (extrapolation)', res2)
 
+    out_prefix = os.path.join(pg.DATA_DIR, pg.OUT_NAME)   # iceberg/shared drive, not utils/
     try:
-        np.save(f'{pg.OUT_PREFIX}_tuned_y_pred1.npy', y_pred1)
-        np.save(f'{pg.OUT_PREFIX}_tuned_y_pred2.npy', y_pred2)
-        print(f'\nSaved: {pg.OUT_PREFIX}_tuned_y_pred1.npy, {pg.OUT_PREFIX}_tuned_y_pred2.npy',
+        np.save(f'{out_prefix}_tuned_y_pred1.npy', y_pred1)
+        np.save(f'{out_prefix}_tuned_y_pred2.npy', y_pred2)
+        print(f'\nSaved: {out_prefix}_tuned_y_pred1.npy, {out_prefix}_tuned_y_pred2.npy',
               flush=True)
     except OSError as e:
         print(f'\n[WARN] Could not save predictions: {e}', flush=True)

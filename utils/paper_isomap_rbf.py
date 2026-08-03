@@ -55,7 +55,10 @@ N_REPEATS = 20
 N_HOLDOUT = 10             # paper: "repeatedly removing only ten randomly selected wall distributions"
 SEED = 0
 
-OUT_PREFIX = 'utils/paper_isomap_rbf'
+OUT_NAME = 'paper_isomap_rbf'   # outputs saved under DATA_DIR (the shared/iceberg drive), not
+                                  # utils/ -- computed fresh in main() as os.path.join(DATA_DIR,
+                                  # OUT_NAME) so it still tracks a caller-overridden DATA_DIR
+                                  # (e.g. for local testing)
 
 
 # ---------------------------------------------------------------------------
@@ -293,20 +296,32 @@ def main():
     print('Predicting phase 2...', flush=True)
     y_pred2 = knn_backmap(Z_pred2, Z_train, Y_train, best_k).reshape(-1)
 
-    joblib.dump({
-        'isomap': isomap, 'rbf': rbf, 'Z_train': Z_train, 'Y_train': Y_train,
-        'cond_scaler_mean': cond_scaler.mean_, 'cond_scaler_scale': cond_scaler.scale_,
-        'best_k': best_k, 'n_components': N_COMPONENTS, 'isomap_k': ISOMAP_K,
-        'rbf_kernel': RBF_KERNEL,
-    }, f'{OUT_PREFIX}_model.joblib')
-    np.save(f'{OUT_PREFIX}_y_pred1.npy', y_pred1)
-    np.save(f'{OUT_PREFIX}_y_pred2.npy', y_pred2)
-    print(f'Saved: {OUT_PREFIX}_model.joblib, {OUT_PREFIX}_y_pred1.npy, {OUT_PREFIX}_y_pred2.npy', flush=True)
-
+    # Metrics first, saving last -- same fix as paper_global_mlp.py/paper_pod_gp.py: a save
+    # failure must never cost results that are already computed.
     res1 = evaluate_phase(data['y_test1'], y_pred1, data['w_test1'], data['comp_masks'])
     res2 = evaluate_phase(data['y_test2'], y_pred2, data['w_test2'], data['comp_masks'])
     print_result('IsoMap+RBF', 'Phase 1 (interpolation)', res1)
     print_result('IsoMap+RBF', 'Phase 2 (extrapolation)', res2)
+
+    out_prefix = os.path.join(DATA_DIR, OUT_NAME)   # iceberg/shared drive, not utils/ -- Y_train
+                                                       # alone inside the joblib is ~670MB
+    try:
+        np.save(f'{out_prefix}_y_pred1.npy', y_pred1)
+        np.save(f'{out_prefix}_y_pred2.npy', y_pred2)
+        print(f'\nSaved: {out_prefix}_y_pred1.npy, {out_prefix}_y_pred2.npy', flush=True)
+    except OSError as e:
+        print(f'\n[WARN] Could not save predictions: {e}', flush=True)
+
+    try:
+        joblib.dump({
+            'isomap': isomap, 'rbf': rbf, 'Z_train': Z_train, 'Y_train': Y_train,
+            'cond_scaler_mean': cond_scaler.mean_, 'cond_scaler_scale': cond_scaler.scale_,
+            'best_k': best_k, 'n_components': N_COMPONENTS, 'isomap_k': ISOMAP_K,
+            'rbf_kernel': RBF_KERNEL,
+        }, f'{out_prefix}_model.joblib')
+        print(f'Saved: {out_prefix}_model.joblib', flush=True)
+    except OSError as e:
+        print(f'[WARN] Could not save model: {e}', flush=True)
 
 
 if __name__ == '__main__':

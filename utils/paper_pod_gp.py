@@ -57,7 +57,9 @@ N_RESTARTS = 5                # random restarts of the GP hyperparameter optimiz
 N_JOBS = -1
 SEED = 0
 
-OUT_PREFIX = 'utils/paper_pod_gp'
+OUT_NAME = 'paper_pod_gp'   # outputs saved under DATA_DIR (the shared/iceberg drive), not utils/
+                             # -- computed fresh in main() as os.path.join(DATA_DIR, OUT_NAME) so
+                             # it still tracks a caller-overridden DATA_DIR (e.g. for local testing)
 
 
 # ---------------------------------------------------------------------------
@@ -221,6 +223,9 @@ def choose_n_modes(pca, variance_threshold):
 
 
 def main():
+    out_prefix = os.path.join(DATA_DIR, OUT_NAME)   # iceberg/shared drive, not utils/ -- keeps
+                                                       # large output files out of the git-tracked
+                                                       # repo directory entirely
     print('Loading data...', flush=True)
     data = load_split(DATA_DIR, SPLIT_DIR)
     train_conds, Y_train, n_train = data['train_conds'], data['Y_train'], data['n_train']
@@ -281,12 +286,12 @@ def main():
     print(f'Mean predictive std (phase 2, all points): {std_pred2.mean():.6f}', flush=True)
 
     try:
-        np.save(f'{OUT_PREFIX}_y_pred1.npy', y_pred1)
-        np.save(f'{OUT_PREFIX}_y_pred2.npy', y_pred2)
-        np.save(f'{OUT_PREFIX}_std_pred1.npy', std_pred1)
-        np.save(f'{OUT_PREFIX}_std_pred2.npy', std_pred2)
-        print(f'\nSaved: {OUT_PREFIX}_y_pred1.npy, {OUT_PREFIX}_y_pred2.npy, '
-              f'{OUT_PREFIX}_std_pred1.npy, {OUT_PREFIX}_std_pred2.npy', flush=True)
+        np.save(f'{out_prefix}_y_pred1.npy', y_pred1)
+        np.save(f'{out_prefix}_y_pred2.npy', y_pred2)
+        np.save(f'{out_prefix}_std_pred1.npy', std_pred1)
+        np.save(f'{out_prefix}_std_pred2.npy', std_pred2)
+        print(f'\nSaved: {out_prefix}_y_pred1.npy, {out_prefix}_y_pred2.npy, '
+              f'{out_prefix}_std_pred1.npy, {out_prefix}_std_pred2.npy', flush=True)
     except OSError as e:
         print(f'\n[WARN] Could not save predictions: {e}', flush=True)
 
@@ -297,8 +302,8 @@ def main():
             'cond_scaler_mean': cond_scaler.mean_, 'cond_scaler_scale': cond_scaler.scale_,
             'variance_threshold': VARIANCE_THRESHOLD, 'cum_var': cum_var,
             'kernel_nu': KERNEL_NU, 'alpha': ALPHA,
-        }, f'{OUT_PREFIX}_model.joblib')
-        print(f'Saved: {OUT_PREFIX}_model.joblib', flush=True)
+        }, f'{out_prefix}_model.joblib')
+        print(f'Saved: {out_prefix}_model.joblib', flush=True)
     except OSError as e:
         print(f'[WARN] Could not save model: {e}', flush=True)
 
