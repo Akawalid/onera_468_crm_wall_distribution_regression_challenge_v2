@@ -214,3 +214,5 @@ rather than treating the data as generic tabular/image input.
  - Talk about the boosting method I tried but didn't work (Neurips challenge says that geometry aware models are the 
  common pojnt between the winners)
  - Talk about fine tunning with optuna, deephyper, local search 
+
+
