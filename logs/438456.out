@@ -1,0 +1,42 @@
+Loading data...
+n_train=324  CV folds=8 (leave-2-consecutive-Machs-out)
+Grid: variance_threshold in [0.97, 0.99, 0.995], kernel_nu in [1.5, 2.5, inf] (9 configs x 8 folds = 72 fits)
+
+  var_thresh=0.97    nu=1.5        modes~=13  mean_KL=2.7115  R2=0.9174  wrMAE=0.0410  score=9.3822  (94s)
+  var_thresh=0.97    nu=2.5        modes~=13  mean_KL=3.1291  R2=0.8887  wrMAE=0.0436  score=9.2256  (89s)
+  var_thresh=0.97    nu=RBF(inf)   modes~=13  mean_KL=5.0049  R2=0.7221  wrMAE=0.0806  score=8.2073  (86s)
+  var_thresh=0.99    nu=1.5        modes~=43  mean_KL=2.5558  R2=0.9197  wrMAE=0.0412  score=9.3930  (101s)
+  var_thresh=0.99    nu=2.5        modes~=43  mean_KL=3.0711  R2=0.8896  wrMAE=0.0441  score=9.2272  (107s)
+  var_thresh=0.99    nu=RBF(inf)   modes~=43  mean_KL=4.9261  R2=0.7233  wrMAE=0.0805  score=8.2137  (105s)
+  var_thresh=0.995   nu=1.5        modes~=74  mean_KL=2.5511  R2=0.9198  wrMAE=0.0411  score=9.3934  (121s)
+  var_thresh=0.995   nu=2.5        modes~=74  mean_KL=3.0696  R2=0.8896  wrMAE=0.0441  score=9.2276  (130s)
+  var_thresh=0.995   nu=RBF(inf)   modes~=74  mean_KL=4.9240  R2=0.7233  wrMAE=0.0805  score=8.2139  (131s)
+
+Total tuning time: 962s
+
+Best by mean_KL (primary metric): variance_threshold=0.995  kernel_nu=1.5  (CV mean_KL=2.5511, R2=0.9198, wrMAE=0.0411, ~74 modes)
+
+Refitting on the full training set with the best hyperparameters...
+Final model uses 89 modes.
+
+POD+GP (tuned) -- Phase 1 (interpolation)
+  R2      : 0.984044
+  wrMAE   : 0.029384  (worst sim idx 22)
+  mean_KL : 1.155890  (worst sim idx 22, KL=3.903167)
+  score   : 9.773299
+
+POD+GP (tuned) -- Phase 2 (extrapolation)
+  R2      : 0.914388
+  wrMAE   : 0.069830  (worst sim idx 71)
+  mean_KL : 5.520312  (worst sim idx 12, KL=8.127858)
+  score   : 9.222787
+
+Saved: /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/paper_pod_gp_tuned_y_pred1.npy, /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/paper_pod_gp_tuned_y_pred2.npy
+
+
+
+Metric	POD+GP — Phase 1	POD+GP — Phase 2	IsoMap+RBF — Phase 1	IsoMap+RBF — Phase 2
+R²	0.9803	0.8854	0.9864	0.8431
+wrMAE	0.0289	0.0853	0.0334	0.0708
+mean_KL	1.482	7.566	0.849	6.577
+score	9.757	9.001	9.765	8.862

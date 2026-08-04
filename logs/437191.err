@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/paper_global_mlp.py", line 261, in <module>
+    main()
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/paper_global_mlp.py", line 245, in main
+    torch.save({'state_dict': model.state_dict(),
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/serialization.py", line 1003, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/torch/serialization.py", line 835, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: basic_ios::clear: iostream error
