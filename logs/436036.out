@@ -1,0 +1,85 @@
+Loading static graph/features...
+n_train=324  n_test1=72
+global train mean = 0.8773  sigma_ref (fixed Q width) = 0.00877
+train/val split: 292 train  32 val (patience=15)
+epoch 1/100  train KLw=14.88066  val KLw=13.61047  best_val=13.61047 (epoch 1)  (45.6s)
+epoch 2/100  train KLw=13.77397  val KLw=12.93971  best_val=12.93971 (epoch 2)  (45.0s)
+epoch 3/100  train KLw=12.34578  val KLw=11.86416  best_val=11.86416 (epoch 3)  (45.1s)
+epoch 4/100  train KLw=11.85378  val KLw=10.46425  best_val=10.46425 (epoch 4)  (45.1s)
+epoch 5/100  train KLw=11.14188  val KLw=11.81623  best_val=10.46425 (epoch 4)  (45.2s)
+  test_phase1  R2=0.3789  worst_rMAE=0.1423  mean_rMAE=0.1086  mean_KLw=11.9609  max_KLw=13.2919
+epoch 6/100  train KLw=11.28169  val KLw=10.89583  best_val=10.46425 (epoch 4)  (45.2s)
+epoch 7/100  train KLw=11.14348  val KLw=11.56820  best_val=10.46425 (epoch 4)  (45.2s)
+epoch 8/100  train KLw=10.13732  val KLw=9.60587  best_val=9.60587 (epoch 8)  (45.2s)
+epoch 9/100  train KLw=9.73567  val KLw=9.95605  best_val=9.60587 (epoch 8)  (45.2s)
+epoch 10/100  train KLw=9.31011  val KLw=10.40672  best_val=9.60587 (epoch 8)  (45.2s)
+  test_phase1  R2=0.5896  worst_rMAE=0.1047  mean_rMAE=0.0848  mean_KLw=10.3203  max_KLw=12.9187
+epoch 11/100  train KLw=9.39260  val KLw=9.41343  best_val=9.41343 (epoch 11)  (45.2s)
+epoch 12/100  train KLw=8.63172  val KLw=10.00312  best_val=9.41343 (epoch 11)  (45.2s)
+epoch 13/100  train KLw=8.67069  val KLw=10.05520  best_val=9.41343 (epoch 11)  (45.2s)
+epoch 14/100  train KLw=8.56632  val KLw=10.27573  best_val=9.41343 (epoch 11)  (45.2s)
+epoch 15/100  train KLw=8.10028  val KLw=8.75955  best_val=8.75955 (epoch 15)  (45.2s)
+  test_phase1  R2=0.6487  worst_rMAE=0.0973  mean_rMAE=0.0729  mean_KLw=8.3702  max_KLw=10.4765
+epoch 16/100  train KLw=7.83645  val KLw=8.36098  best_val=8.36098 (epoch 16)  (45.2s)
+epoch 17/100  train KLw=7.86329  val KLw=9.88386  best_val=8.36098 (epoch 16)  (45.2s)
+epoch 18/100  train KLw=7.65619  val KLw=8.12233  best_val=8.12233 (epoch 18)  (45.2s)
+epoch 19/100  train KLw=7.97244  val KLw=9.35163  best_val=8.12233 (epoch 18)  (45.2s)
+epoch 20/100  train KLw=7.18030  val KLw=8.70226  best_val=8.12233 (epoch 18)  (45.2s)
+  test_phase1  R2=0.7040  worst_rMAE=0.0914  mean_rMAE=0.0685  mean_KLw=8.4881  max_KLw=10.9654
+epoch 21/100  train KLw=7.32793  val KLw=7.09988  best_val=7.09988 (epoch 21)  (45.2s)
+epoch 22/100  train KLw=7.15931  val KLw=8.73825  best_val=7.09988 (epoch 21)  (45.2s)
+epoch 23/100  train KLw=7.06045  val KLw=8.24471  best_val=7.09988 (epoch 21)  (45.2s)
+epoch 24/100  train KLw=7.19717  val KLw=6.62829  best_val=6.62829 (epoch 24)  (45.2s)
+epoch 25/100  train KLw=6.98562  val KLw=7.54623  best_val=6.62829 (epoch 24)  (45.2s)
+  test_phase1  R2=0.7267  worst_rMAE=0.0850  mean_rMAE=0.0629  mean_KLw=7.3234  max_KLw=10.9277
+epoch 26/100  train KLw=6.79572  val KLw=9.79268  best_val=6.62829 (epoch 24)  (45.2s)
+epoch 27/100  train KLw=6.75823  val KLw=10.56028  best_val=6.62829 (epoch 24)  (45.2s)
+epoch 28/100  train KLw=6.85232  val KLw=8.77911  best_val=6.62829 (epoch 24)  (45.2s)
+epoch 29/100  train KLw=6.53725  val KLw=6.91379  best_val=6.62829 (epoch 24)  (45.2s)
+epoch 30/100  train KLw=6.38642  val KLw=10.38730  best_val=6.62829 (epoch 24)  (45.2s)
+  test_phase1  R2=0.7264  worst_rMAE=0.0899  mean_rMAE=0.0666  mean_KLw=8.8131  max_KLw=12.6373
+epoch 31/100  train KLw=6.62245  val KLw=6.93661  best_val=6.62829 (epoch 24)  (45.2s)
+epoch 32/100  train KLw=6.57550  val KLw=8.16303  best_val=6.62829 (epoch 24)  (45.2s)
+epoch 33/100  train KLw=6.17678  val KLw=8.82612  best_val=6.62829 (epoch 24)  (45.2s)
+epoch 34/100  train KLw=6.61254  val KLw=9.13082  best_val=6.62829 (epoch 24)  (45.2s)
+epoch 35/100  train KLw=6.18269  val KLw=10.88131  best_val=6.62829 (epoch 24)  (45.2s)
+  test_phase1  R2=0.7261  worst_rMAE=0.0857  mean_rMAE=0.0700  mean_KLw=10.1857  max_KLw=13.8802
+epoch 36/100  train KLw=6.33761  val KLw=6.42636  best_val=6.42636 (epoch 36)  (45.2s)
+epoch 37/100  train KLw=6.34279  val KLw=11.04319  best_val=6.42636 (epoch 36)  (45.2s)
+epoch 38/100  train KLw=5.91867  val KLw=6.62592  best_val=6.42636 (epoch 36)  (45.2s)
+epoch 39/100  train KLw=5.96357  val KLw=8.13384  best_val=6.42636 (epoch 36)  (45.2s)
+epoch 40/100  train KLw=6.07794  val KLw=9.45638  best_val=6.42636 (epoch 36)  (45.2s)
+  test_phase1  R2=0.7466  worst_rMAE=0.0814  mean_rMAE=0.0627  mean_KLw=8.2178  max_KLw=10.9828
+epoch 41/100  train KLw=6.52186  val KLw=7.78491  best_val=6.42636 (epoch 36)  (45.2s)
+epoch 42/100  train KLw=6.04255  val KLw=7.19937  best_val=6.42636 (epoch 36)  (45.2s)
+epoch 43/100  train KLw=6.36773  val KLw=8.37598  best_val=6.42636 (epoch 36)  (45.2s)
+epoch 44/100  train KLw=6.06229  val KLw=7.59013  best_val=6.42636 (epoch 36)  (45.2s)
+epoch 45/100  train KLw=5.81253  val KLw=7.52519  best_val=6.42636 (epoch 36)  (45.2s)
+  test_phase1  R2=0.7512  worst_rMAE=0.0792  mean_rMAE=0.0587  mean_KLw=6.8683  max_KLw=9.6914
+epoch 46/100  train KLw=5.75397  val KLw=6.37072  best_val=6.37072 (epoch 46)  (45.2s)
+epoch 47/100  train KLw=5.50535  val KLw=7.48819  best_val=6.37072 (epoch 46)  (45.2s)
+epoch 48/100  train KLw=5.77025  val KLw=6.12858  best_val=6.12858 (epoch 48)  (45.2s)
+epoch 49/100  train KLw=5.72239  val KLw=10.57599  best_val=6.12858 (epoch 48)  (45.2s)
+epoch 50/100  train KLw=5.72392  val KLw=5.56383  best_val=5.56383 (epoch 50)  (45.2s)
+  test_phase1  R2=0.7739  worst_rMAE=0.0737  mean_rMAE=0.0509  mean_KLw=5.1151  max_KLw=8.1825
+epoch 51/100  train KLw=5.71249  val KLw=6.00136  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 52/100  train KLw=5.63265  val KLw=6.58339  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 53/100  train KLw=5.55984  val KLw=6.44357  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 54/100  train KLw=5.46343  val KLw=7.54942  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 55/100  train KLw=5.63020  val KLw=6.19581  best_val=5.56383 (epoch 50)  (45.2s)
+  test_phase1  R2=0.7877  worst_rMAE=0.0725  mean_rMAE=0.0505  mean_KLw=5.4249  max_KLw=7.4481
+epoch 56/100  train KLw=5.51470  val KLw=6.51383  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 57/100  train KLw=5.74524  val KLw=5.79978  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 58/100  train KLw=5.43451  val KLw=14.02270  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 59/100  train KLw=5.73426  val KLw=6.90576  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 60/100  train KLw=5.16687  val KLw=8.21132  best_val=5.56383 (epoch 50)  (45.2s)
+  test_phase1  R2=0.7779  worst_rMAE=0.0765  mean_rMAE=0.0581  mean_KLw=7.6893  max_KLw=10.1717
+epoch 61/100  train KLw=5.51494  val KLw=12.88853  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 62/100  train KLw=5.27610  val KLw=11.68532  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 63/100  train KLw=5.23916  val KLw=9.69252  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 64/100  train KLw=5.36574  val KLw=8.47141  best_val=5.56383 (epoch 50)  (45.2s)
+epoch 65/100  train KLw=5.19100  val KLw=6.89325  best_val=5.56383 (epoch 50)  (45.2s)
+  test_phase1  R2=0.7963  worst_rMAE=0.0713  mean_rMAE=0.0522  mean_KLw=6.1066  max_KLw=8.7122
+early stopping at epoch 65 (best epoch 50, val_loss=5.56383)
+best model (epoch 50)  test_phase1  R2=0.7739  worst_rMAE=0.0737  mean_rMAE=0.0509  mean_KLw=5.1151  max_KLw=8.1825
+Saved: utils/simple_gnn2_model.pt

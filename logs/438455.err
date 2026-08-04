@@ -1,0 +1,33 @@
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified lower bound 0.01. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k1__k2__length_scale is close to the specified lower bound 0.01. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified upper bound 0.1. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/lib64/python3.12/site-packages/sklearn/gaussian_process/kernels.py:450: ConvergenceWarning: The optimal value found for dimension 2 of parameter k1__k2__length_scale is close to the specified upper bound 100.0. Increasing the bound and calling fit again may find a better value.
+  warnings.warn(
+[2026-08-03T02:51:55.900] error: *** JOB 438455 ON marg038 CANCELLED AT 2026-08-03T02:51:55 DUE to SIGNAL Terminated ***

@@ -1,0 +1,36 @@
+/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/utils/train_simple_gnn.py:51: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  coords = torch.from_numpy(np.asarray(X[:NWALLP, :3])).float()
+[I 2026-08-01 15:48:41,130] Using an existing study with name 'simple_gnn_splitv3' instead of creating a new one.
+[I 2026-08-01 15:55:59,262] Trial 18 pruned. 
+[I 2026-08-01 15:55:59,329] Trial 19 pruned. 
+[I 2026-08-01 15:55:59,391] Trial 20 pruned. 
+[I 2026-08-01 15:55:59,454] Trial 21 pruned. 
+[I 2026-08-01 16:03:04,209] Trial 22 pruned. 
+[I 2026-08-01 16:03:04,277] Trial 23 pruned. 
+[I 2026-08-01 16:14:24,945] Trial 24 pruned. 
+[I 2026-08-01 16:18:20,042] Trial 25 pruned. 
+[I 2026-08-01 16:18:20,104] Trial 26 pruned. 
+[I 2026-08-01 16:18:20,167] Trial 27 pruned. 
+[I 2026-08-01 16:44:15,502] Trial 28 finished with value: 0.0016434632379969116 and parameters: {'hidden_dim': 128, 'n_layers': 2, 'lr': 0.002782519992789856, 'dropout': 0.023195626717697787, 'weight_decay': 4.658531583803698e-06}. Best is trial 8 with value: 0.0013314902689671726.
+[I 2026-08-01 16:44:15,568] Trial 29 pruned. 
+[I 2026-08-01 16:44:15,631] Trial 30 pruned. 
+[I 2026-08-01 16:44:15,696] Trial 31 pruned. 
+[I 2026-08-01 16:44:15,759] Trial 32 pruned. 
+[I 2026-08-01 16:44:15,821] Trial 33 pruned. 
+[I 2026-08-01 16:48:31,587] Trial 34 pruned. 
+[I 2026-08-01 16:53:30,753] Trial 35 pruned. 
+[I 2026-08-01 16:59:10,788] Trial 36 pruned. 
+[I 2026-08-01 17:04:47,227] Trial 37 pruned. 
+[I 2026-08-01 17:04:47,290] Trial 38 pruned. 
+[I 2026-08-01 17:20:04,828] Trial 39 pruned. 
+[I 2026-08-01 17:37:25,327] Trial 40 pruned. 
+[I 2026-08-01 18:24:15,800] Trial 41 finished with value: 0.0013586191089416388 and parameters: {'hidden_dim': 64, 'n_layers': 4, 'lr': 0.0038931014779505714, 'dropout': 0.12093971826410077, 'weight_decay': 1.6590800464324107e-06}. Best is trial 8 with value: 0.0013314902689671726.
+[I 2026-08-01 18:33:38,786] Trial 42 pruned. 
+[I 2026-08-01 18:33:38,850] Trial 43 pruned. 
+[I 2026-08-01 18:43:01,489] Trial 44 pruned. 
+[I 2026-08-01 18:43:01,552] Trial 45 pruned. 
+[I 2026-08-01 18:55:16,165] Trial 46 pruned. 
+[I 2026-08-01 18:55:16,227] Trial 47 pruned. 
+[I 2026-08-01 18:55:16,284] Trial 48 pruned. 
+[I 2026-08-01 19:10:34,112] Trial 49 pruned. 
+[2026-08-01T19:21:34.994] error: *** JOB 437162 ON margpu002 CANCELLED AT 2026-08-01T19:21:34 DUE to SIGNAL Terminated ***

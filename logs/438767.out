@@ -1,0 +1,1437 @@
+Loading data...
+n_train=324  CV folds=8 (leave-2-consecutive-Machs-out)
+trial 0: n_modes=12  nu=inf  length_scale_upper=302.81  noise_level_upper=0.0100  alpha=2.16e-09
+  trial 0  fold 0 (0.50+0.70)  KL=8.9971  running mean=8.9971
+  trial 0  fold 1 (0.70+0.75)  KL=6.7595  running mean=7.8783
+  trial 0  fold 2 (0.75+0.80)  KL=2.6573  running mean=6.1379
+  trial 0  fold 3 (0.80+0.82)  KL=3.0852  running mean=5.3748
+  trial 0  fold 4 (0.82+0.85)  KL=3.5966  running mean=5.0191
+  trial 0  fold 5 (0.85+0.88)  KL=2.3402  running mean=4.5726
+  trial 0  fold 6 (0.88+0.90)  KL=3.0086  running mean=4.3492
+  trial 0  fold 7 (0.90+0.93)  KL=5.1597  running mean=4.4505
+trial 1: n_modes=103  nu=inf  length_scale_upper=40.93  noise_level_upper=2.9461  alpha=2.01e-05
+  trial 1  fold 0 (0.50+0.70)  KL=10.7773  running mean=10.7773
+  trial 1  fold 1 (0.70+0.75)  KL=6.9270  running mean=8.8521
+  trial 1  fold 2 (0.75+0.80)  KL=2.7264  running mean=6.8102
+  trial 1  fold 3 (0.80+0.82)  KL=3.4329  running mean=5.9659
+  trial 1  fold 4 (0.82+0.85)  KL=2.7861  running mean=5.3299
+  trial 1  fold 5 (0.85+0.88)  KL=3.0029  running mean=4.9421
+  trial 1  fold 6 (0.88+0.90)  KL=4.9572  running mean=4.9443
+  trial 1  fold 7 (0.90+0.93)  KL=4.8814  running mean=4.9364
+trial 2: n_modes=140  nu=1.5  length_scale_upper=148.76  noise_level_upper=0.0285  alpha=1.04e-10
+  trial 2  fold 0 (0.50+0.70)  KL=5.1625  running mean=5.1625
+  trial 2  fold 1 (0.70+0.75)  KL=2.0381  running mean=3.6003
+  trial 2  fold 2 (0.75+0.80)  KL=2.0150  running mean=3.0719
+  trial 2  fold 3 (0.80+0.82)  KL=2.5424  running mean=2.9395
+  trial 2  fold 4 (0.82+0.85)  KL=1.4833  running mean=2.6483
+  trial 2  fold 5 (0.85+0.88)  KL=1.5907  running mean=2.4720
+  trial 2  fold 6 (0.88+0.90)  KL=2.3059  running mean=2.4483
+  trial 2  fold 7 (0.90+0.93)  KL=4.0919  running mean=2.6537
+trial 3: n_modes=86  nu=0.5  length_scale_upper=743.25  noise_level_upper=0.0858  alpha=2.92e-06
+  trial 3  fold 0 (0.50+0.70)  KL=7.6277  running mean=7.6277
+  trial 3  fold 1 (0.70+0.75)  KL=1.9274  running mean=4.7775
+  trial 3  fold 2 (0.75+0.80)  KL=1.3697  running mean=3.6416
+  trial 3  fold 3 (0.80+0.82)  KL=1.7814  running mean=3.1766
+  trial 3  fold 4 (0.82+0.85)  KL=1.5051  running mean=2.8423
+  trial 3  fold 5 (0.85+0.88)  KL=1.7433  running mean=2.6591
+  trial 3  fold 6 (0.88+0.90)  KL=2.9447  running mean=2.6999
+  trial 3  fold 7 (0.90+0.93)  KL=4.2383  running mean=2.8922
+trial 4: n_modes=142  nu=0.5  length_scale_upper=102.43  noise_level_upper=0.1169  alpha=5.68e-09
+  trial 4  fold 0 (0.50+0.70)  KL=8.5240  running mean=8.5240
+  trial 4  fold 1 (0.70+0.75)  KL=1.8776  running mean=5.2008
+  trial 4  fold 2 (0.75+0.80)  KL=1.2792  running mean=3.8936
+  trial 4  fold 3 (0.80+0.82)  KL=1.7978  running mean=3.3696
+  trial 4  fold 4 (0.82+0.85)  KL=1.5038  running mean=2.9965
+  trial 4  fold 5 (0.85+0.88)  KL=1.7488  running mean=2.7885
+  trial 4  fold 6 (0.88+0.90)  KL=3.0254  running mean=2.8224
+  trial 4  fold 7 (0.90+0.93)  KL=4.3493  running mean=3.0132
+trial 5: n_modes=10  nu=2.5  length_scale_upper=17.05  noise_level_upper=2.9034  alpha=1.03e-08
+  trial 5  fold 0 (0.50+0.70)  KL=8.1548  running mean=8.1548
+  trial 5  fold 1 (0.70+0.75)  KL=2.2559  running mean=5.2054
+  trial 5  fold 2 (0.75+0.80)  KL=2.6535  running mean=4.3547
+  trial 5  fold 3 (0.80+0.82)  KL=2.7655  running mean=3.9574
+  trial 5  fold 4 (0.82+0.85)  KL=3.4804  running mean=3.8620
+  trial 5  fold 5 (0.85+0.88)  KL=2.1010  running mean=3.5685
+  trial 5  fold 6 (0.88+0.90)  KL=2.9947  running mean=3.4866
+  trial 5  fold 7 (0.90+0.93)  KL=4.6785  running mean=3.6356
+trial 6: n_modes=77  nu=1.5  length_scale_upper=452.74  noise_level_upper=6.1247  alpha=4.75e-05
+  trial 6  fold 0 (0.50+0.70)  KL=4.7254  running mean=4.7254
+  trial 6  fold 1 (0.70+0.75)  KL=1.7674  running mean=3.2464
+  trial 6  fold 2 (0.75+0.80)  KL=1.1842  running mean=2.5590
+  trial 6  fold 3 (0.80+0.82)  KL=1.5459  running mean=2.3057
+  trial 6  fold 4 (0.82+0.85)  KL=1.3360  running mean=2.1117
+  trial 6  fold 5 (0.85+0.88)  KL=1.6235  running mean=2.0304
+  trial 6  fold 6 (0.88+0.90)  KL=2.3010  running mean=2.0690
+  trial 6  fold 7 (0.90+0.93)  KL=3.9742  running mean=2.3072
+trial 7: n_modes=27  nu=inf  length_scale_upper=23.26  noise_level_upper=2.9281  alpha=2.47e-05
+  trial 7  fold 0 (0.50+0.70)  KL=11.2853  running mean=11.2853
+  trial 7  fold 1 (0.70+0.75)  KL=7.4655  running mean=9.3754
+  trial 7  fold 2 (0.75+0.80)  KL=2.5951  running mean=7.1153
+  trial 7: pruned after fold 2
+trial 8: n_modes=64  nu=inf  length_scale_upper=131.32  noise_level_upper=0.0172  alpha=3.02e-06
+  trial 8  fold 0 (0.50+0.70)  KL=13.2830  running mean=13.2830
+  trial 8  fold 1 (0.70+0.75)  KL=7.8766  running mean=10.5798
+  trial 8  fold 2 (0.75+0.80)  KL=2.8892  running mean=8.0163
+  trial 8: pruned after fold 2
+trial 9: n_modes=43  nu=1.5  length_scale_upper=273.99  noise_level_upper=0.4793  alpha=1.49e-07
+  trial 9  fold 0 (0.50+0.70)  KL=5.2686  running mean=5.2686
+  trial 9  fold 1 (0.70+0.75)  KL=2.1933  running mean=3.7310
+  trial 9  fold 2 (0.75+0.80)  KL=1.1633  running mean=2.8751
+  trial 9  fold 3 (0.80+0.82)  KL=1.8554  running mean=2.6201
+  trial 9  fold 4 (0.82+0.85)  KL=1.4639  running mean=2.3889
+  trial 9  fold 5 (0.85+0.88)  KL=1.7540  running mean=2.2831
+  trial 9  fold 6 (0.88+0.90)  KL=2.3283  running mean=2.2895
+  trial 9  fold 7 (0.90+0.93)  KL=4.0414  running mean=2.5085
+trial 10: n_modes=100  nu=1.5  length_scale_upper=598.57  noise_level_upper=0.7176  alpha=2.50e-07
+  trial 10  fold 0 (0.50+0.70)  KL=4.7116  running mean=4.7116
+  trial 10  fold 1 (0.70+0.75)  KL=1.8025  running mean=3.2570
+  trial 10  fold 2 (0.75+0.80)  KL=1.2806  running mean=2.5982
+  trial 10  fold 3 (0.80+0.82)  KL=1.7985  running mean=2.3983
+  trial 10  fold 4 (0.82+0.85)  KL=1.7624  running mean=2.2711
+  trial 10  fold 5 (0.85+0.88)  KL=1.7191  running mean=2.1791
+  trial 10  fold 6 (0.88+0.90)  KL=2.2899  running mean=2.1949
+  trial 10  fold 7 (0.90+0.93)  KL=4.0094  running mean=2.4217
+trial 11: n_modes=105  nu=1.5  length_scale_upper=917.96  noise_level_upper=9.7005  alpha=1.91e-07
+  trial 11  fold 0 (0.50+0.70)  KL=4.7317  running mean=4.7317
+  trial 11  fold 1 (0.70+0.75)  KL=1.7742  running mean=3.2530
+  trial 11  fold 2 (0.75+0.80)  KL=1.9777  running mean=2.8279
+  trial 11  fold 3 (0.80+0.82)  KL=2.6817  running mean=2.7913
+  trial 11  fold 4 (0.82+0.85)  KL=1.6961  running mean=2.5723
+  trial 11  fold 5 (0.85+0.88)  KL=1.6927  running mean=2.4257
+  trial 11  fold 6 (0.88+0.90)  KL=2.3150  running mean=2.4099
+  trial 11  fold 7 (0.90+0.93)  KL=4.0802  running mean=2.6186
+trial 12: n_modes=69  nu=1.5  length_scale_upper=482.25  noise_level_upper=0.5584  alpha=9.52e-05
+  trial 12  fold 0 (0.50+0.70)  KL=4.7386  running mean=4.7386
+  trial 12  fold 1 (0.70+0.75)  KL=1.8430  running mean=3.2908
+  trial 12  fold 2 (0.75+0.80)  KL=1.9832  running mean=2.8549
+  trial 12  fold 3 (0.80+0.82)  KL=1.5821  running mean=2.5367
+  trial 12  fold 4 (0.82+0.85)  KL=1.6191  running mean=2.3532
+  trial 12  fold 5 (0.85+0.88)  KL=1.6319  running mean=2.2330
+  trial 12  fold 6 (0.88+0.90)  KL=2.3427  running mean=2.2487
+  trial 12  fold 7 (0.90+0.93)  KL=3.9880  running mean=2.4661
+trial 13: n_modes=108  nu=1.5  length_scale_upper=366.14  noise_level_upper=0.6758  alpha=2.77e-07
+  trial 13  fold 0 (0.50+0.70)  KL=5.2841  running mean=5.2841
+  trial 13  fold 1 (0.70+0.75)  KL=2.2203  running mean=3.7522
+  trial 13  fold 2 (0.75+0.80)  KL=1.3243  running mean=2.9429
+  trial 13  fold 3 (0.80+0.82)  KL=1.6655  running mean=2.6236
+  trial 13  fold 4 (0.82+0.85)  KL=1.8127  running mean=2.4614
+  trial 13  fold 5 (0.85+0.88)  KL=1.6691  running mean=2.3293
+  trial 13  fold 6 (0.88+0.90)  KL=2.3231  running mean=2.3284
+  trial 13  fold 7 (0.90+0.93)  KL=4.0248  running mean=2.5405
+trial 14: n_modes=122  nu=2.5  length_scale_upper=538.08  noise_level_upper=8.9841  alpha=2.33e-06
+  trial 14  fold 0 (0.50+0.70)  KL=6.4152  running mean=6.4152
+  trial 14  fold 1 (0.70+0.75)  KL=2.5089  running mean=4.4621
+  trial 14  fold 2 (0.75+0.80)  KL=3.1757  running mean=4.0333
+  trial 14: pruned after fold 2
+trial 15: n_modes=78  nu=1.5  length_scale_upper=241.29  noise_level_upper=1.3985  alpha=4.55e-08
+  trial 15  fold 0 (0.50+0.70)  KL=5.2111  running mean=5.2111
+  trial 15  fold 1 (0.70+0.75)  KL=1.8297  running mean=3.5204
+  trial 15  fold 2 (0.75+0.80)  KL=1.9055  running mean=2.9821
+  trial 15  fold 3 (0.80+0.82)  KL=1.5871  running mean=2.6334
+  trial 15  fold 4 (0.82+0.85)  KL=1.5997  running mean=2.4266
+  trial 15  fold 5 (0.85+0.88)  KL=1.6750  running mean=2.3014
+  trial 15  fold 6 (0.88+0.90)  KL=2.2855  running mean=2.2991
+  trial 15  fold 7 (0.90+0.93)  KL=4.0227  running mean=2.5145
+trial 16: n_modes=53  nu=1.5  length_scale_upper=60.65  noise_level_upper=0.1131  alpha=2.82e-10
+  trial 16  fold 0 (0.50+0.70)  KL=6.5023  running mean=6.5023
+  trial 16  fold 1 (0.70+0.75)  KL=2.1270  running mean=4.3146
+  trial 16  fold 2 (0.75+0.80)  KL=1.4470  running mean=3.3587
+  trial 16  fold 3 (0.80+0.82)  KL=1.9434  running mean=3.0049
+  trial 16  fold 4 (0.82+0.85)  KL=1.6426  running mean=2.7325
+  trial 16  fold 5 (0.85+0.88)  KL=1.8579  running mean=2.5867
+  trial 16  fold 6 (0.88+0.90)  KL=2.5550  running mean=2.5822
+  trial 16  fold 7 (0.90+0.93)  KL=4.0798  running mean=2.7694
+trial 17: n_modes=88  nu=1.5  length_scale_upper=989.38  noise_level_upper=1.2408  alpha=7.12e-07
+  trial 17  fold 0 (0.50+0.70)  KL=4.9436  running mean=4.9436
+  trial 17  fold 1 (0.70+0.75)  KL=2.1744  running mean=3.5590
+  trial 17  fold 2 (0.75+0.80)  KL=1.9913  running mean=3.0364
+  trial 17  fold 3 (0.80+0.82)  KL=1.7983  running mean=2.7269
+  trial 17  fold 4 (0.82+0.85)  KL=1.5653  running mean=2.4946
+  trial 17  fold 5 (0.85+0.88)  KL=1.8096  running mean=2.3804
+  trial 17  fold 6 (0.88+0.90)  KL=2.3009  running mean=2.3691
+  trial 17  fold 7 (0.90+0.93)  KL=4.0206  running mean=2.5755
+trial 18: n_modes=117  nu=0.5  length_scale_upper=10.36  noise_level_upper=0.2333  alpha=9.89e-05
+  trial 18  fold 0 (0.50+0.70)  KL=9.2740  running mean=9.2740
+  trial 18  fold 1 (0.70+0.75)  KL=1.9794  running mean=5.6267
+  trial 18  fold 2 (0.75+0.80)  KL=1.2985  running mean=4.1840
+  trial 18: pruned after fold 2
+trial 19: n_modes=91  nu=2.5  length_scale_upper=202.03  noise_level_upper=5.1522  alpha=3.36e-08
+  trial 19  fold 0 (0.50+0.70)  KL=6.1452  running mean=6.1452
+  trial 19  fold 1 (0.70+0.75)  KL=2.5356  running mean=4.3404
+  trial 19  fold 2 (0.75+0.80)  KL=2.5587  running mean=3.7465
+  trial 19  fold 3 (0.80+0.82)  KL=2.9978  running mean=3.5593
+  trial 19: pruned after fold 3
+trial 20: n_modes=127  nu=1.5  length_scale_upper=548.97  noise_level_upper=1.0656  alpha=1.30e-05
+  trial 20  fold 0 (0.50+0.70)  KL=4.7213  running mean=4.7213
+  trial 20  fold 1 (0.70+0.75)  KL=1.7524  running mean=3.2368
+  trial 20  fold 2 (0.75+0.80)  KL=1.2328  running mean=2.5688
+  trial 20  fold 3 (0.80+0.82)  KL=1.5235  running mean=2.3075
+  trial 20  fold 4 (0.82+0.85)  KL=1.7541  running mean=2.1968
+  trial 20  fold 5 (0.85+0.88)  KL=1.7430  running mean=2.1212
+  trial 20  fold 6 (0.88+0.90)  KL=2.2796  running mean=2.1438
+  trial 20  fold 7 (0.90+0.93)  KL=4.0583  running mean=2.3831
+trial 21: n_modes=128  nu=1.5  length_scale_upper=538.24  noise_level_upper=1.5439  alpha=1.10e-05
+  trial 21  fold 0 (0.50+0.70)  KL=4.7239  running mean=4.7239
+  trial 21  fold 1 (0.70+0.75)  KL=2.2313  running mean=3.4776
+  trial 21  fold 2 (0.75+0.80)  KL=1.2353  running mean=2.7302
+  trial 21  fold 3 (0.80+0.82)  KL=2.4748  running mean=2.6663
+  trial 21  fold 4 (0.82+0.85)  KL=1.7194  running mean=2.4770
+  trial 21  fold 5 (0.85+0.88)  KL=1.6382  running mean=2.3372
+  trial 21  fold 6 (0.88+0.90)  KL=2.2682  running mean=2.3273
+  trial 21  fold 7 (0.90+0.93)  KL=4.0130  running mean=2.5380
+trial 22: n_modes=131  nu=1.5  length_scale_upper=428.18  noise_level_upper=0.2635  alpha=8.17e-06
+  trial 22  fold 0 (0.50+0.70)  KL=4.8227  running mean=4.8227
+  trial 22  fold 1 (0.70+0.75)  KL=1.8632  running mean=3.3429
+  trial 22  fold 2 (0.75+0.80)  KL=1.3745  running mean=2.6868
+  trial 22  fold 3 (0.80+0.82)  KL=1.6459  running mean=2.4266
+  trial 22  fold 4 (0.82+0.85)  KL=1.6061  running mean=2.2625
+  trial 22  fold 5 (0.85+0.88)  KL=6.0088  running mean=2.8869
+  trial 22  fold 6 (0.88+0.90)  KL=2.2954  running mean=2.8024
+  trial 22  fold 7 (0.90+0.93)  KL=4.0668  running mean=2.9604
+trial 23: n_modes=149  nu=1.5  length_scale_upper=695.46  noise_level_upper=0.9741  alpha=7.14e-07
+  trial 23  fold 0 (0.50+0.70)  KL=4.7256  running mean=4.7256
+  trial 23  fold 1 (0.70+0.75)  KL=1.8438  running mean=3.2847
+  trial 23  fold 2 (0.75+0.80)  KL=1.2256  running mean=2.5983
+  trial 23  fold 3 (0.80+0.82)  KL=1.7241  running mean=2.3798
+  trial 23  fold 4 (0.82+0.85)  KL=1.5777  running mean=2.2193
+  trial 23  fold 5 (0.85+0.88)  KL=1.6888  running mean=2.1309
+  trial 23  fold 6 (0.88+0.90)  KL=2.2845  running mean=2.1529
+  trial 23  fold 7 (0.90+0.93)  KL=4.1089  running mean=2.3974
+trial 24: n_modes=148  nu=1.5  length_scale_upper=781.62  noise_level_upper=4.6359  alpha=1.07e-06
+  trial 24  fold 0 (0.50+0.70)  KL=4.7184  running mean=4.7184
+  trial 24  fold 1 (0.70+0.75)  KL=2.2549  running mean=3.4866
+  trial 24  fold 2 (0.75+0.80)  KL=1.9254  running mean=2.9662
+  trial 24  fold 3 (0.80+0.82)  KL=3.3219  running mean=3.0552
+  trial 24  fold 4 (0.82+0.85)  KL=1.5641  running mean=2.7569
+  trial 24  fold 5 (0.85+0.88)  KL=1.8216  running mean=2.6011
+  trial 24  fold 6 (0.88+0.90)  KL=2.2738  running mean=2.5543
+  trial 24  fold 7 (0.90+0.93)  KL=4.0778  running mean=2.7447
+trial 25: n_modes=150  nu=1.5  length_scale_upper=390.21  noise_level_upper=1.4475  alpha=4.02e-05
+  trial 25  fold 0 (0.50+0.70)  KL=4.7078  running mean=4.7078
+  trial 25  fold 1 (0.70+0.75)  KL=2.2536  running mean=3.4807
+  trial 25  fold 2 (0.75+0.80)  KL=1.9138  running mean=2.9584
+  trial 25  fold 3 (0.80+0.82)  KL=1.5898  running mean=2.6163
+  trial 25  fold 4 (0.82+0.85)  KL=1.7774  running mean=2.4485
+  trial 25  fold 5 (0.85+0.88)  KL=1.6414  running mean=2.3140
+  trial 25  fold 6 (0.88+0.90)  KL=2.2860  running mean=2.3100
+  trial 25  fold 7 (0.90+0.93)  KL=3.9970  running mean=2.5208
+trial 26: n_modes=137  nu=1.5  length_scale_upper=186.84  noise_level_upper=0.2949  alpha=6.94e-06
+  trial 26  fold 0 (0.50+0.70)  KL=5.0380  running mean=5.0380
+  trial 26  fold 1 (0.70+0.75)  KL=2.2426  running mean=3.6403
+  trial 26  fold 2 (0.75+0.80)  KL=1.2933  running mean=2.8580
+  trial 26  fold 3 (0.80+0.82)  KL=1.9077  running mean=2.6204
+  trial 26  fold 4 (0.82+0.85)  KL=1.8235  running mean=2.4610
+  trial 26  fold 5 (0.85+0.88)  KL=1.7227  running mean=2.3380
+  trial 26  fold 6 (0.88+0.90)  KL=2.3671  running mean=2.3421
+  trial 26  fold 7 (0.90+0.93)  KL=4.0314  running mean=2.5533
+trial 27: n_modes=114  nu=2.5  length_scale_upper=301.39  noise_level_upper=2.0922  alpha=6.31e-07
+  trial 27  fold 0 (0.50+0.70)  KL=6.3229  running mean=6.3229
+  trial 27  fold 1 (0.70+0.75)  KL=2.6924  running mean=4.5077
+  trial 27  fold 2 (0.75+0.80)  KL=2.0951  running mean=3.7035
+  trial 27: pruned after fold 2
+trial 28: n_modes=39  nu=0.5  length_scale_upper=666.69  noise_level_upper=1.0184  alpha=3.70e-05
+  trial 28  fold 0 (0.50+0.70)  KL=7.6702  running mean=7.6702
+  trial 28  fold 1 (0.70+0.75)  KL=1.8426  running mean=4.7564
+  trial 28  fold 2 (0.75+0.80)  KL=1.3918  running mean=3.6349
+  trial 28: pruned after fold 2
+trial 29: n_modes=134  nu=inf  length_scale_upper=335.95  noise_level_upper=4.3132  alpha=4.35e-06
+  trial 29  fold 0 (0.50+0.70)  KL=9.8356  running mean=9.8356
+  trial 29  fold 1 (0.70+0.75)  KL=6.7861  running mean=8.3108
+  trial 29  fold 2 (0.75+0.80)  KL=3.1496  running mean=6.5904
+  trial 29: pruned after fold 2
+trial 30: n_modes=123  nu=1.5  length_scale_upper=83.34  noise_level_upper=0.4143  alpha=1.39e-06
+  trial 30  fold 0 (0.50+0.70)  KL=5.8785  running mean=5.8785
+  trial 30  fold 1 (0.70+0.75)  KL=1.8537  running mean=3.8661
+  trial 30  fold 2 (0.75+0.80)  KL=2.2080  running mean=3.3134
+  trial 30: pruned after fold 2
+trial 31: n_modes=98  nu=1.5  length_scale_upper=578.64  noise_level_upper=0.8737  alpha=1.38e-05
+  trial 31  fold 0 (0.50+0.70)  KL=4.7234  running mean=4.7234
+  trial 31  fold 1 (0.70+0.75)  KL=1.7370  running mean=3.2302
+  trial 31  fold 2 (0.75+0.80)  KL=1.2437  running mean=2.5680
+  trial 31  fold 3 (0.80+0.82)  KL=1.5786  running mean=2.3207
+  trial 31  fold 4 (0.82+0.85)  KL=1.5106  running mean=2.1587
+  trial 31  fold 5 (0.85+0.88)  KL=1.9111  running mean=2.1174
+  trial 31  fold 6 (0.88+0.90)  KL=2.2713  running mean=2.1394
+  trial 31  fold 7 (0.90+0.93)  KL=4.0035  running mean=2.3724
+trial 32: n_modes=73  nu=1.5  length_scale_upper=622.37  noise_level_upper=0.7959  alpha=1.55e-05
+  trial 32  fold 0 (0.50+0.70)  KL=4.7271  running mean=4.7271
+  trial 32  fold 1 (0.70+0.75)  KL=1.7597  running mean=3.2434
+  trial 32  fold 2 (0.75+0.80)  KL=1.8054  running mean=2.7641
+  trial 32  fold 3 (0.80+0.82)  KL=1.5645  running mean=2.4642
+  trial 32  fold 4 (0.82+0.85)  KL=1.5835  running mean=2.2880
+  trial 32  fold 5 (0.85+0.88)  KL=1.6965  running mean=2.1894
+  trial 32  fold 6 (0.88+0.90)  KL=2.2775  running mean=2.2020
+  trial 32  fold 7 (0.90+0.93)  KL=4.0820  running mean=2.4370
+trial 33: n_modes=94  nu=1.5  length_scale_upper=443.06  noise_level_upper=2.1785  alpha=3.67e-05
+  trial 33  fold 0 (0.50+0.70)  KL=4.6786  running mean=4.6786
+  trial 33  fold 1 (0.70+0.75)  KL=2.1597  running mean=3.4191
+  trial 33  fold 2 (0.75+0.80)  KL=1.1288  running mean=2.6557
+  trial 33  fold 3 (0.80+0.82)  KL=1.5581  running mean=2.3813
+  trial 33  fold 4 (0.82+0.85)  KL=1.5628  running mean=2.2176
+  trial 33  fold 5 (0.85+0.88)  KL=1.6974  running mean=2.1309
+  trial 33  fold 6 (0.88+0.90)  KL=2.2703  running mean=2.1508
+  trial 33  fold 7 (0.90+0.93)  KL=4.0166  running mean=2.3840
+trial 34: n_modes=93  nu=1.5  length_scale_upper=441.18  noise_level_upper=2.1423  alpha=3.65e-05
+  trial 34  fold 0 (0.50+0.70)  KL=4.7195  running mean=4.7195
+  trial 34  fold 1 (0.70+0.75)  KL=2.1599  running mean=3.4397
+  trial 34  fold 2 (0.75+0.80)  KL=1.2167  running mean=2.6987
+  trial 34  fold 3 (0.80+0.82)  KL=1.5821  running mean=2.4195
+  trial 34  fold 4 (0.82+0.85)  KL=1.3593  running mean=2.2075
+  trial 34  fold 5 (0.85+0.88)  KL=1.6559  running mean=2.1156
+  trial 34  fold 6 (0.88+0.90)  KL=2.2761  running mean=2.1385
+  trial 34  fold 7 (0.90+0.93)  KL=4.0056  running mean=2.3719
+trial 35: n_modes=81  nu=inf  length_scale_upper=232.08  noise_level_upper=6.7768  alpha=5.98e-05
+  trial 35  fold 0 (0.50+0.70)  KL=10.2423  running mean=10.2423
+  trial 35  fold 1 (0.70+0.75)  KL=6.2846  running mean=8.2635
+  trial 35  fold 2 (0.75+0.80)  KL=2.6291  running mean=6.3853
+  trial 35: pruned after fold 2
+trial 36: n_modes=61  nu=0.5  length_scale_upper=160.89  noise_level_upper=2.0825  alpha=1.85e-05
+  trial 36  fold 0 (0.50+0.70)  KL=8.2175  running mean=8.2175
+  trial 36  fold 1 (0.70+0.75)  KL=1.8554  running mean=5.0365
+  trial 36  fold 2 (0.75+0.80)  KL=1.2783  running mean=3.7837
+  trial 36: pruned after fold 2
+trial 37: n_modes=97  nu=1.5  length_scale_upper=306.04  noise_level_upper=3.5087  alpha=4.74e-06
+  trial 37  fold 0 (0.50+0.70)  KL=4.6626  running mean=4.6626
+  trial 37  fold 1 (0.70+0.75)  KL=1.7077  running mean=3.1852
+  trial 37  fold 2 (0.75+0.80)  KL=1.9114  running mean=2.7606
+  trial 37  fold 3 (0.80+0.82)  KL=3.2112  running mean=2.8732
+  trial 37  fold 4 (0.82+0.85)  KL=1.5426  running mean=2.6071
+  trial 37  fold 5 (0.85+0.88)  KL=1.6973  running mean=2.4555
+  trial 37  fold 6 (0.88+0.90)  KL=2.2793  running mean=2.4303
+  trial 37  fold 7 (0.90+0.93)  KL=3.9796  running mean=2.6240
+trial 38: n_modes=81  nu=1.5  length_scale_upper=798.35  noise_level_upper=5.6382  alpha=1.35e-05
+  trial 38  fold 0 (0.50+0.70)  KL=4.7299  running mean=4.7299
+  trial 38  fold 1 (0.70+0.75)  KL=1.7450  running mean=3.2374
+  trial 38  fold 2 (0.75+0.80)  KL=1.2065  running mean=2.5605
+  trial 38  fold 3 (0.80+0.82)  KL=1.5642  running mean=2.3114
+  trial 38  fold 4 (0.82+0.85)  KL=1.3461  running mean=2.1183
+  trial 38  fold 5 (0.85+0.88)  KL=1.7399  running mean=2.0553
+  trial 38  fold 6 (0.88+0.90)  KL=2.2803  running mean=2.0874
+  trial 38  fold 7 (0.90+0.93)  KL=4.0452  running mean=2.3321
+trial 39: n_modes=82  nu=2.5  length_scale_upper=847.90  noise_level_upper=6.3099  alpha=2.43e-05
+  trial 39  fold 0 (0.50+0.70)  KL=6.5649  running mean=6.5649
+  trial 39  fold 1 (0.70+0.75)  KL=2.0812  running mean=4.3231
+  trial 39  fold 2 (0.75+0.80)  KL=1.9295  running mean=3.5252
+  trial 39: pruned after fold 2
+trial 40: n_modes=57  nu=inf  length_scale_upper=123.92  noise_level_upper=0.0375  alpha=7.98e-06
+  trial 40  fold 0 (0.50+0.70)  KL=13.4820  running mean=13.4820
+  trial 40  fold 1 (0.70+0.75)  KL=6.8450  running mean=10.1635
+  trial 40  fold 2 (0.75+0.80)  KL=3.0501  running mean=7.7924
+  trial 40: pruned after fold 2
+trial 41: n_modes=108  nu=1.5  length_scale_upper=492.04  noise_level_upper=3.5452  alpha=1.53e-05
+  trial 41  fold 0 (0.50+0.70)  KL=4.7295  running mean=4.7295
+  trial 41  fold 1 (0.70+0.75)  KL=2.1420  running mean=3.4357
+  trial 41  fold 2 (0.75+0.80)  KL=1.2097  running mean=2.6937
+  trial 41  fold 3 (0.80+0.82)  KL=1.5252  running mean=2.4016
+  trial 41  fold 4 (0.82+0.85)  KL=1.3520  running mean=2.1917
+  trial 41  fold 5 (0.85+0.88)  KL=1.6480  running mean=2.1011
+  trial 41  fold 6 (0.88+0.90)  KL=2.2858  running mean=2.1275
+  trial 41  fold 7 (0.90+0.93)  KL=3.9965  running mean=2.3611
+trial 42: n_modes=110  nu=1.5  length_scale_upper=435.12  noise_level_upper=2.8162  alpha=5.42e-05
+  trial 42  fold 0 (0.50+0.70)  KL=5.3416  running mean=5.3416
+  trial 42  fold 1 (0.70+0.75)  KL=1.8749  running mean=3.6082
+  trial 42  fold 2 (0.75+0.80)  KL=1.2181  running mean=2.8115
+  trial 42  fold 3 (0.80+0.82)  KL=2.3159  running mean=2.6876
+  trial 42  fold 4 (0.82+0.85)  KL=1.5908  running mean=2.4683
+  trial 42  fold 5 (0.85+0.88)  KL=1.6005  running mean=2.3236
+  trial 42  fold 6 (0.88+0.90)  KL=2.2728  running mean=2.3164
+  trial 42  fold 7 (0.90+0.93)  KL=3.9969  running mean=2.5264
+trial 43: n_modes=98  nu=1.5  length_scale_upper=704.74  noise_level_upper=7.0347  alpha=2.70e-06
+  trial 43  fold 0 (0.50+0.70)  KL=4.7304  running mean=4.7304
+  trial 43  fold 1 (0.70+0.75)  KL=2.2243  running mean=3.4774
+  trial 43  fold 2 (0.75+0.80)  KL=1.8935  running mean=2.9494
+  trial 43  fold 3 (0.80+0.82)  KL=3.2817  running mean=3.0325
+  trial 43: pruned after fold 3
+trial 44: n_modes=73  nu=1.5  length_scale_upper=366.25  noise_level_upper=3.6127  alpha=2.26e-05
+  trial 44  fold 0 (0.50+0.70)  KL=4.8103  running mean=4.8103
+  trial 44  fold 1 (0.70+0.75)  KL=2.1888  running mean=3.4995
+  trial 44  fold 2 (0.75+0.80)  KL=1.1529  running mean=2.7173
+  trial 44  fold 3 (0.80+0.82)  KL=2.4425  running mean=2.6486
+  trial 44  fold 4 (0.82+0.85)  KL=1.7687  running mean=2.4726
+  trial 44  fold 5 (0.85+0.88)  KL=1.6519  running mean=2.3359
+  trial 44  fold 6 (0.88+0.90)  KL=2.2654  running mean=2.3258
+  trial 44  fold 7 (0.90+0.93)  KL=3.9916  running mean=2.5340
+trial 45: n_modes=103  nu=1.5  length_scale_upper=823.55  noise_level_upper=2.1658  alpha=9.93e-05
+  trial 45  fold 0 (0.50+0.70)  KL=4.7079  running mean=4.7079
+  trial 45  fold 1 (0.70+0.75)  KL=2.0866  running mean=3.3972
+  trial 45  fold 2 (0.75+0.80)  KL=1.1456  running mean=2.6467
+  trial 45  fold 3 (0.80+0.82)  KL=1.4436  running mean=2.3459
+  trial 45  fold 4 (0.82+0.85)  KL=1.3421  running mean=2.1452
+  trial 45  fold 5 (0.85+0.88)  KL=1.7361  running mean=2.0770
+  trial 45  fold 6 (0.88+0.90)  KL=3.0164  running mean=2.2112
+  trial 45  fold 7 (0.90+0.93)  KL=4.0714  running mean=2.4437
+trial 46: n_modes=85  nu=1.5  length_scale_upper=262.99  noise_level_upper=9.2601  alpha=6.32e-06
+  trial 46  fold 0 (0.50+0.70)  KL=4.8503  running mean=4.8503
+  trial 46  fold 1 (0.70+0.75)  KL=1.7745  running mean=3.3124
+  trial 46  fold 2 (0.75+0.80)  KL=1.7935  running mean=2.8061
+  trial 46  fold 3 (0.80+0.82)  KL=2.5802  running mean=2.7496
+  trial 46  fold 4 (0.82+0.85)  KL=1.6284  running mean=2.5254
+  trial 46  fold 5 (0.85+0.88)  KL=1.6879  running mean=2.3858
+  trial 46  fold 6 (0.88+0.90)  KL=2.2911  running mean=2.3723
+  trial 46  fold 7 (0.90+0.93)  KL=4.0041  running mean=2.5763
+trial 47: n_modes=92  nu=0.5  length_scale_upper=499.19  noise_level_upper=3.2822  alpha=1.78e-06
+  trial 47  fold 0 (0.50+0.70)  KL=7.7755  running mean=7.7755
+  trial 47  fold 1 (0.70+0.75)  KL=1.8384  running mean=4.8069
+  trial 47  fold 2 (0.75+0.80)  KL=1.3727  running mean=3.6622
+  trial 47: pruned after fold 2
+trial 48: n_modes=66  nu=1.5  length_scale_upper=961.12  noise_level_upper=5.3224  alpha=1.35e-05
+  trial 48  fold 0 (0.50+0.70)  KL=4.7283  running mean=4.7283
+  trial 48  fold 1 (0.70+0.75)  KL=1.8228  running mean=3.2755
+  trial 48  fold 2 (0.75+0.80)  KL=1.1630  running mean=2.5714
+  trial 48  fold 3 (0.80+0.82)  KL=1.5850  running mean=2.3248
+  trial 48  fold 4 (0.82+0.85)  KL=1.3278  running mean=2.1254
+  trial 48  fold 5 (0.85+0.88)  KL=1.7170  running mean=2.0573
+  trial 48  fold 6 (0.88+0.90)  KL=2.3319  running mean=2.0965
+  trial 48  fold 7 (0.90+0.93)  KL=4.0220  running mean=2.3372
+trial 49: n_modes=49  nu=1.5  length_scale_upper=961.58  noise_level_upper=5.4527  alpha=5.67e-05
+  trial 49  fold 0 (0.50+0.70)  KL=4.7305  running mean=4.7305
+  trial 49  fold 1 (0.70+0.75)  KL=1.8074  running mean=3.2689
+  trial 49  fold 2 (0.75+0.80)  KL=1.2516  running mean=2.5965
+  trial 49  fold 3 (0.80+0.82)  KL=1.5161  running mean=2.3264
+  trial 49  fold 4 (0.82+0.85)  KL=1.3369  running mean=2.1285
+  trial 49  fold 5 (0.85+0.88)  KL=1.6014  running mean=2.0406
+  trial 49  fold 6 (0.88+0.90)  KL=2.2966  running mean=2.0772
+  trial 49  fold 7 (0.90+0.93)  KL=4.0860  running mean=2.3283
+trial 50: n_modes=48  nu=1.5  length_scale_upper=884.03  noise_level_upper=5.5800  alpha=5.80e-05
+  trial 50  fold 0 (0.50+0.70)  KL=4.9021  running mean=4.9021
+  trial 50  fold 1 (0.70+0.75)  KL=1.6944  running mean=3.2982
+  trial 50  fold 2 (0.75+0.80)  KL=1.1614  running mean=2.5860
+  trial 50  fold 3 (0.80+0.82)  KL=1.5104  running mean=2.3171
+  trial 50  fold 4 (0.82+0.85)  KL=1.4317  running mean=2.1400
+  trial 50  fold 5 (0.85+0.88)  KL=1.6306  running mean=2.0551
+  trial 50  fold 6 (0.88+0.90)  KL=2.3065  running mean=2.0910
+  trial 50  fold 7 (0.90+0.93)  KL=4.0731  running mean=2.3388
+trial 51: n_modes=46  nu=1.5  length_scale_upper=987.74  noise_level_upper=5.5233  alpha=5.87e-05
+  trial 51  fold 0 (0.50+0.70)  KL=4.7269  running mean=4.7269
+  trial 51  fold 1 (0.70+0.75)  KL=2.0877  running mean=3.4073
+  trial 51  fold 2 (0.75+0.80)  KL=1.1772  running mean=2.6639
+  trial 51  fold 3 (0.80+0.82)  KL=2.2094  running mean=2.5503
+  trial 51  fold 4 (0.82+0.85)  KL=1.3628  running mean=2.3128
+  trial 51  fold 5 (0.85+0.88)  KL=1.6230  running mean=2.1978
+  trial 51  fold 6 (0.88+0.90)  KL=2.2864  running mean=2.2105
+  trial 51  fold 7 (0.90+0.93)  KL=4.0758  running mean=2.4436
+trial 52: n_modes=27  nu=1.5  length_scale_upper=813.90  noise_level_upper=7.6019  alpha=2.62e-05
+  trial 52  fold 0 (0.50+0.70)  KL=4.7415  running mean=4.7415
+  trial 52  fold 1 (0.70+0.75)  KL=2.1506  running mean=3.4461
+  trial 52  fold 2 (0.75+0.80)  KL=1.1119  running mean=2.6680
+  trial 52  fold 3 (0.80+0.82)  KL=1.5331  running mean=2.3843
+  trial 52  fold 4 (0.82+0.85)  KL=1.3879  running mean=2.1850
+  trial 52  fold 5 (0.85+0.88)  KL=1.6519  running mean=2.0962
+  trial 52  fold 6 (0.88+0.90)  KL=2.3087  running mean=2.1265
+  trial 52  fold 7 (0.90+0.93)  KL=4.0735  running mean=2.3699
+trial 53: n_modes=50  nu=1.5  length_scale_upper=993.62  noise_level_upper=4.4405  alpha=3.80e-06
+  trial 53  fold 0 (0.50+0.70)  KL=4.7207  running mean=4.7207
+  trial 53  fold 1 (0.70+0.75)  KL=1.9335  running mean=3.3271
+  trial 53  fold 2 (0.75+0.80)  KL=1.2437  running mean=2.6326
+  trial 53  fold 3 (0.80+0.82)  KL=1.5940  running mean=2.3730
+  trial 53  fold 4 (0.82+0.85)  KL=1.4927  running mean=2.1969
+  trial 53  fold 5 (0.85+0.88)  KL=1.6596  running mean=2.1074
+  trial 53  fold 6 (0.88+0.90)  KL=2.2871  running mean=2.1331
+  trial 53  fold 7 (0.90+0.93)  KL=4.0289  running mean=2.3700
+trial 54: n_modes=36  nu=1.5  length_scale_upper=659.63  noise_level_upper=9.9804  alpha=1.18e-05
+  trial 54  fold 0 (0.50+0.70)  KL=4.8524  running mean=4.8524
+  trial 54  fold 1 (0.70+0.75)  KL=1.7263  running mean=3.2893
+  trial 54  fold 2 (0.75+0.80)  KL=1.1776  running mean=2.5854
+  trial 54  fold 3 (0.80+0.82)  KL=1.5419  running mean=2.3246
+  trial 54  fold 4 (0.82+0.85)  KL=1.5278  running mean=2.1652
+  trial 54  fold 5 (0.85+0.88)  KL=1.7758  running mean=2.1003
+  trial 54  fold 6 (0.88+0.90)  KL=2.3021  running mean=2.1291
+  trial 54  fold 7 (0.90+0.93)  KL=4.0418  running mean=2.3682
+trial 55: n_modes=66  nu=1.5  length_scale_upper=29.85  noise_level_upper=2.7645  alpha=5.11e-10
+  trial 55  fold 0 (0.50+0.70)  KL=7.1694  running mean=7.1694
+  trial 55  fold 1 (0.70+0.75)  KL=1.7784  running mean=4.4739
+  trial 55  fold 2 (0.75+0.80)  KL=1.3808  running mean=3.4429
+  trial 55: pruned after fold 2
+trial 56: n_modes=31  nu=2.5  length_scale_upper=824.57  noise_level_upper=4.1356  alpha=7.19e-05
+  trial 56  fold 0 (0.50+0.70)  KL=6.5127  running mean=6.5127
+  trial 56  fold 1 (0.70+0.75)  KL=1.9757  running mean=4.2442
+  trial 56  fold 2 (0.75+0.80)  KL=3.0162  running mean=3.8349
+  trial 56: pruned after fold 2
+trial 57: n_modes=60  nu=inf  length_scale_upper=585.83  noise_level_upper=5.0529  alpha=2.28e-05
+  trial 57  fold 0 (0.50+0.70)  KL=8.6982  running mean=8.6982
+  trial 57  fold 1 (0.70+0.75)  KL=3.0811  running mean=5.8896
+  trial 57  fold 2 (0.75+0.80)  KL=5.1719  running mean=5.6504
+  trial 57: pruned after fold 2
+trial 58: n_modes=53  nu=1.5  length_scale_upper=732.60  noise_level_upper=7.4075  alpha=4.47e-05
+  trial 58  fold 0 (0.50+0.70)  KL=4.8256  running mean=4.8256
+  trial 58  fold 1 (0.70+0.75)  KL=1.7529  running mean=3.2893
+  trial 58  fold 2 (0.75+0.80)  KL=1.0631  running mean=2.5472
+  trial 58  fold 3 (0.80+0.82)  KL=1.5703  running mean=2.3030
+  trial 58  fold 4 (0.82+0.85)  KL=1.3600  running mean=2.1144
+  trial 58  fold 5 (0.85+0.88)  KL=1.6690  running mean=2.0401
+  trial 58  fold 6 (0.88+0.90)  KL=2.2920  running mean=2.0761
+  trial 58  fold 7 (0.90+0.93)  KL=4.0077  running mean=2.3176
+trial 59: n_modes=20  nu=1.5  length_scale_upper=730.39  noise_level_upper=7.2716  alpha=4.16e-05
+  trial 59  fold 0 (0.50+0.70)  KL=4.7064  running mean=4.7064
+  trial 59  fold 1 (0.70+0.75)  KL=1.7959  running mean=3.2511
+  trial 59  fold 2 (0.75+0.80)  KL=1.1605  running mean=2.5543
+  trial 59  fold 3 (0.80+0.82)  KL=1.5830  running mean=2.3115
+  trial 59  fold 4 (0.82+0.85)  KL=1.4605  running mean=2.1413
+  trial 59  fold 5 (0.85+0.88)  KL=1.7406  running mean=2.0745
+  trial 59  fold 6 (0.88+0.90)  KL=2.3760  running mean=2.1176
+  trial 59  fold 7 (0.90+0.93)  KL=4.2584  running mean=2.3852
+trial 60: n_modes=52  nu=1.5  length_scale_upper=873.40  noise_level_upper=5.5248  alpha=9.83e-05
+  trial 60  fold 0 (0.50+0.70)  KL=4.7228  running mean=4.7228
+  trial 60  fold 1 (0.70+0.75)  KL=1.9376  running mean=3.3302
+  trial 60  fold 2 (0.75+0.80)  KL=1.8151  running mean=2.8252
+  trial 60  fold 3 (0.80+0.82)  KL=1.4863  running mean=2.4905
+  trial 60  fold 4 (0.82+0.85)  KL=1.3572  running mean=2.2638
+  trial 60  fold 5 (0.85+0.88)  KL=1.6025  running mean=2.1536
+  trial 60  fold 6 (0.88+0.90)  KL=2.2856  running mean=2.1724
+  trial 60  fold 7 (0.90+0.93)  KL=4.0781  running mean=2.4107
+trial 61: n_modes=46  nu=1.5  length_scale_upper=536.39  noise_level_upper=8.2281  alpha=8.86e-06
+  trial 61  fold 0 (0.50+0.70)  KL=4.8586  running mean=4.8586
+  trial 61  fold 1 (0.70+0.75)  KL=2.1590  running mean=3.5088
+  trial 61  fold 2 (0.75+0.80)  KL=1.9043  running mean=2.9740
+  trial 61: pruned after fold 2
+trial 62: n_modes=72  nu=1.5  length_scale_upper=734.08  noise_level_upper=5.9355  alpha=2.97e-05
+  trial 62  fold 0 (0.50+0.70)  KL=5.3459  running mean=5.3459
+  trial 62  fold 1 (0.70+0.75)  KL=1.7194  running mean=3.5327
+  trial 62  fold 2 (0.75+0.80)  KL=1.1563  running mean=2.7406
+  trial 62  fold 3 (0.80+0.82)  KL=1.5169  running mean=2.4346
+  trial 62  fold 4 (0.82+0.85)  KL=1.3400  running mean=2.2157
+  trial 62  fold 5 (0.85+0.88)  KL=1.6310  running mean=2.1182
+  trial 62  fold 6 (0.88+0.90)  KL=2.2624  running mean=2.1388
+  trial 62  fold 7 (0.90+0.93)  KL=4.0171  running mean=2.3736
+trial 63: n_modes=66  nu=1.5  length_scale_upper=996.44  noise_level_upper=3.9179  alpha=1.66e-05
+  trial 63  fold 0 (0.50+0.70)  KL=5.2860  running mean=5.2860
+  trial 63  fold 1 (0.70+0.75)  KL=1.8430  running mean=3.5645
+  trial 63  fold 2 (0.75+0.80)  KL=1.0638  running mean=2.7310
+  trial 63  fold 3 (0.80+0.82)  KL=1.4736  running mean=2.4166
+  trial 63  fold 4 (0.82+0.85)  KL=1.5433  running mean=2.2419
+  trial 63  fold 5 (0.85+0.88)  KL=1.6293  running mean=2.1398
+  trial 63  fold 6 (0.88+0.90)  KL=2.2975  running mean=2.1624
+  trial 63  fold 7 (0.90+0.93)  KL=4.0162  running mean=2.3941
+trial 64: n_modes=56  nu=1.5  length_scale_upper=618.98  noise_level_upper=2.9253  alpha=6.02e-05
+  trial 64  fold 0 (0.50+0.70)  KL=4.6821  running mean=4.6821
+  trial 64  fold 1 (0.70+0.75)  KL=1.7940  running mean=3.2381
+  trial 64  fold 2 (0.75+0.80)  KL=1.1305  running mean=2.5355
+  trial 64  fold 3 (0.80+0.82)  KL=1.5036  running mean=2.2776
+  trial 64  fold 4 (0.82+0.85)  KL=1.3517  running mean=2.0924
+  trial 64  fold 5 (0.85+0.88)  KL=1.6176  running mean=2.0133
+  trial 64  fold 6 (0.88+0.90)  KL=2.2690  running mean=2.0498
+  trial 64  fold 7 (0.90+0.93)  KL=3.9929  running mean=2.2927
+trial 65: n_modes=55  nu=1.5  length_scale_upper=632.39  noise_level_upper=1.6400  alpha=7.26e-05
+  trial 65  fold 0 (0.50+0.70)  KL=4.6876  running mean=4.6876
+  trial 65  fold 1 (0.70+0.75)  KL=1.7547  running mean=3.2212
+  trial 65  fold 2 (0.75+0.80)  KL=1.1635  running mean=2.5353
+  trial 65  fold 3 (0.80+0.82)  KL=1.5117  running mean=2.2794
+  trial 65  fold 4 (0.82+0.85)  KL=1.3405  running mean=2.0916
+  trial 65  fold 5 (0.85+0.88)  KL=1.6975  running mean=2.0259
+  trial 65  fold 6 (0.88+0.90)  KL=2.2781  running mean=2.0620
+  trial 65  fold 7 (0.90+0.93)  KL=4.0319  running mean=2.3082
+trial 66: n_modes=56  nu=0.5  length_scale_upper=622.94  noise_level_upper=1.6847  alpha=6.66e-05
+  trial 66  fold 0 (0.50+0.70)  KL=7.6918  running mean=7.6918
+  trial 66  fold 1 (0.70+0.75)  KL=1.8398  running mean=4.7658
+  trial 66  fold 2 (0.75+0.80)  KL=1.3722  running mean=3.6346
+  trial 66: pruned after fold 2
+trial 67: n_modes=42  nu=1.5  length_scale_upper=724.83  noise_level_upper=1.2296  alpha=4.53e-05
+  trial 67  fold 0 (0.50+0.70)  KL=4.7243  running mean=4.7243
+  trial 67  fold 1 (0.70+0.75)  KL=1.8188  running mean=3.2715
+  trial 67  fold 2 (0.75+0.80)  KL=1.0883  running mean=2.5438
+  trial 67  fold 3 (0.80+0.82)  KL=1.5174  running mean=2.2872
+  trial 67  fold 4 (0.82+0.85)  KL=1.3734  running mean=2.1044
+  trial 67  fold 5 (0.85+0.88)  KL=1.6565  running mean=2.0298
+  trial 67  fold 6 (0.88+0.90)  KL=2.2707  running mean=2.0642
+  trial 67  fold 7 (0.90+0.93)  KL=4.0925  running mean=2.3177
+trial 68: n_modes=39  nu=2.5  length_scale_upper=396.27  noise_level_upper=1.2045  alpha=4.19e-05
+  trial 68  fold 0 (0.50+0.70)  KL=6.3205  running mean=6.3205
+  trial 68  fold 1 (0.70+0.75)  KL=1.9195  running mean=4.1200
+  trial 68  fold 2 (0.75+0.80)  KL=2.0152  running mean=3.4184
+  trial 68: pruned after fold 2
+trial 69: n_modes=41  nu=1.5  length_scale_upper=337.86  noise_level_upper=2.7143  alpha=7.35e-05
+  trial 69  fold 0 (0.50+0.70)  KL=4.8167  running mean=4.8167
+  trial 69  fold 1 (0.70+0.75)  KL=1.7498  running mean=3.2832
+  trial 69  fold 2 (0.75+0.80)  KL=1.1656  running mean=2.5774
+  trial 69  fold 3 (0.80+0.82)  KL=1.5526  running mean=2.3212
+  trial 69  fold 4 (0.82+0.85)  KL=1.7238  running mean=2.2017
+  trial 69  fold 5 (0.85+0.88)  KL=1.7155  running mean=2.1207
+  trial 69  fold 6 (0.88+0.90)  KL=2.2797  running mean=2.1434
+  trial 69  fold 7 (0.90+0.93)  KL=4.0166  running mean=2.3775
+trial 70: n_modes=34  nu=1.5  length_scale_upper=591.88  noise_level_upper=0.0105  alpha=2.89e-05
+  trial 70  fold 0 (0.50+0.70)  KL=5.4800  running mean=5.4800
+  trial 70  fold 1 (0.70+0.75)  KL=2.0618  running mean=3.7709
+  trial 70  fold 2 (0.75+0.80)  KL=1.3875  running mean=2.9764
+  trial 70: pruned after fold 2
+trial 71: n_modes=55  nu=1.5  length_scale_upper=750.69  noise_level_upper=1.6649  alpha=1.10e-05
+  trial 71  fold 0 (0.50+0.70)  KL=4.6831  running mean=4.6831
+  trial 71  fold 1 (0.70+0.75)  KL=2.2448  running mean=3.4639
+  trial 71  fold 2 (0.75+0.80)  KL=1.1254  running mean=2.6844
+  trial 71  fold 3 (0.80+0.82)  KL=1.5157  running mean=2.3922
+  trial 71  fold 4 (0.82+0.85)  KL=1.5125  running mean=2.2163
+  trial 71  fold 5 (0.85+0.88)  KL=1.7103  running mean=2.1319
+  trial 71  fold 6 (0.88+0.90)  KL=2.2667  running mean=2.1512
+  trial 71  fold 7 (0.90+0.93)  KL=4.0263  running mean=2.3856
+trial 72: n_modes=78  nu=1.5  length_scale_upper=492.81  noise_level_upper=2.5822  alpha=4.60e-05
+  trial 72  fold 0 (0.50+0.70)  KL=4.7225  running mean=4.7225
+  trial 72  fold 1 (0.70+0.75)  KL=1.8163  running mean=3.2694
+  trial 72  fold 2 (0.75+0.80)  KL=1.1779  running mean=2.5723
+  trial 72  fold 3 (0.80+0.82)  KL=1.5395  running mean=2.3141
+  trial 72  fold 4 (0.82+0.85)  KL=1.5196  running mean=2.1552
+  trial 72  fold 5 (0.85+0.88)  KL=1.5995  running mean=2.0625
+  trial 72  fold 6 (0.88+0.90)  KL=2.2697  running mean=2.0921
+  trial 72  fold 7 (0.90+0.93)  KL=4.0132  running mean=2.3323
+trial 73: n_modes=80  nu=1.5  length_scale_upper=489.33  noise_level_upper=2.4009  alpha=4.57e-05
+  trial 73  fold 0 (0.50+0.70)  KL=4.6822  running mean=4.6822
+  trial 73  fold 1 (0.70+0.75)  KL=1.8165  running mean=3.2493
+  trial 73  fold 2 (0.75+0.80)  KL=1.9783  running mean=2.8257
+  trial 73  fold 3 (0.80+0.82)  KL=1.5032  running mean=2.4951
+  trial 73  fold 4 (0.82+0.85)  KL=1.4920  running mean=2.2944
+  trial 73  fold 5 (0.85+0.88)  KL=1.5838  running mean=2.1760
+  trial 73  fold 6 (0.88+0.90)  KL=2.2749  running mean=2.1901
+  trial 73  fold 7 (0.90+0.93)  KL=4.0004  running mean=2.4164
+trial 74: n_modes=60  nu=1.5  length_scale_upper=674.24  noise_level_upper=1.7199  alpha=2.04e-05
+  trial 74  fold 0 (0.50+0.70)  KL=4.6777  running mean=4.6777
+  trial 74  fold 1 (0.70+0.75)  KL=1.8289  running mean=3.2533
+  trial 74  fold 2 (0.75+0.80)  KL=1.0751  running mean=2.5272
+  trial 74  fold 3 (0.80+0.82)  KL=1.4895  running mean=2.2678
+  trial 74  fold 4 (0.82+0.85)  KL=1.3692  running mean=2.0881
+  trial 74  fold 5 (0.85+0.88)  KL=1.6574  running mean=2.0163
+  trial 74  fold 6 (0.88+0.90)  KL=2.2900  running mean=2.0554
+  trial 74  fold 7 (0.90+0.93)  KL=4.0194  running mean=2.3009
+trial 75: n_modes=62  nu=1.5  length_scale_upper=660.98  noise_level_upper=1.2437  alpha=2.36e-05
+  trial 75  fold 0 (0.50+0.70)  KL=4.8177  running mean=4.8177
+  trial 75  fold 1 (0.70+0.75)  KL=1.8068  running mean=3.3123
+  trial 75  fold 2 (0.75+0.80)  KL=1.1323  running mean=2.5856
+  trial 75  fold 3 (0.80+0.82)  KL=2.4557  running mean=2.5531
+  trial 75  fold 4 (0.82+0.85)  KL=1.3623  running mean=2.3150
+  trial 75  fold 5 (0.85+0.88)  KL=1.6310  running mean=2.2010
+  trial 75  fold 6 (0.88+0.90)  KL=2.3026  running mean=2.2155
+  trial 75  fold 7 (0.90+0.93)  KL=4.0539  running mean=2.4453
+trial 76: n_modes=58  nu=inf  length_scale_upper=554.73  noise_level_upper=0.5973  alpha=3.18e-05
+  trial 76  fold 0 (0.50+0.70)  KL=10.6952  running mean=10.6952
+  trial 76  fold 1 (0.70+0.75)  KL=3.5417  running mean=7.1184
+  trial 76  fold 2 (0.75+0.80)  KL=2.7684  running mean=5.6684
+  trial 76: pruned after fold 2
+trial 77: n_modes=44  nu=1.5  length_scale_upper=671.15  noise_level_upper=1.8003  alpha=8.33e-05
+  trial 77  fold 0 (0.50+0.70)  KL=4.7803  running mean=4.7803
+  trial 77  fold 1 (0.70+0.75)  KL=2.2245  running mean=3.5024
+  trial 77  fold 2 (0.75+0.80)  KL=1.1274  running mean=2.7107
+  trial 77  fold 3 (0.80+0.82)  KL=1.5209  running mean=2.4133
+  trial 77  fold 4 (0.82+0.85)  KL=1.3658  running mean=2.2038
+  trial 77  fold 5 (0.85+0.88)  KL=1.6466  running mean=2.1109
+  trial 77  fold 6 (0.88+0.90)  KL=2.3000  running mean=2.1379
+  trial 77  fold 7 (0.90+0.93)  KL=4.0444  running mean=2.3763
+trial 78: n_modes=70  nu=1.5  length_scale_upper=767.50  noise_level_upper=3.2285  alpha=2.14e-05
+  trial 78  fold 0 (0.50+0.70)  KL=5.3434  running mean=5.3434
+  trial 78  fold 1 (0.70+0.75)  KL=1.7553  running mean=3.5493
+  trial 78  fold 2 (0.75+0.80)  KL=1.2771  running mean=2.7919
+  trial 78  fold 3 (0.80+0.82)  KL=1.5586  running mean=2.4836
+  trial 78  fold 4 (0.82+0.85)  KL=1.3837  running mean=2.2636
+  trial 78  fold 5 (0.85+0.88)  KL=1.5974  running mean=2.1526
+  trial 78  fold 6 (0.88+0.90)  KL=2.2653  running mean=2.1687
+  trial 78  fold 7 (0.90+0.93)  KL=3.9888  running mean=2.3962
+trial 79: n_modes=51  nu=0.5  length_scale_upper=463.28  noise_level_upper=0.8958  alpha=5.20e-06
+  trial 79  fold 0 (0.50+0.70)  KL=7.7967  running mean=7.7967
+  trial 79  fold 1 (0.70+0.75)  KL=1.8390  running mean=4.8179
+  trial 79  fold 2 (0.75+0.80)  KL=1.3750  running mean=3.6702
+  trial 79: pruned after fold 2
+trial 80: n_modes=76  nu=1.5  length_scale_upper=389.05  noise_level_upper=1.3496  alpha=6.05e-09
+  trial 80  fold 0 (0.50+0.70)  KL=4.7096  running mean=4.7096
+  trial 80  fold 1 (0.70+0.75)  KL=2.2178  running mean=3.4637
+  trial 80  fold 2 (0.75+0.80)  KL=1.2895  running mean=2.7390
+  trial 80  fold 3 (0.80+0.82)  KL=1.7175  running mean=2.4836
+  trial 80  fold 4 (0.82+0.85)  KL=1.4270  running mean=2.2723
+  trial 80  fold 5 (0.85+0.88)  KL=1.6925  running mean=2.1756
+  trial 80  fold 6 (0.88+0.90)  KL=2.3031  running mean=2.1939
+  trial 80  fold 7 (0.90+0.93)  KL=4.0500  running mean=2.4259
+trial 81: n_modes=88  nu=1.5  length_scale_upper=538.03  noise_level_upper=2.6375  alpha=5.03e-05
+  trial 81  fold 0 (0.50+0.70)  KL=4.6810  running mean=4.6810
+  trial 81  fold 1 (0.70+0.75)  KL=1.8093  running mean=3.2452
+  trial 81  fold 2 (0.75+0.80)  KL=1.1479  running mean=2.5461
+  trial 81  fold 3 (0.80+0.82)  KL=2.4034  running mean=2.5104
+  trial 81  fold 4 (0.82+0.85)  KL=1.3383  running mean=2.2760
+  trial 81  fold 5 (0.85+0.88)  KL=1.6116  running mean=2.1652
+  trial 81  fold 6 (0.88+0.90)  KL=2.2679  running mean=2.1799
+  trial 81  fold 7 (0.90+0.93)  KL=4.0423  running mean=2.4127
+trial 82: n_modes=63  nu=1.5  length_scale_upper=616.09  noise_level_upper=1.8854  alpha=3.44e-05
+  trial 82  fold 0 (0.50+0.70)  KL=4.6759  running mean=4.6759
+  trial 82  fold 1 (0.70+0.75)  KL=1.8151  running mean=3.2455
+  trial 82  fold 2 (0.75+0.80)  KL=1.1413  running mean=2.5441
+  trial 82  fold 3 (0.80+0.82)  KL=1.4882  running mean=2.2801
+  trial 82  fold 4 (0.82+0.85)  KL=1.5009  running mean=2.1243
+  trial 82  fold 5 (0.85+0.88)  KL=1.6212  running mean=2.0404
+  trial 82  fold 6 (0.88+0.90)  KL=2.2849  running mean=2.0754
+  trial 82  fold 7 (0.90+0.93)  KL=4.1003  running mean=2.3285
+trial 83: n_modes=53  nu=1.5  length_scale_upper=615.22  noise_level_upper=1.9335  alpha=1.83e-05
+  trial 83  fold 0 (0.50+0.70)  KL=4.7311  running mean=4.7311
+  trial 83  fold 1 (0.70+0.75)  KL=1.8072  running mean=3.2692
+  trial 83  fold 2 (0.75+0.80)  KL=1.2147  running mean=2.5844
+  trial 83  fold 3 (0.80+0.82)  KL=1.5731  running mean=2.3315
+  trial 83  fold 4 (0.82+0.85)  KL=1.5053  running mean=2.1663
+  trial 83  fold 5 (0.85+0.88)  KL=1.6989  running mean=2.0884
+  trial 83  fold 6 (0.88+0.90)  KL=2.2722  running mean=2.1147
+  trial 83  fold 7 (0.90+0.93)  KL=4.0177  running mean=2.3525
+trial 84: n_modes=60  nu=1.5  length_scale_upper=867.34  noise_level_upper=1.1084  alpha=9.07e-06
+  trial 84  fold 0 (0.50+0.70)  KL=4.7293  running mean=4.7293
+  trial 84  fold 1 (0.70+0.75)  KL=1.8186  running mean=3.2739
+  trial 84  fold 2 (0.75+0.80)  KL=1.1507  running mean=2.5662
+  trial 84  fold 3 (0.80+0.82)  KL=1.5297  running mean=2.3070
+  trial 84  fold 4 (0.82+0.85)  KL=1.5705  running mean=2.1597
+  trial 84  fold 5 (0.85+0.88)  KL=1.6453  running mean=2.0740
+  trial 84  fold 6 (0.88+0.90)  KL=2.2813  running mean=2.1036
+  trial 84  fold 7 (0.90+0.93)  KL=4.0639  running mean=2.3487
+trial 85: n_modes=68  nu=1.5  length_scale_upper=13.52  noise_level_upper=1.4639  alpha=3.09e-05
+  trial 85  fold 0 (0.50+0.70)  KL=7.9621  running mean=7.9621
+  trial 85  fold 1 (0.70+0.75)  KL=2.1187  running mean=5.0404
+  trial 85  fold 2 (0.75+0.80)  KL=1.6831  running mean=3.9213
+  trial 85: pruned after fold 2
+trial 86: n_modes=55  nu=1.5  length_scale_upper=728.67  noise_level_upper=4.0432  alpha=7.49e-05
+  trial 86  fold 0 (0.50+0.70)  KL=4.7296  running mean=4.7296
+  trial 86  fold 1 (0.70+0.75)  KL=1.6786  running mean=3.2041
+  trial 86  fold 2 (0.75+0.80)  KL=1.0651  running mean=2.4911
+  trial 86  fold 3 (0.80+0.82)  KL=1.5132  running mean=2.2466
+  trial 86  fold 4 (0.82+0.85)  KL=1.3632  running mean=2.0699
+  trial 86  fold 5 (0.85+0.88)  KL=1.5974  running mean=1.9912
+  trial 86  fold 6 (0.88+0.90)  KL=2.2728  running mean=2.0314
+  trial 86  fold 7 (0.90+0.93)  KL=4.0740  running mean=2.2867
+trial 87: n_modes=63  nu=1.5  length_scale_upper=429.78  noise_level_upper=0.6694  alpha=7.27e-05
+  trial 87  fold 0 (0.50+0.70)  KL=5.2924  running mean=5.2924
+  trial 87  fold 1 (0.70+0.75)  KL=1.7503  running mean=3.5213
+  trial 87  fold 2 (0.75+0.80)  KL=1.3727  running mean=2.8051
+  trial 87  fold 3 (0.80+0.82)  KL=2.4432  running mean=2.7146
+  trial 87: pruned after fold 3
+trial 88: n_modes=49  nu=2.5  length_scale_upper=704.71  noise_level_upper=0.4362  alpha=9.41e-05
+  trial 88  fold 0 (0.50+0.70)  KL=6.3922  running mean=6.3922
+  trial 88  fold 1 (0.70+0.75)  KL=2.4577  running mean=4.4249
+  trial 88  fold 2 (0.75+0.80)  KL=3.0354  running mean=3.9617
+  trial 88: pruned after fold 2
+trial 89: n_modes=55  nu=1.5  length_scale_upper=339.23  noise_level_upper=4.5029  alpha=5.32e-05
+  trial 89  fold 0 (0.50+0.70)  KL=4.6562  running mean=4.6562
+  trial 89  fold 1 (0.70+0.75)  KL=1.7600  running mean=3.2081
+  trial 89  fold 2 (0.75+0.80)  KL=1.0911  running mean=2.5024
+  trial 89  fold 3 (0.80+0.82)  KL=2.5143  running mean=2.5054
+  trial 89  fold 4 (0.82+0.85)  KL=1.5272  running mean=2.3098
+  trial 89  fold 5 (0.85+0.88)  KL=1.6079  running mean=2.1928
+  trial 89  fold 6 (0.88+0.90)  KL=2.2860  running mean=2.2061
+  trial 89  fold 7 (0.90+0.93)  KL=3.9930  running mean=2.4295
+trial 90: n_modes=46  nu=1.5  length_scale_upper=621.01  noise_level_upper=3.1226  alpha=3.54e-05
+  trial 90  fold 0 (0.50+0.70)  KL=5.2991  running mean=5.2991
+  trial 90  fold 1 (0.70+0.75)  KL=2.2304  running mean=3.7647
+  trial 90  fold 2 (0.75+0.80)  KL=1.1443  running mean=2.8912
+  trial 90: pruned after fold 2
+trial 91: n_modes=76  nu=1.5  length_scale_upper=902.75  noise_level_upper=6.4551  alpha=1.79e-05
+  trial 91  fold 0 (0.50+0.70)  KL=4.7266  running mean=4.7266
+  trial 91  fold 1 (0.70+0.75)  KL=1.7105  running mean=3.2186
+  trial 91  fold 2 (0.75+0.80)  KL=1.1358  running mean=2.5243
+  trial 91  fold 3 (0.80+0.82)  KL=1.5158  running mean=2.2722
+  trial 91  fold 4 (0.82+0.85)  KL=1.3913  running mean=2.0960
+  trial 91  fold 5 (0.85+0.88)  KL=1.6476  running mean=2.0213
+  trial 91  fold 6 (0.88+0.90)  KL=2.2761  running mean=2.0577
+  trial 91  fold 7 (0.90+0.93)  KL=4.0455  running mean=2.3062
+trial 92: n_modes=42  nu=1.5  length_scale_upper=898.69  noise_level_upper=8.5180  alpha=1.96e-05
+  trial 92  fold 0 (0.50+0.70)  KL=4.7327  running mean=4.7327
+  trial 92  fold 1 (0.70+0.75)  KL=1.6960  running mean=3.2143
+  trial 92  fold 2 (0.75+0.80)  KL=1.1918  running mean=2.5402
+  trial 92  fold 3 (0.80+0.82)  KL=1.5405  running mean=2.2902
+  trial 92  fold 4 (0.82+0.85)  KL=1.3555  running mean=2.1033
+  trial 92  fold 5 (0.85+0.88)  KL=1.6392  running mean=2.0259
+  trial 92  fold 6 (0.88+0.90)  KL=2.3023  running mean=2.0654
+  trial 92  fold 7 (0.90+0.93)  KL=4.0391  running mean=2.3121
+trial 93: n_modes=38  nu=1.5  length_scale_upper=887.30  noise_level_upper=8.1833  alpha=1.94e-05
+  trial 93  fold 0 (0.50+0.70)  KL=4.8209  running mean=4.8209
+  trial 93  fold 1 (0.70+0.75)  KL=1.7229  running mean=3.2719
+  trial 93  fold 2 (0.75+0.80)  KL=1.1480  running mean=2.5639
+  trial 93  fold 3 (0.80+0.82)  KL=1.5426  running mean=2.3086
+  trial 93  fold 4 (0.82+0.85)  KL=1.3913  running mean=2.1251
+  trial 93  fold 5 (0.85+0.88)  KL=1.7288  running mean=2.0591
+  trial 93  fold 6 (0.88+0.90)  KL=2.3265  running mean=2.0973
+  trial 93  fold 7 (0.90+0.93)  KL=4.0382  running mean=2.3399
+trial 94: n_modes=42  nu=1.5  length_scale_upper=774.83  noise_level_upper=6.6369  alpha=6.65e-05
+  trial 94  fold 0 (0.50+0.70)  KL=4.7077  running mean=4.7077
+  trial 94  fold 1 (0.70+0.75)  KL=1.7480  running mean=3.2279
+  trial 94  fold 2 (0.75+0.80)  KL=1.1654  running mean=2.5404
+  trial 94  fold 3 (0.80+0.82)  KL=1.6295  running mean=2.3127
+  trial 94  fold 4 (0.82+0.85)  KL=1.3431  running mean=2.1187
+  trial 94  fold 5 (0.85+0.88)  KL=1.6069  running mean=2.0334
+  trial 94  fold 6 (0.88+0.90)  KL=2.2976  running mean=2.0712
+  trial 94  fold 7 (0.90+0.93)  KL=4.0493  running mean=2.3184
+trial 95: n_modes=42  nu=1.5  length_scale_upper=799.62  noise_level_upper=6.3844  alpha=6.22e-06
+  trial 95  fold 0 (0.50+0.70)  KL=4.7287  running mean=4.7287
+  trial 95  fold 1 (0.70+0.75)  KL=1.8470  running mean=3.2879
+  trial 95  fold 2 (0.75+0.80)  KL=1.1754  running mean=2.5837
+  trial 95  fold 3 (0.80+0.82)  KL=3.1748  running mean=2.7315
+  trial 95  fold 4 (0.82+0.85)  KL=1.7731  running mean=2.5398
+  trial 95: pruned after fold 4
+trial 96: n_modes=33  nu=inf  length_scale_upper=706.01  noise_level_upper=8.2455  alpha=5.70e-08
+  trial 96  fold 0 (0.50+0.70)  KL=10.4930  running mean=10.4930
+  trial 96  fold 1 (0.70+0.75)  KL=3.0566  running mean=6.7748
+  trial 96  fold 2 (0.75+0.80)  KL=3.0512  running mean=5.5336
+  trial 96: pruned after fold 2
+trial 97: n_modes=26  nu=1.5  length_scale_upper=549.29  noise_level_upper=7.1374  alpha=6.53e-05
+  trial 97  fold 0 (0.50+0.70)  KL=4.7421  running mean=4.7421
+  trial 97  fold 1 (0.70+0.75)  KL=1.8167  running mean=3.2794
+  trial 97  fold 2 (0.75+0.80)  KL=1.1884  running mean=2.5824
+  trial 97  fold 3 (0.80+0.82)  KL=1.5109  running mean=2.3145
+  trial 97  fold 4 (0.82+0.85)  KL=1.3863  running mean=2.1289
+  trial 97  fold 5 (0.85+0.88)  KL=1.6376  running mean=2.0470
+  trial 97  fold 6 (0.88+0.90)  KL=2.3151  running mean=2.0853
+  trial 97  fold 7 (0.90+0.93)  KL=4.0544  running mean=2.3314
+trial 98: n_modes=58  nu=1.5  length_scale_upper=905.04  noise_level_upper=3.9057  alpha=1.60e-05
+  trial 98  fold 0 (0.50+0.70)  KL=4.7191  running mean=4.7191
+  trial 98  fold 1 (0.70+0.75)  KL=1.7278  running mean=3.2235
+  trial 98  fold 2 (0.75+0.80)  KL=1.0884  running mean=2.5118
+  trial 98  fold 3 (0.80+0.82)  KL=1.5413  running mean=2.2692
+  trial 98  fold 4 (0.82+0.85)  KL=1.3606  running mean=2.0874
+  trial 98  fold 5 (0.85+0.88)  KL=1.6063  running mean=2.0073
+  trial 98  fold 6 (0.88+0.90)  KL=2.2774  running mean=2.0459
+  trial 98  fold 7 (0.90+0.93)  KL=4.0389  running mean=2.2950
+trial 99: n_modes=58  nu=1.5  length_scale_upper=892.25  noise_level_upper=4.0583  alpha=9.73e-06
+  trial 99  fold 0 (0.50+0.70)  KL=4.9629  running mean=4.9629
+  trial 99  fold 1 (0.70+0.75)  KL=1.7544  running mean=3.3586
+  trial 99  fold 2 (0.75+0.80)  KL=1.0836  running mean=2.6003
+  trial 99  fold 3 (0.80+0.82)  KL=1.5330  running mean=2.3334
+  trial 99  fold 4 (0.82+0.85)  KL=1.3808  running mean=2.1429
+  trial 99  fold 5 (0.85+0.88)  KL=1.6919  running mean=2.0678
+  trial 99  fold 6 (0.88+0.90)  KL=2.2739  running mean=2.0972
+  trial 99  fold 7 (0.90+0.93)  KL=4.0084  running mean=2.3361
+trial 100: n_modes=75  nu=1.5  length_scale_upper=673.19  noise_level_upper=3.6708  alpha=3.45e-06
+  trial 100  fold 0 (0.50+0.70)  KL=5.3474  running mean=5.3474
+  trial 100  fold 1 (0.70+0.75)  KL=2.1640  running mean=3.7557
+  trial 100  fold 2 (0.75+0.80)  KL=1.1817  running mean=2.8977
+  trial 100: pruned after fold 2
+trial 101: n_modes=54  nu=1.5  length_scale_upper=773.90  noise_level_upper=4.8353  alpha=1.64e-05
+  trial 101  fold 0 (0.50+0.70)  KL=4.7272  running mean=4.7272
+  trial 101  fold 1 (0.70+0.75)  KL=1.7240  running mean=3.2256
+  trial 101  fold 2 (0.75+0.80)  KL=1.1064  running mean=2.5192
+  trial 101  fold 3 (0.80+0.82)  KL=1.5514  running mean=2.2773
+  trial 101  fold 4 (0.82+0.85)  KL=1.5197  running mean=2.1257
+  trial 101  fold 5 (0.85+0.88)  KL=1.7461  running mean=2.0625
+  trial 101  fold 6 (0.88+0.90)  KL=2.2933  running mean=2.0954
+  trial 101  fold 7 (0.90+0.93)  KL=4.0207  running mean=2.3361
+trial 102: n_modes=44  nu=1.5  length_scale_upper=887.79  noise_level_upper=9.2821  alpha=4.46e-05
+  trial 102  fold 0 (0.50+0.70)  KL=4.7283  running mean=4.7283
+  trial 102  fold 1 (0.70+0.75)  KL=1.8056  running mean=3.2669
+  trial 102  fold 2 (0.75+0.80)  KL=1.1795  running mean=2.5711
+  trial 102  fold 3 (0.80+0.82)  KL=1.4670  running mean=2.2951
+  trial 102  fold 4 (0.82+0.85)  KL=1.3704  running mean=2.1102
+  trial 102  fold 5 (0.85+0.88)  KL=1.6677  running mean=2.0364
+  trial 102  fold 6 (0.88+0.90)  KL=2.2983  running mean=2.0738
+  trial 102  fold 7 (0.90+0.93)  KL=4.0241  running mean=2.3176
+trial 103: n_modes=46  nu=1.5  length_scale_upper=909.32  noise_level_upper=8.3701  alpha=2.54e-05
+  trial 103  fold 0 (0.50+0.70)  KL=5.3454  running mean=5.3454
+  trial 103  fold 1 (0.70+0.75)  KL=1.6881  running mean=3.5167
+  trial 103  fold 2 (0.75+0.80)  KL=1.1311  running mean=2.7215
+  trial 103  fold 3 (0.80+0.82)  KL=1.6196  running mean=2.4460
+  trial 103  fold 4 (0.82+0.85)  KL=1.3719  running mean=2.2312
+  trial 103  fold 5 (0.85+0.88)  KL=1.6199  running mean=2.1293
+  trial 103  fold 6 (0.88+0.90)  KL=2.2822  running mean=2.1512
+  trial 103  fold 7 (0.90+0.93)  KL=4.0245  running mean=2.3853
+trial 104: n_modes=69  nu=0.5  length_scale_upper=522.42  noise_level_upper=9.1805  alpha=4.36e-05
+  trial 104  fold 0 (0.50+0.70)  KL=7.7580  running mean=7.7580
+  trial 104  fold 1 (0.70+0.75)  KL=1.8398  running mean=4.7989
+  trial 104  fold 2 (0.75+0.80)  KL=1.3715  running mean=3.6564
+  trial 104: pruned after fold 2
+trial 105: n_modes=59  nu=1.5  length_scale_upper=836.01  noise_level_upper=2.3316  alpha=1.22e-05
+  trial 105  fold 0 (0.50+0.70)  KL=4.8191  running mean=4.8191
+  trial 105  fold 1 (0.70+0.75)  KL=1.8236  running mean=3.3213
+  trial 105  fold 2 (0.75+0.80)  KL=1.1449  running mean=2.5958
+  trial 105  fold 3 (0.80+0.82)  KL=1.5001  running mean=2.3219
+  trial 105  fold 4 (0.82+0.85)  KL=1.3611  running mean=2.1297
+  trial 105  fold 5 (0.85+0.88)  KL=1.6402  running mean=2.0481
+  trial 105  fold 6 (0.88+0.90)  KL=2.4079  running mean=2.0995
+  trial 105  fold 7 (0.90+0.93)  KL=3.9996  running mean=2.3370
+trial 106: n_modes=51  nu=1.5  length_scale_upper=727.45  noise_level_upper=9.9646  alpha=9.97e-05
+  trial 106  fold 0 (0.50+0.70)  KL=4.7237  running mean=4.7237
+  trial 106  fold 1 (0.70+0.75)  KL=1.7274  running mean=3.2255
+  trial 106  fold 2 (0.75+0.80)  KL=1.0750  running mean=2.5087
+  trial 106  fold 3 (0.80+0.82)  KL=1.5138  running mean=2.2600
+  trial 106  fold 4 (0.82+0.85)  KL=1.3640  running mean=2.0808
+  trial 106  fold 5 (0.85+0.88)  KL=1.6023  running mean=2.0010
+  trial 106  fold 6 (0.88+0.90)  KL=2.2779  running mean=2.0406
+  trial 106  fold 7 (0.90+0.93)  KL=4.0677  running mean=2.2940
+trial 107: n_modes=52  nu=1.5  length_scale_upper=940.00  noise_level_upper=9.2442  alpha=8.05e-05
+  trial 107  fold 0 (0.50+0.70)  KL=5.3409  running mean=5.3409
+  trial 107  fold 1 (0.70+0.75)  KL=2.0793  running mean=3.7101
+  trial 107  fold 2 (0.75+0.80)  KL=1.1439  running mean=2.8547
+  trial 107: pruned after fold 2
+trial 108: n_modes=49  nu=1.5  length_scale_upper=649.71  noise_level_upper=6.3601  alpha=9.74e-05
+  trial 108  fold 0 (0.50+0.70)  KL=4.8418  running mean=4.8418
+  trial 108  fold 1 (0.70+0.75)  KL=2.2225  running mean=3.5322
+  trial 108  fold 2 (0.75+0.80)  KL=1.0980  running mean=2.7208
+  trial 108  fold 3 (0.80+0.82)  KL=1.4856  running mean=2.4120
+  trial 108  fold 4 (0.82+0.85)  KL=1.3588  running mean=2.2014
+  trial 108  fold 5 (0.85+0.88)  KL=1.5960  running mean=2.1005
+  trial 108  fold 6 (0.88+0.90)  KL=2.3046  running mean=2.1296
+  trial 108  fold 7 (0.90+0.93)  KL=4.0907  running mean=2.3747
+trial 109: n_modes=65  nu=2.5  length_scale_upper=575.75  noise_level_upper=9.9209  alpha=2.93e-05
+  trial 109  fold 0 (0.50+0.70)  KL=6.3075  running mean=6.3075
+  trial 109  fold 1 (0.70+0.75)  KL=2.2950  running mean=4.3013
+  trial 109  fold 2 (0.75+0.80)  KL=1.2960  running mean=3.2995
+  trial 109: pruned after fold 2
+trial 110: n_modes=56  nu=1.5  length_scale_upper=464.63  noise_level_upper=4.6947  alpha=1.81e-05
+  trial 110  fold 0 (0.50+0.70)  KL=4.7253  running mean=4.7253
+  trial 110  fold 1 (0.70+0.75)  KL=2.1437  running mean=3.4345
+  trial 110  fold 2 (0.75+0.80)  KL=1.1422  running mean=2.6704
+  trial 110  fold 3 (0.80+0.82)  KL=1.5087  running mean=2.3800
+  trial 110  fold 4 (0.82+0.85)  KL=1.5420  running mean=2.2124
+  trial 110  fold 5 (0.85+0.88)  KL=1.6725  running mean=2.1224
+  trial 110  fold 6 (0.88+0.90)  KL=2.2896  running mean=2.1463
+  trial 110  fold 7 (0.90+0.93)  KL=3.9935  running mean=2.3772
+trial 111: n_modes=45  nu=1.5  length_scale_upper=710.25  noise_level_upper=7.2254  alpha=4.93e-05
+  trial 111  fold 0 (0.50+0.70)  KL=5.3435  running mean=5.3435
+  trial 111  fold 1 (0.70+0.75)  KL=1.7452  running mean=3.5444
+  trial 111  fold 2 (0.75+0.80)  KL=1.1410  running mean=2.7432
+  trial 111  fold 3 (0.80+0.82)  KL=1.4933  running mean=2.4307
+  trial 111  fold 4 (0.82+0.85)  KL=1.3423  running mean=2.2131
+  trial 111  fold 5 (0.85+0.88)  KL=1.6489  running mean=2.1190
+  trial 111  fold 6 (0.88+0.90)  KL=2.2873  running mean=2.1431
+  trial 111  fold 7 (0.90+0.93)  KL=4.0075  running mean=2.3761
+trial 112: n_modes=39  nu=1.5  length_scale_upper=48.92  noise_level_upper=8.0735  alpha=3.83e-05
+  trial 112  fold 0 (0.50+0.70)  KL=6.4334  running mean=6.4334
+  trial 112  fold 1 (0.70+0.75)  KL=2.2259  running mean=4.3296
+  trial 112  fold 2 (0.75+0.80)  KL=2.0215  running mean=3.5602
+  trial 112: pruned after fold 2
+trial 113: n_modes=52  nu=1.5  length_scale_upper=755.49  noise_level_upper=6.0953  alpha=2.48e-05
+  trial 113  fold 0 (0.50+0.70)  KL=5.3410  running mean=5.3410
+  trial 113  fold 1 (0.70+0.75)  KL=1.7579  running mean=3.5494
+  trial 113  fold 2 (0.75+0.80)  KL=1.1526  running mean=2.7505
+  trial 113  fold 3 (0.80+0.82)  KL=1.5626  running mean=2.4535
+  trial 113  fold 4 (0.82+0.85)  KL=1.3449  running mean=2.2318
+  trial 113  fold 5 (0.85+0.88)  KL=1.5856  running mean=2.1241
+  trial 113  fold 6 (0.88+0.90)  KL=2.2840  running mean=2.1469
+  trial 113  fold 7 (0.90+0.93)  KL=4.0394  running mean=2.3835
+trial 114: n_modes=30  nu=1.5  length_scale_upper=838.85  noise_level_upper=5.1072  alpha=5.29e-05
+  trial 114  fold 0 (0.50+0.70)  KL=5.5682  running mean=5.5682
+  trial 114  fold 1 (0.70+0.75)  KL=1.8089  running mean=3.6885
+  trial 114  fold 2 (0.75+0.80)  KL=1.1693  running mean=2.8488
+  trial 114: pruned after fold 2
+trial 115: n_modes=36  nu=1.5  length_scale_upper=989.44  noise_level_upper=0.1621  alpha=7.55e-05
+  trial 115  fold 0 (0.50+0.70)  KL=4.8156  running mean=4.8156
+  trial 115  fold 1 (0.70+0.75)  KL=2.0209  running mean=3.4183
+  trial 115  fold 2 (0.75+0.80)  KL=1.2929  running mean=2.7098
+  trial 115  fold 3 (0.80+0.82)  KL=2.3971  running mean=2.6316
+  trial 115: pruned after fold 3
+trial 116: n_modes=43  nu=1.5  length_scale_upper=711.27  noise_level_upper=0.0413  alpha=1.44e-05
+  trial 116  fold 0 (0.50+0.70)  KL=4.8219  running mean=4.8219
+  trial 116  fold 1 (0.70+0.75)  KL=2.2360  running mean=3.5289
+  trial 116  fold 2 (0.75+0.80)  KL=2.0033  running mean=3.0204
+  trial 116: pruned after fold 2
+trial 117: n_modes=48  nu=inf  length_scale_upper=579.53  noise_level_upper=3.0713  alpha=3.77e-05
+  trial 117  fold 0 (0.50+0.70)  KL=9.7695  running mean=9.7695
+  trial 117  fold 1 (0.70+0.75)  KL=10.0347  running mean=9.9021
+  trial 117  fold 2 (0.75+0.80)  KL=2.7278  running mean=7.5107
+  trial 117: pruned after fold 2
+trial 118: n_modes=60  nu=1.5  length_scale_upper=644.25  noise_level_upper=3.8854  alpha=2.23e-05
+  trial 118  fold 0 (0.50+0.70)  KL=4.7235  running mean=4.7235
+  trial 118  fold 1 (0.70+0.75)  KL=1.8152  running mean=3.2694
+  trial 118  fold 2 (0.75+0.80)  KL=1.1589  running mean=2.5659
+  trial 118  fold 3 (0.80+0.82)  KL=1.5423  running mean=2.3100
+  trial 118  fold 4 (0.82+0.85)  KL=1.3648  running mean=2.1209
+  trial 118  fold 5 (0.85+0.88)  KL=1.6073  running mean=2.0353
+  trial 118  fold 6 (0.88+0.90)  KL=2.2839  running mean=2.0708
+  trial 118  fold 7 (0.90+0.93)  KL=4.0159  running mean=2.3140
+trial 119: n_modes=62  nu=1.5  length_scale_upper=638.07  noise_level_upper=4.2617  alpha=2.26e-05
+  trial 119  fold 0 (0.50+0.70)  KL=4.7259  running mean=4.7259
+  trial 119  fold 1 (0.70+0.75)  KL=1.8006  running mean=3.2633
+  trial 119  fold 2 (0.75+0.80)  KL=1.1326  running mean=2.5531
+  trial 119  fold 3 (0.80+0.82)  KL=1.5813  running mean=2.3101
+  trial 119  fold 4 (0.82+0.85)  KL=1.5189  running mean=2.1519
+  trial 119  fold 5 (0.85+0.88)  KL=1.7865  running mean=2.0910
+  trial 119  fold 6 (0.88+0.90)  KL=2.2798  running mean=2.1180
+  trial 119  fold 7 (0.90+0.93)  KL=3.9860  running mean=2.3515
+trial 120: n_modes=58  nu=1.5  length_scale_upper=892.13  noise_level_upper=3.6690  alpha=5.82e-06
+  trial 120  fold 0 (0.50+0.70)  KL=4.7270  running mean=4.7270
+  trial 120  fold 1 (0.70+0.75)  KL=1.7387  running mean=3.2328
+  trial 120  fold 2 (0.75+0.80)  KL=1.0974  running mean=2.5210
+  trial 120  fold 3 (0.80+0.82)  KL=1.5667  running mean=2.2825
+  trial 120  fold 4 (0.82+0.85)  KL=1.7824  running mean=2.1824
+  trial 120  fold 5 (0.85+0.88)  KL=1.6659  running mean=2.0964
+  trial 120  fold 6 (0.88+0.90)  KL=2.3013  running mean=2.1256
+  trial 120  fold 7 (0.90+0.93)  KL=4.0192  running mean=2.3623
+trial 121: n_modes=72  nu=1.5  length_scale_upper=802.44  noise_level_upper=7.3480  alpha=5.84e-05
+  trial 121  fold 0 (0.50+0.70)  KL=4.7268  running mean=4.7268
+  trial 121  fold 1 (0.70+0.75)  KL=1.7201  running mean=3.2235
+  trial 121  fold 2 (0.75+0.80)  KL=1.1371  running mean=2.5280
+  trial 121  fold 3 (0.80+0.82)  KL=1.5515  running mean=2.2839
+  trial 121  fold 4 (0.82+0.85)  KL=1.3857  running mean=2.1042
+  trial 121  fold 5 (0.85+0.88)  KL=1.6096  running mean=2.0218
+  trial 121  fold 6 (0.88+0.90)  KL=2.2922  running mean=2.0604
+  trial 121  fold 7 (0.90+0.93)  KL=4.0381  running mean=2.3076
+trial 122: n_modes=68  nu=1.5  length_scale_upper=820.71  noise_level_upper=7.1873  alpha=3.08e-05
+  trial 122  fold 0 (0.50+0.70)  KL=4.7259  running mean=4.7259
+  trial 122  fold 1 (0.70+0.75)  KL=1.7367  running mean=3.2313
+  trial 122  fold 2 (0.75+0.80)  KL=1.0796  running mean=2.5141
+  trial 122  fold 3 (0.80+0.82)  KL=1.4497  running mean=2.2480
+  trial 122  fold 4 (0.82+0.85)  KL=1.3778  running mean=2.0739
+  trial 122  fold 5 (0.85+0.88)  KL=1.7152  running mean=2.0142
+  trial 122  fold 6 (0.88+0.90)  KL=2.2943  running mean=2.0542
+  trial 122  fold 7 (0.90+0.93)  KL=3.9873  running mean=2.2958
+trial 123: n_modes=70  nu=1.5  length_scale_upper=806.40  noise_level_upper=7.3853  alpha=6.19e-05
+  trial 123  fold 0 (0.50+0.70)  KL=4.7314  running mean=4.7314
+  trial 123  fold 1 (0.70+0.75)  KL=1.8078  running mean=3.2696
+  trial 123  fold 2 (0.75+0.80)  KL=1.1245  running mean=2.5546
+  trial 123  fold 3 (0.80+0.82)  KL=1.4791  running mean=2.2857
+  trial 123  fold 4 (0.82+0.85)  KL=1.3613  running mean=2.1008
+  trial 123  fold 5 (0.85+0.88)  KL=1.6066  running mean=2.0184
+  trial 123  fold 6 (0.88+0.90)  KL=2.2794  running mean=2.0557
+  trial 123  fold 7 (0.90+0.93)  KL=4.0410  running mean=2.3039
+trial 124: n_modes=73  nu=1.5  length_scale_upper=794.65  noise_level_upper=5.9784  alpha=7.78e-06
+  trial 124  fold 0 (0.50+0.70)  KL=5.4155  running mean=5.4155
+  trial 124  fold 1 (0.70+0.75)  KL=1.8092  running mean=3.6123
+  trial 124  fold 2 (0.75+0.80)  KL=1.1208  running mean=2.7818
+  trial 124: pruned after fold 2
+trial 125: n_modes=84  nu=1.5  length_scale_upper=515.50  noise_level_upper=5.1937  alpha=6.08e-05
+  trial 125  fold 0 (0.50+0.70)  KL=4.7205  running mean=4.7205
+  trial 125  fold 1 (0.70+0.75)  KL=1.8421  running mean=3.2813
+  trial 125  fold 2 (0.75+0.80)  KL=1.1832  running mean=2.5819
+  trial 125  fold 3 (0.80+0.82)  KL=1.5166  running mean=2.3156
+  trial 125  fold 4 (0.82+0.85)  KL=1.4859  running mean=2.1496
+  trial 125  fold 5 (0.85+0.88)  KL=1.5850  running mean=2.0555
+  trial 125  fold 6 (0.88+0.90)  KL=2.3047  running mean=2.0911
+  trial 125  fold 7 (0.90+0.93)  KL=4.0347  running mean=2.3341
+trial 126: n_modes=70  nu=1.5  length_scale_upper=407.18  noise_level_upper=4.0723  alpha=3.10e-05
+  trial 126  fold 0 (0.50+0.70)  KL=4.7070  running mean=4.7070
+  trial 126  fold 1 (0.70+0.75)  KL=1.7696  running mean=3.2383
+  trial 126  fold 2 (0.75+0.80)  KL=1.9913  running mean=2.8226
+  trial 126: pruned after fold 2
+trial 127: n_modes=77  nu=0.5  length_scale_upper=671.12  noise_level_upper=6.9549  alpha=1.08e-05
+  trial 127  fold 0 (0.50+0.70)  KL=7.6644  running mean=7.6644
+  trial 127  fold 1 (0.70+0.75)  KL=1.8404  running mean=4.7524
+  trial 127  fold 2 (0.75+0.80)  KL=1.3695  running mean=3.6248
+  trial 127: pruned after fold 2
+trial 128: n_modes=68  nu=1.5  length_scale_upper=804.00  noise_level_upper=5.8127  alpha=9.88e-05
+  trial 128  fold 0 (0.50+0.70)  KL=4.7236  running mean=4.7236
+  trial 128  fold 1 (0.70+0.75)  KL=2.2107  running mean=3.4671
+  trial 128  fold 2 (0.75+0.80)  KL=1.1389  running mean=2.6910
+  trial 128  fold 3 (0.80+0.82)  KL=1.4592  running mean=2.3831
+  trial 128  fold 4 (0.82+0.85)  KL=1.3586  running mean=2.1782
+  trial 128  fold 5 (0.85+0.88)  KL=1.6118  running mean=2.0838
+  trial 128  fold 6 (0.88+0.90)  KL=2.3015  running mean=2.1149
+  trial 128  fold 7 (0.90+0.93)  KL=4.0175  running mean=2.3527
+trial 129: n_modes=65  nu=1.5  length_scale_upper=595.54  noise_level_upper=3.4079  alpha=1.80e-05
+  trial 129  fold 0 (0.50+0.70)  KL=4.7303  running mean=4.7303
+  trial 129  fold 1 (0.70+0.75)  KL=1.6934  running mean=3.2118
+  trial 129  fold 2 (0.75+0.80)  KL=1.1471  running mean=2.5236
+  trial 129  fold 3 (0.80+0.82)  KL=1.4721  running mean=2.2607
+  trial 129  fold 4 (0.82+0.85)  KL=1.5459  running mean=2.1177
+  trial 129  fold 5 (0.85+0.88)  KL=1.7704  running mean=2.0599
+  trial 129  fold 6 (0.88+0.90)  KL=2.2888  running mean=2.0926
+  trial 129  fold 7 (0.90+0.93)  KL=4.0206  running mean=2.3336
+trial 130: n_modes=72  nu=1.5  length_scale_upper=969.38  noise_level_upper=4.6651  alpha=7.21e-05
+  trial 130  fold 0 (0.50+0.70)  KL=4.8100  running mean=4.8100
+  trial 130  fold 1 (0.70+0.75)  KL=1.7690  running mean=3.2895
+  trial 130  fold 2 (0.75+0.80)  KL=1.0927  running mean=2.5572
+  trial 130  fold 3 (0.80+0.82)  KL=1.5537  running mean=2.3064
+  trial 130  fold 4 (0.82+0.85)  KL=1.3544  running mean=2.1160
+  trial 130  fold 5 (0.85+0.88)  KL=1.6272  running mean=2.0345
+  trial 130  fold 6 (0.88+0.90)  KL=2.2635  running mean=2.0672
+  trial 130  fold 7 (0.90+0.93)  KL=4.0274  running mean=2.3123
+trial 131: n_modes=74  nu=1.5  length_scale_upper=985.72  noise_level_upper=7.6256  alpha=6.22e-05
+  trial 131  fold 0 (0.50+0.70)  KL=4.7296  running mean=4.7296
+  trial 131  fold 1 (0.70+0.75)  KL=2.1449  running mean=3.4373
+  trial 131  fold 2 (0.75+0.80)  KL=1.1443  running mean=2.6729
+  trial 131  fold 3 (0.80+0.82)  KL=1.5491  running mean=2.3920
+  trial 131  fold 4 (0.82+0.85)  KL=1.3574  running mean=2.1851
+  trial 131  fold 5 (0.85+0.88)  KL=1.5986  running mean=2.0873
+  trial 131  fold 6 (0.88+0.90)  KL=2.2829  running mean=2.1153
+  trial 131  fold 7 (0.90+0.93)  KL=4.0133  running mean=2.3525
+trial 132: n_modes=71  nu=1.5  length_scale_upper=856.90  noise_level_upper=4.8874  alpha=1.01e-09
+  trial 132  fold 0 (0.50+0.70)  KL=4.7606  running mean=4.7606
+  trial 132  fold 1 (0.70+0.75)  KL=2.2419  running mean=3.5012
+  trial 132  fold 2 (0.75+0.80)  KL=1.2847  running mean=2.7624
+  trial 132: pruned after fold 2
+trial 133: n_modes=80  nu=1.5  length_scale_upper=753.90  noise_level_upper=4.4532  alpha=7.79e-05
+  trial 133  fold 0 (0.50+0.70)  KL=4.8187  running mean=4.8187
+  trial 133  fold 1 (0.70+0.75)  KL=1.7133  running mean=3.2660
+  trial 133  fold 2 (0.75+0.80)  KL=1.1227  running mean=2.5515
+  trial 133  fold 3 (0.80+0.82)  KL=1.4678  running mean=2.2806
+  trial 133  fold 4 (0.82+0.85)  KL=1.3436  running mean=2.0932
+  trial 133  fold 5 (0.85+0.88)  KL=1.6077  running mean=2.0123
+  trial 133  fold 6 (0.88+0.90)  KL=2.2755  running mean=2.0499
+  trial 133  fold 7 (0.90+0.93)  KL=4.0124  running mean=2.2952
+trial 134: n_modes=80  nu=1.5  length_scale_upper=771.79  noise_level_upper=6.4946  alpha=7.24e-05
+  trial 134  fold 0 (0.50+0.70)  KL=5.1393  running mean=5.1393
+  trial 134  fold 1 (0.70+0.75)  KL=1.7567  running mean=3.4480
+  trial 134  fold 2 (0.75+0.80)  KL=1.1310  running mean=2.6757
+  trial 134  fold 3 (0.80+0.82)  KL=1.5184  running mean=2.3864
+  trial 134  fold 4 (0.82+0.85)  KL=1.3526  running mean=2.1796
+  trial 134  fold 5 (0.85+0.88)  KL=1.6123  running mean=2.0851
+  trial 134  fold 6 (0.88+0.90)  KL=2.2731  running mean=2.1119
+  trial 134  fold 7 (0.90+0.93)  KL=4.0231  running mean=2.3508
+trial 135: n_modes=86  nu=1.5  length_scale_upper=904.86  noise_level_upper=4.5566  alpha=8.09e-05
+  trial 135  fold 0 (0.50+0.70)  KL=4.7140  running mean=4.7140
+  trial 135  fold 1 (0.70+0.75)  KL=1.8193  running mean=3.2666
+  trial 135  fold 2 (0.75+0.80)  KL=1.1236  running mean=2.5523
+  trial 135  fold 3 (0.80+0.82)  KL=1.5491  running mean=2.3015
+  trial 135  fold 4 (0.82+0.85)  KL=1.3489  running mean=2.1110
+  trial 135  fold 5 (0.85+0.88)  KL=1.6308  running mean=2.0309
+  trial 135  fold 6 (0.88+0.90)  KL=2.2817  running mean=2.0668
+  trial 135  fold 7 (0.90+0.93)  KL=4.0552  running mean=2.3153
+trial 136: n_modes=67  nu=1.5  length_scale_upper=716.30  noise_level_upper=8.0736  alpha=3.31e-05
+  trial 136  fold 0 (0.50+0.70)  KL=4.7184  running mean=4.7184
+  trial 136  fold 1 (0.70+0.75)  KL=1.8125  running mean=3.2654
+  trial 136  fold 2 (0.75+0.80)  KL=1.1382  running mean=2.5563
+  trial 136  fold 3 (0.80+0.82)  KL=1.5591  running mean=2.3070
+  trial 136  fold 4 (0.82+0.85)  KL=1.4329  running mean=2.1322
+  trial 136  fold 5 (0.85+0.88)  KL=1.5930  running mean=2.0423
+  trial 136  fold 6 (0.88+0.90)  KL=2.2828  running mean=2.0767
+  trial 136  fold 7 (0.90+0.93)  KL=4.0170  running mean=2.3192
+trial 137: n_modes=80  nu=2.5  length_scale_upper=825.10  noise_level_upper=5.8827  alpha=5.55e-05
+  trial 137  fold 0 (0.50+0.70)  KL=6.4035  running mean=6.4035
+  trial 137  fold 1 (0.70+0.75)  KL=2.2962  running mean=4.3498
+  trial 137  fold 2 (0.75+0.80)  KL=1.5078  running mean=3.4025
+  trial 137: pruned after fold 2
+trial 138: n_modes=77  nu=1.5  length_scale_upper=934.37  noise_level_upper=2.9413  alpha=3.92e-05
+  trial 138  fold 0 (0.50+0.70)  KL=5.2995  running mean=5.2995
+  trial 138  fold 1 (0.70+0.75)  KL=1.7247  running mean=3.5121
+  trial 138  fold 2 (0.75+0.80)  KL=1.1994  running mean=2.7412
+  trial 138  fold 3 (0.80+0.82)  KL=1.5138  running mean=2.4344
+  trial 138  fold 4 (0.82+0.85)  KL=1.3388  running mean=2.2152
+  trial 138  fold 5 (0.85+0.88)  KL=1.6874  running mean=2.1273
+  trial 138  fold 6 (0.88+0.90)  KL=2.3242  running mean=2.1554
+  trial 138  fold 7 (0.90+0.93)  KL=4.0129  running mean=2.3876
+trial 139: n_modes=83  nu=1.5  length_scale_upper=748.72  noise_level_upper=9.9571  alpha=9.76e-05
+  trial 139  fold 0 (0.50+0.70)  KL=4.7226  running mean=4.7226
+  trial 139  fold 1 (0.70+0.75)  KL=1.8078  running mean=3.2652
+  trial 139  fold 2 (0.75+0.80)  KL=1.1504  running mean=2.5603
+  trial 139  fold 3 (0.80+0.82)  KL=1.4995  running mean=2.2951
+  trial 139  fold 4 (0.82+0.85)  KL=1.3565  running mean=2.1074
+  trial 139  fold 5 (0.85+0.88)  KL=1.6178  running mean=2.0258
+  trial 139  fold 6 (0.88+0.90)  KL=2.2603  running mean=2.0593
+  trial 139  fold 7 (0.90+0.93)  KL=4.1335  running mean=2.3185
+trial 140: n_modes=73  nu=1.5  length_scale_upper=651.15  noise_level_upper=2.4208  alpha=1.77e-10
+  trial 140  fold 0 (0.50+0.70)  KL=4.7785  running mean=4.7785
+  trial 140  fold 1 (0.70+0.75)  KL=2.1009  running mean=3.4397
+  trial 140  fold 2 (0.75+0.80)  KL=1.2009  running mean=2.6934
+  trial 140  fold 3 (0.80+0.82)  KL=1.7772  running mean=2.4644
+  trial 140  fold 4 (0.82+0.85)  KL=2.7896  running mean=2.5294
+  trial 140: pruned after fold 4
+trial 141: n_modes=60  nu=1.5  length_scale_upper=593.46  noise_level_upper=3.8789  alpha=2.25e-05
+  trial 141  fold 0 (0.50+0.70)  KL=4.7261  running mean=4.7261
+  trial 141  fold 1 (0.70+0.75)  KL=1.7681  running mean=3.2471
+  trial 141  fold 2 (0.75+0.80)  KL=1.1305  running mean=2.5416
+  trial 141  fold 3 (0.80+0.82)  KL=1.5290  running mean=2.2884
+  trial 141  fold 4 (0.82+0.85)  KL=1.5283  running mean=2.1364
+  trial 141  fold 5 (0.85+0.88)  KL=1.6476  running mean=2.0550
+  trial 141  fold 6 (0.88+0.90)  KL=2.2726  running mean=2.0861
+  trial 141  fold 7 (0.90+0.93)  KL=4.0465  running mean=2.3311
+trial 142: n_modes=61  nu=1.5  length_scale_upper=670.46  noise_level_upper=4.6545  alpha=2.72e-05
+  trial 142  fold 0 (0.50+0.70)  KL=4.7267  running mean=4.7267
+  trial 142  fold 1 (0.70+0.75)  KL=1.7589  running mean=3.2428
+  trial 142  fold 2 (0.75+0.80)  KL=1.0905  running mean=2.5254
+  trial 142  fold 3 (0.80+0.82)  KL=1.5276  running mean=2.2759
+  trial 142  fold 4 (0.82+0.85)  KL=1.4978  running mean=2.1203
+  trial 142  fold 5 (0.85+0.88)  KL=1.6347  running mean=2.0394
+  trial 142  fold 6 (0.88+0.90)  KL=2.2666  running mean=2.0718
+  trial 142  fold 7 (0.90+0.93)  KL=4.0448  running mean=2.3185
+trial 143: n_modes=88  nu=1.5  length_scale_upper=830.47  noise_level_upper=5.2360  alpha=5.59e-05
+  trial 143  fold 0 (0.50+0.70)  KL=4.7249  running mean=4.7249
+  trial 143  fold 1 (0.70+0.75)  KL=1.7445  running mean=3.2347
+  trial 143  fold 2 (0.75+0.80)  KL=1.1078  running mean=2.5257
+  trial 143  fold 3 (0.80+0.82)  KL=1.5445  running mean=2.2804
+  trial 143  fold 4 (0.82+0.85)  KL=1.3637  running mean=2.0971
+  trial 143  fold 5 (0.85+0.88)  KL=1.5964  running mean=2.0136
+  trial 143  fold 6 (0.88+0.90)  KL=2.2755  running mean=2.0510
+  trial 143  fold 7 (0.90+0.93)  KL=4.0129  running mean=2.2963
+trial 144: n_modes=90  nu=1.5  length_scale_upper=824.99  noise_level_upper=5.5116  alpha=5.50e-05
+  trial 144  fold 0 (0.50+0.70)  KL=4.7272  running mean=4.7272
+  trial 144  fold 1 (0.70+0.75)  KL=1.7858  running mean=3.2565
+  trial 144  fold 2 (0.75+0.80)  KL=1.1461  running mean=2.5530
+  trial 144  fold 3 (0.80+0.82)  KL=2.1506  running mean=2.4524
+  trial 144  fold 4 (0.82+0.85)  KL=1.3552  running mean=2.2330
+  trial 144  fold 5 (0.85+0.88)  KL=1.6122  running mean=2.1295
+  trial 144  fold 6 (0.88+0.90)  KL=2.2845  running mean=2.1517
+  trial 144  fold 7 (0.90+0.93)  KL=4.0119  running mean=2.3842
+trial 145: n_modes=95  nu=1.5  length_scale_upper=977.25  noise_level_upper=6.9096  alpha=7.84e-05
+  trial 145  fold 0 (0.50+0.70)  KL=4.6825  running mean=4.6825
+  trial 145  fold 1 (0.70+0.75)  KL=2.2147  running mean=3.4486
+  trial 145  fold 2 (0.75+0.80)  KL=1.1381  running mean=2.6784
+  trial 145  fold 3 (0.80+0.82)  KL=1.4864  running mean=2.3804
+  trial 145  fold 4 (0.82+0.85)  KL=1.3349  running mean=2.1713
+  trial 145  fold 5 (0.85+0.88)  KL=1.6637  running mean=2.0867
+  trial 145  fold 6 (0.88+0.90)  KL=2.3075  running mean=2.1183
+  trial 145  fold 7 (0.90+0.93)  KL=4.0103  running mean=2.3548
+trial 146: n_modes=64  nu=1.5  length_scale_upper=756.80  noise_level_upper=8.6120  alpha=6.44e-05
+  trial 146  fold 0 (0.50+0.70)  KL=4.7140  running mean=4.7140
+  trial 146  fold 1 (0.70+0.75)  KL=1.8174  running mean=3.2657
+  trial 146  fold 2 (0.75+0.80)  KL=1.1547  running mean=2.5621
+  trial 146  fold 3 (0.80+0.82)  KL=1.5160  running mean=2.3005
+  trial 146  fold 4 (0.82+0.85)  KL=1.3587  running mean=2.1122
+  trial 146  fold 5 (0.85+0.88)  KL=1.6860  running mean=2.0412
+  trial 146  fold 6 (0.88+0.90)  KL=2.2756  running mean=2.0746
+  trial 146  fold 7 (0.90+0.93)  KL=4.0212  running mean=2.3180
+trial 147: n_modes=75  nu=inf  length_scale_upper=862.69  noise_level_upper=7.6140  alpha=3.96e-05
+  trial 147  fold 0 (0.50+0.70)  KL=13.2813  running mean=13.2813
+  trial 147  fold 1 (0.70+0.75)  KL=9.5365  running mean=11.4089
+  trial 147  fold 2 (0.75+0.80)  KL=4.7702  running mean=9.1960
+  trial 147: pruned after fold 2
+trial 148: n_modes=78  nu=1.5  length_scale_upper=549.51  noise_level_upper=3.2660  alpha=4.60e-05
+  trial 148  fold 0 (0.50+0.70)  KL=4.6834  running mean=4.6834
+  trial 148  fold 1 (0.70+0.75)  KL=2.2215  running mean=3.4525
+  trial 148  fold 2 (0.75+0.80)  KL=1.1538  running mean=2.6863
+  trial 148  fold 3 (0.80+0.82)  KL=1.4887  running mean=2.3869
+  trial 148  fold 4 (0.82+0.85)  KL=1.3593  running mean=2.1814
+  trial 148  fold 5 (0.85+0.88)  KL=1.6163  running mean=2.0872
+  trial 148  fold 6 (0.88+0.90)  KL=2.2631  running mean=2.1123
+  trial 148  fold 7 (0.90+0.93)  KL=3.9915  running mean=2.3472
+trial 149: n_modes=71  nu=1.5  length_scale_upper=992.24  noise_level_upper=5.2678  alpha=3.00e-05
+  trial 149  fold 0 (0.50+0.70)  KL=4.7150  running mean=4.7150
+  trial 149  fold 1 (0.70+0.75)  KL=1.7566  running mean=3.2358
+  trial 149  fold 2 (0.75+0.80)  KL=1.1664  running mean=2.5460
+  trial 149  fold 3 (0.80+0.82)  KL=1.5534  running mean=2.2979
+  trial 149  fold 4 (0.82+0.85)  KL=1.3871  running mean=2.1157
+  trial 149  fold 5 (0.85+0.88)  KL=1.6152  running mean=2.0323
+  trial 149  fold 6 (0.88+0.90)  KL=2.2802  running mean=2.0677
+  trial 149  fold 7 (0.90+0.93)  KL=4.0142  running mean=2.3110
+trial 150: n_modes=87  nu=1.5  length_scale_upper=77.56  noise_level_upper=6.6837  alpha=1.42e-05
+  trial 150  fold 0 (0.50+0.70)  KL=6.0457  running mean=6.0457
+  trial 150  fold 1 (0.70+0.75)  KL=2.0861  running mean=4.0659
+  trial 150  fold 2 (0.75+0.80)  KL=1.8229  running mean=3.3182
+  trial 150: pruned after fold 2
+trial 151: n_modes=69  nu=1.5  length_scale_upper=906.91  noise_level_upper=5.3039  alpha=3.03e-05
+  trial 151  fold 0 (0.50+0.70)  KL=4.7315  running mean=4.7315
+  trial 151  fold 1 (0.70+0.75)  KL=1.8141  running mean=3.2728
+  trial 151  fold 2 (0.75+0.80)  KL=1.1123  running mean=2.5526
+  trial 151  fold 3 (0.80+0.82)  KL=1.5191  running mean=2.2943
+  trial 151  fold 4 (0.82+0.85)  KL=1.3472  running mean=2.1048
+  trial 151  fold 5 (0.85+0.88)  KL=1.6116  running mean=2.0226
+  trial 151  fold 6 (0.88+0.90)  KL=2.2792  running mean=2.0593
+  trial 151  fold 7 (0.90+0.93)  KL=4.1250  running mean=2.3175
+trial 152: n_modes=71  nu=1.5  length_scale_upper=994.14  noise_level_upper=4.6424  alpha=7.08e-05
+  trial 152  fold 0 (0.50+0.70)  KL=4.8177  running mean=4.8177
+  trial 152  fold 1 (0.70+0.75)  KL=2.1940  running mean=3.5059
+  trial 152  fold 2 (0.75+0.80)  KL=1.1228  running mean=2.7115
+  trial 152  fold 3 (0.80+0.82)  KL=1.4394  running mean=2.3935
+  trial 152  fold 4 (0.82+0.85)  KL=1.3603  running mean=2.1868
+  trial 152  fold 5 (0.85+0.88)  KL=1.6495  running mean=2.0973
+  trial 152  fold 6 (0.88+0.90)  KL=2.2861  running mean=2.1243
+  trial 152  fold 7 (0.90+0.93)  KL=4.0377  running mean=2.3634
+trial 153: n_modes=67  nu=1.5  length_scale_upper=796.43  noise_level_upper=6.0182  alpha=5.31e-05
+  trial 153  fold 0 (0.50+0.70)  KL=4.8182  running mean=4.8182
+  trial 153  fold 1 (0.70+0.75)  KL=1.7357  running mean=3.2770
+  trial 153  fold 2 (0.75+0.80)  KL=1.2142  running mean=2.5894
+  trial 153  fold 3 (0.80+0.82)  KL=1.5133  running mean=2.3204
+  trial 153  fold 4 (0.82+0.85)  KL=1.3870  running mean=2.1337
+  trial 153  fold 5 (0.85+0.88)  KL=1.6058  running mean=2.0457
+  trial 153  fold 6 (0.88+0.90)  KL=2.2856  running mean=2.0800
+  trial 153  fold 7 (0.90+0.93)  KL=4.0217  running mean=2.3227
+trial 154: n_modes=55  nu=1.5  length_scale_upper=695.68  noise_level_upper=1.5433  alpha=3.47e-05
+  trial 154  fold 0 (0.50+0.70)  KL=4.7231  running mean=4.7231
+  trial 154  fold 1 (0.70+0.75)  KL=1.8152  running mean=3.2692
+  trial 154  fold 2 (0.75+0.80)  KL=1.1372  running mean=2.5585
+  trial 154  fold 3 (0.80+0.82)  KL=1.5226  running mean=2.2995
+  trial 154  fold 4 (0.82+0.85)  KL=1.3704  running mean=2.1137
+  trial 154  fold 5 (0.85+0.88)  KL=1.6005  running mean=2.0282
+  trial 154  fold 6 (0.88+0.90)  KL=2.2594  running mean=2.0612
+  trial 154  fold 7 (0.90+0.93)  KL=4.0263  running mean=2.3068
+trial 155: n_modes=55  nu=1.5  length_scale_upper=702.90  noise_level_upper=1.8051  alpha=3.26e-05
+  trial 155  fold 0 (0.50+0.70)  KL=4.7249  running mean=4.7249
+  trial 155  fold 1 (0.70+0.75)  KL=2.2051  running mean=3.4650
+  trial 155  fold 2 (0.75+0.80)  KL=1.1429  running mean=2.6910
+  trial 155  fold 3 (0.80+0.82)  KL=1.5511  running mean=2.4060
+  trial 155  fold 4 (0.82+0.85)  KL=1.3549  running mean=2.1958
+  trial 155  fold 5 (0.85+0.88)  KL=1.6354  running mean=2.1024
+  trial 155  fold 6 (0.88+0.90)  KL=2.2611  running mean=2.1250
+  trial 155  fold 7 (0.90+0.93)  KL=4.0238  running mean=2.3624
+trial 156: n_modes=82  nu=1.5  length_scale_upper=740.78  noise_level_upper=1.4222  alpha=1.81e-05
+  trial 156  fold 0 (0.50+0.70)  KL=4.7287  running mean=4.7287
+  trial 156  fold 1 (0.70+0.75)  KL=2.2183  running mean=3.4735
+  trial 156  fold 2 (0.75+0.80)  KL=1.1619  running mean=2.7029
+  trial 156  fold 3 (0.80+0.82)  KL=1.5538  running mean=2.4156
+  trial 156  fold 4 (0.82+0.85)  KL=1.3390  running mean=2.2003
+  trial 156  fold 5 (0.85+0.88)  KL=1.6353  running mean=2.1062
+  trial 156  fold 6 (0.88+0.90)  KL=2.2629  running mean=2.1285
+  trial 156  fold 7 (0.90+0.93)  KL=4.0632  running mean=2.3704
+trial 157: n_modes=56  nu=1.5  length_scale_upper=487.14  noise_level_upper=1.6735  alpha=3.83e-05
+  trial 157  fold 0 (0.50+0.70)  KL=4.7234  running mean=4.7234
+  trial 157  fold 1 (0.70+0.75)  KL=2.1852  running mean=3.4543
+  trial 157  fold 2 (0.75+0.80)  KL=1.9740  running mean=2.9609
+  trial 157: pruned after fold 2
+trial 158: n_modes=63  nu=0.5  length_scale_upper=631.44  noise_level_upper=1.0082  alpha=2.82e-05
+  trial 158  fold 0 (0.50+0.70)  KL=7.6867  running mean=7.6867
+  trial 158  fold 1 (0.70+0.75)  KL=1.8391  running mean=4.7629
+  trial 158  fold 2 (0.75+0.80)  KL=1.3594  running mean=3.6284
+  trial 158: pruned after fold 2
+trial 159: n_modes=53  nu=1.5  length_scale_upper=850.42  noise_level_upper=8.3335  alpha=4.59e-05
+  trial 159  fold 0 (0.50+0.70)  KL=4.7280  running mean=4.7280
+  trial 159  fold 1 (0.70+0.75)  KL=1.7518  running mean=3.2399
+  trial 159  fold 2 (0.75+0.80)  KL=1.1515  running mean=2.5438
+  trial 159  fold 3 (0.80+0.82)  KL=2.4020  running mean=2.5083
+  trial 159: pruned after fold 3
+trial 160: n_modes=50  nu=1.5  length_scale_upper=697.93  noise_level_upper=2.0688  alpha=9.86e-05
+  trial 160  fold 0 (0.50+0.70)  KL=4.8172  running mean=4.8172
+  trial 160  fold 1 (0.70+0.75)  KL=2.1522  running mean=3.4847
+  trial 160  fold 2 (0.75+0.80)  KL=1.1181  running mean=2.6958
+  trial 160  fold 3 (0.80+0.82)  KL=2.3851  running mean=2.6182
+  trial 160: pruned after fold 3
+trial 161: n_modes=75  nu=1.5  length_scale_upper=908.05  noise_level_upper=4.2655  alpha=6.66e-05
+  trial 161  fold 0 (0.50+0.70)  KL=4.8177  running mean=4.8177
+  trial 161  fold 1 (0.70+0.75)  KL=2.1498  running mean=3.4837
+  trial 161  fold 2 (0.75+0.80)  KL=1.1149  running mean=2.6941
+  trial 161  fold 3 (0.80+0.82)  KL=1.6453  running mean=2.4319
+  trial 161  fold 4 (0.82+0.85)  KL=1.3365  running mean=2.2128
+  trial 161  fold 5 (0.85+0.88)  KL=1.6385  running mean=2.1171
+  trial 161  fold 6 (0.88+0.90)  KL=2.2885  running mean=2.1416
+  trial 161  fold 7 (0.90+0.93)  KL=4.0065  running mean=2.3747
+trial 162: n_modes=71  nu=1.5  length_scale_upper=997.92  noise_level_upper=5.4107  alpha=5.65e-05
+  trial 162  fold 0 (0.50+0.70)  KL=4.7242  running mean=4.7242
+  trial 162  fold 1 (0.70+0.75)  KL=1.7419  running mean=3.2331
+  trial 162  fold 2 (0.75+0.80)  KL=1.1443  running mean=2.5368
+  trial 162  fold 3 (0.80+0.82)  KL=1.5098  running mean=2.2800
+  trial 162  fold 4 (0.82+0.85)  KL=1.3368  running mean=2.0914
+  trial 162  fold 5 (0.85+0.88)  KL=1.6537  running mean=2.0184
+  trial 162  fold 6 (0.88+0.90)  KL=2.3011  running mean=2.0588
+  trial 162  fold 7 (0.90+0.93)  KL=4.0651  running mean=2.3096
+trial 163: n_modes=57  nu=1.5  length_scale_upper=813.12  noise_level_upper=7.1039  alpha=5.38e-05
+  trial 163  fold 0 (0.50+0.70)  KL=4.9495  running mean=4.9495
+  trial 163  fold 1 (0.70+0.75)  KL=1.7775  running mean=3.3635
+  trial 163  fold 2 (0.75+0.80)  KL=1.1293  running mean=2.6187
+  trial 163  fold 3 (0.80+0.82)  KL=1.6095  running mean=2.3664
+  trial 163  fold 4 (0.82+0.85)  KL=1.3523  running mean=2.1636
+  trial 163  fold 5 (0.85+0.88)  KL=1.6058  running mean=2.0706
+  trial 163  fold 6 (0.88+0.90)  KL=2.2622  running mean=2.0980
+  trial 163  fold 7 (0.90+0.93)  KL=4.0191  running mean=2.3381
+trial 164: n_modes=79  nu=1.5  length_scale_upper=781.88  noise_level_upper=6.2170  alpha=1.95e-05
+  trial 164  fold 0 (0.50+0.70)  KL=4.7316  running mean=4.7316
+  trial 164  fold 1 (0.70+0.75)  KL=1.8058  running mean=3.2687
+  trial 164  fold 2 (0.75+0.80)  KL=1.1114  running mean=2.5496
+  trial 164  fold 3 (0.80+0.82)  KL=1.5113  running mean=2.2900
+  trial 164  fold 4 (0.82+0.85)  KL=1.3565  running mean=2.1033
+  trial 164  fold 5 (0.85+0.88)  KL=1.7232  running mean=2.0400
+  trial 164  fold 6 (0.88+0.90)  KL=2.2587  running mean=2.0712
+  trial 164  fold 7 (0.90+0.93)  KL=3.9938  running mean=2.3115
+trial 165: n_modes=77  nu=1.5  length_scale_upper=759.37  noise_level_upper=5.4898  alpha=1.31e-05
+  trial 165  fold 0 (0.50+0.70)  KL=4.7103  running mean=4.7103
+  trial 165  fold 1 (0.70+0.75)  KL=1.7803  running mean=3.2453
+  trial 165  fold 2 (0.75+0.80)  KL=1.1983  running mean=2.5630
+  trial 165  fold 3 (0.80+0.82)  KL=1.5717  running mean=2.3152
+  trial 165  fold 4 (0.82+0.85)  KL=1.4887  running mean=2.1499
+  trial 165  fold 5 (0.85+0.88)  KL=1.6789  running mean=2.0714
+  trial 165  fold 6 (0.88+0.90)  KL=2.2779  running mean=2.1009
+  trial 165  fold 7 (0.90+0.93)  KL=3.9904  running mean=2.3371
+trial 166: n_modes=80  nu=1.5  length_scale_upper=24.73  noise_level_upper=3.5482  alpha=3.71e-05
+  trial 166  fold 0 (0.50+0.70)  KL=7.4495  running mean=7.4495
+  trial 166  fold 1 (0.70+0.75)  KL=2.0493  running mean=4.7494
+  trial 166  fold 2 (0.75+0.80)  KL=1.2921  running mean=3.5970
+  trial 166: pruned after fold 2
+trial 167: n_modes=66  nu=1.5  length_scale_upper=565.92  noise_level_upper=5.1626  alpha=2.56e-05
+  trial 167  fold 0 (0.50+0.70)  KL=5.3839  running mean=5.3839
+  trial 167  fold 1 (0.70+0.75)  KL=1.8201  running mean=3.6020
+  trial 167  fold 2 (0.75+0.80)  KL=1.1536  running mean=2.7859
+  trial 167: pruned after fold 2
+trial 168: n_modes=70  nu=2.5  length_scale_upper=670.64  noise_level_upper=6.7496  alpha=5.58e-05
+  trial 168  fold 0 (0.50+0.70)  KL=6.6520  running mean=6.6520
+  trial 168  fold 1 (0.70+0.75)  KL=2.1174  running mean=4.3847
+  trial 168  fold 2 (0.75+0.80)  KL=1.2564  running mean=3.3419
+  trial 168: pruned after fold 2
+trial 169: n_modes=84  nu=1.5  length_scale_upper=819.57  noise_level_upper=6.1630  alpha=8.59e-05
+  trial 169  fold 0 (0.50+0.70)  KL=4.7246  running mean=4.7246
+  trial 169  fold 1 (0.70+0.75)  KL=1.7366  running mean=3.2306
+  trial 169  fold 2 (0.75+0.80)  KL=1.1295  running mean=2.5302
+  trial 169  fold 3 (0.80+0.82)  KL=1.5703  running mean=2.2902
+  trial 169  fold 4 (0.82+0.85)  KL=1.3540  running mean=2.1030
+  trial 169  fold 5 (0.85+0.88)  KL=1.6009  running mean=2.0193
+  trial 169  fold 6 (0.88+0.90)  KL=2.2912  running mean=2.0582
+  trial 169  fold 7 (0.90+0.93)  KL=3.9975  running mean=2.3006
+trial 170: n_modes=89  nu=1.5  length_scale_upper=853.29  noise_level_upper=4.0815  alpha=8.39e-05
+  trial 170  fold 0 (0.50+0.70)  KL=4.8255  running mean=4.8255
+  trial 170  fold 1 (0.70+0.75)  KL=1.7491  running mean=3.2873
+  trial 170  fold 2 (0.75+0.80)  KL=1.1330  running mean=2.5692
+  trial 170  fold 3 (0.80+0.82)  KL=1.4635  running mean=2.2928
+  trial 170  fold 4 (0.82+0.85)  KL=1.3248  running mean=2.0992
+  trial 170  fold 5 (0.85+0.88)  KL=1.6232  running mean=2.0198
+  trial 170  fold 6 (0.88+0.90)  KL=2.2887  running mean=2.0583
+  trial 170  fold 7 (0.90+0.93)  KL=4.0148  running mean=2.3028
+trial 171: n_modes=89  nu=1.5  length_scale_upper=836.26  noise_level_upper=2.6767  alpha=8.34e-05
+  trial 171  fold 0 (0.50+0.70)  KL=4.8086  running mean=4.8086
+  trial 171  fold 1 (0.70+0.75)  KL=2.2106  running mean=3.5096
+  trial 171  fold 2 (0.75+0.80)  KL=1.1361  running mean=2.7184
+  trial 171  fold 3 (0.80+0.82)  KL=1.4912  running mean=2.4116
+  trial 171  fold 4 (0.82+0.85)  KL=1.3465  running mean=2.1986
+  trial 171  fold 5 (0.85+0.88)  KL=1.6063  running mean=2.0999
+  trial 171  fold 6 (0.88+0.90)  KL=2.3125  running mean=2.1302
+  trial 171  fold 7 (0.90+0.93)  KL=4.0129  running mean=2.3656
+trial 172: n_modes=92  nu=1.5  length_scale_upper=902.74  noise_level_upper=4.2075  alpha=9.93e-05
+  trial 172  fold 0 (0.50+0.70)  KL=4.7085  running mean=4.7085
+  trial 172  fold 1 (0.70+0.75)  KL=2.1510  running mean=3.4297
+  trial 172  fold 2 (0.75+0.80)  KL=1.1736  running mean=2.6777
+  trial 172  fold 3 (0.80+0.82)  KL=1.5062  running mean=2.3848
+  trial 172  fold 4 (0.82+0.85)  KL=1.3572  running mean=2.1793
+  trial 172  fold 5 (0.85+0.88)  KL=1.6577  running mean=2.0924
+  trial 172  fold 6 (0.88+0.90)  KL=2.2788  running mean=2.1190
+  trial 172  fold 7 (0.90+0.93)  KL=4.0682  running mean=2.3627
+trial 173: n_modes=86  nu=1.5  length_scale_upper=721.47  noise_level_upper=1.5480  alpha=6.55e-05
+  trial 173  fold 0 (0.50+0.70)  KL=4.7815  running mean=4.7815
+  trial 173  fold 1 (0.70+0.75)  KL=1.6951  running mean=3.2383
+  trial 173  fold 2 (0.75+0.80)  KL=1.0732  running mean=2.5166
+  trial 173  fold 3 (0.80+0.82)  KL=1.5127  running mean=2.2656
+  trial 173  fold 4 (0.82+0.85)  KL=1.3619  running mean=2.0849
+  trial 173  fold 5 (0.85+0.88)  KL=1.5882  running mean=2.0021
+  trial 173  fold 6 (0.88+0.90)  KL=2.2630  running mean=2.0394
+  trial 173  fold 7 (0.90+0.93)  KL=4.0589  running mean=2.2918
+trial 174: n_modes=85  nu=1.5  length_scale_upper=617.18  noise_level_upper=1.3138  alpha=7.41e-05
+  trial 174  fold 0 (0.50+0.70)  KL=4.7134  running mean=4.7134
+  trial 174  fold 1 (0.70+0.75)  KL=1.8269  running mean=3.2701
+  trial 174  fold 2 (0.75+0.80)  KL=1.0711  running mean=2.5371
+  trial 174  fold 3 (0.80+0.82)  KL=1.4852  running mean=2.2741
+  trial 174  fold 4 (0.82+0.85)  KL=1.3653  running mean=2.0924
+  trial 174  fold 5 (0.85+0.88)  KL=1.6290  running mean=2.0151
+  trial 174  fold 6 (0.88+0.90)  KL=2.2666  running mean=2.0511
+  trial 174  fold 7 (0.90+0.93)  KL=4.0818  running mean=2.3049
+trial 175: n_modes=84  nu=1.5  length_scale_upper=606.84  noise_level_upper=0.7918  alpha=7.21e-05
+  trial 175  fold 0 (0.50+0.70)  KL=4.9289  running mean=4.9289
+  trial 175  fold 1 (0.70+0.75)  KL=1.8157  running mean=3.3723
+  trial 175  fold 2 (0.75+0.80)  KL=1.9965  running mean=2.9137
+  trial 175: pruned after fold 2
+trial 176: n_modes=87  nu=1.5  length_scale_upper=709.49  noise_level_upper=1.5197  alpha=7.53e-05
+  trial 176  fold 0 (0.50+0.70)  KL=4.7307  running mean=4.7307
+  trial 176  fold 1 (0.70+0.75)  KL=1.8018  running mean=3.2662
+  trial 176  fold 2 (0.75+0.80)  KL=1.0612  running mean=2.5312
+  trial 176  fold 3 (0.80+0.82)  KL=2.4115  running mean=2.5013
+  trial 176: pruned after fold 3
+trial 177: n_modes=85  nu=1.5  length_scale_upper=638.45  noise_level_upper=1.1494  alpha=4.27e-05
+  trial 177  fold 0 (0.50+0.70)  KL=4.8212  running mean=4.8212
+  trial 177  fold 1 (0.70+0.75)  KL=1.8090  running mean=3.3151
+  trial 177  fold 2 (0.75+0.80)  KL=1.0778  running mean=2.5693
+  trial 177  fold 3 (0.80+0.82)  KL=2.3956  running mean=2.5259
+  trial 177: pruned after fold 3
+trial 178: n_modes=96  nu=inf  length_scale_upper=538.70  noise_level_upper=1.2631  alpha=9.98e-05
+  trial 178  fold 0 (0.50+0.70)  KL=10.3767  running mean=10.3767
+  trial 178  fold 1 (0.70+0.75)  KL=10.0358  running mean=10.2063
+  trial 178  fold 2 (0.75+0.80)  KL=5.0559  running mean=8.4895
+  trial 178: pruned after fold 2
+trial 179: n_modes=90  nu=1.5  length_scale_upper=712.28  noise_level_upper=1.5659  alpha=5.15e-05
+  trial 179  fold 0 (0.50+0.70)  KL=4.8464  running mean=4.8464
+  trial 179  fold 1 (0.70+0.75)  KL=1.8134  running mean=3.3299
+  trial 179  fold 2 (0.75+0.80)  KL=1.2594  running mean=2.6397
+  trial 179  fold 3 (0.80+0.82)  KL=1.6426  running mean=2.3905
+  trial 179  fold 4 (0.82+0.85)  KL=1.3908  running mean=2.1905
+  trial 179  fold 5 (0.85+0.88)  KL=1.6095  running mean=2.0937
+  trial 179  fold 6 (0.88+0.90)  KL=2.2645  running mean=2.1181
+  trial 179  fold 7 (0.90+0.93)  KL=4.0181  running mean=2.3556
+trial 180: n_modes=99  nu=1.5  length_scale_upper=601.01  noise_level_upper=2.1032  alpha=7.06e-05
+  trial 180  fold 0 (0.50+0.70)  KL=4.6825  running mean=4.6825
+  trial 180  fold 1 (0.70+0.75)  KL=1.7528  running mean=3.2176
+  trial 180  fold 2 (0.75+0.80)  KL=1.1234  running mean=2.5195
+  trial 180  fold 3 (0.80+0.82)  KL=1.6800  running mean=2.3096
+  trial 180  fold 4 (0.82+0.85)  KL=1.3652  running mean=2.1208
+  trial 180  fold 5 (0.85+0.88)  KL=1.6045  running mean=2.0347
+  trial 180  fold 6 (0.88+0.90)  KL=2.2701  running mean=2.0683
+  trial 180  fold 7 (0.90+0.93)  KL=4.0171  running mean=2.3119
+
+Best trial:
+  value (CV mean_KL): 2.28673
+  n_modes: 55
+  kernel_nu: 1.5
+  length_scale_upper: 728.6705690631443
+  noise_level_upper: 4.043220411002399
+  alpha: 7.485874594219525e-05
+
+181 trials total (58 pruned, 123 completed)
+
+Refitting on the full training set with the best hyperparameters...
+
+POD+GP (Optuna-tuned) -- Phase 1 (interpolation)
+  R2      : 0.986056
+  wrMAE   : 0.028629  (worst sim idx 70)
+  mean_KL : 0.943448  (worst sim idx 22, KL=3.501652)
+  score   : 9.787138
+
+POD+GP (Optuna-tuned) -- Phase 2 (extrapolation)
+  R2      : 0.922044
+  wrMAE   : 0.065839  (worst sim idx 70)
+  mean_KL : 4.712470  (worst sim idx 12, KL=7.965212)
+  score   : 9.281022
+
+Saved: /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/paper_pod_gp_optuna_tuned_y_pred1.npy, /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/paper_pod_gp_optuna_tuned_y_pred2.npy

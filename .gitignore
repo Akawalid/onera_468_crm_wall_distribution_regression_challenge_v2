@@ -39,6 +39,8 @@ ENV/
 .ipynb_checkpoints/
 
 
+*.db
+
 # Data files
 #bundle/feedback_phase/input_data/
 #bundle/feedback_phase/reference_data/

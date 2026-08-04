@@ -1,0 +1,27 @@
+device: cpu
+Loading data...
+n_train=324  n_test1=72  n_test2=72
+model parameters: 4,320,815,030
+Training Global MLP (hidden=(75, 120, 1226, 16490), 200 epochs, batch=32)...
+epoch    0  train MSE (scaled) = 0.460622  elapsed = 101.3s
+epoch   10  train MSE (scaled) = 0.026211  elapsed = 1089.8s
+epoch   20  train MSE (scaled) = 0.021787  elapsed = 2073.0s
+epoch   30  train MSE (scaled) = 0.019018  elapsed = 3059.8s
+epoch   40  train MSE (scaled) = 0.014867  elapsed = 4041.8s
+epoch   50  train MSE (scaled) = 0.020153  elapsed = 5025.7s
+epoch   60  train MSE (scaled) = 0.014292  elapsed = 6010.0s
+epoch   70  train MSE (scaled) = 0.014885  elapsed = 6997.7s
+epoch   80  train MSE (scaled) = 0.010015  elapsed = 7984.8s
+epoch   90  train MSE (scaled) = 0.009175  elapsed = 8972.0s
+epoch  100  train MSE (scaled) = 0.009452  elapsed = 9955.1s
+epoch  110  train MSE (scaled) = 0.011735  elapsed = 10940.7s
+epoch  120  train MSE (scaled) = 0.007144  elapsed = 11929.7s
+epoch  130  train MSE (scaled) = 0.007189  elapsed = 12915.2s
+epoch  140  train MSE (scaled) = 0.005656  elapsed = 13900.7s
+epoch  150  train MSE (scaled) = 0.004800  elapsed = 14885.4s
+epoch  160  train MSE (scaled) = 0.006579  elapsed = 15874.7s
+epoch  170  train MSE (scaled) = 0.008993  elapsed = 16862.8s
+epoch  180  train MSE (scaled) = 0.014634  elapsed = 17851.1s
+epoch  190  train MSE (scaled) = 0.009265  elapsed = 18838.6s
+epoch  199  train MSE (scaled) = 0.004186  elapsed = 19727.6s
+Training done in 19727.6s

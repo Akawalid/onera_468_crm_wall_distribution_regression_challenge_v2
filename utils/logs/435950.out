@@ -1,0 +1,101 @@
+Loading static graph/features...
+Building kNN (k=20) graph over 260774 nodes...
+  done in 2.7s, 5215480 edges
+n_train=324  n_test1=72
+train/val split: 292 train  32 val (patience=15)
+epoch 1/100  loss=0.08507  val_loss=0.01999  best_val=0.01999 (epoch 1)  (31.0s)
+epoch 2/100  loss=0.02405  val_loss=0.01501  best_val=0.01501 (epoch 2)  (29.7s)
+epoch 3/100  loss=0.01743  val_loss=0.01265  best_val=0.01265 (epoch 3)  (29.8s)
+epoch 4/100  loss=0.01444  val_loss=0.01192  best_val=0.01192 (epoch 4)  (29.9s)
+epoch 5/100  loss=0.01246  val_loss=0.01079  best_val=0.01079 (epoch 5)  (30.0s)
+  test_phase1  R2=0.6343  worst_rMAE=0.1191  mean_rMAE=0.0909  mean_KLw=2.6006  max_KLw=3.0233
+epoch 6/100  loss=0.01108  val_loss=0.00964  best_val=0.00964 (epoch 6)  (30.0s)
+epoch 7/100  loss=0.00996  val_loss=0.00838  best_val=0.00838 (epoch 7)  (30.0s)
+epoch 8/100  loss=0.00923  val_loss=0.00847  best_val=0.00838 (epoch 7)  (30.1s)
+epoch 9/100  loss=0.00847  val_loss=0.00807  best_val=0.00807 (epoch 9)  (30.1s)
+epoch 10/100  loss=0.00808  val_loss=0.00787  best_val=0.00787 (epoch 10)  (30.1s)
+  test_phase1  R2=0.7343  worst_rMAE=0.1041  mean_rMAE=0.0783  mean_KLw=2.7917  max_KLw=3.2392
+epoch 11/100  loss=0.00735  val_loss=0.00661  best_val=0.00661 (epoch 11)  (30.2s)
+epoch 12/100  loss=0.00784  val_loss=0.01131  best_val=0.00661 (epoch 11)  (30.2s)
+epoch 13/100  loss=0.00675  val_loss=0.00598  best_val=0.00598 (epoch 13)  (30.2s)
+epoch 14/100  loss=0.00640  val_loss=0.00551  best_val=0.00551 (epoch 14)  (30.2s)
+epoch 15/100  loss=0.00587  val_loss=0.00531  best_val=0.00531 (epoch 15)  (30.2s)
+  test_phase1  R2=0.8205  worst_rMAE=0.0824  mean_rMAE=0.0610  mean_KLw=2.5030  max_KLw=2.9710
+epoch 16/100  loss=0.00602  val_loss=0.00499  best_val=0.00499 (epoch 16)  (30.2s)
+epoch 17/100  loss=0.00526  val_loss=0.00500  best_val=0.00499 (epoch 16)  (30.2s)
+epoch 18/100  loss=0.00506  val_loss=0.00467  best_val=0.00467 (epoch 18)  (30.2s)
+epoch 19/100  loss=0.00492  val_loss=0.00459  best_val=0.00459 (epoch 19)  (30.2s)
+epoch 20/100  loss=0.00463  val_loss=0.00451  best_val=0.00451 (epoch 20)  (30.2s)
+  test_phase1  R2=0.8542  worst_rMAE=0.0750  mean_rMAE=0.0538  mean_KLw=2.2868  max_KLw=2.6506
+epoch 21/100  loss=0.00462  val_loss=0.00401  best_val=0.00401 (epoch 21)  (30.2s)
+epoch 22/100  loss=0.00490  val_loss=0.00687  best_val=0.00401 (epoch 21)  (30.2s)
+epoch 23/100  loss=0.00457  val_loss=0.00445  best_val=0.00401 (epoch 21)  (30.2s)
+epoch 24/100  loss=0.00403  val_loss=0.00349  best_val=0.00349 (epoch 24)  (30.2s)
+epoch 25/100  loss=0.00402  val_loss=0.00349  best_val=0.00349 (epoch 25)  (30.2s)
+  test_phase1  R2=0.8859  worst_rMAE=0.0651  mean_rMAE=0.0465  mean_KLw=2.0777  max_KLw=2.4238
+epoch 26/100  loss=0.00389  val_loss=0.00377  best_val=0.00349 (epoch 25)  (30.1s)
+epoch 27/100  loss=0.00409  val_loss=0.00432  best_val=0.00349 (epoch 25)  (30.1s)
+epoch 28/100  loss=0.00371  val_loss=0.00387  best_val=0.00349 (epoch 25)  (30.1s)
+epoch 29/100  loss=0.00343  val_loss=0.00344  best_val=0.00344 (epoch 29)  (30.1s)
+epoch 30/100  loss=0.00387  val_loss=0.00333  best_val=0.00333 (epoch 30)  (30.1s)
+  test_phase1  R2=0.8867  worst_rMAE=0.0645  mean_rMAE=0.0466  mean_KLw=2.1269  max_KLw=2.4319
+epoch 31/100  loss=0.00342  val_loss=0.00314  best_val=0.00314 (epoch 31)  (30.1s)
+epoch 32/100  loss=0.00353  val_loss=0.00461  best_val=0.00314 (epoch 31)  (30.1s)
+epoch 33/100  loss=0.00332  val_loss=0.00534  best_val=0.00314 (epoch 31)  (30.1s)
+epoch 34/100  loss=0.00343  val_loss=0.00327  best_val=0.00314 (epoch 31)  (30.1s)
+epoch 35/100  loss=0.00390  val_loss=0.00396  best_val=0.00314 (epoch 31)  (30.1s)
+  test_phase1  R2=0.8607  worst_rMAE=0.0719  mean_rMAE=0.0555  mean_KLw=2.8117  max_KLw=3.4214
+epoch 36/100  loss=0.00333  val_loss=0.00282  best_val=0.00282 (epoch 36)  (30.1s)
+epoch 37/100  loss=0.00297  val_loss=0.00293  best_val=0.00282 (epoch 36)  (30.1s)
+epoch 38/100  loss=0.00307  val_loss=0.00291  best_val=0.00282 (epoch 36)  (30.1s)
+epoch 39/100  loss=0.00326  val_loss=0.00293  best_val=0.00282 (epoch 36)  (30.1s)
+epoch 40/100  loss=0.00290  val_loss=0.00370  best_val=0.00282 (epoch 36)  (30.1s)
+  test_phase1  R2=0.8757  worst_rMAE=0.0733  mean_rMAE=0.0511  mean_KLw=2.6885  max_KLw=3.3983
+epoch 41/100  loss=0.00290  val_loss=0.00298  best_val=0.00282 (epoch 36)  (30.1s)
+epoch 42/100  loss=0.00311  val_loss=0.00276  best_val=0.00276 (epoch 42)  (30.1s)
+epoch 43/100  loss=0.00298  val_loss=0.00256  best_val=0.00256 (epoch 43)  (30.1s)
+epoch 44/100  loss=0.00280  val_loss=0.00331  best_val=0.00256 (epoch 43)  (30.1s)
+epoch 45/100  loss=0.00307  val_loss=0.00258  best_val=0.00256 (epoch 43)  (30.1s)
+  test_phase1  R2=0.9148  worst_rMAE=0.0548  mean_rMAE=0.0403  mean_KLw=2.0682  max_KLw=2.9777
+epoch 46/100  loss=0.00277  val_loss=0.00270  best_val=0.00256 (epoch 43)  (30.1s)
+epoch 47/100  loss=0.00274  val_loss=0.00279  best_val=0.00256 (epoch 43)  (30.1s)
+epoch 48/100  loss=0.00292  val_loss=0.00239  best_val=0.00239 (epoch 48)  (30.1s)
+epoch 49/100  loss=0.00269  val_loss=0.00336  best_val=0.00239 (epoch 48)  (30.1s)
+epoch 50/100  loss=0.00300  val_loss=0.00259  best_val=0.00239 (epoch 48)  (30.0s)
+  test_phase1  R2=0.9155  worst_rMAE=0.0521  mean_rMAE=0.0391  mean_KLw=1.9095  max_KLw=2.6577
+epoch 51/100  loss=0.00261  val_loss=0.00255  best_val=0.00239 (epoch 48)  (30.1s)
+epoch 52/100  loss=0.00277  val_loss=0.00263  best_val=0.00239 (epoch 48)  (30.1s)
+epoch 53/100  loss=0.00271  val_loss=0.00222  best_val=0.00222 (epoch 53)  (30.1s)
+epoch 54/100  loss=0.00251  val_loss=0.00261  best_val=0.00222 (epoch 53)  (30.1s)
+epoch 55/100  loss=0.00266  val_loss=0.00246  best_val=0.00222 (epoch 53)  (30.1s)
+  test_phase1  R2=0.9231  worst_rMAE=0.0523  mean_rMAE=0.0375  mean_KLw=1.8529  max_KLw=2.7514
+epoch 56/100  loss=0.00262  val_loss=0.00214  best_val=0.00214 (epoch 56)  (30.1s)
+epoch 57/100  loss=0.00254  val_loss=0.00233  best_val=0.00214 (epoch 56)  (30.1s)
+epoch 58/100  loss=0.00268  val_loss=0.00234  best_val=0.00214 (epoch 56)  (30.1s)
+epoch 59/100  loss=0.00234  val_loss=0.00311  best_val=0.00214 (epoch 56)  (30.1s)
+epoch 60/100  loss=0.00269  val_loss=0.00216  best_val=0.00214 (epoch 56)  (30.1s)
+  test_phase1  R2=0.9288  worst_rMAE=0.0532  mean_rMAE=0.0350  mean_KLw=1.5727  max_KLw=2.0056
+epoch 61/100  loss=0.00254  val_loss=0.00278  best_val=0.00214 (epoch 56)  (30.1s)
+epoch 62/100  loss=0.00235  val_loss=0.00208  best_val=0.00208 (epoch 62)  (30.1s)
+epoch 63/100  loss=0.00230  val_loss=0.00189  best_val=0.00189 (epoch 63)  (30.1s)
+epoch 64/100  loss=0.00246  val_loss=0.00328  best_val=0.00189 (epoch 63)  (30.1s)
+epoch 65/100  loss=0.00254  val_loss=0.00227  best_val=0.00189 (epoch 63)  (30.1s)
+  test_phase1  R2=0.9266  worst_rMAE=0.0561  mean_rMAE=0.0378  mean_KLw=1.9489  max_KLw=2.5813
+epoch 66/100  loss=0.00224  val_loss=0.00235  best_val=0.00189 (epoch 63)  (30.1s)
+epoch 67/100  loss=0.00244  val_loss=0.00208  best_val=0.00189 (epoch 63)  (30.1s)
+epoch 68/100  loss=0.00225  val_loss=0.00203  best_val=0.00189 (epoch 63)  (30.1s)
+epoch 69/100  loss=0.00230  val_loss=0.00219  best_val=0.00189 (epoch 63)  (30.2s)
+epoch 70/100  loss=0.00217  val_loss=0.00220  best_val=0.00189 (epoch 63)  (30.2s)
+  test_phase1  R2=0.9279  worst_rMAE=0.0519  mean_rMAE=0.0380  mean_KLw=2.0578  max_KLw=2.4982
+epoch 71/100  loss=0.00230  val_loss=0.00196  best_val=0.00189 (epoch 63)  (30.1s)
+epoch 72/100  loss=0.00228  val_loss=0.00268  best_val=0.00189 (epoch 63)  (30.2s)
+epoch 73/100  loss=0.00221  val_loss=0.00233  best_val=0.00189 (epoch 63)  (30.1s)
+epoch 74/100  loss=0.00214  val_loss=0.00207  best_val=0.00189 (epoch 63)  (30.1s)
+epoch 75/100  loss=0.00231  val_loss=0.00230  best_val=0.00189 (epoch 63)  (30.1s)
+  test_phase1  R2=0.9265  worst_rMAE=0.0548  mean_rMAE=0.0361  mean_KLw=1.5946  max_KLw=2.2699
+epoch 76/100  loss=0.00205  val_loss=0.00197  best_val=0.00189 (epoch 63)  (30.1s)
+epoch 77/100  loss=0.00235  val_loss=0.00297  best_val=0.00189 (epoch 63)  (30.1s)
+epoch 78/100  loss=0.00239  val_loss=0.00212  best_val=0.00189 (epoch 63)  (30.1s)
+early stopping at epoch 78 (best epoch 63, val_loss=0.00189)
+best model (epoch 63)  test_phase1  R2=0.9394  worst_rMAE=0.0454  mean_rMAE=0.0333  mean_KLw=1.6342  max_KLw=2.1438
+Saved: utils/simple_gnn_splitv3_model.pt
