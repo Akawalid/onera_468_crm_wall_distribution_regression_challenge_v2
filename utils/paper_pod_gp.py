@@ -219,7 +219,17 @@ def choose_n_modes(pca, variance_threshold):
     cum = np.cumsum(pca.explained_variance_ratio_)
     k = int(np.searchsorted(cum, variance_threshold) + 1)
     k = min(k, len(cum))
-    return k, float(cum[k - 1])
+    cum_var = float(cum[k - 1])
+    if cum_var < variance_threshold:
+        # searchsorted never found an index reaching variance_threshold within the modes PCA was
+        # fit with, so k was silently capped at all of them (len(cum) = MAX_COMPONENTS, capped by
+        # n_train-1) instead of actually reaching the target -- surface that loudly here rather
+        # than only via a cum_var number in the log that a caller has to notice doesn't match.
+        print(f'[WARN] choose_n_modes: requested variance_threshold={variance_threshold:.4f} but '
+              f'only {cum_var:.5f} is reachable with the {len(cum)} modes PCA was fit with -- '
+              f'increase MAX_COMPONENTS if more modes are available (n_train-1), or lower '
+              f'variance_threshold to silence this.', flush=True)
+    return k, cum_var
 
 
 def main():
@@ -238,7 +248,16 @@ def main():
 
     n_components = min(MAX_COMPONENTS, n_train - 1)
     print(f'Fitting PCA ({n_components} components, capped by n_train-1={n_train - 1})...', flush=True)
-    pca = PCA(n_components=n_components, random_state=SEED)
+    # svd_solver='full' (not the 'auto' default): with n_components=150 on a (n_train, NWALLP)
+    # matrix, sklearn's own heuristic (n_components < 80% of min(n_train, NWALLP)) picks the
+    # randomized SVD solver here, which is an approximation whose subspace construction depends on
+    # the requested rank itself -- so PCA(n_components=150)-then-sliced-to-k and a standalone
+    # PCA(n_components=k) fit are not guaranteed bit-identical even at the same random_state. That
+    # was the confirmed source of a small (~0.0001-0.01 R2) discrepancy between two "equivalent"
+    # runs of this pipeline computed two different ways. 'full' forces the exact LAPACK SVD
+    # (deterministic, and guaranteed nested/nested-nested top-k prefixes) -- negligible cost here
+    # since it's the tiny n_train dimension that bounds the computation either way.
+    pca = PCA(n_components=n_components, random_state=SEED, svd_solver='full')
     Z_train_full = pca.fit_transform(Y_train)   # mean-subtracted internally by PCA
 
     k, cum_var = choose_n_modes(pca, VARIANCE_THRESHOLD)

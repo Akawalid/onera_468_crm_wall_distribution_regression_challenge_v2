@@ -1,5 +1,6 @@
 This submission file shows how to include extra Python packages in your submission.
-Here we use LightGBM, which is not available by default in the Codabench environment.
+Here we use LightGBM (the same package the starting kit's own LightGBM
+baseline needs), which is not available by default in the Codabench environment.
 
 To prepare your submission:
 1) Create a fresh conda environment from using_extra_packages/environement.yml
@@ -8,9 +9,16 @@ To prepare your submission:
 2) Activate the environment:
    conda activate codabench-env
 3) Create a folder named `python_packages` in the same directory as this file
-4) Install LightGBM into that folder:
-   pip install --target python_packages lightgbm
-5) Edit this file with your model
+4) Install the extra package into that folder with --no-deps, then separately
+   install any of ITS dependencies that aren't already in the Codabench base
+   image (see ../environement.yml for what's already there). Using --no-deps
+   avoids re-bundling numpy/scipy/etc., which would bloat your zip and can
+   conflict with the versions already in the Codabench environment.
+   pip install --target python_packages --no-deps lightgbm
+   # lightgbm's own dependencies (numpy, scipy) are already in the Codabench
+   # image, so nothing else needs to be installed.
+5) Edit this file with your model, keeping the sys.path.append(...
+   "python_packages") line at the top so the extra package stays importable
 6) Compress your submission into a zip file (the python_packages folder will be included):
    cd PATH_TO_YOUR_FOLDER && zip -r ../submission.zip .
 7) Submit the zip file in the "My Submissions" tab on Codabench

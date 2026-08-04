@@ -14,8 +14,8 @@ import zipfile
 # freshly-signed URL each time, so these links don't expire even though the
 # redirect target does.
 DATASET_URLS = {
-    'feedback_phase': 'https://www.codabench.org/datasets/download/25e0fd03-1f60-4d60-8bc1-718f05f5ea9d/',
-    'final_phase':    'https://www.codabench.org/datasets/download/338d9248-42cb-4dbb-bf40-1efb0413250c/',
+    'feedback_phase': 'https://www.codabench.org/datasets/download/6c284e9f-482b-4015-8c83-200b41f66674/',
+    'final_phase':    'https://www.codabench.org/datasets/download/e32b5c9b-dfd8-4f39-9a58-9fd5bc7af33d/',
 }
 
 

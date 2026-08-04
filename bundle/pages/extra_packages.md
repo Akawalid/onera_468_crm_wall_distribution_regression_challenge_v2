@@ -2,26 +2,31 @@
 
 The Codabench environment provides the following packages by default:
 
-- `Cython==3.0.12`
-- `numpy==1.26.4`
-- `scipy==1.11.4`
-- `scikit-learn==1.5.1`
-- `pandas==2.2.3`
-- `pyyaml==6.0.2`
+- `Cython==3.2.8`
+- `numpy==2.5.1`
+- `matplotlib==3.11.0`
+- `seaborn==0.13.2`
+- `scipy==1.18.0`
+- `scikit-learn==1.9.0`
+- `pandas==3.0.3`
+- `PyYAML==6.0.3`
 - `imutils==0.5.4`
-- `numba==0.61.2`
-- `threadpoolctl==3.6.0`
-- `matplotlib==3.8.4`
-- `psutil==7.0.0`
+- `opencv-python==5.0.0.93`
+- `torch==2.12.1`
+- `tensorflow==2.21.0`
+- `tqdm==4.68.4`
+- `psutil==7.2.2`
+- `h5py==3.14.0`
+- `jupyter==1.1.1`
 
 If your model requires packages beyond this list, you need to include them in a folder that should be names `python_packages` on the same level as your `model.py` file in your submission.
 The `using_extra_packages/` folder in the starting kit provides ready-to-use examples for two workflows:
 
 ### With conda
 
-1. Create a fresh environment from the provided `environment.yml`:
+1. Create a fresh environment from the provided `environement.yml`:
 ```bash
-   conda env create -f environment.yml
+   conda env create -f environement.yml
    conda activate codabench-env
 ```
 2. Create a `python_packages/` folder next to your `model.py`:
@@ -30,7 +35,7 @@ The `using_extra_packages/` folder in the starting kit provides ready-to-use exa
 ```
 3. Install your package into that folder:
 ```bash
-   pip install --target python_packages lightgbm
+   pip install --target python_packages --no-deps lightgbm
 ```
 4. Add the following lines at the top of your `model.py`:
 ```python
@@ -43,22 +48,22 @@ The `using_extra_packages/` folder in the starting kit provides ready-to-use exa
    cd PATH_TO_YOUR_FOLDER && zip -r ../submission.zip .
 ```
 
-See `using_extra_packages/conda_submission_example.py` for a full working example.
+See `using_extra_packages/submission_example/conda_tuto.txt` for the full walkthrough and `using_extra_packages/submission_example/model.py` for a working example.
 
 ### With uv
 
-1. Set up the environment from the `codalab-env/` folder:
+1. Set up the environment from the provided `requirements.txt`:
 ```bash
-   cd codalab-env
-   uv sync
-   uv activate
+   uv venv --python 3.12
+   source .venv/bin/activate
+   uv pip install -r requirements.txt
 ```
 2. Follow steps 2–5 from the conda workflow above, replacing the install command with:
 ```bash
-   uv pip install --target python_packages lightgbm
+   uv pip install --target python_packages --no-deps lightgbm
 ```
 
-See `using_extra_packages/uv_submission_example.py` for a full working example.
+See `using_extra_packages/submission_example/uv_tuto.txt` for the full walkthrough and `using_extra_packages/submission_example/model.py` for a working example.
 
 ## How to submit
 
@@ -80,4 +85,4 @@ To submit, compress your `model.py` file into a zip file and upload it in the **
 cd PATH_TO_YOUR_FOLDER && zip -r ../submission.zip .
 ```
 
-A template `model.py` is available in the `solution/` folder of the starting kit.
+A template `model.py` is available in the `using_extra_packages/submission_example/` folder of the starting kit.

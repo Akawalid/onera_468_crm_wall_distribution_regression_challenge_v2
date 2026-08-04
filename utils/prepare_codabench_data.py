@@ -1,5 +1,5 @@
 """
-Stage data/splitv2 (+ data/component_*) into the input_data/reference_data
+Stage data/splitv3 (+ data/component_*) into the input_data/reference_data
 layout expected by bundle/ingestion_program/ingestion.py and
 bundle/scoring_program/scoring.py, ready to be zipped and uploaded to
 Codabench interactively (one dataset per phase, per input/reference slot).
@@ -26,7 +26,7 @@ import shutil
 import numpy as np
 
 ROOT       = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SPLIT_DIR  = os.path.join(ROOT, 'data', 'splitv2')
+SPLIT_DIR  = os.path.join(ROOT, 'data', 'splitv3')
 COMP_LABELS = os.path.join(ROOT, 'data', 'component_labels_unique.npy')
 COMP_MAP    = os.path.join(ROOT, 'data', 'component_map.json')
 BUNDLE_DIR  = os.path.join(ROOT, 'bundle')

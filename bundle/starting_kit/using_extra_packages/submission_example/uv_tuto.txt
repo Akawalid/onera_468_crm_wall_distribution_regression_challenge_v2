@@ -7,27 +7,43 @@ and how to use them in your submission file.
 This TUTORIAL WILL ONLY WORK WITH LINUX!
 
 This type of installation is suitable for small packages that do not
-require compilation, example lightgbm.
+require compilation, e.g. LightGBM (the same package the starting kit's
+own LightGBM baseline needs).
 
 --------------------------------------------------------------------------
-IMPORTANT: The packages already installed in the Codabench execution image
-are listed in using_extra_packages/codalab-env/pyproject.toml. Only add
-packages that are missing from that list.
+IMPORTANT: Make sure that the extra packages you include are compatible
+with the Python version and the packages already installed in the
+Codabench environment. This competition's environment uses Python 3.12
+(see the docker_image entry in competition.yaml). ../requirements.txt lists
+the same packages as ../environement.yml (the conda version, for
+conda_tuto.txt) but by their pip/PyPI names, for use with uv/pip instead.
+Only add packages that are missing from that list.
 --------------------------------------------------------------------------
 
 To include extra Python packages, you need to:
-0) Create the reference env and activate it:
-   cd codalab-env
-   uv sync
+0) Create a fresh environment based on the Codabench environment.
+   From this folder:
+   uv venv --python 3.12
    source .venv/bin/activate
+   uv pip install -r ../requirements.txt
 1) Create a folder named `python_packages` in the same directory as this
    submission file.
-2) Install the packages you need into that folder:
-   uv pip install --target PATH_FOR_YOUR_FOLDER/python_packages <package_name>
+2) Install the packages you need into that folder with --no-deps, then
+   separately install any of THEIR dependencies that aren't already in the
+   Codabench base image (see ../requirements.txt for what's already
+   there). --no-deps avoids re-bundling numpy/scipy/etc., which would bloat
+   your zip and can conflict with the versions already in the Codabench
+   environment.
+   uv pip install --target PATH_FOR_YOUR_FOLDER/python_packages --no-deps <package_name>
+   # e.g. for lightgbm (a working example of this is model.py in this folder):
+   uv pip install --target PATH_FOR_YOUR_FOLDER/python_packages --no-deps lightgbm
+   # lightgbm's own dependencies (numpy, scipy) are already in the Codabench
+   # image, so nothing else needs to be installed.
 3) Test locally that your submission file works with the extra packages.
-   Run `python submission.py` from this directory with the env activated.
-   You'll need `python_packages` on your PYTHONPATH to test locally --
-   see the `resolve_path` function below for how this file does it.
+   Run `python model.py` (or plug it into the starting kit notebook) from
+   this directory with the env activated. You'll need `python_packages` on
+   your PYTHONPATH to test locally -- see the sys.path.append line at the
+   top of model.py for how this file does it.
 4) Zip the `python_packages` folder along with your submission file (this is important!!!!!) and
    any other files you need (e.g., model weights) into a single zip
    file.
