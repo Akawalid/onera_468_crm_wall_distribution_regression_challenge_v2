@@ -54,7 +54,7 @@ phases:
     end: 12-30-2026
     max_submissions_per_day: 5
     max_submissions: 100
-    execution_time_limit: 3600
+    execution_time_limit: 86400
     tasks:
       - 0
     solutions: []
@@ -67,7 +67,7 @@ phases:
     start: 2-1-2030
     max_submissions_per_day: 500
     max_submissions: 5000
-    execution_time_limit: 3600
+    execution_time_limit: 86400
     tasks:
       - 1
     solutions: []

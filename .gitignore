@@ -38,6 +38,8 @@ ENV/
 # Jupyter
 .ipynb_checkpoints/
 
+bundle/starting_kit/submission_mlp_klw/
+bundle/starting_kit/submission_global_mlp/
 
 *.db
 
