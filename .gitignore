@@ -25,7 +25,21 @@ lib/
 lib64/
 *.pt
 *.joblib
-*.png
+gap_*.png
+utils/logs/simple_gnn_error_analysis/test_phase1_component_bar.png
+utils/logs/simple_gnn_error_analysis/test_phase1_density_vs_error.png
+utils/logs/simple_gnn_error_analysis/test_phase1_systematic_pylon_slice1.png
+utils/logs/simple_gnn_error_analysis/test_phase1_systematic_pylon_slice2.png
+utils/logs/simple_gnn_error_analysis/test_phase1_systematic_wing_slice1.png
+utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_pylon_slice3.png
+utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_wing_slice1.png
+utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_wing_slice2.png
+utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_wing_slice3.png
+utils/logs/simple_gnn_error_analysis/test_phase1_systematic_pylon_slice3.png
+utils/logs/simple_gnn_error_analysis/test_phase1_systematic_wing_slice2.png
+utils/logs/simple_gnn_error_analysis/test_phase1_systematic_wing_slice3.png
+utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_pylon_slice1.png
+utils/logs/simple_gnn_error_analysis/test_phase1_worstsim58_pylon_slice2.png
 
 # Virtual environments
 .env

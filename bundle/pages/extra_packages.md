@@ -77,7 +77,7 @@ class Model:
         ...
 ```
 
-The `fit()` method receives `X_train` of shape [np×n_train, 9] and `Y_train` of shape [np×n_train], and the `predict()` method receives `X_test` of shape [np×n_test, 9] and must return a numpy array of shape [np×n_test].
+The `fit()` method receives `X_train` of shape [np $\times$ n_train, 9] and `Y_train` of shape [np $\times$ n_train], and the `predict()` method receives `X_test` of shape [np $\times$ n_test, 9] and must return a numpy array of shape [np $\times$ n_test].
 
 To submit, compress your `model.py` file into a zip file and upload it in the **My Submissions** tab:
 

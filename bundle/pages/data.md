@@ -2,7 +2,7 @@
 
 ## Database
 
-The database consists of **nf = 468 CFD simulations**[^cfd], each simulation contains **np = 260,774 wall points** computed on the same CRM[^crm] surface mesh[^surfacemesh].
+The database consists of **nf = 468 CFD simulations**[^cfd], each simulation contains **np = 260,774 wall points** computed on the **same** CRM[^crm] surface mesh[^surfacemesh] (fixed geometry).
 
 The input features are the follwing:
 - **Cartesian coordinates (x, y, z):** the standard three-dimensional coordinate system used to
@@ -13,14 +13,14 @@ pointing outward into the flow. It encodes the local orientation of the surface 
 geometric input for predicting how the flow interacts with the surface at that location.
 - **Aerodynamic conditions (Minf, AoA, Pi):**
   - **Mach number (Minf)[^mach]:** ranges from 0.30 to 0.96, covering two flow regimes: subsonic
-    (Minf < 0.80) and transonic[^transonic] (0.80 ≤ Minf < 1.0).
-  - **Angle of attack (AoA)[^aoa]:** ranges from −15° to +15°, covering conditions from attached
+    (Minf < 0.80) and transonic[^transonic] (0.80 $\leq$ Minf < 1.0).
+  - **Angle of attack (AoA)[^aoa]:** ranges from $-15^\circ$ to $+15^\circ$, covering conditions from attached
     flow to full flow separation[^separation].
   - **Stagnation pressure (Pi)[^pi]:** takes three values : 100 kPa, 200 kPa, and 400 kPa,
     which control the Reynolds number[^reynolds] of the flow.
 
-The dataset is stored as a single `.npy` file of shape **(np × nf, 9) = (260,774*468, 9)**, where
-**np = 260,774** is the number of surface mesh[^surfacemesh] points and **nf = 468** is the number of simulations.
+The dataset is stored as a single `.npy` file of shape **(np $\times$ nf, 9) = (260,774*468, 9)**, where
+**np = 260,774** is the number of surface mesh points and **nf = 468** is the number of simulations.
 The simulations are stacked row-wise, which means, the first `np` rows correspond to the first simulation.
 
 Each row describes one surface point under one set of flow conditions, with 9 columns split into two groups:
@@ -28,11 +28,11 @@ Each row describes one surface point under one set of flow conditions, with 9 co
 - **Geometric features (columns 0-5: x, y, z, nx, ny, nz):** the position and surface normal of
   the mesh point. These are identical across all simulations since the aircraft geometry is fixed
   the same np geometric rows repeat for every simulation.
-- **Flow condition features (columns 6-8 respectively: Minf[^mach], AoA[^aoa], Pi[^pi]):** the flwo conditions. These are constant within a simulation (all np rows share the same values) but vary from one simulation to the next.
+- **Flow condition features (columns 6-8 respectively: Minf, AoA, Pi):** the flwo conditions. These are constant within a simulation (all np rows share the same values) but vary from one simulation to the next.
 
 > **Confidence weights:** Each simulation is assigned a confidence weight based on its convergence[^convergence]
-> quality: **1.0** for well-converged simulations (|AoA[^aoa]| < 10°) and **0.5** for low-confidence
-> ones (|AoA[^aoa]| ≥ 10°). These weights are provided in the Files section below and must be used when
+> quality: **1.0** for well-converged simulations (|AoA| < $10^\circ$) and **0.5** for low-confidence
+> ones (|AoA| $\geq$ $10^\circ$). These weights are provided in the Files section below and must be used when
 > computing the evaluation metric (see the **Evaluation** tab).
 >
 > **Notes:**
@@ -41,30 +41,49 @@ Each row describes one surface point under one set of flow conditions, with 9 co
 
 ## Target Variable
 
-The target variable is the **volumetric density ρ (rho)** which represents the mass of fluid per unit volume
+The target variable is the **volumetric density $\rho$ (rho)** which represents the mass of fluid per unit volume
 (kg/m3), it is evaluated at each of the np = 260,774 surface points. For a given simulation, the
 output is a vector of shape **(np,) = (260,774,)**, and the full training label matrix is of
-shape **(np × n_train,)**.
+shape **(np $\times$ n_train,)**.
 
 Density is a fundamental thermodynamic quantity, through the ideal gas law, it is directly linked
 to local pressure and temperature, making it a physically meaningful summary of the aerodynamic
 state at each surface point. Its distribution over the aircraft surface is particularly sensitive
 to compressibility effects and shock wave[^shock] locations.
 
-## Train/Test Split
+## Phases and Train/Test Split
 
-The split is performed along the **Mach number[^mach] axis**, in order to evaluate the model's ability
+You have two main phases, 
+  - Phase 1 tests interpolation (easy)
+  - phase 2 tests extrapolation (hard)
+
+The training data is the same for phase 1 and phase 2,
+You wil get only training data with their labels, the test data and their labels are only visible for the scoring program, not for you.
+
+The split is performed along the **Mach number axis**, in order to evaluate the model's ability
 to generalize and extrapolate[^extrapolation] to unseen compressibility regimes:
 
 | Split | Mach numbers | Size |
 |---|---|---|
-| **Train** | 0.50, 0.70, 0.75, 0.80, 0.88, 0.90, 0.93 | n_train = 252 |
-| **Phase 1 test** | 0.82, 0.84, 0.85, 0.86 | n_test_phase1 = 144 |
+| **Train** | 0.50, 0.70, 0.75, 0.80, 0.82, 0.85, 0.88, 0.90, 0.93 | n_train = 324 |
+| **Phase 1 test** | 0.84, 0.86 | n_test_phase1 = 72 |
 | **Phase 2 test** | 0.30, 0.96 | n_test_phase2 = 72 |
 
-Phase 1 tests **interpolation**: these Mach numbers fall between the train values 0.80 and 0.88.
-Phase 2 tests **extrapolation**[^extrapolation]: these Mach numbers fall outside the full train
-range, covering the lowest and highest compressibility[^transonic] regimes in the dataset.
+Phase 1 tests **interpolation**: these Mach numbers fall between train values already seen
+(0.84 between 0.82 and 0.85, 0.86 between 0.85 and 0.88).
+Phase 2 tests **extrapolation**: these Mach numbers fall outside the full train
+range, covering the lowest and highest compressibility regimes in the dataset.
+
+Here is how it works:
+train your model locally on the training data, then submit it to
+be evaluated on the phase 1 test data. When phase 1 closes, submit the same code again
+for phase 2. Your model is retrained on the same training data as before, then evaluated
+on the phase 2 test data.
+
+Since the training data does not change between the two phases, retraining is wasted
+compute. To avoid it, save your big model as a `.pt` file, include it in your
+submission, and load it instead of training again. A submission example is available at the starting kit
+`starting_kit/submission_klw_with_dotpt_file.zip`
 
 ## Different ways of using the dataset
 
@@ -74,7 +93,7 @@ Depending on your model architecture, the input matrix X can be used in two ways
 
 - **Pointwise regressor:** use the full X as-is. Each row contains all 9 features (geometry +
   flow conditions) and the model predicts the density at that individual point. The model sees
-  260,774 × n_train independent input-output pairs during training.
+  260,774 $\times$ n_train independent input-output pairs during training.
 
 ## Starting kit & data
 
@@ -125,29 +144,49 @@ All `.npy` files are stored as **float32 (single precision)** numpy arrays.
 |---|---|---|
 | np | 260,774 | Number of wall points per simulation |
 | nf | 468 | Total number of simulations |
-| n_train | 252 | Number of simulations in the train set |
-| n_test_phase1 | 144 | Number of simulations in the phase 1 test set |
+| n_train | 324 | Number of simulations in the train set |
+| n_test_phase1 | 72 | Number of simulations in the phase 1 test set |
 | n_test_phase2 | 72 | Number of simulations in the phase 2 test set |
 
 ## Terminology
-**Surface mesh:**[^surfacemesh] a discrete representation of the aircraft surface as a collection of points
-and connecting elements. The CRM mesh used here has 260,774 points and is identical across all
-simulations.
 
-**Convergence:**[^convergence] in CFD, a simulation convergence is asseced by running it multiple times then measure the standard diviation of the lift[^liftdrag] and drag[^liftdrag] forces, the smaller they are, the better the simulation converges.
+[^cfd]: **CFD (Computational Fluid Dynamics):** numerical simulation of fluid flow, used here to
+compute the aerodynamic quantities (pressure, velocity, density) at every wall point without a
+physical wind-tunnel test. See the **Overview** tab for more detail.
 
-**Extrapolation:**[^extrapolation] predicting outputs for input conditions that lie outside the range seen during
-training. The train/test split in this challenge is specifically designed to test extrapolation
-across Mach numbers[^mach].
+[^crm]: **CRM (Common Research Model):** a publicly available aircraft geometry developed jointly
+by NASA and Boeing, used here as the fixed surface mesh across all simulations. See the
+**Overview** tab for more detail.
 
-**Reynolds number:**[^reynolds] a dimensionless number characterizing the ratio of inertial to viscous forces
-in the flow. Controlled here via the stagnation pressure Pi[^pi].
+[^surfacemesh]: **Surface mesh:** a discrete representation of the aircraft surface as a collection
+of points and connecting elements. The CRM mesh used here has 260,774 points and is identical
+across all simulations.
 
-**Stagnation pressure (Pi):**[^pi] the pressure a fluid element would reach if brought to rest
-isentropically. Used here as a proxy to control the Reynolds number[^reynolds].
+[^mach]: **Mach number (Minf):** ratio of flow speed to the speed of sound. Determines the
+compressibility regime of the flow.
 
-**Mach number (Minf):**[^mach] ratio of flow speed to the speed of sound. Determines the compressibility
-regime of the flow.
+[^transonic]: **Transonic:** the flight regime (0.80 $\leq$ Minf < 1.0) where subsonic and supersonic
+zones coexist around the aircraft, producing shock waves.
 
-**Angle of attack (AoA):**[^aoa] angle between the incoming airflow and the aircraft reference axis.
-Controls lift[^liftdrag] generation and can trigger flow separation[^separation] at large values.
+[^aoa]: **Angle of attack (AoA):** angle between the incoming airflow and the aircraft reference
+axis. Controls lift generation and can trigger flow separation at large values.
+
+[^separation]: **Flow separation:** the airflow detaching from the aircraft surface instead of
+following it, typically at large angle of attack. Causes a sharp rise in drag and loss of lift.
+
+[^pi]: **Stagnation pressure (Pi):** the pressure a fluid element would reach if brought to rest
+isentropically. Used here as a proxy to control the Reynolds number.
+
+[^reynolds]: **Reynolds number:** a dimensionless number characterizing the ratio of inertial to
+viscous forces in the flow. Controlled here via the stagnation pressure Pi.
+
+[^convergence]: **Convergence:** in CFD, a simulation's convergence is assessed by running it
+multiple times and measuring the standard deviation of the lift and drag forces -- the smaller
+they are, the better the simulation converges.
+
+[^shock]: **Shock wave:** a thin region of abrupt change in pressure, density, and velocity that
+forms when a flow locally exceeds the speed of sound.
+
+[^extrapolation]: **Extrapolation:** predicting outputs for input conditions that lie outside the
+range seen during training. The train/test split in this challenge is specifically designed to
+test extrapolation across Mach numbers.

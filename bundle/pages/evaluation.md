@@ -27,7 +27,7 @@ for very poor predictions). **Lower is better.**
 
 **Step 3: Worst-case error across well-converged simulations (wrMAE):**
 The wrMAE retains only the **worst-performing simulation** among the well-converged ones
-(those with confidence weight wf = 1.0, i.e. |AoA| < 10°).
+(those with confidence weight wf = 1.0, i.e. |AoA| < $10^\circ$).
 $$
 wrMAE = \max_{f \in \mathcal{W}} rMAE^f
 $$
@@ -130,12 +130,12 @@ including the physically hard ones. **Higher is better.**
 TODO...
 <!-- Both metrics are combined into a single score out of 10:
 
-`score = 5 × R2 + 5 × (1 − wrMAI)`
+`score = 5 $\times$ R2 + 5 $\times$ (1 $-$ wrMAI)`
 
 | Component | Weight | Direction | Best value | Worst value |
 |---|---|---|---|---|
 | R2 | 5 | Higher is better | 5.0 (R2=1) | 0.0 (R2=0) |
-| 1 − wrMAE | 5 | Higher is better | 5.0 (wrMAE=0) | 0.0 (wrMAE=1) |
+| 1 $-$ wrMAE | 5 | Higher is better | 5.0 (wrMAE=0) | 0.0 (wrMAE=1) |
 | **Total score** | **10** | **Higher is better** | **10.0** | **0.0** |
 
 The two components are given equal weight (5 points each), rewarding models that are both
@@ -155,7 +155,7 @@ np = 260,774 points:
 Then:
 - **wrMAE** = max(0.021, 0.008, 0.045) = **0.045**
 - Suppose **R2** = 0.987 computed across all points and simulations
-- **score** = 5 × 0.987 + 5 × (1 − 0.045) = 4.935 + 4.775 = **9.71 / 10** -->
+- **score** = 5 $\times$ 0.987 + 5 $\times$ (1 $-$ 0.045) = 4.935 + 4.775 = **9.71 / 10** -->
 
 
 ## Evaluation Procedure
@@ -183,7 +183,7 @@ into a zip file. Submit the zip file in the **My Submissions** tab.
 ## Terminology
 
 **R2 (coefficient of determination):** a standard regression metric that measures the proportion
-of variance in the true values explained by the model. Ranges from −∞ to 1.0; a perfect model
+of variance in the true values explained by the model. Ranges from $-\infty$ to 1.0; a perfect model
 scores 1.0, a model predicting the global mean everywhere scores 0.0, and negative values
 indicate predictions worse than the global mean.
 

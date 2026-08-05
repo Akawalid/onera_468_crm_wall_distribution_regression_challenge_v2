@@ -2,12 +2,15 @@
 
 > **In one sentence:** given the flight conditions of an unseen simulation, Mach
 > number (Minf), angle of attack (AoA), and stagnation pressure (Pi), predict the
-> volumetric density ρ at each of the 260,774 points on the aircraft surface.
+> volumetric density $\rho$ at each of the 260,774 points on the aircraft surface.
 
-> 💡 **New here?** The [starting kit](https://www.codabench.org/datasets/download/209115f6-4e98-4aad-8327-1a712560c384/)
+> ```
+> (v)
+>  =
+> ```
+> **New here?** The [starting kit](https://www.codabench.org/datasets/download/209115f6-4e98-4aad-8327-1a712560c384/)
 > walks through loading the data, training two baseline models, evaluating them with
 > the challenge's own metrics, and preparing a submission.
-
 
 ## Introduction to Aircraft Physics
 Since the Wright brothers' first powered flight in 1903, understanding how air flows around a wing has been the central problem of aeronautics.
@@ -84,14 +87,14 @@ Each simulation is characterized by three flow condition parameters:
   - **Transonic (0.80 <= Minf < 0.96):** compressibility effects become significant as the flow
     speed approaches the speed of sound, causing the local air density to vary markedly from point
     to point. Both subsonic and supersonic flow regions can coexist around the aircraft, often
-    accompanied by shock waves[^shock] that produce abrupt pressure jumps on the surface.
+    accompanied by shock waves that produce abrupt pressure jumps on the surface.
 
 - **Angle of attack (AoA):** the angle between the incoming airflow and the aircraft's reference
   axis. Small AoA values correspond to typical cruise conditions, where the flow remains attached
   to the surface. Large positive or negative AoA values tilt the aircraft more aggressively relative
   to the flow, which can significantly change the pressure distribution and may lead to *flow
   separation*, a phenomenon where the airflow detaches from the surface, causing a
-  sharp increase in drag[^drag] and a loss of lift[^drag].
+  sharp increase in drag[^drag] and a loss of lift.
   
   <!-- <figure style="text-align: center;">
     <img src="https://raw.githubusercontent.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/main/bundle/pages/figures/Airfoil_angle_of_attack.jpg" alt="Illustration of angle of attack"/>
@@ -113,7 +116,7 @@ Each simulation is characterized by three flow condition parameters:
 
 The quantity to predict is the **wall distribution of volumetric density**. Unpacking this phrase:
 
-- **Wall distribution** means the value of a quantity evaluated at every point on the aircraft
+- **Wall distribution**[^wall] means the value of a quantity evaluated at every point on the aircraft
   surface mesh[^mesh], as opposed to the full three-dimensional flow field. Each of the 260,774 surface
   points of the CRM mesh has an associated density value for a given simulation.
 - **Volumetric density** (kg/m3) is the mass of fluid per unit volume at a given location. It is
@@ -161,6 +164,9 @@ forms when a flow locally exceeds the speed of sound. On a transonic aircraft, s
 typically appear on the upper wing surface and can cause a sudden increase in drag
 and potentially trigger flow separation downstream.
 
+[^drag]: **Drag:** the aerodynamic force parallel to the incoming flow, opposing the aircraft's
+motion; balanced by thrust in steady, level flight.
+
 [^pi]: **Stagnation pressure (Pi):** the pressure that a fluid element would reach if brought to
 rest isentropically (without losses). It is a measure of the total energy of the flow. In this
 dataset, Pi is used as a control parameter to vary the Reynolds number while keeping the Mach
@@ -169,7 +175,7 @@ number and AoA fixed.
 [^reynolds]: **Reynolds number (Re):** a dimensionless number that characterizes the relative
 importance of inertial forces to viscous forces in a flow. At low Reynolds numbers the flow is
 laminar and orderly; at high Reynolds numbers it becomes turbulent. In aerodynamics, full-scale
-aircraft typically operate at very high Reynolds numbers (Re ~ 10⁷–10⁸), while wind tunnel
+aircraft typically operate at very high Reynolds numbers (Re ~ $10^7$–$10^8$), while wind tunnel
 models often operate at lower values due to size and pressure constraints.
 
 [^windtunnel]: **Wind tunnel experiment:** a controlled laboratory test in which a scaled model
