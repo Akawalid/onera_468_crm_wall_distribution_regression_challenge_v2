@@ -126,11 +126,14 @@ means the errors are concentrated around zero across **all** components of the a
 including the physically hard ones. **Higher is better.**
 
 
-**Step 7: Final leaderboard score:**
-TODO...
-<!-- Both metrics are combined into a single score out of 10:
+**Step 7: Secondary composite score:**
 
-`score = 5 $\times$ R2 + 5 $\times$ (1 $-$ wrMAI)`
+R2 and wrMAE are also combined into a single secondary score out of 10, shown as its own
+**Score** column on the leaderboard:
+
+$$
+score = 5 \times R2 + 5 \times (1 - wrMAE)
+$$
 
 | Component | Weight | Direction | Best value | Worst value |
 |---|---|---|---|---|
@@ -140,6 +143,10 @@ TODO...
 
 The two components are given equal weight (5 points each), rewarding models that are both
 globally accurate (R2) and reliable in the worst case (wrMAE).
+
+> **Note:** this score does **not** include KL. It exists as a quick, single-number read on
+> R2/wrMAE alone -- it is not what your leaderboard rank is based on. See **Evaluation
+> Procedure** below for what actually determines your rank.
 
 ### Small worked example
 
@@ -155,7 +162,7 @@ np = 260,774 points:
 Then:
 - **wrMAE** = max(0.021, 0.008, 0.045) = **0.045**
 - Suppose **R2** = 0.987 computed across all points and simulations
-- **score** = 5 $\times$ 0.987 + 5 $\times$ (1 $-$ 0.045) = 4.935 + 4.775 = **9.71 / 10** -->
+- **score** = 5 $\times$ 0.987 + 5 $\times$ (1 $-$ 0.045) = 4.935 + 4.775 = **9.71 / 10**
 
 
 ## Evaluation Procedure
@@ -167,10 +174,20 @@ The evaluation follows a standard machine learning competition workflow:
    is called.
 3. **Prediction:** the model receives test data (`X_test`) without labels and its `predict()`
    method is called to generate predictions, saved as `Yhat.npy`.
-4. **Scoring:** predictions are compared against ground truth labels; R2 and wrMAE are computed.
-   Execution time is also recorded (training, prediction, and scoring).
-5. **Leaderboard ranking:** models are ranked by score (out of 10, higher is better). R2 and
-   wrMAE are displayed as additional columns for reference.
+4. **Scoring:** predictions are compared against ground truth labels; Mean KL, R2, wrMAE, and
+   the secondary score (Step 7) are all computed. Execution time is also recorded (training,
+   prediction, and scoring).
+5. **Leaderboard ranking:** the leaderboard is sorted by **Mean KL, lower is better** -- the
+   primary metric described above. The other columns are shown for context but do not affect
+   your rank:
+
+   | Column | What it is | Sort |
+   |---|---|---|
+   | **Mean KL** | primary metric -- **this is what determines your rank** | lower is better |
+   | **Score** | secondary composite, `5*R2 + 5*(1-wrMAE)` (Step 7); does **not** include KL | higher is better |
+   | **R2** | secondary metric (Step 4) | higher is better |
+   | **wrMAE** | secondary metric (Step 3) | lower is better |
+   | **Duration** | total execution time (training + prediction + scoring) | lower is better |
 
 ## Submitting a Solution
 

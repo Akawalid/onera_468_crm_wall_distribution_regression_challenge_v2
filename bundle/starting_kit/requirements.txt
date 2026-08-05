@@ -1,5 +1,6 @@
 numpy
 matplotlib
 scikit-learn
+joblib
 lightgbm
 torch

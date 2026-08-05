@@ -41,8 +41,7 @@ Each row describes one surface point under one set of flow conditions, with 9 co
 
 ## Target Variable
 
-The target variable is the **volumetric density $\rho$ (rho)** which represents the mass of fluid per unit volume
-(kg/m3), it is evaluated at each of the np = 260,774 surface points. For a given simulation, the
+The target variable is the **volumetric density $\rho$ (rho)** as stated in the overview page, it is evaluated at each of the np = 260,774 surface points. For a given simulation, the
 output is a vector of shape **(np,) = (260,774,)**, and the full training label matrix is of
 shape **(np $\times$ n_train,)**.
 
@@ -83,7 +82,7 @@ on the phase 2 test data.
 Since the training data does not change between the two phases, retraining is wasted
 compute. To avoid it, save your big model as a `.pt` file, include it in your
 submission, and load it instead of training again. A submission example is available at the starting kit
-`starting_kit/submission_klw_with_dotpt_file.zip`
+`starting_kit/submission_mlp_klw_with_dotpt_file.zip`
 
 ## Different ways of using the dataset
 
@@ -120,13 +119,20 @@ All `.npy` files are stored as **float32 (single precision)** numpy arrays.
 
 - `starting_kit.ipynb`: main notebook: download and load data, train, evaluate, plot, submit.
 - `kit_utils/`: code imported by the notebook.
-  - `data.py`: data loading and cross-validation splitting.
+  - `data.py`: data loading, plus cross-validation splitting (available, not used by default).
   - `metrics.py`: R2, wrMAE, KLw, same formulas as the scoring program.
-  - `lgbm_baseline.py`: pointwise LightGBM baseline.
+  - `mean_baseline.py`: Baseline A, predicts the global training mean.
+  - `pod_gp_baseline.py`: Baseline B, POD + Gaussian Process (Optuna-tuned).
+  - `lgbm_baseline.py`: pointwise LightGBM baseline (reference, not used by the notebook by default).
   - `pca_plots.py`: visual diagnostics.
 - `baselines/`: heavier reference baselines, run on their own, not from the notebook.
   - `mlp_klw.py`: production-scale full-field MLP with a KL-aware loss.
-- `submission/model.py`: the baseline written out by the notebook, ready to zip and submit.
+- `submission.zip`: the baseline written out by the notebook, ready to submit (unzip for `model.py`).
+- `submission_pod_gp.zip`, `submission_knn.zip`, `submission_isomap_rbf.zip`,
+  `submission_global_mlp.zip`, `submission_mlp_klw_with_dotpt_file.zip`: ready-made alternative
+  submissions, one per baseline explored in the parent project -- POD+GP, input-space kNN,
+  IsoMap+RBF, global-field MLP, and the KL-loss MLP (this last one ships a pretrained `.pt` file
+  so it skips retraining between phases, see above).
 - `using_extra_packages/`: how to bundle extra Python packages in a submission.
   - ...
   - `submission_example/`

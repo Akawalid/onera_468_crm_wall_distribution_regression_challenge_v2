@@ -4,10 +4,10 @@
 > number (Minf), angle of attack (AoA), and stagnation pressure (Pi), predict the
 > volumetric density $\rho$ at each of the 260,774 points on the aircraft surface.
 
-> ```
-> (v)
->  =
-> ```
+> **Central problem:** learn an ML model that predicts the volumetric density field $\rho$ over
+> the entire aircraft surface -- not just particular regions -- and that generalizes to unseen
+> aerodynamic conditions.
+
 > **New here?** The [starting kit](https://www.codabench.org/datasets/download/209115f6-4e98-4aad-8327-1a712560c384/)
 > walks through loading the data, training two baseline models, evaluating them with
 > the challenge's own metrics, and preparing a submission.
@@ -72,9 +72,16 @@ patterns and provide much faster predictions.
 
 The database contains 468 Reynolds-Averaged Navier-Stokes (RANS)[^rans] simulations using the
 Spalart-Allmaras[^sa] turbulence model, performed on the NASA/Boeing Common Research Model (CRM)[^crm]
-a wing-body-pylon-nacelle configuration representative of a modern commercial aircraft.
+a wing-body-pylon-nacelle configuration (cf. figure below) representative of a modern commercial aircraft.
 The aircraft geometry is **fixed across all simulations**, only the aerodynamic operating
 conditions vary from one simulation to another, the observations don't include time variation.
+
+<figure style="text-align: center;">
+    <img src="https://raw.githubusercontent.com/Akawalid/onera_468_crm_wall_distribution_regression_challenge_v2/main/bundle/pages/figures/fig_components_CRM.png" style="height: 400px; object-fit: contain;" alt="Aircraf components"/>
+  <figcaption>
+    <em>Figure 4: Aircraf components (Pylon-wing-body-nacelle).</em>
+  </figcaption>
+</figure>
 
 ## Flow Condition Variables
 
@@ -123,10 +130,6 @@ The quantity to predict is the **wall distribution of volumetric density**. Unpa
   a fundamental thermodynamic quantity: through the ideal gas law, density is directly linked to
   both pressure and temperature, meaning it encodes key information about the local aerodynamic
   state of the flow.
-- **Why density on the wall?** The density distribution on the aircraft surface reflects the
-  combined effect of Mach number, angle of attack, and Reynolds number on the flow. It is
-  particularly sensitive to compressibility effects and shock wave locations, making it a
-  physically meaningful and challenging quantity to predict.
 
 The goal of this challenge is therefore to learn a surrogate model that, given a set of flow
 conditions (Minf, AoA, Pi), accurately predicts the density value at each of the 260,774 surface

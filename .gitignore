@@ -2,6 +2,15 @@
 bundle.zip
 sample_code_submission.zip
 *.zip
+# Starting kit ships these as zips only (no expanded folder) -- keep them tracked.
+!bundle/starting_kit/submission.zip
+!bundle/starting_kit/submission_pod_gp.zip
+!bundle/starting_kit/submission_knn.zip
+!bundle/starting_kit/submission_isomap_rbf.zip
+!bundle/starting_kit/submission_global_mlp.zip
+
+bundle/starting_kit/submission_mlp_klw_with_dotpt_file.zip
+
 *.tgz
 *.tar.gz
 aaa.txt
