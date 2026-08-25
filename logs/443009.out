@@ -1,0 +1,2457 @@
+Loading data...
+n_train=324  CV folds=8 (leave-2-consecutive-Machs-out)
+trial 0: n_components=3  isomap_k=23  rbf_kernel=linear  smoothing=2.27e-03  backmap_k=11
+  trial 0  fold 0 (0.50+0.70)  KL=6.7818  running mean=6.7818
+  trial 0  fold 1 (0.70+0.75)  KL=6.8067  running mean=6.7942
+  trial 0  fold 2 (0.75+0.80)  KL=1.4135  running mean=5.0007
+  trial 0  fold 3 (0.80+0.82)  KL=1.9011  running mean=4.2258
+  trial 0  fold 4 (0.82+0.85)  KL=2.2184  running mean=3.8243
+  trial 0  fold 5 (0.85+0.88)  KL=2.6824  running mean=3.6340
+  trial 0  fold 6 (0.88+0.90)  KL=3.9771  running mean=3.6830
+  trial 0  fold 7 (0.90+0.93)  KL=5.8096  running mean=3.9488
+trial 1: n_components=6  isomap_k=29  rbf_kernel=thin_plate_spline  smoothing=1.15e-03  backmap_k=3
+  trial 1  fold 0 (0.50+0.70)  KL=6.3433  running mean=6.3433
+  trial 1  fold 1 (0.70+0.75)  KL=4.7672  running mean=5.5552
+  trial 1  fold 2 (0.75+0.80)  KL=1.6243  running mean=4.2449
+  trial 1  fold 3 (0.80+0.82)  KL=2.6232  running mean=3.8395
+  trial 1  fold 4 (0.82+0.85)  KL=2.3991  running mean=3.5514
+  trial 1  fold 5 (0.85+0.88)  KL=2.5356  running mean=3.3821
+  trial 1  fold 6 (0.88+0.90)  KL=4.5803  running mean=3.5533
+  trial 1  fold 7 (0.90+0.93)  KL=5.2980  running mean=3.7714
+trial 2: n_components=6  isomap_k=26  rbf_kernel=quintic  smoothing=1.45e-07  backmap_k=4
+  trial 2  fold 0 (0.50+0.70)  KL=10.5158  running mean=10.5158
+  trial 2  fold 1 (0.70+0.75)  KL=5.1449  running mean=7.8304
+  trial 2  fold 2 (0.75+0.80)  KL=2.5408  running mean=6.0672
+  trial 2  fold 3 (0.80+0.82)  KL=2.5371  running mean=5.1847
+  trial 2  fold 4 (0.82+0.85)  KL=2.4649  running mean=4.6407
+  trial 2  fold 5 (0.85+0.88)  KL=2.6984  running mean=4.3170
+  trial 2  fold 6 (0.88+0.90)  KL=3.9679  running mean=4.2671
+  trial 2  fold 7 (0.90+0.93)  KL=5.9573  running mean=4.4784
+trial 3: n_components=6  isomap_k=29  rbf_kernel=cubic  smoothing=1.73e-06  backmap_k=12
+  trial 3  fold 0 (0.50+0.70)  KL=7.5472  running mean=7.5472
+  trial 3  fold 1 (0.70+0.75)  KL=5.1163  running mean=6.3318
+  trial 3  fold 2 (0.75+0.80)  KL=1.2665  running mean=4.6433
+  trial 3  fold 3 (0.80+0.82)  KL=2.1825  running mean=4.0281
+  trial 3  fold 4 (0.82+0.85)  KL=2.6004  running mean=3.7426
+  trial 3  fold 5 (0.85+0.88)  KL=2.4189  running mean=3.5220
+  trial 3  fold 6 (0.88+0.90)  KL=3.5043  running mean=3.5195
+  trial 3  fold 7 (0.90+0.93)  KL=6.1676  running mean=3.8505
+trial 4: n_components=3  isomap_k=26  rbf_kernel=thin_plate_spline  smoothing=8.21e-06  backmap_k=8
+  trial 4  fold 0 (0.50+0.70)  KL=6.5914  running mean=6.5914
+  trial 4  fold 1 (0.70+0.75)  KL=5.3356  running mean=5.9635
+  trial 4  fold 2 (0.75+0.80)  KL=1.3065  running mean=4.4112
+  trial 4  fold 3 (0.80+0.82)  KL=1.7909  running mean=3.7561
+  trial 4  fold 4 (0.82+0.85)  KL=2.3840  running mean=3.4817
+  trial 4  fold 5 (0.85+0.88)  KL=2.4862  running mean=3.3158
+  trial 4  fold 6 (0.88+0.90)  KL=3.6375  running mean=3.3617
+  trial 4  fold 7 (0.90+0.93)  KL=5.7909  running mean=3.6654
+trial 5: n_components=5  isomap_k=31  rbf_kernel=linear  smoothing=1.89e-06  backmap_k=4
+  trial 5  fold 0 (0.50+0.70)  KL=6.1521  running mean=6.1521
+  trial 5  fold 1 (0.70+0.75)  KL=4.7675  running mean=5.4598
+  trial 5  fold 2 (0.75+0.80)  KL=1.3901  running mean=4.1032
+  trial 5  fold 3 (0.80+0.82)  KL=2.0674  running mean=3.5943
+  trial 5  fold 4 (0.82+0.85)  KL=2.3418  running mean=3.3438
+  trial 5  fold 5 (0.85+0.88)  KL=2.5366  running mean=3.2092
+  trial 5  fold 6 (0.88+0.90)  KL=4.4804  running mean=3.3908
+  trial 5  fold 7 (0.90+0.93)  KL=5.2557  running mean=3.6239
+trial 6: n_components=7  isomap_k=36  rbf_kernel=linear  smoothing=5.27e-08  backmap_k=9
+  trial 6  fold 0 (0.50+0.70)  KL=6.5895  running mean=6.5895
+  trial 6  fold 1 (0.70+0.75)  KL=5.3215  running mean=5.9555
+  trial 6  fold 2 (0.75+0.80)  KL=1.3455  running mean=4.4188
+  trial 6  fold 3 (0.80+0.82)  KL=2.1495  running mean=3.8515
+  trial 6  fold 4 (0.82+0.85)  KL=1.9743  running mean=3.4761
+  trial 6  fold 5 (0.85+0.88)  KL=2.3894  running mean=3.2950
+  trial 6  fold 6 (0.88+0.90)  KL=3.8264  running mean=3.3709
+  trial 6  fold 7 (0.90+0.93)  KL=5.5102  running mean=3.6383
+trial 7: n_components=7  isomap_k=26  rbf_kernel=quintic  smoothing=3.56e-04  backmap_k=6
+  trial 7  fold 0 (0.50+0.70)  KL=10.1590  running mean=10.1590
+  trial 7  fold 1 (0.70+0.75)  KL=5.0573  running mean=7.6082
+  trial 7  fold 2 (0.75+0.80)  KL=2.4551  running mean=5.8905
+  trial 7: pruned after fold 2
+trial 8: n_components=7  isomap_k=37  rbf_kernel=quintic  smoothing=1.33e-02  backmap_k=4
+  trial 8  fold 0 (0.50+0.70)  KL=8.8423  running mean=8.8423
+  trial 8  fold 1 (0.70+0.75)  KL=4.8628  running mean=6.8525
+  trial 8  fold 2 (0.75+0.80)  KL=1.5412  running mean=5.0821
+  trial 8: pruned after fold 2
+trial 9: n_components=6  isomap_k=22  rbf_kernel=cubic  smoothing=5.34e-08  backmap_k=11
+  trial 9  fold 0 (0.50+0.70)  KL=7.1337  running mean=7.1337
+  trial 9  fold 1 (0.70+0.75)  KL=5.8628  running mean=6.4983
+  trial 9  fold 2 (0.75+0.80)  KL=1.5586  running mean=4.8517
+  trial 9: pruned after fold 2
+trial 10: n_components=2  isomap_k=10  rbf_kernel=linear  smoothing=1.75e-05  backmap_k=2
+  trial 10  fold 0 (0.50+0.70)  KL=11.1492  running mean=11.1492
+  trial 10  fold 1 (0.70+0.75)  KL=7.9682  running mean=9.5587
+  trial 10  fold 2 (0.75+0.80)  KL=2.3241  running mean=7.1472
+  trial 10: pruned after fold 2
+trial 11: n_components=8  isomap_k=40  rbf_kernel=linear  smoothing=1.36e-08  backmap_k=8
+  trial 11  fold 0 (0.50+0.70)  KL=6.5108  running mean=6.5108
+  trial 11  fold 1 (0.70+0.75)  KL=5.2365  running mean=5.8736
+  trial 11  fold 2 (0.75+0.80)  KL=1.3934  running mean=4.3802
+  trial 11  fold 3 (0.80+0.82)  KL=1.9211  running mean=3.7655
+  trial 11  fold 4 (0.82+0.85)  KL=1.8856  running mean=3.3895
+  trial 11  fold 5 (0.85+0.88)  KL=2.5898  running mean=3.2562
+  trial 11  fold 6 (0.88+0.90)  KL=3.7867  running mean=3.3320
+  trial 11  fold 7 (0.90+0.93)  KL=5.4203  running mean=3.5930
+trial 12: n_components=8  isomap_k=40  rbf_kernel=linear  smoothing=1.03e-08  backmap_k=6
+  trial 12  fold 0 (0.50+0.70)  KL=6.3191  running mean=6.3191
+  trial 12  fold 1 (0.70+0.75)  KL=5.1496  running mean=5.7343
+  trial 12  fold 2 (0.75+0.80)  KL=1.6351  running mean=4.3679
+  trial 12  fold 3 (0.80+0.82)  KL=2.1820  running mean=3.8214
+  trial 12  fold 4 (0.82+0.85)  KL=2.0322  running mean=3.4636
+  trial 12  fold 5 (0.85+0.88)  KL=2.8700  running mean=3.3647
+  trial 12  fold 6 (0.88+0.90)  KL=4.2034  running mean=3.4845
+  trial 12  fold 7 (0.90+0.93)  KL=5.2568  running mean=3.7060
+trial 13: n_components=4  isomap_k=33  rbf_kernel=linear  smoothing=9.21e-07  backmap_k=7
+  trial 13  fold 0 (0.50+0.70)  KL=6.5894  running mean=6.5894
+  trial 13  fold 1 (0.70+0.75)  KL=4.9531  running mean=5.7713
+  trial 13  fold 2 (0.75+0.80)  KL=1.3183  running mean=4.2870
+  trial 13  fold 3 (0.80+0.82)  KL=1.9846  running mean=3.7114
+  trial 13  fold 4 (0.82+0.85)  KL=1.9300  running mean=3.3551
+  trial 13  fold 5 (0.85+0.88)  KL=2.5305  running mean=3.2177
+  trial 13  fold 6 (0.88+0.90)  KL=4.1425  running mean=3.3498
+  trial 13  fold 7 (0.90+0.93)  KL=5.5762  running mean=3.6281
+trial 14: n_components=4  isomap_k=13  rbf_kernel=linear  smoothing=1.10e-04  backmap_k=9
+  trial 14  fold 0 (0.50+0.70)  KL=6.5467  running mean=6.5467
+  trial 14  fold 1 (0.70+0.75)  KL=5.5930  running mean=6.0698
+  trial 14  fold 2 (0.75+0.80)  KL=1.6027  running mean=4.5808
+  trial 14  fold 3 (0.80+0.82)  KL=2.9304  running mean=4.1682
+  trial 14: pruned after fold 3
+trial 15: n_components=8  isomap_k=40  rbf_kernel=linear  smoothing=5.75e-07  backmap_k=5
+  trial 15  fold 0 (0.50+0.70)  KL=6.1688  running mean=6.1688
+  trial 15  fold 1 (0.70+0.75)  KL=4.9995  running mean=5.5842
+  trial 15  fold 2 (0.75+0.80)  KL=1.5973  running mean=4.2552
+  trial 15  fold 3 (0.80+0.82)  KL=2.1744  running mean=3.7350
+  trial 15  fold 4 (0.82+0.85)  KL=2.0169  running mean=3.3914
+  trial 15  fold 5 (0.85+0.88)  KL=2.7243  running mean=3.2802
+  trial 15  fold 6 (0.88+0.90)  KL=4.1078  running mean=3.3984
+  trial 15  fold 7 (0.90+0.93)  KL=5.1737  running mean=3.6203
+trial 16: n_components=8  isomap_k=40  rbf_kernel=linear  smoothing=1.44e-08  backmap_k=6
+  trial 16  fold 0 (0.50+0.70)  KL=6.3191  running mean=6.3191
+  trial 16  fold 1 (0.70+0.75)  KL=5.1496  running mean=5.7343
+  trial 16  fold 2 (0.75+0.80)  KL=1.6350  running mean=4.3679
+  trial 16  fold 3 (0.80+0.82)  KL=2.1820  running mean=3.8214
+  trial 16  fold 4 (0.82+0.85)  KL=2.0322  running mean=3.4636
+  trial 16  fold 5 (0.85+0.88)  KL=2.8700  running mean=3.3647
+  trial 16  fold 6 (0.88+0.90)  KL=4.2034  running mean=3.4845
+  trial 16  fold 7 (0.90+0.93)  KL=5.2568  running mean=3.7060
+trial 17: n_components=8  isomap_k=35  rbf_kernel=cubic  smoothing=2.86e-07  backmap_k=8
+  trial 17  fold 0 (0.50+0.70)  KL=6.6658  running mean=6.6658
+  trial 17  fold 1 (0.70+0.75)  KL=5.2047  running mean=5.9352
+  trial 17  fold 2 (0.75+0.80)  KL=1.4950  running mean=4.4552
+  trial 17  fold 3 (0.80+0.82)  KL=2.2655  running mean=3.9077
+  trial 17: pruned after fold 3
+trial 18: n_components=8  isomap_k=40  rbf_kernel=thin_plate_spline  smoothing=1.26e-05  backmap_k=5
+  trial 18  fold 0 (0.50+0.70)  KL=6.4256  running mean=6.4256
+  trial 18  fold 1 (0.70+0.75)  KL=5.0722  running mean=5.7489
+  trial 18  fold 2 (0.75+0.80)  KL=1.5270  running mean=4.3416
+  trial 18  fold 3 (0.80+0.82)  KL=2.0568  running mean=3.7704
+  trial 18  fold 4 (0.82+0.85)  KL=1.9317  running mean=3.4027
+  trial 18  fold 5 (0.85+0.88)  KL=2.6830  running mean=3.2827
+  trial 18  fold 6 (0.88+0.90)  KL=3.7839  running mean=3.3543
+  trial 18  fold 7 (0.90+0.93)  KL=5.3725  running mean=3.6066
+trial 19: n_components=7  isomap_k=37  rbf_kernel=thin_plate_spline  smoothing=5.38e-02  backmap_k=10
+  trial 19  fold 0 (0.50+0.70)  KL=6.9595  running mean=6.9595
+  trial 19  fold 1 (0.70+0.75)  KL=5.5106  running mean=6.2350
+  trial 19  fold 2 (0.75+0.80)  KL=1.3615  running mean=4.6105
+  trial 19: pruned after fold 2
+trial 20: n_components=8  isomap_k=18  rbf_kernel=thin_plate_spline  smoothing=3.33e-05  backmap_k=7
+  trial 20  fold 0 (0.50+0.70)  KL=6.4019  running mean=6.4019
+  trial 20  fold 1 (0.70+0.75)  KL=5.1688  running mean=5.7853
+  trial 20  fold 2 (0.75+0.80)  KL=1.4419  running mean=4.3375
+  trial 20  fold 3 (0.80+0.82)  KL=2.0952  running mean=3.7770
+  trial 20  fold 4 (0.82+0.85)  KL=2.6626  running mean=3.5541
+  trial 20: pruned after fold 4
+trial 21: n_components=8  isomap_k=40  rbf_kernel=thin_plate_spline  smoothing=3.89e-06  backmap_k=5
+  trial 21  fold 0 (0.50+0.70)  KL=6.4256  running mean=6.4256
+  trial 21  fold 1 (0.70+0.75)  KL=5.0722  running mean=5.7489
+  trial 21  fold 2 (0.75+0.80)  KL=1.5270  running mean=4.3416
+  trial 21  fold 3 (0.80+0.82)  KL=2.0568  running mean=3.7704
+  trial 21  fold 4 (0.82+0.85)  KL=1.9317  running mean=3.4027
+  trial 21  fold 5 (0.85+0.88)  KL=2.6830  running mean=3.2827
+  trial 21  fold 6 (0.88+0.90)  KL=3.7839  running mean=3.3543
+  trial 21  fold 7 (0.90+0.93)  KL=5.3725  running mean=3.6066
+trial 22: n_components=7  isomap_k=38  rbf_kernel=thin_plate_spline  smoothing=6.64e-06  backmap_k=2
+  trial 22  fold 0 (0.50+0.70)  KL=6.3400  running mean=6.3400
+  trial 22  fold 1 (0.70+0.75)  KL=4.6524  running mean=5.4962
+  trial 22  fold 2 (0.75+0.80)  KL=1.6720  running mean=4.2215
+  trial 22  fold 3 (0.80+0.82)  KL=2.8966  running mean=3.8902
+  trial 22: pruned after fold 3
+trial 23: n_components=8  isomap_k=34  rbf_kernel=thin_plate_spline  smoothing=7.64e-05  backmap_k=5
+  trial 23  fold 0 (0.50+0.70)  KL=6.4246  running mean=6.4246
+  trial 23  fold 1 (0.70+0.75)  KL=5.0562  running mean=5.7404
+  trial 23  fold 2 (0.75+0.80)  KL=1.5068  running mean=4.3292
+  trial 23  fold 3 (0.80+0.82)  KL=2.0800  running mean=3.7669
+  trial 23  fold 4 (0.82+0.85)  KL=2.3297  running mean=3.4794
+  trial 23  fold 5 (0.85+0.88)  KL=2.8568  running mean=3.3757
+  trial 23  fold 6 (0.88+0.90)  KL=3.8707  running mean=3.4464
+  trial 23  fold 7 (0.90+0.93)  KL=5.5004  running mean=3.7031
+trial 24: n_components=7  isomap_k=32  rbf_kernel=thin_plate_spline  smoothing=3.41e-06  backmap_k=5
+  trial 24  fold 0 (0.50+0.70)  KL=6.6704  running mean=6.6704
+  trial 24  fold 1 (0.70+0.75)  KL=4.8218  running mean=5.7461
+  trial 24  fold 2 (0.75+0.80)  KL=1.5156  running mean=4.3360
+  trial 24  fold 3 (0.80+0.82)  KL=2.1187  running mean=3.7816
+  trial 24  fold 4 (0.82+0.85)  KL=2.3381  running mean=3.4929
+  trial 24  fold 5 (0.85+0.88)  KL=2.6881  running mean=3.3588
+  trial 24  fold 6 (0.88+0.90)  KL=3.6976  running mean=3.4072
+  trial 24  fold 7 (0.90+0.93)  KL=5.5082  running mean=3.6698
+trial 25: n_components=8  isomap_k=38  rbf_kernel=thin_plate_spline  smoothing=2.51e-04  backmap_k=7
+  trial 25  fold 0 (0.50+0.70)  KL=6.5697  running mean=6.5697
+  trial 25  fold 1 (0.70+0.75)  KL=5.3510  running mean=5.9604
+  trial 25  fold 2 (0.75+0.80)  KL=1.3955  running mean=4.4387
+  trial 25: pruned after fold 2
+trial 26: n_components=8  isomap_k=40  rbf_kernel=thin_plate_spline  smoothing=9.40e-08  backmap_k=3
+  trial 26  fold 0 (0.50+0.70)  KL=6.3670  running mean=6.3670
+  trial 26  fold 1 (0.70+0.75)  KL=4.7033  running mean=5.5352
+  trial 26  fold 2 (0.75+0.80)  KL=1.5757  running mean=4.2153
+  trial 26  fold 3 (0.80+0.82)  KL=2.5830  running mean=3.8073
+  trial 26  fold 4 (0.82+0.85)  KL=2.2889  running mean=3.5036
+  trial 26  fold 5 (0.85+0.88)  KL=2.5796  running mean=3.3496
+  trial 26  fold 6 (0.88+0.90)  KL=4.1609  running mean=3.4655
+  trial 26  fold 7 (0.90+0.93)  KL=5.2444  running mean=3.6878
+trial 27: n_components=7  isomap_k=35  rbf_kernel=thin_plate_spline  smoothing=2.26e-05  backmap_k=8
+  trial 27  fold 0 (0.50+0.70)  KL=6.6234  running mean=6.6234
+  trial 27  fold 1 (0.70+0.75)  KL=5.3281  running mean=5.9757
+  trial 27  fold 2 (0.75+0.80)  KL=1.3364  running mean=4.4293
+  trial 27: pruned after fold 2
+trial 28: n_components=8  isomap_k=38  rbf_kernel=cubic  smoothing=4.59e-07  backmap_k=3
+  trial 28  fold 0 (0.50+0.70)  KL=6.2592  running mean=6.2592
+  trial 28  fold 1 (0.70+0.75)  KL=5.0867  running mean=5.6729
+  trial 28  fold 2 (0.75+0.80)  KL=1.6822  running mean=4.3427
+  trial 28  fold 3 (0.80+0.82)  KL=2.6940  running mean=3.9305
+  trial 28: pruned after fold 3
+trial 29: n_components=7  isomap_k=31  rbf_kernel=quintic  smoothing=2.56e-03  backmap_k=10
+  trial 29  fold 0 (0.50+0.70)  KL=10.5938  running mean=10.5938
+  trial 29  fold 1 (0.70+0.75)  KL=5.5256  running mean=8.0597
+  trial 29  fold 2 (0.75+0.80)  KL=1.5697  running mean=5.8964
+  trial 29: pruned after fold 2
+trial 30: n_components=5  isomap_k=34  rbf_kernel=thin_plate_spline  smoothing=2.38e-08  backmap_k=6
+  trial 30  fold 0 (0.50+0.70)  KL=6.3341  running mean=6.3341
+  trial 30  fold 1 (0.70+0.75)  KL=5.1270  running mean=5.7306
+  trial 30  fold 2 (0.75+0.80)  KL=1.4395  running mean=4.3002
+  trial 30  fold 3 (0.80+0.82)  KL=2.0921  running mean=3.7482
+  trial 30  fold 4 (0.82+0.85)  KL=2.0994  running mean=3.4184
+  trial 30  fold 5 (0.85+0.88)  KL=2.7256  running mean=3.3030
+  trial 30  fold 6 (0.88+0.90)  KL=3.8146  running mean=3.3760
+  trial 30  fold 7 (0.90+0.93)  KL=5.5998  running mean=3.6540
+trial 31: n_components=8  isomap_k=40  rbf_kernel=linear  smoothing=3.71e-07  backmap_k=5
+  trial 31  fold 0 (0.50+0.70)  KL=6.1688  running mean=6.1688
+  trial 31  fold 1 (0.70+0.75)  KL=4.9995  running mean=5.5842
+  trial 31  fold 2 (0.75+0.80)  KL=1.5973  running mean=4.2552
+  trial 31  fold 3 (0.80+0.82)  KL=2.1744  running mean=3.7350
+  trial 31  fold 4 (0.82+0.85)  KL=2.0169  running mean=3.3914
+  trial 31  fold 5 (0.85+0.88)  KL=2.7243  running mean=3.2802
+  trial 31  fold 6 (0.88+0.90)  KL=4.1078  running mean=3.3984
+  trial 31  fold 7 (0.90+0.93)  KL=5.1737  running mean=3.6203
+trial 32: n_components=8  isomap_k=38  rbf_kernel=linear  smoothing=2.29e-07  backmap_k=5
+  trial 32  fold 0 (0.50+0.70)  KL=6.2131  running mean=6.2131
+  trial 32  fold 1 (0.70+0.75)  KL=5.0497  running mean=5.6314
+  trial 32  fold 2 (0.75+0.80)  KL=1.5453  running mean=4.2694
+  trial 32  fold 3 (0.80+0.82)  KL=2.1747  running mean=3.7457
+  trial 32  fold 4 (0.82+0.85)  KL=2.1260  running mean=3.4218
+  trial 32  fold 5 (0.85+0.88)  KL=2.6521  running mean=3.2935
+  trial 32  fold 6 (0.88+0.90)  KL=4.2267  running mean=3.4268
+  trial 32  fold 7 (0.90+0.93)  KL=5.1654  running mean=3.6441
+trial 33: n_components=8  isomap_k=40  rbf_kernel=linear  smoothing=4.74e-06  backmap_k=4
+  trial 33  fold 0 (0.50+0.70)  KL=6.0763  running mean=6.0763
+  trial 33  fold 1 (0.70+0.75)  KL=4.8644  running mean=5.4703
+  trial 33  fold 2 (0.75+0.80)  KL=1.4768  running mean=4.1391
+  trial 33  fold 3 (0.80+0.82)  KL=2.2918  running mean=3.6773
+  trial 33  fold 4 (0.82+0.85)  KL=2.0854  running mean=3.3589
+  trial 33  fold 5 (0.85+0.88)  KL=2.5959  running mean=3.2318
+  trial 33  fold 6 (0.88+0.90)  KL=4.1015  running mean=3.3560
+  trial 33  fold 7 (0.90+0.93)  KL=5.1107  running mean=3.5753
+trial 34: n_components=7  isomap_k=37  rbf_kernel=linear  smoothing=5.96e-06  backmap_k=3
+  trial 34  fold 0 (0.50+0.70)  KL=6.1572  running mean=6.1572
+  trial 34  fold 1 (0.70+0.75)  KL=4.7398  running mean=5.4485
+  trial 34  fold 2 (0.75+0.80)  KL=1.6141  running mean=4.1704
+  trial 34  fold 3 (0.80+0.82)  KL=2.6849  running mean=3.7990
+  trial 34  fold 4 (0.82+0.85)  KL=2.4171  running mean=3.5226
+  trial 34: pruned after fold 4
+trial 35: n_components=6  isomap_k=36  rbf_kernel=thin_plate_spline  smoothing=1.06e-03  backmap_k=4
+  trial 35  fold 0 (0.50+0.70)  KL=6.1857  running mean=6.1857
+  trial 35  fold 1 (0.70+0.75)  KL=4.7401  running mean=5.4629
+  trial 35  fold 2 (0.75+0.80)  KL=1.3882  running mean=4.1047
+  trial 35  fold 3 (0.80+0.82)  KL=2.2235  running mean=3.6344
+  trial 35  fold 4 (0.82+0.85)  KL=2.1391  running mean=3.3353
+  trial 35  fold 5 (0.85+0.88)  KL=2.5317  running mean=3.2014
+  trial 35  fold 6 (0.88+0.90)  KL=4.0274  running mean=3.3194
+  trial 35  fold 7 (0.90+0.93)  KL=5.2704  running mean=3.5632
+trial 36: n_components=5  isomap_k=29  rbf_kernel=quintic  smoothing=2.11e-03  backmap_k=4
+  trial 36  fold 0 (0.50+0.70)  KL=9.7065  running mean=9.7065
+  trial 36  fold 1 (0.70+0.75)  KL=5.4295  running mean=7.5680
+  trial 36  fold 2 (0.75+0.80)  KL=1.5404  running mean=5.5588
+  trial 36: pruned after fold 2
+trial 37: n_components=6  isomap_k=36  rbf_kernel=linear  smoothing=1.10e-02  backmap_k=4
+  trial 37  fold 0 (0.50+0.70)  KL=6.1941  running mean=6.1941
+  trial 37  fold 1 (0.70+0.75)  KL=4.8804  running mean=5.5372
+  trial 37  fold 2 (0.75+0.80)  KL=1.4018  running mean=4.1588
+  trial 37  fold 3 (0.80+0.82)  KL=2.2349  running mean=3.6778
+  trial 37  fold 4 (0.82+0.85)  KL=2.1012  running mean=3.3625
+  trial 37  fold 5 (0.85+0.88)  KL=2.4981  running mean=3.2184
+  trial 37  fold 6 (0.88+0.90)  KL=4.4070  running mean=3.3882
+  trial 37  fold 7 (0.90+0.93)  KL=5.0984  running mean=3.6020
+trial 38: n_components=6  isomap_k=30  rbf_kernel=linear  smoothing=9.25e-02  backmap_k=12
+  trial 38  fold 0 (0.50+0.70)  KL=6.9983  running mean=6.9983
+  trial 38  fold 1 (0.70+0.75)  KL=5.4172  running mean=6.2078
+  trial 38  fold 2 (0.75+0.80)  KL=1.2716  running mean=4.5624
+  trial 38: pruned after fold 2
+trial 39: n_components=6  isomap_k=27  rbf_kernel=linear  smoothing=2.30e-02  backmap_k=3
+  trial 39  fold 0 (0.50+0.70)  KL=6.0013  running mean=6.0013
+  trial 39  fold 1 (0.70+0.75)  KL=4.6488  running mean=5.3251
+  trial 39  fold 2 (0.75+0.80)  KL=1.5158  running mean=4.0553
+  trial 39  fold 3 (0.80+0.82)  KL=2.7294  running mean=3.7238
+  trial 39  fold 4 (0.82+0.85)  KL=2.3521  running mean=3.4495
+  trial 39  fold 5 (0.85+0.88)  KL=2.5479  running mean=3.2992
+  trial 39  fold 6 (0.88+0.90)  KL=4.5741  running mean=3.4813
+  trial 39  fold 7 (0.90+0.93)  KL=5.1622  running mean=3.6914
+trial 40: n_components=5  isomap_k=36  rbf_kernel=linear  smoothing=7.02e-03  backmap_k=4
+  trial 40  fold 0 (0.50+0.70)  KL=6.1978  running mean=6.1978
+  trial 40  fold 1 (0.70+0.75)  KL=4.7819  running mean=5.4899
+  trial 40  fold 2 (0.75+0.80)  KL=1.3986  running mean=4.1261
+  trial 40  fold 3 (0.80+0.82)  KL=2.1934  running mean=3.6429
+  trial 40  fold 4 (0.82+0.85)  KL=2.0102  running mean=3.3164
+  trial 40  fold 5 (0.85+0.88)  KL=2.5187  running mean=3.1834
+  trial 40  fold 6 (0.88+0.90)  KL=4.3485  running mean=3.3499
+  trial 40  fold 7 (0.90+0.93)  KL=5.1423  running mean=3.5739
+trial 41: n_components=5  isomap_k=36  rbf_kernel=linear  smoothing=1.03e-02  backmap_k=4
+  trial 41  fold 0 (0.50+0.70)  KL=6.1979  running mean=6.1979
+  trial 41  fold 1 (0.70+0.75)  KL=4.7820  running mean=5.4899
+  trial 41  fold 2 (0.75+0.80)  KL=1.3988  running mean=4.1262
+  trial 41  fold 3 (0.80+0.82)  KL=2.1930  running mean=3.6429
+  trial 41  fold 4 (0.82+0.85)  KL=2.0101  running mean=3.3164
+  trial 41  fold 5 (0.85+0.88)  KL=2.5257  running mean=3.1846
+  trial 41  fold 6 (0.88+0.90)  KL=4.3487  running mean=3.3509
+  trial 41  fold 7 (0.90+0.93)  KL=5.1407  running mean=3.5746
+trial 42: n_components=4  isomap_k=33  rbf_kernel=linear  smoothing=4.72e-03  backmap_k=2
+  trial 42  fold 0 (0.50+0.70)  KL=6.0866  running mean=6.0866
+  trial 42  fold 1 (0.70+0.75)  KL=4.8268  running mean=5.4567
+  trial 42  fold 2 (0.75+0.80)  KL=1.6259  running mean=4.1797
+  trial 42  fold 3 (0.80+0.82)  KL=2.6238  running mean=3.7908
+  trial 42  fold 4 (0.82+0.85)  KL=2.4194  running mean=3.5165
+  trial 42: pruned after fold 4
+trial 43: n_components=5  isomap_k=36  rbf_kernel=linear  smoothing=8.48e-04  backmap_k=4
+  trial 43  fold 0 (0.50+0.70)  KL=6.1978  running mean=6.1978
+  trial 43  fold 1 (0.70+0.75)  KL=4.7816  running mean=5.4897
+  trial 43  fold 2 (0.75+0.80)  KL=1.3981  running mean=4.1258
+  trial 43  fold 3 (0.80+0.82)  KL=2.1930  running mean=3.6426
+  trial 43  fold 4 (0.82+0.85)  KL=2.0103  running mean=3.3162
+  trial 43  fold 5 (0.85+0.88)  KL=2.5187  running mean=3.1832
+  trial 43  fold 6 (0.88+0.90)  KL=4.3482  running mean=3.3497
+  trial 43  fold 7 (0.90+0.93)  KL=5.1424  running mean=3.5738
+trial 44: n_components=5  isomap_k=35  rbf_kernel=linear  smoothing=7.02e-04  backmap_k=4
+  trial 44  fold 0 (0.50+0.70)  KL=6.0952  running mean=6.0952
+  trial 44  fold 1 (0.70+0.75)  KL=4.9305  running mean=5.5128
+  trial 44  fold 2 (0.75+0.80)  KL=1.4141  running mean=4.1466
+  trial 44  fold 3 (0.80+0.82)  KL=2.2327  running mean=3.6681
+  trial 44  fold 4 (0.82+0.85)  KL=2.0424  running mean=3.3430
+  trial 44  fold 5 (0.85+0.88)  KL=2.5315  running mean=3.2077
+  trial 44  fold 6 (0.88+0.90)  KL=4.3705  running mean=3.3738
+  trial 44  fold 7 (0.90+0.93)  KL=5.1846  running mean=3.6002
+trial 45: n_components=5  isomap_k=32  rbf_kernel=linear  smoothing=1.00e-03  backmap_k=4
+  trial 45  fold 0 (0.50+0.70)  KL=6.1628  running mean=6.1628
+  trial 45  fold 1 (0.70+0.75)  KL=4.8054  running mean=5.4841
+  trial 45  fold 2 (0.75+0.80)  KL=1.4235  running mean=4.1305
+  trial 45  fold 3 (0.80+0.82)  KL=2.1269  running mean=3.6296
+  trial 45  fold 4 (0.82+0.85)  KL=2.0860  running mean=3.3209
+  trial 45  fold 5 (0.85+0.88)  KL=2.5721  running mean=3.1961
+  trial 45  fold 6 (0.88+0.90)  KL=4.3389  running mean=3.3594
+  trial 45  fold 7 (0.90+0.93)  KL=5.2571  running mean=3.5966
+trial 46: n_components=4  isomap_k=37  rbf_kernel=linear  smoothing=5.21e-03  backmap_k=3
+  trial 46  fold 0 (0.50+0.70)  KL=6.1107  running mean=6.1107
+  trial 46  fold 1 (0.70+0.75)  KL=4.6639  running mean=5.3873
+  trial 46  fold 2 (0.75+0.80)  KL=1.6070  running mean=4.1272
+  trial 46  fold 3 (0.80+0.82)  KL=2.5206  running mean=3.7256
+  trial 46  fold 4 (0.82+0.85)  KL=2.3460  running mean=3.4496
+  trial 46  fold 5 (0.85+0.88)  KL=2.5144  running mean=3.2938
+  trial 46  fold 6 (0.88+0.90)  KL=4.4407  running mean=3.4576
+  trial 46  fold 7 (0.90+0.93)  KL=5.1246  running mean=3.6660
+trial 47: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=2.93e-04  backmap_k=4
+  trial 47  fold 0 (0.50+0.70)  KL=5.9303  running mean=5.9303
+  trial 47  fold 1 (0.70+0.75)  KL=4.7574  running mean=5.3438
+  trial 47  fold 2 (0.75+0.80)  KL=1.3976  running mean=4.0284
+  trial 47  fold 3 (0.80+0.82)  KL=2.1886  running mean=3.5685
+  trial 47  fold 4 (0.82+0.85)  KL=2.1215  running mean=3.2791
+  trial 47  fold 5 (0.85+0.88)  KL=2.5511  running mean=3.1577
+  trial 47  fold 6 (0.88+0.90)  KL=3.7385  running mean=3.2407
+  trial 47  fold 7 (0.90+0.93)  KL=5.4149  running mean=3.5125
+trial 48: n_components=2  isomap_k=28  rbf_kernel=cubic  smoothing=2.62e-04  backmap_k=3
+  trial 48  fold 0 (0.50+0.70)  KL=6.2584  running mean=6.2584
+  trial 48  fold 1 (0.70+0.75)  KL=4.8375  running mean=5.5479
+  trial 48  fold 2 (0.75+0.80)  KL=1.6296  running mean=4.2418
+  trial 48  fold 3 (0.80+0.82)  KL=2.4122  running mean=3.7844
+  trial 48  fold 4 (0.82+0.85)  KL=2.3902  running mean=3.5056
+  trial 48: pruned after fold 4
+trial 49: n_components=3  isomap_k=33  rbf_kernel=cubic  smoothing=6.90e-04  backmap_k=4
+  trial 49  fold 0 (0.50+0.70)  KL=6.5886  running mean=6.5886
+  trial 49  fold 1 (0.70+0.75)  KL=4.8866  running mean=5.7376
+  trial 49  fold 2 (0.75+0.80)  KL=1.2861  running mean=4.2538
+  trial 49  fold 3 (0.80+0.82)  KL=2.1079  running mean=3.7173
+  trial 49  fold 4 (0.82+0.85)  KL=2.1569  running mean=3.4052
+  trial 49  fold 5 (0.85+0.88)  KL=2.5225  running mean=3.2581
+  trial 49  fold 6 (0.88+0.90)  KL=3.7883  running mean=3.3339
+  trial 49  fold 7 (0.90+0.93)  KL=5.4305  running mean=3.5959
+trial 50: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=2.19e-03  backmap_k=2
+  trial 50  fold 0 (0.50+0.70)  KL=5.9180  running mean=5.9180
+  trial 50  fold 1 (0.70+0.75)  KL=4.7047  running mean=5.3114
+  trial 50  fold 2 (0.75+0.80)  KL=1.6434  running mean=4.0887
+  trial 50  fold 3 (0.80+0.82)  KL=2.6309  running mean=3.7243
+  trial 50  fold 4 (0.82+0.85)  KL=2.3859  running mean=3.4566
+  trial 50  fold 5 (0.85+0.88)  KL=2.5277  running mean=3.3018
+  trial 50  fold 6 (0.88+0.90)  KL=4.3270  running mean=3.4483
+  trial 50  fold 7 (0.90+0.93)  KL=5.2748  running mean=3.6766
+trial 51: n_components=5  isomap_k=34  rbf_kernel=cubic  smoothing=2.30e-02  backmap_k=4
+  trial 51  fold 0 (0.50+0.70)  KL=5.9814  running mean=5.9814
+  trial 51  fold 1 (0.70+0.75)  KL=5.0319  running mean=5.5066
+  trial 51  fold 2 (0.75+0.80)  KL=1.3934  running mean=4.1356
+  trial 51  fold 3 (0.80+0.82)  KL=2.0986  running mean=3.6263
+  trial 51  fold 4 (0.82+0.85)  KL=2.1961  running mean=3.3403
+  trial 51  fold 5 (0.85+0.88)  KL=2.6254  running mean=3.2212
+  trial 51  fold 6 (0.88+0.90)  KL=3.8872  running mean=3.3163
+  trial 51  fold 7 (0.90+0.93)  KL=5.4418  running mean=3.5820
+trial 52: n_components=4  isomap_k=38  rbf_kernel=linear  smoothing=6.50e-03  backmap_k=4
+  trial 52  fold 0 (0.50+0.70)  KL=6.2816  running mean=6.2816
+  trial 52  fold 1 (0.70+0.75)  KL=4.7096  running mean=5.4956
+  trial 52  fold 2 (0.75+0.80)  KL=1.4525  running mean=4.1479
+  trial 52  fold 3 (0.80+0.82)  KL=2.1123  running mean=3.6390
+  trial 52  fold 4 (0.82+0.85)  KL=2.0300  running mean=3.3172
+  trial 52  fold 5 (0.85+0.88)  KL=2.5233  running mean=3.1849
+  trial 52  fold 6 (0.88+0.90)  KL=4.4163  running mean=3.3608
+  trial 52  fold 7 (0.90+0.93)  KL=5.1395  running mean=3.5831
+trial 53: n_components=5  isomap_k=36  rbf_kernel=quintic  smoothing=3.97e-04  backmap_k=3
+  trial 53  fold 0 (0.50+0.70)  KL=10.0668  running mean=10.0668
+  trial 53  fold 1 (0.70+0.75)  KL=5.8753  running mean=7.9710
+  trial 53  fold 2 (0.75+0.80)  KL=1.7341  running mean=5.8921
+  trial 53: pruned after fold 2
+trial 54: n_components=2  isomap_k=35  rbf_kernel=linear  smoothing=6.35e-05  backmap_k=6
+  trial 54  fold 0 (0.50+0.70)  KL=6.2720  running mean=6.2720
+  trial 54  fold 1 (0.70+0.75)  KL=4.6838  running mean=5.4779
+  trial 54  fold 2 (0.75+0.80)  KL=1.5463  running mean=4.1673
+  trial 54  fold 3 (0.80+0.82)  KL=2.2141  running mean=3.6790
+  trial 54  fold 4 (0.82+0.85)  KL=1.9399  running mean=3.3312
+  trial 54  fold 5 (0.85+0.88)  KL=2.6417  running mean=3.2163
+  trial 54  fold 6 (0.88+0.90)  KL=4.2566  running mean=3.3649
+  trial 54  fold 7 (0.90+0.93)  KL=5.4331  running mean=3.6234
+trial 55: n_components=6  isomap_k=24  rbf_kernel=cubic  smoothing=1.44e-03  backmap_k=4
+  trial 55  fold 0 (0.50+0.70)  KL=6.7906  running mean=6.7906
+  trial 55  fold 1 (0.70+0.75)  KL=4.9347  running mean=5.8626
+  trial 55  fold 2 (0.75+0.80)  KL=1.6567  running mean=4.4607
+  trial 55: pruned after fold 2
+trial 56: n_components=4  isomap_k=31  rbf_kernel=linear  smoothing=1.44e-04  backmap_k=5
+  trial 56  fold 0 (0.50+0.70)  KL=6.1117  running mean=6.1117
+  trial 56  fold 1 (0.70+0.75)  KL=4.7891  running mean=5.4504
+  trial 56  fold 2 (0.75+0.80)  KL=1.4280  running mean=4.1096
+  trial 56  fold 3 (0.80+0.82)  KL=1.9730  running mean=3.5754
+  trial 56  fold 4 (0.82+0.85)  KL=2.2895  running mean=3.3183
+  trial 56  fold 5 (0.85+0.88)  KL=2.6320  running mean=3.2039
+  trial 56  fold 6 (0.88+0.90)  KL=4.4067  running mean=3.3757
+  trial 56  fold 7 (0.90+0.93)  KL=5.3293  running mean=3.6199
+trial 57: n_components=6  isomap_k=39  rbf_kernel=linear  smoothing=2.70e-02  backmap_k=4
+  trial 57  fold 0 (0.50+0.70)  KL=6.1503  running mean=6.1503
+  trial 57  fold 1 (0.70+0.75)  KL=4.8606  running mean=5.5054
+  trial 57  fold 2 (0.75+0.80)  KL=1.4871  running mean=4.1660
+  trial 57  fold 3 (0.80+0.82)  KL=2.2209  running mean=3.6797
+  trial 57  fold 4 (0.82+0.85)  KL=1.9607  running mean=3.3359
+  trial 57  fold 5 (0.85+0.88)  KL=2.5112  running mean=3.1985
+  trial 57  fold 6 (0.88+0.90)  KL=4.2841  running mean=3.3536
+  trial 57  fold 7 (0.90+0.93)  KL=5.1146  running mean=3.5737
+trial 58: n_components=6  isomap_k=39  rbf_kernel=cubic  smoothing=1.08e-02  backmap_k=5
+  trial 58  fold 0 (0.50+0.70)  KL=6.3406  running mean=6.3406
+  trial 58  fold 1 (0.70+0.75)  KL=4.9679  running mean=5.6543
+  trial 58  fold 2 (0.75+0.80)  KL=1.5415  running mean=4.2833
+  trial 58  fold 3 (0.80+0.82)  KL=1.9617  running mean=3.7029
+  trial 58  fold 4 (0.82+0.85)  KL=1.9026  running mean=3.3429
+  trial 58  fold 5 (0.85+0.88)  KL=2.6428  running mean=3.2262
+  trial 58  fold 6 (0.88+0.90)  KL=3.5637  running mean=3.2744
+  trial 58  fold 7 (0.90+0.93)  KL=5.4337  running mean=3.5443
+trial 59: n_components=6  isomap_k=39  rbf_kernel=cubic  smoothing=2.87e-02  backmap_k=6
+  trial 59  fold 0 (0.50+0.70)  KL=6.2787  running mean=6.2787
+  trial 59  fold 1 (0.70+0.75)  KL=5.1553  running mean=5.7170
+  trial 59  fold 2 (0.75+0.80)  KL=1.5999  running mean=4.3446
+  trial 59: pruned after fold 2
+trial 60: n_components=6  isomap_k=39  rbf_kernel=cubic  smoothing=3.41e-03  backmap_k=5
+  trial 60  fold 0 (0.50+0.70)  KL=6.5479  running mean=6.5479
+  trial 60  fold 1 (0.70+0.75)  KL=5.0268  running mean=5.7873
+  trial 60  fold 2 (0.75+0.80)  KL=1.5407  running mean=4.3718
+  trial 60: pruned after fold 2
+trial 61: n_components=6  isomap_k=37  rbf_kernel=cubic  smoothing=1.05e-02  backmap_k=5
+  trial 61  fold 0 (0.50+0.70)  KL=6.1523  running mean=6.1523
+  trial 61  fold 1 (0.70+0.75)  KL=4.7498  running mean=5.4510
+  trial 61  fold 2 (0.75+0.80)  KL=1.4539  running mean=4.1187
+  trial 61  fold 3 (0.80+0.82)  KL=2.0311  running mean=3.5968
+  trial 61  fold 4 (0.82+0.85)  KL=1.9712  running mean=3.2717
+  trial 61  fold 5 (0.85+0.88)  KL=2.6089  running mean=3.1612
+  trial 61  fold 6 (0.88+0.90)  KL=3.6154  running mean=3.2261
+  trial 61  fold 7 (0.90+0.93)  KL=5.4666  running mean=3.5062
+trial 62: n_components=6  isomap_k=37  rbf_kernel=cubic  smoothing=5.42e-02  backmap_k=5
+  trial 62  fold 0 (0.50+0.70)  KL=6.2143  running mean=6.2143
+  trial 62  fold 1 (0.70+0.75)  KL=4.9833  running mean=5.5988
+  trial 62  fold 2 (0.75+0.80)  KL=1.4462  running mean=4.2146
+  trial 62  fold 3 (0.80+0.82)  KL=2.0548  running mean=3.6747
+  trial 62  fold 4 (0.82+0.85)  KL=2.0364  running mean=3.3470
+  trial 62  fold 5 (0.85+0.88)  KL=2.6162  running mean=3.2252
+  trial 62  fold 6 (0.88+0.90)  KL=3.6451  running mean=3.2852
+  trial 62  fold 7 (0.90+0.93)  KL=5.4081  running mean=3.5506
+trial 63: n_components=6  isomap_k=39  rbf_kernel=cubic  smoothing=4.61e-02  backmap_k=5
+  trial 63  fold 0 (0.50+0.70)  KL=6.1233  running mean=6.1233
+  trial 63  fold 1 (0.70+0.75)  KL=5.0897  running mean=5.6065
+  trial 63  fold 2 (0.75+0.80)  KL=1.5823  running mean=4.2651
+  trial 63  fold 3 (0.80+0.82)  KL=2.0056  running mean=3.7002
+  trial 63  fold 4 (0.82+0.85)  KL=1.8819  running mean=3.3366
+  trial 63  fold 5 (0.85+0.88)  KL=2.6902  running mean=3.2288
+  trial 63  fold 6 (0.88+0.90)  KL=3.7301  running mean=3.3005
+  trial 63  fold 7 (0.90+0.93)  KL=5.3915  running mean=3.5618
+trial 64: n_components=6  isomap_k=39  rbf_kernel=cubic  smoothing=4.72e-02  backmap_k=6
+  trial 64  fold 0 (0.50+0.70)  KL=6.2817  running mean=6.2817
+  trial 64  fold 1 (0.70+0.75)  KL=5.2187  running mean=5.7502
+  trial 64  fold 2 (0.75+0.80)  KL=1.6292  running mean=4.3765
+  trial 64: pruned after fold 2
+trial 65: n_components=6  isomap_k=38  rbf_kernel=cubic  smoothing=8.82e-02  backmap_k=5
+  trial 65  fold 0 (0.50+0.70)  KL=6.0825  running mean=6.0825
+  trial 65  fold 1 (0.70+0.75)  KL=5.0624  running mean=5.5725
+  trial 65  fold 2 (0.75+0.80)  KL=1.4875  running mean=4.2108
+  trial 65  fold 3 (0.80+0.82)  KL=2.1137  running mean=3.6866
+  trial 65  fold 4 (0.82+0.85)  KL=1.9973  running mean=3.3487
+  trial 65  fold 5 (0.85+0.88)  KL=2.6770  running mean=3.2367
+  trial 65  fold 6 (0.88+0.90)  KL=3.7700  running mean=3.3129
+  trial 65  fold 7 (0.90+0.93)  KL=5.3555  running mean=3.5682
+trial 66: n_components=6  isomap_k=8  rbf_kernel=cubic  smoothing=8.99e-02  backmap_k=5
+  trial 66  fold 0 (0.50+0.70)  KL=9.3819  running mean=9.3819
+  trial 66  fold 1 (0.70+0.75)  KL=7.5034  running mean=8.4427
+  trial 66  fold 2 (0.75+0.80)  KL=3.6249  running mean=6.8368
+  trial 66: pruned after fold 2
+trial 67: n_components=6  isomap_k=37  rbf_kernel=cubic  smoothing=5.09e-02  backmap_k=7
+  trial 67  fold 0 (0.50+0.70)  KL=6.4058  running mean=6.4058
+  trial 67  fold 1 (0.70+0.75)  KL=5.1851  running mean=5.7954
+  trial 67  fold 2 (0.75+0.80)  KL=1.3974  running mean=4.3294
+  trial 67  fold 3 (0.80+0.82)  KL=1.9878  running mean=3.7440
+  trial 67  fold 4 (0.82+0.85)  KL=1.8251  running mean=3.3602
+  trial 67  fold 5 (0.85+0.88)  KL=2.5765  running mean=3.2296
+  trial 67  fold 6 (0.88+0.90)  KL=3.4666  running mean=3.2635
+  trial 67  fold 7 (0.90+0.93)  KL=5.4373  running mean=3.5352
+trial 68: n_components=7  isomap_k=37  rbf_kernel=cubic  smoothing=1.18e-02  backmap_k=7
+  trial 68  fold 0 (0.50+0.70)  KL=6.2751  running mean=6.2751
+  trial 68  fold 1 (0.70+0.75)  KL=5.3467  running mean=5.8109
+  trial 68  fold 2 (0.75+0.80)  KL=1.4654  running mean=4.3624
+  trial 68: pruned after fold 2
+trial 69: n_components=6  isomap_k=18  rbf_kernel=cubic  smoothing=4.32e-02  backmap_k=6
+  trial 69  fold 0 (0.50+0.70)  KL=6.4742  running mean=6.4742
+  trial 69  fold 1 (0.70+0.75)  KL=5.1577  running mean=5.8160
+  trial 69  fold 2 (0.75+0.80)  KL=1.5056  running mean=4.3792
+  trial 69: pruned after fold 2
+trial 70: n_components=7  isomap_k=33  rbf_kernel=cubic  smoothing=1.68e-02  backmap_k=7
+  trial 70  fold 0 (0.50+0.70)  KL=6.9927  running mean=6.9927
+  trial 70  fold 1 (0.70+0.75)  KL=5.1722  running mean=6.0825
+  trial 70  fold 2 (0.75+0.80)  KL=1.3890  running mean=4.5180
+  trial 70: pruned after fold 2
+trial 71: n_components=6  isomap_k=38  rbf_kernel=cubic  smoothing=6.04e-02  backmap_k=5
+  trial 71  fold 0 (0.50+0.70)  KL=6.0924  running mean=6.0924
+  trial 71  fold 1 (0.70+0.75)  KL=5.0855  running mean=5.5889
+  trial 71  fold 2 (0.75+0.80)  KL=1.4983  running mean=4.2254
+  trial 71  fold 3 (0.80+0.82)  KL=2.1200  running mean=3.6991
+  trial 71  fold 4 (0.82+0.85)  KL=1.9574  running mean=3.3507
+  trial 71  fold 5 (0.85+0.88)  KL=2.6648  running mean=3.2364
+  trial 71  fold 6 (0.88+0.90)  KL=3.7253  running mean=3.3062
+  trial 71  fold 7 (0.90+0.93)  KL=5.3598  running mean=3.5629
+trial 72: n_components=6  isomap_k=35  rbf_kernel=cubic  smoothing=4.84e-02  backmap_k=9
+  trial 72  fold 0 (0.50+0.70)  KL=6.6189  running mean=6.6189
+  trial 72  fold 1 (0.70+0.75)  KL=5.5093  running mean=6.0641
+  trial 72  fold 2 (0.75+0.80)  KL=1.3277  running mean=4.4853
+  trial 72: pruned after fold 2
+trial 73: n_components=6  isomap_k=37  rbf_kernel=cubic  smoothing=1.72e-02  backmap_k=5
+  trial 73  fold 0 (0.50+0.70)  KL=6.1442  running mean=6.1442
+  trial 73  fold 1 (0.70+0.75)  KL=4.9060  running mean=5.5251
+  trial 73  fold 2 (0.75+0.80)  KL=1.4569  running mean=4.1690
+  trial 73  fold 3 (0.80+0.82)  KL=2.0318  running mean=3.6347
+  trial 73  fold 4 (0.82+0.85)  KL=1.9534  running mean=3.2984
+  trial 73  fold 5 (0.85+0.88)  KL=2.6104  running mean=3.1838
+  trial 73  fold 6 (0.88+0.90)  KL=3.5823  running mean=3.2407
+  trial 73  fold 7 (0.90+0.93)  KL=5.4575  running mean=3.5178
+trial 74: n_components=6  isomap_k=39  rbf_kernel=cubic  smoothing=1.66e-02  backmap_k=5
+  trial 74  fold 0 (0.50+0.70)  KL=6.2119  running mean=6.2119
+  trial 74  fold 1 (0.70+0.75)  KL=4.9995  running mean=5.6057
+  trial 74  fold 2 (0.75+0.80)  KL=1.5699  running mean=4.2604
+  trial 74  fold 3 (0.80+0.82)  KL=1.9791  running mean=3.6901
+  trial 74  fold 4 (0.82+0.85)  KL=1.9022  running mean=3.3325
+  trial 74  fold 5 (0.85+0.88)  KL=2.6766  running mean=3.2232
+  trial 74  fold 6 (0.88+0.90)  KL=3.6038  running mean=3.2776
+  trial 74  fold 7 (0.90+0.93)  KL=5.4323  running mean=3.5469
+trial 75: n_components=7  isomap_k=39  rbf_kernel=cubic  smoothing=3.33e-02  backmap_k=6
+  trial 75  fold 0 (0.50+0.70)  KL=6.0754  running mean=6.0754
+  trial 75  fold 1 (0.70+0.75)  KL=5.2130  running mean=5.6442
+  trial 75  fold 2 (0.75+0.80)  KL=1.5820  running mean=4.2901
+  trial 75  fold 3 (0.80+0.82)  KL=1.9873  running mean=3.7144
+  trial 75  fold 4 (0.82+0.85)  KL=1.9607  running mean=3.3637
+  trial 75  fold 5 (0.85+0.88)  KL=2.8745  running mean=3.2821
+  trial 75  fold 6 (0.88+0.90)  KL=3.5784  running mean=3.3245
+  trial 75  fold 7 (0.90+0.93)  KL=5.4973  running mean=3.5961
+trial 76: n_components=6  isomap_k=37  rbf_kernel=cubic  smoothing=1.92e-02  backmap_k=5
+  trial 76  fold 0 (0.50+0.70)  KL=6.1611  running mean=6.1611
+  trial 76  fold 1 (0.70+0.75)  KL=4.9045  running mean=5.5328
+  trial 76  fold 2 (0.75+0.80)  KL=1.4494  running mean=4.1717
+  trial 76  fold 3 (0.80+0.82)  KL=2.0128  running mean=3.6319
+  trial 76  fold 4 (0.82+0.85)  KL=1.9374  running mean=3.2930
+  trial 76  fold 5 (0.85+0.88)  KL=2.6191  running mean=3.1807
+  trial 76  fold 6 (0.88+0.90)  KL=3.6042  running mean=3.2412
+  trial 76  fold 7 (0.90+0.93)  KL=5.4553  running mean=3.5180
+trial 77: n_components=6  isomap_k=37  rbf_kernel=cubic  smoothing=1.66e-02  backmap_k=6
+  trial 77  fold 0 (0.50+0.70)  KL=6.1963  running mean=6.1963
+  trial 77  fold 1 (0.70+0.75)  KL=4.9117  running mean=5.5540
+  trial 77  fold 2 (0.75+0.80)  KL=1.5553  running mean=4.2211
+  trial 77  fold 3 (0.80+0.82)  KL=2.0568  running mean=3.6800
+  trial 77  fold 4 (0.82+0.85)  KL=1.9166  running mean=3.3273
+  trial 77  fold 5 (0.85+0.88)  KL=2.7543  running mean=3.2318
+  trial 77  fold 6 (0.88+0.90)  KL=3.5173  running mean=3.2726
+  trial 77  fold 7 (0.90+0.93)  KL=5.5303  running mean=3.5548
+trial 78: n_components=7  isomap_k=34  rbf_kernel=cubic  smoothing=8.25e-03  backmap_k=7
+  trial 78  fold 0 (0.50+0.70)  KL=6.2101  running mean=6.2101
+  trial 78  fold 1 (0.70+0.75)  KL=5.3846  running mean=5.7974
+  trial 78  fold 2 (0.75+0.80)  KL=1.3404  running mean=4.3117
+  trial 78  fold 3 (0.80+0.82)  KL=2.2126  running mean=3.7869
+  trial 78: pruned after fold 3
+trial 79: n_components=6  isomap_k=37  rbf_kernel=cubic  smoothing=3.48e-03  backmap_k=5
+  trial 79  fold 0 (0.50+0.70)  KL=6.1629  running mean=6.1629
+  trial 79  fold 1 (0.70+0.75)  KL=4.8487  running mean=5.5058
+  trial 79  fold 2 (0.75+0.80)  KL=1.4512  running mean=4.1543
+  trial 79  fold 3 (0.80+0.82)  KL=2.0595  running mean=3.6306
+  trial 79  fold 4 (0.82+0.85)  KL=1.9947  running mean=3.3034
+  trial 79  fold 5 (0.85+0.88)  KL=2.6002  running mean=3.1862
+  trial 79  fold 6 (0.88+0.90)  KL=3.5682  running mean=3.2408
+  trial 79  fold 7 (0.90+0.93)  KL=5.4993  running mean=3.5231
+trial 80: n_components=5  isomap_k=35  rbf_kernel=cubic  smoothing=3.54e-03  backmap_k=5
+  trial 80  fold 0 (0.50+0.70)  KL=6.1505  running mean=6.1505
+  trial 80  fold 1 (0.70+0.75)  KL=4.8475  running mean=5.4990
+  trial 80  fold 2 (0.75+0.80)  KL=1.4089  running mean=4.1356
+  trial 80  fold 3 (0.80+0.82)  KL=2.1522  running mean=3.6398
+  trial 80  fold 4 (0.82+0.85)  KL=1.9931  running mean=3.3104
+  trial 80  fold 5 (0.85+0.88)  KL=2.5618  running mean=3.1857
+  trial 80  fold 6 (0.88+0.90)  KL=3.5442  running mean=3.2369
+  trial 80  fold 7 (0.90+0.93)  KL=5.6375  running mean=3.5370
+trial 81: n_components=6  isomap_k=35  rbf_kernel=cubic  smoothing=3.75e-03  backmap_k=5
+  trial 81  fold 0 (0.50+0.70)  KL=6.0812  running mean=6.0812
+  trial 81  fold 1 (0.70+0.75)  KL=4.9829  running mean=5.5320
+  trial 81  fold 2 (0.75+0.80)  KL=1.5707  running mean=4.2116
+  trial 81  fold 3 (0.80+0.82)  KL=2.2775  running mean=3.7281
+  trial 81  fold 4 (0.82+0.85)  KL=2.1295  running mean=3.4083
+  trial 81  fold 5 (0.85+0.88)  KL=2.5566  running mean=3.2664
+  trial 81  fold 6 (0.88+0.90)  KL=3.5320  running mean=3.3043
+  trial 81  fold 7 (0.90+0.93)  KL=5.5738  running mean=3.5880
+trial 82: n_components=5  isomap_k=38  rbf_kernel=cubic  smoothing=1.37e-02  backmap_k=6
+  trial 82  fold 0 (0.50+0.70)  KL=6.4036  running mean=6.4036
+  trial 82  fold 1 (0.70+0.75)  KL=5.0502  running mean=5.7269
+  trial 82  fold 2 (0.75+0.80)  KL=1.5301  running mean=4.3279
+  trial 82: pruned after fold 2
+trial 83: n_components=6  isomap_k=35  rbf_kernel=cubic  smoothing=2.97e-03  backmap_k=5
+  trial 83  fold 0 (0.50+0.70)  KL=6.0827  running mean=6.0827
+  trial 83  fold 1 (0.70+0.75)  KL=4.9426  running mean=5.5126
+  trial 83  fold 2 (0.75+0.80)  KL=1.5415  running mean=4.1889
+  trial 83  fold 3 (0.80+0.82)  KL=2.2772  running mean=3.7110
+  trial 83  fold 4 (0.82+0.85)  KL=2.1301  running mean=3.3948
+  trial 83  fold 5 (0.85+0.88)  KL=2.5552  running mean=3.2549
+  trial 83  fold 6 (0.88+0.90)  KL=3.5313  running mean=3.2944
+  trial 83  fold 7 (0.90+0.93)  KL=5.5719  running mean=3.5791
+trial 84: n_components=5  isomap_k=37  rbf_kernel=cubic  smoothing=1.71e-03  backmap_k=5
+  trial 84  fold 0 (0.50+0.70)  KL=6.2746  running mean=6.2746
+  trial 84  fold 1 (0.70+0.75)  KL=4.8298  running mean=5.5522
+  trial 84  fold 2 (0.75+0.80)  KL=1.4240  running mean=4.1761
+  trial 84  fold 3 (0.80+0.82)  KL=2.0294  running mean=3.6394
+  trial 84  fold 4 (0.82+0.85)  KL=1.9414  running mean=3.2998
+  trial 84  fold 5 (0.85+0.88)  KL=2.6321  running mean=3.1886
+  trial 84  fold 6 (0.88+0.90)  KL=3.5727  running mean=3.2434
+  trial 84  fold 7 (0.90+0.93)  KL=5.4704  running mean=3.5218
+trial 85: n_components=5  isomap_k=34  rbf_kernel=cubic  smoothing=1.81e-03  backmap_k=6
+  trial 85  fold 0 (0.50+0.70)  KL=6.0625  running mean=6.0625
+  trial 85  fold 1 (0.70+0.75)  KL=5.0238  running mean=5.5431
+  trial 85  fold 2 (0.75+0.80)  KL=1.4775  running mean=4.1879
+  trial 85  fold 3 (0.80+0.82)  KL=2.1349  running mean=3.6747
+  trial 85  fold 4 (0.82+0.85)  KL=2.1323  running mean=3.3662
+  trial 85  fold 5 (0.85+0.88)  KL=2.7501  running mean=3.2635
+  trial 85  fold 6 (0.88+0.90)  KL=3.5080  running mean=3.2985
+  trial 85  fold 7 (0.90+0.93)  KL=5.6249  running mean=3.5893
+trial 86: n_components=2  isomap_k=32  rbf_kernel=cubic  smoothing=4.81e-03  backmap_k=8
+  trial 86  fold 0 (0.50+0.70)  KL=6.9158  running mean=6.9158
+  trial 86  fold 1 (0.70+0.75)  KL=4.8930  running mean=5.9044
+  trial 86  fold 2 (0.75+0.80)  KL=1.3732  running mean=4.3940
+  trial 86: pruned after fold 2
+trial 87: n_components=3  isomap_k=34  rbf_kernel=cubic  smoothing=4.75e-04  backmap_k=5
+  trial 87  fold 0 (0.50+0.70)  KL=6.1713  running mean=6.1713
+  trial 87  fold 1 (0.70+0.75)  KL=4.9274  running mean=5.5493
+  trial 87  fold 2 (0.75+0.80)  KL=1.4224  running mean=4.1737
+  trial 87  fold 3 (0.80+0.82)  KL=2.0259  running mean=3.6367
+  trial 87  fold 4 (0.82+0.85)  KL=2.0999  running mean=3.3294
+  trial 87  fold 5 (0.85+0.88)  KL=2.5476  running mean=3.1991
+  trial 87  fold 6 (0.88+0.90)  KL=3.5560  running mean=3.2501
+  trial 87  fold 7 (0.90+0.93)  KL=5.5866  running mean=3.5421
+trial 88: n_components=3  isomap_k=37  rbf_kernel=quintic  smoothing=4.26e-04  backmap_k=5
+  trial 88  fold 0 (0.50+0.70)  KL=10.0186  running mean=10.0186
+  trial 88  fold 1 (0.70+0.75)  KL=6.1184  running mean=8.0685
+  trial 88  fold 2 (0.75+0.80)  KL=1.5431  running mean=5.8934
+  trial 88: pruned after fold 2
+trial 89: n_components=3  isomap_k=33  rbf_kernel=cubic  smoothing=5.55e-04  backmap_k=6
+  trial 89  fold 0 (0.50+0.70)  KL=6.7259  running mean=6.7259
+  trial 89  fold 1 (0.70+0.75)  KL=4.9705  running mean=5.8482
+  trial 89  fold 2 (0.75+0.80)  KL=1.4059  running mean=4.3675
+  trial 89: pruned after fold 2
+trial 90: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=1.65e-04  backmap_k=6
+  trial 90  fold 0 (0.50+0.70)  KL=6.1334  running mean=6.1334
+  trial 90  fold 1 (0.70+0.75)  KL=4.9280  running mean=5.5307
+  trial 90  fold 2 (0.75+0.80)  KL=1.4765  running mean=4.1793
+  trial 90  fold 3 (0.80+0.82)  KL=2.1435  running mean=3.6704
+  trial 90  fold 4 (0.82+0.85)  KL=2.0552  running mean=3.3473
+  trial 90  fold 5 (0.85+0.88)  KL=2.6608  running mean=3.2329
+  trial 90  fold 6 (0.88+0.90)  KL=3.4870  running mean=3.2692
+  trial 90  fold 7 (0.90+0.93)  KL=5.5518  running mean=3.5545
+trial 91: n_components=3  isomap_k=34  rbf_kernel=cubic  smoothing=1.27e-03  backmap_k=5
+  trial 91  fold 0 (0.50+0.70)  KL=6.1840  running mean=6.1840
+  trial 91  fold 1 (0.70+0.75)  KL=4.9516  running mean=5.5678
+  trial 91  fold 2 (0.75+0.80)  KL=1.4210  running mean=4.1855
+  trial 91  fold 3 (0.80+0.82)  KL=2.0119  running mean=3.6421
+  trial 91  fold 4 (0.82+0.85)  KL=2.0524  running mean=3.3242
+  trial 91  fold 5 (0.85+0.88)  KL=2.5591  running mean=3.1967
+  trial 91  fold 6 (0.88+0.90)  KL=3.6000  running mean=3.2543
+  trial 91  fold 7 (0.90+0.93)  KL=5.5817  running mean=3.5452
+trial 92: n_components=4  isomap_k=38  rbf_kernel=cubic  smoothing=6.70e-03  backmap_k=5
+  trial 92  fold 0 (0.50+0.70)  KL=6.3134  running mean=6.3134
+  trial 92  fold 1 (0.70+0.75)  KL=4.9924  running mean=5.6529
+  trial 92  fold 2 (0.75+0.80)  KL=1.4901  running mean=4.2653
+  trial 92  fold 3 (0.80+0.82)  KL=2.0860  running mean=3.7205
+  trial 92  fold 4 (0.82+0.85)  KL=1.8606  running mean=3.3485
+  trial 92  fold 5 (0.85+0.88)  KL=2.6721  running mean=3.2358
+  trial 92  fold 6 (0.88+0.90)  KL=3.6464  running mean=3.2944
+  trial 92  fold 7 (0.90+0.93)  KL=5.3984  running mean=3.5574
+trial 93: n_components=7  isomap_k=36  rbf_kernel=cubic  smoothing=9.35e-03  backmap_k=5
+  trial 93  fold 0 (0.50+0.70)  KL=6.1099  running mean=6.1099
+  trial 93  fold 1 (0.70+0.75)  KL=5.0479  running mean=5.5789
+  trial 93  fold 2 (0.75+0.80)  KL=1.4790  running mean=4.2123
+  trial 93  fold 3 (0.80+0.82)  KL=2.1573  running mean=3.6985
+  trial 93  fold 4 (0.82+0.85)  KL=2.1200  running mean=3.3828
+  trial 93  fold 5 (0.85+0.88)  KL=2.6614  running mean=3.2626
+  trial 93  fold 6 (0.88+0.90)  KL=3.5382  running mean=3.3020
+  trial 93  fold 7 (0.90+0.93)  KL=5.4757  running mean=3.5737
+trial 94: n_components=5  isomap_k=37  rbf_kernel=cubic  smoothing=1.65e-03  backmap_k=4
+  trial 94  fold 0 (0.50+0.70)  KL=6.1860  running mean=6.1860
+  trial 94  fold 1 (0.70+0.75)  KL=4.7611  running mean=5.4735
+  trial 94  fold 2 (0.75+0.80)  KL=1.3837  running mean=4.1102
+  trial 94  fold 3 (0.80+0.82)  KL=2.1047  running mean=3.6089
+  trial 94  fold 4 (0.82+0.85)  KL=2.0348  running mean=3.2940
+  trial 94  fold 5 (0.85+0.88)  KL=2.5593  running mean=3.1716
+  trial 94  fold 6 (0.88+0.90)  KL=3.7806  running mean=3.2586
+  trial 94  fold 7 (0.90+0.93)  KL=5.4363  running mean=3.5308
+trial 95: n_components=5  isomap_k=37  rbf_kernel=cubic  smoothing=2.57e-04  backmap_k=11
+  trial 95  fold 0 (0.50+0.70)  KL=7.1517  running mean=7.1517
+  trial 95  fold 1 (0.70+0.75)  KL=5.1785  running mean=6.1651
+  trial 95  fold 2 (0.75+0.80)  KL=1.2571  running mean=4.5291
+  trial 95: pruned after fold 2
+trial 96: n_components=4  isomap_k=35  rbf_kernel=cubic  smoothing=1.66e-03  backmap_k=4
+  trial 96  fold 0 (0.50+0.70)  KL=6.0598  running mean=6.0598
+  trial 96  fold 1 (0.70+0.75)  KL=4.7219  running mean=5.3909
+  trial 96  fold 2 (0.75+0.80)  KL=1.3955  running mean=4.0591
+  trial 96  fold 3 (0.80+0.82)  KL=2.1638  running mean=3.5853
+  trial 96  fold 4 (0.82+0.85)  KL=2.1102  running mean=3.2903
+  trial 96  fold 5 (0.85+0.88)  KL=2.4933  running mean=3.1574
+  trial 96  fold 6 (0.88+0.90)  KL=3.6986  running mean=3.2348
+  trial 96  fold 7 (0.90+0.93)  KL=5.4685  running mean=3.5140
+trial 97: n_components=4  isomap_k=37  rbf_kernel=cubic  smoothing=2.67e-03  backmap_k=3
+  trial 97  fold 0 (0.50+0.70)  KL=6.2611  running mean=6.2611
+  trial 97  fold 1 (0.70+0.75)  KL=4.8592  running mean=5.5601
+  trial 97  fold 2 (0.75+0.80)  KL=1.5822  running mean=4.2341
+  trial 97  fold 3 (0.80+0.82)  KL=2.5672  running mean=3.8174
+  trial 97: pruned after fold 3
+trial 98: n_components=5  isomap_k=35  rbf_kernel=cubic  smoothing=1.45e-03  backmap_k=4
+  trial 98  fold 0 (0.50+0.70)  KL=6.1134  running mean=6.1134
+  trial 98  fold 1 (0.70+0.75)  KL=4.7019  running mean=5.4077
+  trial 98  fold 2 (0.75+0.80)  KL=1.3785  running mean=4.0646
+  trial 98  fold 3 (0.80+0.82)  KL=2.1636  running mean=3.5894
+  trial 98  fold 4 (0.82+0.85)  KL=2.1366  running mean=3.2988
+  trial 98  fold 5 (0.85+0.88)  KL=2.4779  running mean=3.1620
+  trial 98  fold 6 (0.88+0.90)  KL=3.7130  running mean=3.2407
+  trial 98  fold 7 (0.90+0.93)  KL=5.5481  running mean=3.5291
+trial 99: n_components=5  isomap_k=36  rbf_kernel=cubic  smoothing=1.45e-03  backmap_k=3
+  trial 99  fold 0 (0.50+0.70)  KL=6.0638  running mean=6.0638
+  trial 99  fold 1 (0.70+0.75)  KL=4.6717  running mean=5.3677
+  trial 99  fold 2 (0.75+0.80)  KL=1.6386  running mean=4.1247
+  trial 99  fold 3 (0.80+0.82)  KL=2.5293  running mean=3.7258
+  trial 99  fold 4 (0.82+0.85)  KL=2.3831  running mean=3.4573
+  trial 99: pruned after fold 4
+trial 100: n_components=5  isomap_k=33  rbf_kernel=quintic  smoothing=8.55e-04  backmap_k=4
+  trial 100  fold 0 (0.50+0.70)  KL=9.5283  running mean=9.5283
+  trial 100  fold 1 (0.70+0.75)  KL=5.7629  running mean=7.6456
+  trial 100  fold 2 (0.75+0.80)  KL=1.8216  running mean=5.7043
+  trial 100: pruned after fold 2
+trial 101: n_components=5  isomap_k=35  rbf_kernel=cubic  smoothing=1.86e-03  backmap_k=4
+  trial 101  fold 0 (0.50+0.70)  KL=6.1128  running mean=6.1128
+  trial 101  fold 1 (0.70+0.75)  KL=4.7352  running mean=5.4240
+  trial 101  fold 2 (0.75+0.80)  KL=1.3778  running mean=4.0753
+  trial 101  fold 3 (0.80+0.82)  KL=2.1696  running mean=3.5988
+  trial 101  fold 4 (0.82+0.85)  KL=2.1362  running mean=3.3063
+  trial 101  fold 5 (0.85+0.88)  KL=2.5043  running mean=3.1726
+  trial 101  fold 6 (0.88+0.90)  KL=3.7123  running mean=3.2497
+  trial 101  fold 7 (0.90+0.93)  KL=5.5467  running mean=3.5369
+trial 102: n_components=5  isomap_k=35  rbf_kernel=cubic  smoothing=1.98e-03  backmap_k=4
+  trial 102  fold 0 (0.50+0.70)  KL=6.1126  running mean=6.1126
+  trial 102  fold 1 (0.70+0.75)  KL=4.7356  running mean=5.4241
+  trial 102  fold 2 (0.75+0.80)  KL=1.3586  running mean=4.0689
+  trial 102  fold 3 (0.80+0.82)  KL=2.1695  running mean=3.5941
+  trial 102  fold 4 (0.82+0.85)  KL=2.1361  running mean=3.3025
+  trial 102  fold 5 (0.85+0.88)  KL=2.5249  running mean=3.1729
+  trial 102  fold 6 (0.88+0.90)  KL=3.7124  running mean=3.2500
+  trial 102  fold 7 (0.90+0.93)  KL=5.5463  running mean=3.5370
+trial 103: n_components=4  isomap_k=38  rbf_kernel=cubic  smoothing=4.72e-03  backmap_k=4
+  trial 103  fold 0 (0.50+0.70)  KL=6.2138  running mean=6.2138
+  trial 103  fold 1 (0.70+0.75)  KL=4.9083  running mean=5.5610
+  trial 103  fold 2 (0.75+0.80)  KL=1.3993  running mean=4.1738
+  trial 103  fold 3 (0.80+0.82)  KL=2.1591  running mean=3.6701
+  trial 103  fold 4 (0.82+0.85)  KL=1.9414  running mean=3.3244
+  trial 103  fold 5 (0.85+0.88)  KL=2.5636  running mean=3.1976
+  trial 103  fold 6 (0.88+0.90)  KL=3.7664  running mean=3.2789
+  trial 103  fold 7 (0.90+0.93)  KL=5.3437  running mean=3.5370
+trial 104: n_components=5  isomap_k=32  rbf_kernel=cubic  smoothing=1.52e-03  backmap_k=4
+  trial 104  fold 0 (0.50+0.70)  KL=6.5980  running mean=6.5980
+  trial 104  fold 1 (0.70+0.75)  KL=4.5873  running mean=5.5926
+  trial 104  fold 2 (0.75+0.80)  KL=1.3969  running mean=4.1941
+  trial 104  fold 3 (0.80+0.82)  KL=2.1116  running mean=3.6735
+  trial 104  fold 4 (0.82+0.85)  KL=2.3055  running mean=3.3999
+  trial 104  fold 5 (0.85+0.88)  KL=2.6117  running mean=3.2685
+  trial 104  fold 6 (0.88+0.90)  KL=3.6816  running mean=3.3275
+  trial 104  fold 7 (0.90+0.93)  KL=5.5133  running mean=3.6007
+trial 105: n_components=4  isomap_k=36  rbf_kernel=cubic  smoothing=6.02e-03  backmap_k=3
+  trial 105  fold 0 (0.50+0.70)  KL=6.1168  running mean=6.1168
+  trial 105  fold 1 (0.70+0.75)  KL=4.6422  running mean=5.3795
+  trial 105  fold 2 (0.75+0.80)  KL=1.6036  running mean=4.1209
+  trial 105  fold 3 (0.80+0.82)  KL=2.4834  running mean=3.7115
+  trial 105  fold 4 (0.82+0.85)  KL=2.4252  running mean=3.4542
+  trial 105: pruned after fold 4
+trial 106: n_components=5  isomap_k=37  rbf_kernel=cubic  smoothing=2.06e-02  backmap_k=4
+  trial 106  fold 0 (0.50+0.70)  KL=6.2056  running mean=6.2056
+  trial 106  fold 1 (0.70+0.75)  KL=4.6715  running mean=5.4385
+  trial 106  fold 2 (0.75+0.80)  KL=1.3600  running mean=4.0790
+  trial 106  fold 3 (0.80+0.82)  KL=2.1113  running mean=3.5871
+  trial 106  fold 4 (0.82+0.85)  KL=2.0121  running mean=3.2721
+  trial 106  fold 5 (0.85+0.88)  KL=2.5570  running mean=3.1529
+  trial 106  fold 6 (0.88+0.90)  KL=3.8545  running mean=3.2531
+  trial 106  fold 7 (0.90+0.93)  KL=5.4000  running mean=3.5215
+trial 107: n_components=5  isomap_k=40  rbf_kernel=cubic  smoothing=2.12e-02  backmap_k=4
+  trial 107  fold 0 (0.50+0.70)  KL=6.6618  running mean=6.6618
+  trial 107  fold 1 (0.70+0.75)  KL=4.8230  running mean=5.7424
+  trial 107  fold 2 (0.75+0.80)  KL=1.4931  running mean=4.3260
+  trial 107: pruned after fold 2
+trial 108: n_components=6  isomap_k=37  rbf_kernel=cubic  smoothing=7.27e-05  backmap_k=3
+  trial 108  fold 0 (0.50+0.70)  KL=6.2040  running mean=6.2040
+  trial 108  fold 1 (0.70+0.75)  KL=4.7073  running mean=5.4556
+  trial 108  fold 2 (0.75+0.80)  KL=1.5942  running mean=4.1685
+  trial 108  fold 3 (0.80+0.82)  KL=2.5358  running mean=3.7603
+  trial 108: pruned after fold 3
+trial 109: n_components=4  isomap_k=36  rbf_kernel=cubic  smoothing=3.35e-02  backmap_k=4
+  trial 109  fold 0 (0.50+0.70)  KL=6.1258  running mean=6.1258
+  trial 109  fold 1 (0.70+0.75)  KL=4.8364  running mean=5.4811
+  trial 109  fold 2 (0.75+0.80)  KL=1.3886  running mean=4.1169
+  trial 109  fold 3 (0.80+0.82)  KL=2.2547  running mean=3.6514
+  trial 109  fold 4 (0.82+0.85)  KL=1.9519  running mean=3.3115
+  trial 109  fold 5 (0.85+0.88)  KL=2.5011  running mean=3.1764
+  trial 109  fold 6 (0.88+0.90)  KL=3.7720  running mean=3.2615
+  trial 109  fold 7 (0.90+0.93)  KL=5.3200  running mean=3.5188
+trial 110: n_components=4  isomap_k=36  rbf_kernel=cubic  smoothing=3.16e-02  backmap_k=4
+  trial 110  fold 0 (0.50+0.70)  KL=6.1144  running mean=6.1144
+  trial 110  fold 1 (0.70+0.75)  KL=4.8363  running mean=5.4754
+  trial 110  fold 2 (0.75+0.80)  KL=1.3883  running mean=4.1130
+  trial 110  fold 3 (0.80+0.82)  KL=2.2501  running mean=3.6473
+  trial 110  fold 4 (0.82+0.85)  KL=1.9516  running mean=3.3081
+  trial 110  fold 5 (0.85+0.88)  KL=2.5009  running mean=3.1736
+  trial 110  fold 6 (0.88+0.90)  KL=3.7717  running mean=3.2591
+  trial 110  fold 7 (0.90+0.93)  KL=5.3098  running mean=3.5154
+trial 111: n_components=4  isomap_k=36  rbf_kernel=cubic  smoothing=3.74e-02  backmap_k=4
+  trial 111  fold 0 (0.50+0.70)  KL=6.1286  running mean=6.1286
+  trial 111  fold 1 (0.70+0.75)  KL=4.8364  running mean=5.4825
+  trial 111  fold 2 (0.75+0.80)  KL=1.3909  running mean=4.1186
+  trial 111  fold 3 (0.80+0.82)  KL=2.2779  running mean=3.6584
+  trial 111  fold 4 (0.82+0.85)  KL=1.9499  running mean=3.3167
+  trial 111  fold 5 (0.85+0.88)  KL=2.5015  running mean=3.1809
+  trial 111  fold 6 (0.88+0.90)  KL=3.8248  running mean=3.2729
+  trial 111  fold 7 (0.90+0.93)  KL=5.3224  running mean=3.5291
+trial 112: n_components=4  isomap_k=36  rbf_kernel=cubic  smoothing=2.18e-02  backmap_k=4
+  trial 112  fold 0 (0.50+0.70)  KL=6.0936  running mean=6.0936
+  trial 112  fold 1 (0.70+0.75)  KL=4.7725  running mean=5.4330
+  trial 112  fold 2 (0.75+0.80)  KL=1.3739  running mean=4.0800
+  trial 112  fold 3 (0.80+0.82)  KL=2.2503  running mean=3.6226
+  trial 112  fold 4 (0.82+0.85)  KL=2.0054  running mean=3.2991
+  trial 112  fold 5 (0.85+0.88)  KL=2.5094  running mean=3.1675
+  trial 112  fold 6 (0.88+0.90)  KL=3.7825  running mean=3.2554
+  trial 112  fold 7 (0.90+0.93)  KL=5.3313  running mean=3.5149
+trial 113: n_components=4  isomap_k=38  rbf_kernel=cubic  smoothing=3.03e-02  backmap_k=4
+  trial 113  fold 0 (0.50+0.70)  KL=6.1194  running mean=6.1194
+  trial 113  fold 1 (0.70+0.75)  KL=4.7812  running mean=5.4503
+  trial 113  fold 2 (0.75+0.80)  KL=1.4556  running mean=4.1187
+  trial 113  fold 3 (0.80+0.82)  KL=2.2213  running mean=3.6444
+  trial 113  fold 4 (0.82+0.85)  KL=1.9861  running mean=3.3127
+  trial 113  fold 5 (0.85+0.88)  KL=2.5549  running mean=3.1864
+  trial 113  fold 6 (0.88+0.90)  KL=3.8773  running mean=3.2851
+  trial 113  fold 7 (0.90+0.93)  KL=5.3030  running mean=3.5373
+trial 114: n_components=4  isomap_k=36  rbf_kernel=cubic  smoothing=3.45e-02  backmap_k=4
+  trial 114  fold 0 (0.50+0.70)  KL=6.1311  running mean=6.1311
+  trial 114  fold 1 (0.70+0.75)  KL=4.8364  running mean=5.4837
+  trial 114  fold 2 (0.75+0.80)  KL=1.3888  running mean=4.1188
+  trial 114  fold 3 (0.80+0.82)  KL=2.2549  running mean=3.6528
+  trial 114  fold 4 (0.82+0.85)  KL=1.9520  running mean=3.3126
+  trial 114  fold 5 (0.85+0.88)  KL=2.5012  running mean=3.1774
+  trial 114  fold 6 (0.88+0.90)  KL=3.7722  running mean=3.2624
+  trial 114  fold 7 (0.90+0.93)  KL=5.3198  running mean=3.5195
+trial 115: n_components=4  isomap_k=34  rbf_kernel=cubic  smoothing=2.38e-02  backmap_k=3
+  trial 115  fold 0 (0.50+0.70)  KL=6.0935  running mean=6.0935
+  trial 115  fold 1 (0.70+0.75)  KL=4.8409  running mean=5.4672
+  trial 115  fold 2 (0.75+0.80)  KL=1.5978  running mean=4.1774
+  trial 115  fold 3 (0.80+0.82)  KL=2.5773  running mean=3.7774
+  trial 115: pruned after fold 3
+trial 116: n_components=4  isomap_k=38  rbf_kernel=cubic  smoothing=6.70e-02  backmap_k=4
+  trial 116  fold 0 (0.50+0.70)  KL=6.1616  running mean=6.1616
+  trial 116  fold 1 (0.70+0.75)  KL=4.6997  running mean=5.4306
+  trial 116  fold 2 (0.75+0.80)  KL=1.4650  running mean=4.1087
+  trial 116  fold 3 (0.80+0.82)  KL=2.2214  running mean=3.6369
+  trial 116  fold 4 (0.82+0.85)  KL=2.0076  running mean=3.3110
+  trial 116  fold 5 (0.85+0.88)  KL=2.5641  running mean=3.1866
+  trial 116  fold 6 (0.88+0.90)  KL=4.0068  running mean=3.3037
+  trial 116  fold 7 (0.90+0.93)  KL=5.2619  running mean=3.5485
+trial 117: n_components=4  isomap_k=36  rbf_kernel=cubic  smoothing=1.98e-02  backmap_k=5
+  trial 117  fold 0 (0.50+0.70)  KL=6.1480  running mean=6.1480
+  trial 117  fold 1 (0.70+0.75)  KL=4.8187  running mean=5.4833
+  trial 117  fold 2 (0.75+0.80)  KL=1.4166  running mean=4.1277
+  trial 117  fold 3 (0.80+0.82)  KL=2.1806  running mean=3.6410
+  trial 117  fold 4 (0.82+0.85)  KL=1.9444  running mean=3.3016
+  trial 117  fold 5 (0.85+0.88)  KL=2.6096  running mean=3.1863
+  trial 117  fold 6 (0.88+0.90)  KL=3.6207  running mean=3.2484
+  trial 117  fold 7 (0.90+0.93)  KL=5.4650  running mean=3.5254
+trial 118: n_components=4  isomap_k=13  rbf_kernel=cubic  smoothing=1.34e-02  backmap_k=4
+  trial 118  fold 0 (0.50+0.70)  KL=8.2147  running mean=8.2147
+  trial 118  fold 1 (0.70+0.75)  KL=5.3522  running mean=6.7834
+  trial 118  fold 2 (0.75+0.80)  KL=1.5762  running mean=5.0477
+  trial 118: pruned after fold 2
+trial 119: n_components=4  isomap_k=37  rbf_kernel=thin_plate_spline  smoothing=8.85e-03  backmap_k=5
+  trial 119  fold 0 (0.50+0.70)  KL=6.3101  running mean=6.3101
+  trial 119  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.5423
+  trial 119  fold 2 (0.75+0.80)  KL=1.5063  running mean=4.1969
+  trial 119  fold 3 (0.80+0.82)  KL=2.0175  running mean=3.6521
+  trial 119  fold 4 (0.82+0.85)  KL=1.8334  running mean=3.2883
+  trial 119  fold 5 (0.85+0.88)  KL=2.6244  running mean=3.1777
+  trial 119  fold 6 (0.88+0.90)  KL=3.8533  running mean=3.2742
+  trial 119  fold 7 (0.90+0.93)  KL=5.4003  running mean=3.5400
+trial 120: n_components=4  isomap_k=35  rbf_kernel=quintic  smoothing=3.19e-02  backmap_k=3
+  trial 120  fold 0 (0.50+0.70)  KL=8.9844  running mean=8.9844
+  trial 120  fold 1 (0.70+0.75)  KL=4.7595  running mean=6.8720
+  trial 120  fold 2 (0.75+0.80)  KL=1.6204  running mean=5.1214
+  trial 120: pruned after fold 2
+trial 121: n_components=4  isomap_k=36  rbf_kernel=cubic  smoothing=1.86e-02  backmap_k=5
+  trial 121  fold 0 (0.50+0.70)  KL=6.1494  running mean=6.1494
+  trial 121  fold 1 (0.70+0.75)  KL=4.8392  running mean=5.4943
+  trial 121  fold 2 (0.75+0.80)  KL=1.4162  running mean=4.1349
+  trial 121  fold 3 (0.80+0.82)  KL=2.1818  running mean=3.6466
+  trial 121  fold 4 (0.82+0.85)  KL=1.9446  running mean=3.3062
+  trial 121  fold 5 (0.85+0.88)  KL=2.6098  running mean=3.1902
+  trial 121  fold 6 (0.88+0.90)  KL=3.6205  running mean=3.2516
+  trial 121  fold 7 (0.90+0.93)  KL=5.4667  running mean=3.5285
+trial 122: n_components=4  isomap_k=36  rbf_kernel=cubic  smoothing=6.95e-02  backmap_k=5
+  trial 122  fold 0 (0.50+0.70)  KL=6.1921  running mean=6.1921
+  trial 122  fold 1 (0.70+0.75)  KL=4.8956  running mean=5.5438
+  trial 122  fold 2 (0.75+0.80)  KL=1.4571  running mean=4.1816
+  trial 122  fold 3 (0.80+0.82)  KL=2.1651  running mean=3.6774
+  trial 122  fold 4 (0.82+0.85)  KL=1.9019  running mean=3.3223
+  trial 122  fold 5 (0.85+0.88)  KL=2.5917  running mean=3.2006
+  trial 122  fold 6 (0.88+0.90)  KL=3.6348  running mean=3.2626
+  trial 122  fold 7 (0.90+0.93)  KL=5.4422  running mean=3.5350
+trial 123: n_components=4  isomap_k=34  rbf_kernel=cubic  smoothing=1.33e-02  backmap_k=4
+  trial 123  fold 0 (0.50+0.70)  KL=5.9752  running mean=5.9752
+  trial 123  fold 1 (0.70+0.75)  KL=4.9991  running mean=5.4872
+  trial 123  fold 2 (0.75+0.80)  KL=1.4159  running mean=4.1301
+  trial 123  fold 3 (0.80+0.82)  KL=2.0623  running mean=3.6131
+  trial 123  fold 4 (0.82+0.85)  KL=2.1727  running mean=3.3250
+  trial 123  fold 5 (0.85+0.88)  KL=2.5305  running mean=3.1926
+  trial 123  fold 6 (0.88+0.90)  KL=3.8304  running mean=3.2837
+  trial 123  fold 7 (0.90+0.93)  KL=5.4595  running mean=3.5557
+trial 124: n_components=4  isomap_k=39  rbf_kernel=cubic  smoothing=2.39e-02  backmap_k=5
+  trial 124  fold 0 (0.50+0.70)  KL=6.5456  running mean=6.5456
+  trial 124  fold 1 (0.70+0.75)  KL=5.0422  running mean=5.7939
+  trial 124  fold 2 (0.75+0.80)  KL=1.5656  running mean=4.3845
+  trial 124: pruned after fold 2
+trial 125: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=8.34e-03  backmap_k=4
+  trial 125  fold 0 (0.50+0.70)  KL=5.9003  running mean=5.9003
+  trial 125  fold 1 (0.70+0.75)  KL=4.6699  running mean=5.2851
+  trial 125  fold 2 (0.75+0.80)  KL=1.3650  running mean=3.9784
+  trial 125  fold 3 (0.80+0.82)  KL=2.1871  running mean=3.5306
+  trial 125  fold 4 (0.82+0.85)  KL=1.9308  running mean=3.2106
+  trial 125  fold 5 (0.85+0.88)  KL=2.5195  running mean=3.0954
+  trial 125  fold 6 (0.88+0.90)  KL=3.7473  running mean=3.1886
+  trial 125  fold 7 (0.90+0.93)  KL=5.3625  running mean=3.4603
+trial 126: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=7.91e-03  backmap_k=4
+  trial 126  fold 0 (0.50+0.70)  KL=6.0494  running mean=6.0494
+  trial 126  fold 1 (0.70+0.75)  KL=4.6645  running mean=5.3569
+  trial 126  fold 2 (0.75+0.80)  KL=1.3696  running mean=4.0278
+  trial 126  fold 3 (0.80+0.82)  KL=2.0695  running mean=3.5383
+  trial 126  fold 4 (0.82+0.85)  KL=1.9207  running mean=3.2147
+  trial 126  fold 5 (0.85+0.88)  KL=2.5854  running mean=3.1098
+  trial 126  fold 6 (0.88+0.90)  KL=3.8190  running mean=3.2112
+  trial 126  fold 7 (0.90+0.93)  KL=5.3679  running mean=3.4807
+trial 127: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=7.98e-03  backmap_k=4
+  trial 127  fold 0 (0.50+0.70)  KL=6.1831  running mean=6.1831
+  trial 127  fold 1 (0.70+0.75)  KL=4.6576  running mean=5.4204
+  trial 127  fold 2 (0.75+0.80)  KL=1.3882  running mean=4.0763
+  trial 127  fold 3 (0.80+0.82)  KL=2.1648  running mean=3.5984
+  trial 127  fold 4 (0.82+0.85)  KL=1.9355  running mean=3.2658
+  trial 127  fold 5 (0.85+0.88)  KL=2.5579  running mean=3.1479
+  trial 127  fold 6 (0.88+0.90)  KL=3.7830  running mean=3.2386
+  trial 127  fold 7 (0.90+0.93)  KL=5.3076  running mean=3.4972
+trial 128: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=7.71e-03  backmap_k=4
+  trial 128  fold 0 (0.50+0.70)  KL=6.1833  running mean=6.1833
+  trial 128  fold 1 (0.70+0.75)  KL=4.6576  running mean=5.4205
+  trial 128  fold 2 (0.75+0.80)  KL=1.3880  running mean=4.0763
+  trial 128  fold 3 (0.80+0.82)  KL=2.1649  running mean=3.5985
+  trial 128  fold 4 (0.82+0.85)  KL=1.9107  running mean=3.2609
+  trial 128  fold 5 (0.85+0.88)  KL=2.5579  running mean=3.1438
+  trial 128  fold 6 (0.88+0.90)  KL=3.7829  running mean=3.2351
+  trial 128  fold 7 (0.90+0.93)  KL=5.3079  running mean=3.4942
+trial 129: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=7.83e-03  backmap_k=3
+  trial 129  fold 0 (0.50+0.70)  KL=6.0431  running mean=6.0431
+  trial 129  fold 1 (0.70+0.75)  KL=4.6273  running mean=5.3352
+  trial 129  fold 2 (0.75+0.80)  KL=1.5875  running mean=4.0860
+  trial 129  fold 3 (0.80+0.82)  KL=2.4235  running mean=3.6703
+  trial 129  fold 4 (0.82+0.85)  KL=2.2640  running mean=3.3891
+  trial 129  fold 5 (0.85+0.88)  KL=2.5491  running mean=3.2491
+  trial 129  fold 6 (0.88+0.90)  KL=4.1410  running mean=3.3765
+  trial 129  fold 7 (0.90+0.93)  KL=5.3112  running mean=3.6183
+trial 130: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=1.22e-02  backmap_k=4
+  trial 130  fold 0 (0.50+0.70)  KL=6.3413  running mean=6.3413
+  trial 130  fold 1 (0.70+0.75)  KL=4.8250  running mean=5.5832
+  trial 130  fold 2 (0.75+0.80)  KL=1.4389  running mean=4.2017
+  trial 130  fold 3 (0.80+0.82)  KL=2.0113  running mean=3.6541
+  trial 130  fold 4 (0.82+0.85)  KL=1.7662  running mean=3.2765
+  trial 130  fold 5 (0.85+0.88)  KL=2.5316  running mean=3.1524
+  trial 130  fold 6 (0.88+0.90)  KL=3.7307  running mean=3.2350
+  trial 130  fold 7 (0.90+0.93)  KL=5.3382  running mean=3.4979
+trial 131: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=1.55e-02  backmap_k=4
+  trial 131  fold 0 (0.50+0.70)  KL=6.3147  running mean=6.3147
+  trial 131  fold 1 (0.70+0.75)  KL=4.7456  running mean=5.5302
+  trial 131  fold 2 (0.75+0.80)  KL=1.4261  running mean=4.1621
+  trial 131  fold 3 (0.80+0.82)  KL=2.0185  running mean=3.6262
+  trial 131  fold 4 (0.82+0.85)  KL=1.7856  running mean=3.2581
+  trial 131  fold 5 (0.85+0.88)  KL=2.5321  running mean=3.1371
+  trial 131  fold 6 (0.88+0.90)  KL=3.7311  running mean=3.2220
+  trial 131  fold 7 (0.90+0.93)  KL=5.3358  running mean=3.4862
+trial 132: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=1.06e-02  backmap_k=4
+  trial 132  fold 0 (0.50+0.70)  KL=6.3697  running mean=6.3697
+  trial 132  fold 1 (0.70+0.75)  KL=4.8366  running mean=5.6031
+  trial 132  fold 2 (0.75+0.80)  KL=1.4390  running mean=4.2151
+  trial 132  fold 3 (0.80+0.82)  KL=2.0112  running mean=3.6641
+  trial 132  fold 4 (0.82+0.85)  KL=1.7770  running mean=3.2867
+  trial 132  fold 5 (0.85+0.88)  KL=2.5373  running mean=3.1618
+  trial 132  fold 6 (0.88+0.90)  KL=3.7305  running mean=3.2430
+  trial 132  fold 7 (0.90+0.93)  KL=5.3550  running mean=3.5070
+trial 133: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=1.14e-02  backmap_k=4
+  trial 133  fold 0 (0.50+0.70)  KL=6.3512  running mean=6.3512
+  trial 133  fold 1 (0.70+0.75)  KL=4.8288  running mean=5.5900
+  trial 133  fold 2 (0.75+0.80)  KL=1.4389  running mean=4.2063
+  trial 133  fold 3 (0.80+0.82)  KL=2.0112  running mean=3.6575
+  trial 133  fold 4 (0.82+0.85)  KL=1.7725  running mean=3.2805
+  trial 133  fold 5 (0.85+0.88)  KL=2.5372  running mean=3.1566
+  trial 133  fold 6 (0.88+0.90)  KL=3.7306  running mean=3.2386
+  trial 133  fold 7 (0.90+0.93)  KL=5.3544  running mean=3.5031
+trial 134: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=4.92e-03  backmap_k=4
+  trial 134  fold 0 (0.50+0.70)  KL=6.4406  running mean=6.4406
+  trial 134  fold 1 (0.70+0.75)  KL=4.8066  running mean=5.6236
+  trial 134  fold 2 (0.75+0.80)  KL=1.4302  running mean=4.2258
+  trial 134  fold 3 (0.80+0.82)  KL=2.0340  running mean=3.6778
+  trial 134  fold 4 (0.82+0.85)  KL=1.8493  running mean=3.3121
+  trial 134  fold 5 (0.85+0.88)  KL=2.5557  running mean=3.1860
+  trial 134  fold 6 (0.88+0.90)  KL=3.7639  running mean=3.2686
+  trial 134  fold 7 (0.90+0.93)  KL=5.3795  running mean=3.5325
+trial 135: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=9.65e-03  backmap_k=3
+  trial 135  fold 0 (0.50+0.70)  KL=6.2846  running mean=6.2846
+  trial 135  fold 1 (0.70+0.75)  KL=4.8571  running mean=5.5708
+  trial 135  fold 2 (0.75+0.80)  KL=1.6210  running mean=4.2542
+  trial 135  fold 3 (0.80+0.82)  KL=2.2568  running mean=3.7549
+  trial 135: pruned after fold 3
+trial 136: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=1.05e-02  backmap_k=4
+  trial 136  fold 0 (0.50+0.70)  KL=6.3510  running mean=6.3510
+  trial 136  fold 1 (0.70+0.75)  KL=4.7428  running mean=5.5469
+  trial 136  fold 2 (0.75+0.80)  KL=1.4288  running mean=4.1742
+  trial 136  fold 3 (0.80+0.82)  KL=2.0378  running mean=3.6401
+  trial 136  fold 4 (0.82+0.85)  KL=1.8789  running mean=3.2879
+  trial 136  fold 5 (0.85+0.88)  KL=2.5456  running mean=3.1642
+  trial 136  fold 6 (0.88+0.90)  KL=3.7475  running mean=3.2475
+  trial 136  fold 7 (0.90+0.93)  KL=5.3282  running mean=3.5076
+trial 137: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=6.66e-03  backmap_k=4
+  trial 137  fold 0 (0.50+0.70)  KL=6.3547  running mean=6.3547
+  trial 137  fold 1 (0.70+0.75)  KL=4.7290  running mean=5.5419
+  trial 137  fold 2 (0.75+0.80)  KL=1.4188  running mean=4.1675
+  trial 137  fold 3 (0.80+0.82)  KL=2.0444  running mean=3.6367
+  trial 137  fold 4 (0.82+0.85)  KL=1.8914  running mean=3.2877
+  trial 137  fold 5 (0.85+0.88)  KL=2.5661  running mean=3.1674
+  trial 137  fold 6 (0.88+0.90)  KL=3.6910  running mean=3.2422
+  trial 137  fold 7 (0.90+0.93)  KL=5.3562  running mean=3.5065
+trial 138: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=5.84e-03  backmap_k=4
+  trial 138  fold 0 (0.50+0.70)  KL=6.4017  running mean=6.4017
+  trial 138  fold 1 (0.70+0.75)  KL=4.8772  running mean=5.6394
+  trial 138  fold 2 (0.75+0.80)  KL=1.4399  running mean=4.2396
+  trial 138  fold 3 (0.80+0.82)  KL=2.0169  running mean=3.6839
+  trial 138  fold 4 (0.82+0.85)  KL=1.8450  running mean=3.3161
+  trial 138  fold 5 (0.85+0.88)  KL=2.5367  running mean=3.1862
+  trial 138  fold 6 (0.88+0.90)  KL=3.7641  running mean=3.2688
+  trial 138  fold 7 (0.90+0.93)  KL=5.3590  running mean=3.5301
+trial 139: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=1.17e-02  backmap_k=3
+  trial 139  fold 0 (0.50+0.70)  KL=6.1725  running mean=6.1725
+  trial 139  fold 1 (0.70+0.75)  KL=4.7877  running mean=5.4801
+  trial 139  fold 2 (0.75+0.80)  KL=1.6282  running mean=4.1961
+  trial 139  fold 3 (0.80+0.82)  KL=2.3134  running mean=3.7255
+  trial 139: pruned after fold 3
+trial 140: n_components=2  isomap_k=39  rbf_kernel=thin_plate_spline  smoothing=6.99e-03  backmap_k=4
+  trial 140  fold 0 (0.50+0.70)  KL=6.6932  running mean=6.6932
+  trial 140  fold 1 (0.70+0.75)  KL=4.4934  running mean=5.5933
+  trial 140  fold 2 (0.75+0.80)  KL=1.5254  running mean=4.2373
+  trial 140  fold 3 (0.80+0.82)  KL=1.9558  running mean=3.6670
+  trial 140  fold 4 (0.82+0.85)  KL=1.9213  running mean=3.3178
+  trial 140  fold 5 (0.85+0.88)  KL=2.5102  running mean=3.1832
+  trial 140  fold 6 (0.88+0.90)  KL=4.0369  running mean=3.3052
+  trial 140  fold 7 (0.90+0.93)  KL=5.1923  running mean=3.5411
+trial 141: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=4.08e-03  backmap_k=4
+  trial 141  fold 0 (0.50+0.70)  KL=6.4448  running mean=6.4448
+  trial 141  fold 1 (0.70+0.75)  KL=4.8141  running mean=5.6294
+  trial 141  fold 2 (0.75+0.80)  KL=1.4218  running mean=4.2269
+  trial 141  fold 3 (0.80+0.82)  KL=2.0313  running mean=3.6780
+  trial 141  fold 4 (0.82+0.85)  KL=1.8829  running mean=3.3190
+  trial 141  fold 5 (0.85+0.88)  KL=2.5563  running mean=3.1919
+  trial 141  fold 6 (0.88+0.90)  KL=3.7758  running mean=3.2753
+  trial 141  fold 7 (0.90+0.93)  KL=5.3879  running mean=3.5394
+trial 142: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=9.21e-03  backmap_k=4
+  trial 142  fold 0 (0.50+0.70)  KL=6.3613  running mean=6.3613
+  trial 142  fold 1 (0.70+0.75)  KL=4.7767  running mean=5.5690
+  trial 142  fold 2 (0.75+0.80)  KL=1.4277  running mean=4.1885
+  trial 142  fold 3 (0.80+0.82)  KL=2.0435  running mean=3.6523
+  trial 142  fold 4 (0.82+0.85)  KL=1.8816  running mean=3.2981
+  trial 142  fold 5 (0.85+0.88)  KL=2.5487  running mean=3.1732
+  trial 142  fold 6 (0.88+0.90)  KL=3.7092  running mean=3.2498
+  trial 142  fold 7 (0.90+0.93)  KL=5.3368  running mean=3.5107
+trial 143: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=8.70e-03  backmap_k=4
+  trial 143  fold 0 (0.50+0.70)  KL=6.3615  running mean=6.3615
+  trial 143  fold 1 (0.70+0.75)  KL=4.7298  running mean=5.5457
+  trial 143  fold 2 (0.75+0.80)  KL=1.4276  running mean=4.1730
+  trial 143  fold 3 (0.80+0.82)  KL=2.0441  running mean=3.6408
+  trial 143  fold 4 (0.82+0.85)  KL=1.8819  running mean=3.2890
+  trial 143  fold 5 (0.85+0.88)  KL=2.5489  running mean=3.1656
+  trial 143  fold 6 (0.88+0.90)  KL=3.7090  running mean=3.2433
+  trial 143  fold 7 (0.90+0.93)  KL=5.3372  running mean=3.5050
+trial 144: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=8.07e-03  backmap_k=4
+  trial 144  fold 0 (0.50+0.70)  KL=6.3619  running mean=6.3619
+  trial 144  fold 1 (0.70+0.75)  KL=4.7584  running mean=5.5601
+  trial 144  fold 2 (0.75+0.80)  KL=1.4275  running mean=4.1826
+  trial 144  fold 3 (0.80+0.82)  KL=2.0442  running mean=3.6480
+  trial 144  fold 4 (0.82+0.85)  KL=1.8823  running mean=3.2948
+  trial 144  fold 5 (0.85+0.88)  KL=2.5659  running mean=3.1733
+  trial 144  fold 6 (0.88+0.90)  KL=3.7088  running mean=3.2498
+  trial 144  fold 7 (0.90+0.93)  KL=5.3377  running mean=3.5108
+trial 145: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=7.85e-03  backmap_k=4
+  trial 145  fold 0 (0.50+0.70)  KL=6.3620  running mean=6.3620
+  trial 145  fold 1 (0.70+0.75)  KL=4.7584  running mean=5.5602
+  trial 145  fold 2 (0.75+0.80)  KL=1.4275  running mean=4.1827
+  trial 145  fold 3 (0.80+0.82)  KL=2.0442  running mean=3.6480
+  trial 145  fold 4 (0.82+0.85)  KL=1.8824  running mean=3.2949
+  trial 145  fold 5 (0.85+0.88)  KL=2.5659  running mean=3.1734
+  trial 145  fold 6 (0.88+0.90)  KL=3.7087  running mean=3.2499
+  trial 145  fold 7 (0.90+0.93)  KL=5.3379  running mean=3.5109
+trial 146: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=9.33e-03  backmap_k=4
+  trial 146  fold 0 (0.50+0.70)  KL=6.3612  running mean=6.3612
+  trial 146  fold 1 (0.70+0.75)  KL=4.7460  running mean=5.5536
+  trial 146  fold 2 (0.75+0.80)  KL=1.4277  running mean=4.1783
+  trial 146  fold 3 (0.80+0.82)  KL=2.0435  running mean=3.6446
+  trial 146  fold 4 (0.82+0.85)  KL=1.8815  running mean=3.2920
+  trial 146  fold 5 (0.85+0.88)  KL=2.5487  running mean=3.1681
+  trial 146  fold 6 (0.88+0.90)  KL=3.7474  running mean=3.2509
+  trial 146  fold 7 (0.90+0.93)  KL=5.3367  running mean=3.5116
+trial 147: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=6.80e-03  backmap_k=3
+  trial 147  fold 0 (0.50+0.70)  KL=6.3012  running mean=6.3012
+  trial 147  fold 1 (0.70+0.75)  KL=4.9313  running mean=5.6162
+  trial 147  fold 2 (0.75+0.80)  KL=1.6041  running mean=4.2789
+  trial 147: pruned after fold 2
+trial 148: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=1.18e-02  backmap_k=4
+  trial 148  fold 0 (0.50+0.70)  KL=6.3224  running mean=6.3224
+  trial 148  fold 1 (0.70+0.75)  KL=4.8263  running mean=5.5743
+  trial 148  fold 2 (0.75+0.80)  KL=1.4279  running mean=4.1922
+  trial 148  fold 3 (0.80+0.82)  KL=2.0395  running mean=3.6540
+  trial 148  fold 4 (0.82+0.85)  KL=1.8678  running mean=3.2968
+  trial 148  fold 5 (0.85+0.88)  KL=2.5407  running mean=3.1708
+  trial 148  fold 6 (0.88+0.90)  KL=3.7477  running mean=3.2532
+  trial 148  fold 7 (0.90+0.93)  KL=5.3273  running mean=3.5124
+trial 149: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=2.99e-03  backmap_k=4
+  trial 149  fold 0 (0.50+0.70)  KL=6.4626  running mean=6.4626
+  trial 149  fold 1 (0.70+0.75)  KL=4.8425  running mean=5.6526
+  trial 149  fold 2 (0.75+0.80)  KL=1.4085  running mean=4.2379
+  trial 149  fold 3 (0.80+0.82)  KL=2.0132  running mean=3.6817
+  trial 149  fold 4 (0.82+0.85)  KL=1.9136  running mean=3.3281
+  trial 149  fold 5 (0.85+0.88)  KL=2.5572  running mean=3.1996
+  trial 149  fold 6 (0.88+0.90)  KL=3.7468  running mean=3.2778
+  trial 149  fold 7 (0.90+0.93)  KL=5.3848  running mean=3.5411
+trial 150: n_components=3  isomap_k=39  rbf_kernel=quintic  smoothing=1.48e-02  backmap_k=3
+  trial 150  fold 0 (0.50+0.70)  KL=7.3604  running mean=7.3604
+  trial 150  fold 1 (0.70+0.75)  KL=5.1061  running mean=6.2333
+  trial 150  fold 2 (0.75+0.80)  KL=1.6161  running mean=4.6942
+  trial 150: pruned after fold 2
+trial 151: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=8.21e-03  backmap_k=4
+  trial 151  fold 0 (0.50+0.70)  KL=6.3618  running mean=6.3618
+  trial 151  fold 1 (0.70+0.75)  KL=4.7296  running mean=5.5457
+  trial 151  fold 2 (0.75+0.80)  KL=1.4275  running mean=4.1730
+  trial 151  fold 3 (0.80+0.82)  KL=2.0441  running mean=3.6408
+  trial 151  fold 4 (0.82+0.85)  KL=1.8822  running mean=3.2890
+  trial 151  fold 5 (0.85+0.88)  KL=2.5658  running mean=3.1685
+  trial 151  fold 6 (0.88+0.90)  KL=3.7089  running mean=3.2457
+  trial 151  fold 7 (0.90+0.93)  KL=5.3376  running mean=3.5072
+trial 152: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=7.76e-03  backmap_k=4
+  trial 152  fold 0 (0.50+0.70)  KL=6.3621  running mean=6.3621
+  trial 152  fold 1 (0.70+0.75)  KL=4.7585  running mean=5.5603
+  trial 152  fold 2 (0.75+0.80)  KL=1.4274  running mean=4.1827
+  trial 152  fold 3 (0.80+0.82)  KL=2.0442  running mean=3.6480
+  trial 152  fold 4 (0.82+0.85)  KL=1.8825  running mean=3.2949
+  trial 152  fold 5 (0.85+0.88)  KL=2.5657  running mean=3.1734
+  trial 152  fold 6 (0.88+0.90)  KL=3.7087  running mean=3.2499
+  trial 152  fold 7 (0.90+0.93)  KL=5.3379  running mean=3.5109
+trial 153: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=5.39e-03  backmap_k=4
+  trial 153  fold 0 (0.50+0.70)  KL=6.2388  running mean=6.2388
+  trial 153  fold 1 (0.70+0.75)  KL=4.7522  running mean=5.4955
+  trial 153  fold 2 (0.75+0.80)  KL=1.3890  running mean=4.1267
+  trial 153  fold 3 (0.80+0.82)  KL=2.1703  running mean=3.6376
+  trial 153  fold 4 (0.82+0.85)  KL=1.9089  running mean=3.2918
+  trial 153  fold 5 (0.85+0.88)  KL=2.5599  running mean=3.1699
+  trial 153  fold 6 (0.88+0.90)  KL=3.7870  running mean=3.2580
+  trial 153  fold 7 (0.90+0.93)  KL=5.3196  running mean=3.5157
+trial 154: n_components=2  isomap_k=40  rbf_kernel=cubic  smoothing=1.04e-02  backmap_k=4
+  trial 154  fold 0 (0.50+0.70)  KL=6.4577  running mean=6.4577
+  trial 154  fold 1 (0.70+0.75)  KL=4.6862  running mean=5.5720
+  trial 154  fold 2 (0.75+0.80)  KL=1.4936  running mean=4.2125
+  trial 154  fold 3 (0.80+0.82)  KL=1.9303  running mean=3.6419
+  trial 154  fold 4 (0.82+0.85)  KL=1.8422  running mean=3.2820
+  trial 154  fold 5 (0.85+0.88)  KL=2.5176  running mean=3.1546
+  trial 154  fold 6 (0.88+0.90)  KL=4.0520  running mean=3.2828
+  trial 154  fold 7 (0.90+0.93)  KL=5.2008  running mean=3.5225
+trial 155: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=4.29e-03  backmap_k=4
+  trial 155  fold 0 (0.50+0.70)  KL=6.2533  running mean=6.2533
+  trial 155  fold 1 (0.70+0.75)  KL=4.7464  running mean=5.4999
+  trial 155  fold 2 (0.75+0.80)  KL=1.3878  running mean=4.1292
+  trial 155  fold 3 (0.80+0.82)  KL=2.1625  running mean=3.6375
+  trial 155  fold 4 (0.82+0.85)  KL=1.9102  running mean=3.2920
+  trial 155  fold 5 (0.85+0.88)  KL=2.5600  running mean=3.1700
+  trial 155  fold 6 (0.88+0.90)  KL=3.7794  running mean=3.2571
+  trial 155  fold 7 (0.90+0.93)  KL=5.3223  running mean=3.5152
+trial 156: n_components=3  isomap_k=39  rbf_kernel=cubic  smoothing=1.41e-02  backmap_k=4
+  trial 156  fold 0 (0.50+0.70)  KL=6.3174  running mean=6.3174
+  trial 156  fold 1 (0.70+0.75)  KL=4.8161  running mean=5.5668
+  trial 156  fold 2 (0.75+0.80)  KL=1.4161  running mean=4.1832
+  trial 156  fold 3 (0.80+0.82)  KL=2.0468  running mean=3.6491
+  trial 156  fold 4 (0.82+0.85)  KL=1.8381  running mean=3.2869
+  trial 156  fold 5 (0.85+0.88)  KL=2.5452  running mean=3.1633
+  trial 156  fold 6 (0.88+0.90)  KL=3.7356  running mean=3.2451
+  trial 156  fold 7 (0.90+0.93)  KL=5.3260  running mean=3.5052
+trial 157: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=1.44e-02  backmap_k=4
+  trial 157  fold 0 (0.50+0.70)  KL=6.3425  running mean=6.3425
+  trial 157  fold 1 (0.70+0.75)  KL=4.7457  running mean=5.5441
+  trial 157  fold 2 (0.75+0.80)  KL=1.4388  running mean=4.1756
+  trial 157  fold 3 (0.80+0.82)  KL=2.0149  running mean=3.6355
+  trial 157  fold 4 (0.82+0.85)  KL=1.7765  running mean=3.2637
+  trial 157  fold 5 (0.85+0.88)  KL=2.5349  running mean=3.1422
+  trial 157  fold 6 (0.88+0.90)  KL=3.7310  running mean=3.2263
+  trial 157  fold 7 (0.90+0.93)  KL=5.3364  running mean=3.4901
+trial 158: n_components=3  isomap_k=40  rbf_kernel=cubic  smoothing=1.38e-02  backmap_k=3
+  trial 158  fold 0 (0.50+0.70)  KL=6.2300  running mean=6.2300
+  trial 158  fold 1 (0.70+0.75)  KL=4.8134  running mean=5.5217
+  trial 158  fold 2 (0.75+0.80)  KL=1.6220  running mean=4.2218
+  trial 158  fold 3 (0.80+0.82)  KL=2.2491  running mean=3.7286
+  trial 158: pruned after fold 3
+trial 159: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.48e-02  backmap_k=4
+  trial 159  fold 0 (0.50+0.70)  KL=6.1649  running mean=6.1649
+  trial 159  fold 1 (0.70+0.75)  KL=4.7359  running mean=5.4504
+  trial 159  fold 2 (0.75+0.80)  KL=1.3815  running mean=4.0941
+  trial 159  fold 3 (0.80+0.82)  KL=2.1435  running mean=3.6065
+  trial 159  fold 4 (0.82+0.85)  KL=1.9165  running mean=3.2685
+  trial 159  fold 5 (0.85+0.88)  KL=2.5545  running mean=3.1495
+  trial 159  fold 6 (0.88+0.90)  KL=3.7303  running mean=3.2324
+  trial 159  fold 7 (0.90+0.93)  KL=5.3024  running mean=3.4912
+trial 160: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.37e-02  backmap_k=4
+  trial 160  fold 0 (0.50+0.70)  KL=6.1886  running mean=6.1886
+  trial 160  fold 1 (0.70+0.75)  KL=4.7354  running mean=5.4620
+  trial 160  fold 2 (0.75+0.80)  KL=1.3806  running mean=4.1015
+  trial 160  fold 3 (0.80+0.82)  KL=2.1383  running mean=3.6107
+  trial 160  fold 4 (0.82+0.85)  KL=1.9168  running mean=3.2720
+  trial 160  fold 5 (0.85+0.88)  KL=2.5543  running mean=3.1523
+  trial 160  fold 6 (0.88+0.90)  KL=3.7484  running mean=3.2375
+  trial 160  fold 7 (0.90+0.93)  KL=5.3030  running mean=3.4957
+trial 161: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.57e-02  backmap_k=4
+  trial 161  fold 0 (0.50+0.70)  KL=6.1648  running mean=6.1648
+  trial 161  fold 1 (0.70+0.75)  KL=4.7363  running mean=5.4505
+  trial 161  fold 2 (0.75+0.80)  KL=1.3820  running mean=4.0943
+  trial 161  fold 3 (0.80+0.82)  KL=2.1437  running mean=3.6067
+  trial 161  fold 4 (0.82+0.85)  KL=1.9046  running mean=3.2663
+  trial 161  fold 5 (0.85+0.88)  KL=2.5546  running mean=3.1477
+  trial 161  fold 6 (0.88+0.90)  KL=3.7304  running mean=3.2309
+  trial 161  fold 7 (0.90+0.93)  KL=5.3034  running mean=3.4900
+trial 162: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.51e-02  backmap_k=4
+  trial 162  fold 0 (0.50+0.70)  KL=6.1649  running mean=6.1649
+  trial 162  fold 1 (0.70+0.75)  KL=4.7360  running mean=5.4504
+  trial 162  fold 2 (0.75+0.80)  KL=1.3817  running mean=4.0942
+  trial 162  fold 3 (0.80+0.82)  KL=2.1436  running mean=3.6066
+  trial 162  fold 4 (0.82+0.85)  KL=1.9164  running mean=3.2685
+  trial 162  fold 5 (0.85+0.88)  KL=2.5545  running mean=3.1495
+  trial 162  fold 6 (0.88+0.90)  KL=3.7303  running mean=3.2325
+  trial 162  fold 7 (0.90+0.93)  KL=5.3023  running mean=3.4912
+trial 163: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.53e-02  backmap_k=4
+  trial 163  fold 0 (0.50+0.70)  KL=6.1648  running mean=6.1648
+  trial 163  fold 1 (0.70+0.75)  KL=4.7361  running mean=5.4505
+  trial 163  fold 2 (0.75+0.80)  KL=1.3818  running mean=4.0943
+  trial 163  fold 3 (0.80+0.82)  KL=2.1436  running mean=3.6066
+  trial 163  fold 4 (0.82+0.85)  KL=1.9163  running mean=3.2686
+  trial 163  fold 5 (0.85+0.88)  KL=2.5546  running mean=3.1496
+  trial 163  fold 6 (0.88+0.90)  KL=3.7304  running mean=3.2325
+  trial 163  fold 7 (0.90+0.93)  KL=5.3021  running mean=3.4912
+trial 164: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.79e-02  backmap_k=4
+  trial 164  fold 0 (0.50+0.70)  KL=6.1521  running mean=6.1521
+  trial 164  fold 1 (0.70+0.75)  KL=4.7379  running mean=5.4450
+  trial 164  fold 2 (0.75+0.80)  KL=1.3697  running mean=4.0866
+  trial 164  fold 3 (0.80+0.82)  KL=2.1477  running mean=3.6019
+  trial 164  fold 4 (0.82+0.85)  KL=1.8973  running mean=3.2609
+  trial 164  fold 5 (0.85+0.88)  KL=2.5745  running mean=3.1465
+  trial 164  fold 6 (0.88+0.90)  KL=3.7308  running mean=3.2300
+  trial 164  fold 7 (0.90+0.93)  KL=5.3003  running mean=3.4888
+trial 165: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.61e-02  backmap_k=4
+  trial 165  fold 0 (0.50+0.70)  KL=6.1556  running mean=6.1556
+  trial 165  fold 1 (0.70+0.75)  KL=4.7364  running mean=5.4460
+  trial 165  fold 2 (0.75+0.80)  KL=1.3820  running mean=4.0914
+  trial 165  fold 3 (0.80+0.82)  KL=2.1438  running mean=3.6045
+  trial 165  fold 4 (0.82+0.85)  KL=1.8976  running mean=3.2631
+  trial 165  fold 5 (0.85+0.88)  KL=2.5547  running mean=3.1450
+  trial 165  fold 6 (0.88+0.90)  KL=3.7305  running mean=3.2287
+  trial 165  fold 7 (0.90+0.93)  KL=5.3032  running mean=3.4880
+trial 166: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.70e-02  backmap_k=4
+  trial 166  fold 0 (0.50+0.70)  KL=6.1522  running mean=6.1522
+  trial 166  fold 1 (0.70+0.75)  KL=4.7368  running mean=5.4445
+  trial 166  fold 2 (0.75+0.80)  KL=1.3815  running mean=4.0902
+  trial 166  fold 3 (0.80+0.82)  KL=2.1475  running mean=3.6045
+  trial 166  fold 4 (0.82+0.85)  KL=1.8888  running mean=3.2614
+  trial 166  fold 5 (0.85+0.88)  KL=2.5744  running mean=3.1469
+  trial 166  fold 6 (0.88+0.90)  KL=3.7306  running mean=3.2303
+  trial 166  fold 7 (0.90+0.93)  KL=5.3008  running mean=3.4891
+trial 167: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.74e-02  backmap_k=4
+  trial 167  fold 0 (0.50+0.70)  KL=6.1522  running mean=6.1522
+  trial 167  fold 1 (0.70+0.75)  KL=4.7376  running mean=5.4449
+  trial 167  fold 2 (0.75+0.80)  KL=1.3698  running mean=4.0865
+  trial 167  fold 3 (0.80+0.82)  KL=2.1476  running mean=3.6018
+  trial 167  fold 4 (0.82+0.85)  KL=1.8888  running mean=3.2592
+  trial 167  fold 5 (0.85+0.88)  KL=2.5745  running mean=3.1451
+  trial 167  fold 6 (0.88+0.90)  KL=3.7307  running mean=3.2287
+  trial 167  fold 7 (0.90+0.93)  KL=5.3006  running mean=3.4877
+trial 168: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.90e-02  backmap_k=4
+  trial 168  fold 0 (0.50+0.70)  KL=6.1534  running mean=6.1534
+  trial 168  fold 1 (0.70+0.75)  KL=4.7384  running mean=5.4459
+  trial 168  fold 2 (0.75+0.80)  KL=1.3695  running mean=4.0871
+  trial 168  fold 3 (0.80+0.82)  KL=2.1480  running mean=3.6023
+  trial 168  fold 4 (0.82+0.85)  KL=1.9249  running mean=3.2668
+  trial 168  fold 5 (0.85+0.88)  KL=2.5747  running mean=3.1515
+  trial 168  fold 6 (0.88+0.90)  KL=3.7234  running mean=3.2332
+  trial 168  fold 7 (0.90+0.93)  KL=5.2999  running mean=3.4915
+trial 169: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.67e-02  backmap_k=3
+  trial 169  fold 0 (0.50+0.70)  KL=6.0244  running mean=6.0244
+  trial 169  fold 1 (0.70+0.75)  KL=4.5761  running mean=5.3002
+  trial 169  fold 2 (0.75+0.80)  KL=1.6390  running mean=4.0798
+  trial 169  fold 3 (0.80+0.82)  KL=2.4356  running mean=3.6688
+  trial 169  fold 4 (0.82+0.85)  KL=2.1726  running mean=3.3695
+  trial 169: pruned after fold 4
+trial 170: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=2.59e-02  backmap_k=4
+  trial 170  fold 0 (0.50+0.70)  KL=6.1582  running mean=6.1582
+  trial 170  fold 1 (0.70+0.75)  KL=4.7340  running mean=5.4461
+  trial 170  fold 2 (0.75+0.80)  KL=1.3794  running mean=4.0905
+  trial 170  fold 3 (0.80+0.82)  KL=2.1410  running mean=3.6031
+  trial 170  fold 4 (0.82+0.85)  KL=1.9391  running mean=3.2703
+  trial 170  fold 5 (0.85+0.88)  KL=2.5803  running mean=3.1553
+  trial 170  fold 6 (0.88+0.90)  KL=3.7295  running mean=3.2374
+  trial 170  fold 7 (0.90+0.93)  KL=5.2970  running mean=3.4948
+trial 171: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=2.37e-02  backmap_k=4
+  trial 171  fold 0 (0.50+0.70)  KL=6.1579  running mean=6.1579
+  trial 171  fold 1 (0.70+0.75)  KL=4.7340  running mean=5.4460
+  trial 171  fold 2 (0.75+0.80)  KL=1.3795  running mean=4.0905
+  trial 171  fold 3 (0.80+0.82)  KL=2.1426  running mean=3.6035
+  trial 171  fold 4 (0.82+0.85)  KL=1.9172  running mean=3.2663
+  trial 171  fold 5 (0.85+0.88)  KL=2.5864  running mean=3.1530
+  trial 171  fold 6 (0.88+0.90)  KL=3.7241  running mean=3.2346
+  trial 171  fold 7 (0.90+0.93)  KL=5.2977  running mean=3.4924
+trial 172: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=2.66e-02  backmap_k=4
+  trial 172  fold 0 (0.50+0.70)  KL=6.1583  running mean=6.1583
+  trial 172  fold 1 (0.70+0.75)  KL=4.7340  running mean=5.4461
+  trial 172  fold 2 (0.75+0.80)  KL=1.3940  running mean=4.0954
+  trial 172  fold 3 (0.80+0.82)  KL=2.1411  running mean=3.6068
+  trial 172  fold 4 (0.82+0.85)  KL=1.9393  running mean=3.2733
+  trial 172  fold 5 (0.85+0.88)  KL=2.5805  running mean=3.1579
+  trial 172  fold 6 (0.88+0.90)  KL=3.7296  running mean=3.2395
+  trial 172  fold 7 (0.90+0.93)  KL=5.2968  running mean=3.4967
+trial 173: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=2.66e-02  backmap_k=4
+  trial 173  fold 0 (0.50+0.70)  KL=6.1583  running mean=6.1583
+  trial 173  fold 1 (0.70+0.75)  KL=4.7340  running mean=5.4461
+  trial 173  fold 2 (0.75+0.80)  KL=1.3940  running mean=4.0954
+  trial 173  fold 3 (0.80+0.82)  KL=2.1411  running mean=3.6068
+  trial 173  fold 4 (0.82+0.85)  KL=1.9393  running mean=3.2733
+  trial 173  fold 5 (0.85+0.88)  KL=2.5805  running mean=3.1579
+  trial 173  fold 6 (0.88+0.90)  KL=3.7296  running mean=3.2395
+  trial 173  fold 7 (0.90+0.93)  KL=5.2968  running mean=3.4967
+trial 174: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=2.57e-02  backmap_k=4
+  trial 174  fold 0 (0.50+0.70)  KL=6.1581  running mean=6.1581
+  trial 174  fold 1 (0.70+0.75)  KL=4.7340  running mean=5.4461
+  trial 174  fold 2 (0.75+0.80)  KL=1.3794  running mean=4.0905
+  trial 174  fold 3 (0.80+0.82)  KL=2.1410  running mean=3.6031
+  trial 174  fold 4 (0.82+0.85)  KL=1.9390  running mean=3.2703
+  trial 174  fold 5 (0.85+0.88)  KL=2.5803  running mean=3.1553
+  trial 174  fold 6 (0.88+0.90)  KL=3.7295  running mean=3.2373
+  trial 174  fold 7 (0.90+0.93)  KL=5.2970  running mean=3.4948
+trial 175: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.84e-02  backmap_k=4
+  trial 175  fold 0 (0.50+0.70)  KL=6.1521  running mean=6.1521
+  trial 175  fold 1 (0.70+0.75)  KL=4.7381  running mean=5.4451
+  trial 175  fold 2 (0.75+0.80)  KL=1.3696  running mean=4.0866
+  trial 175  fold 3 (0.80+0.82)  KL=2.1478  running mean=3.6019
+  trial 175  fold 4 (0.82+0.85)  KL=1.9027  running mean=3.2621
+  trial 175  fold 5 (0.85+0.88)  KL=2.5746  running mean=3.1475
+  trial 175  fold 6 (0.88+0.90)  KL=3.7309  running mean=3.2308
+  trial 175  fold 7 (0.90+0.93)  KL=5.3001  running mean=3.4895
+trial 176: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=1.66e-02  backmap_k=4
+  trial 176  fold 0 (0.50+0.70)  KL=6.1013  running mean=6.1013
+  trial 176  fold 1 (0.70+0.75)  KL=4.7107  running mean=5.4060
+  trial 176  fold 2 (0.75+0.80)  KL=1.3555  running mean=4.0558
+  trial 176  fold 3 (0.80+0.82)  KL=2.0958  running mean=3.5658
+  trial 176  fold 4 (0.82+0.85)  KL=1.9362  running mean=3.2399
+  trial 176  fold 5 (0.85+0.88)  KL=2.5551  running mean=3.1258
+  trial 176  fold 6 (0.88+0.90)  KL=3.7581  running mean=3.2161
+  trial 176  fold 7 (0.90+0.93)  KL=5.3388  running mean=3.4814
+trial 177: n_components=3  isomap_k=37  rbf_kernel=thin_plate_spline  smoothing=4.36e-02  backmap_k=4
+  trial 177  fold 0 (0.50+0.70)  KL=6.2224  running mean=6.2224
+  trial 177  fold 1 (0.70+0.75)  KL=4.7099  running mean=5.4661
+  trial 177  fold 2 (0.75+0.80)  KL=1.3619  running mean=4.0981
+  trial 177  fold 3 (0.80+0.82)  KL=2.0725  running mean=3.5917
+  trial 177  fold 4 (0.82+0.85)  KL=1.9014  running mean=3.2536
+  trial 177  fold 5 (0.85+0.88)  KL=2.5581  running mean=3.1377
+  trial 177  fold 6 (0.88+0.90)  KL=4.0206  running mean=3.2638
+  trial 177  fold 7 (0.90+0.93)  KL=5.2692  running mean=3.5145
+trial 178: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=1.78e-02  backmap_k=3
+  trial 178  fold 0 (0.50+0.70)  KL=6.0260  running mean=6.0260
+  trial 178  fold 1 (0.70+0.75)  KL=4.6790  running mean=5.3525
+  trial 178  fold 2 (0.75+0.80)  KL=1.6061  running mean=4.1037
+  trial 178  fold 3 (0.80+0.82)  KL=2.4122  running mean=3.6808
+  trial 178  fold 4 (0.82+0.85)  KL=2.2886  running mean=3.4024
+  trial 178: pruned after fold 4
+trial 179: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=1.91e-02  backmap_k=4
+  trial 179  fold 0 (0.50+0.70)  KL=6.1361  running mean=6.1361
+  trial 179  fold 1 (0.70+0.75)  KL=4.7861  running mean=5.4611
+  trial 179  fold 2 (0.75+0.80)  KL=1.3533  running mean=4.0918
+  trial 179  fold 3 (0.80+0.82)  KL=2.0990  running mean=3.5936
+  trial 179  fold 4 (0.82+0.85)  KL=1.9575  running mean=3.2664
+  trial 179  fold 5 (0.85+0.88)  KL=2.5554  running mean=3.1479
+  trial 179  fold 6 (0.88+0.90)  KL=3.7607  running mean=3.2355
+  trial 179  fold 7 (0.90+0.93)  KL=5.3374  running mean=3.4982
+trial 180: n_components=2  isomap_k=38  rbf_kernel=cubic  smoothing=3.80e-02  backmap_k=4
+  trial 180  fold 0 (0.50+0.70)  KL=6.2754  running mean=6.2754
+  trial 180  fold 1 (0.70+0.75)  KL=4.7848  running mean=5.5301
+  trial 180  fold 2 (0.75+0.80)  KL=1.4745  running mean=4.1782
+  trial 180  fold 3 (0.80+0.82)  KL=2.1309  running mean=3.6664
+  trial 180  fold 4 (0.82+0.85)  KL=1.9449  running mean=3.3221
+  trial 180  fold 5 (0.85+0.88)  KL=2.5424  running mean=3.1921
+  trial 180  fold 6 (0.88+0.90)  KL=3.9958  running mean=3.3070
+  trial 180  fold 7 (0.90+0.93)  KL=5.2240  running mean=3.5466
+trial 181: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=2.28e-02  backmap_k=4
+  trial 181  fold 0 (0.50+0.70)  KL=6.1579  running mean=6.1579
+  trial 181  fold 1 (0.70+0.75)  KL=4.6798  running mean=5.4188
+  trial 181  fold 2 (0.75+0.80)  KL=1.3796  running mean=4.0724
+  trial 181  fold 3 (0.80+0.82)  KL=2.1488  running mean=3.5915
+  trial 181  fold 4 (0.82+0.85)  KL=1.9169  running mean=3.2566
+  trial 181  fold 5 (0.85+0.88)  KL=2.5863  running mean=3.1449
+  trial 181  fold 6 (0.88+0.90)  KL=3.7239  running mean=3.2276
+  trial 181  fold 7 (0.90+0.93)  KL=5.2979  running mean=3.4864
+trial 182: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=2.27e-02  backmap_k=4
+  trial 182  fold 0 (0.50+0.70)  KL=6.1512  running mean=6.1512
+  trial 182  fold 1 (0.70+0.75)  KL=4.8268  running mean=5.4890
+  trial 182  fold 2 (0.75+0.80)  KL=1.3543  running mean=4.1108
+  trial 182  fold 3 (0.80+0.82)  KL=2.1063  running mean=3.6096
+  trial 182  fold 4 (0.82+0.85)  KL=1.9629  running mean=3.2803
+  trial 182  fold 5 (0.85+0.88)  KL=2.5649  running mean=3.1611
+  trial 182  fold 6 (0.88+0.90)  KL=3.7518  running mean=3.2455
+  trial 182  fold 7 (0.90+0.93)  KL=5.3263  running mean=3.5056
+trial 183: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.71e-02  backmap_k=4
+  trial 183  fold 0 (0.50+0.70)  KL=6.1522  running mean=6.1522
+  trial 183  fold 1 (0.70+0.75)  KL=4.7369  running mean=5.4445
+  trial 183  fold 2 (0.75+0.80)  KL=1.3815  running mean=4.0902
+  trial 183  fold 3 (0.80+0.82)  KL=2.1475  running mean=3.6045
+  trial 183  fold 4 (0.82+0.85)  KL=1.8888  running mean=3.2614
+  trial 183  fold 5 (0.85+0.88)  KL=2.5744  running mean=3.1469
+  trial 183  fold 6 (0.88+0.90)  KL=3.7307  running mean=3.2303
+  trial 183  fold 7 (0.90+0.93)  KL=5.3007  running mean=3.4891
+trial 184: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.74e-02  backmap_k=4
+  trial 184  fold 0 (0.50+0.70)  KL=6.1522  running mean=6.1522
+  trial 184  fold 1 (0.70+0.75)  KL=4.7376  running mean=5.4449
+  trial 184  fold 2 (0.75+0.80)  KL=1.3698  running mean=4.0865
+  trial 184  fold 3 (0.80+0.82)  KL=2.1476  running mean=3.6018
+  trial 184  fold 4 (0.82+0.85)  KL=1.8888  running mean=3.2592
+  trial 184  fold 5 (0.85+0.88)  KL=2.5745  running mean=3.1451
+  trial 184  fold 6 (0.88+0.90)  KL=3.7307  running mean=3.2287
+  trial 184  fold 7 (0.90+0.93)  KL=5.3006  running mean=3.4877
+trial 185: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=1.75e-02  backmap_k=4
+  trial 185  fold 0 (0.50+0.70)  KL=6.1174  running mean=6.1174
+  trial 185  fold 1 (0.70+0.75)  KL=4.7116  running mean=5.4145
+  trial 185  fold 2 (0.75+0.80)  KL=1.3559  running mean=4.0616
+  trial 185  fold 3 (0.80+0.82)  KL=2.0985  running mean=3.5708
+  trial 185  fold 4 (0.82+0.85)  KL=1.9576  running mean=3.2482
+  trial 185  fold 5 (0.85+0.88)  KL=2.5553  running mean=3.1327
+  trial 185  fold 6 (0.88+0.90)  KL=3.7582  running mean=3.2221
+  trial 185  fold 7 (0.90+0.93)  KL=5.3382  running mean=3.4866
+trial 186: n_components=3  isomap_k=37  rbf_kernel=quintic  smoothing=1.55e-02  backmap_k=4
+  trial 186  fold 0 (0.50+0.70)  KL=8.9492  running mean=8.9492
+  trial 186  fold 1 (0.70+0.75)  KL=4.8579  running mean=6.9035
+  trial 186  fold 2 (0.75+0.80)  KL=1.3675  running mean=5.0582
+  trial 186: pruned after fold 2
+trial 187: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=3.94e-02  backmap_k=4
+  trial 187  fold 0 (0.50+0.70)  KL=6.1963  running mean=6.1963
+  trial 187  fold 1 (0.70+0.75)  KL=4.8308  running mean=5.5136
+  trial 187  fold 2 (0.75+0.80)  KL=1.3745  running mean=4.1339
+  trial 187  fold 3 (0.80+0.82)  KL=2.0353  running mean=3.6092
+  trial 187  fold 4 (0.82+0.85)  KL=1.9618  running mean=3.2797
+  trial 187  fold 5 (0.85+0.88)  KL=2.5625  running mean=3.1602
+  trial 187  fold 6 (0.88+0.90)  KL=3.7902  running mean=3.2502
+  trial 187  fold 7 (0.90+0.93)  KL=5.3314  running mean=3.5104
+trial 188: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=1.77e-02  backmap_k=4
+  trial 188  fold 0 (0.50+0.70)  KL=6.1174  running mean=6.1174
+  trial 188  fold 1 (0.70+0.75)  KL=4.7622  running mean=5.4398
+  trial 188  fold 2 (0.75+0.80)  KL=1.3528  running mean=4.0775
+  trial 188  fold 3 (0.80+0.82)  KL=2.0985  running mean=3.5828
+  trial 188  fold 4 (0.82+0.85)  KL=1.9576  running mean=3.2577
+  trial 188  fold 5 (0.85+0.88)  KL=2.5553  running mean=3.1406
+  trial 188  fold 6 (0.88+0.90)  KL=3.7582  running mean=3.2289
+  trial 188  fold 7 (0.90+0.93)  KL=5.3381  running mean=3.4925
+trial 189: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.71e-02  backmap_k=3
+  trial 189  fold 0 (0.50+0.70)  KL=6.0244  running mean=6.0244
+  trial 189  fold 1 (0.70+0.75)  KL=4.5763  running mean=5.3003
+  trial 189  fold 2 (0.75+0.80)  KL=1.6390  running mean=4.0799
+  trial 189  fold 3 (0.80+0.82)  KL=2.4357  running mean=3.6688
+  trial 189  fold 4 (0.82+0.85)  KL=2.1744  running mean=3.3700
+  trial 189: pruned after fold 4
+trial 190: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=3.40e-02  backmap_k=4
+  trial 190  fold 0 (0.50+0.70)  KL=6.1621  running mean=6.1621
+  trial 190  fold 1 (0.70+0.75)  KL=4.8300  running mean=5.4960
+  trial 190  fold 2 (0.75+0.80)  KL=1.3649  running mean=4.1190
+  trial 190  fold 3 (0.80+0.82)  KL=2.0532  running mean=3.6025
+  trial 190  fold 4 (0.82+0.85)  KL=1.9339  running mean=3.2688
+  trial 190  fold 5 (0.85+0.88)  KL=2.5585  running mean=3.1504
+  trial 190  fold 6 (0.88+0.90)  KL=3.7670  running mean=3.2385
+  trial 190  fold 7 (0.90+0.93)  KL=5.3328  running mean=3.5003
+trial 191: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=2.22e-02  backmap_k=4
+  trial 191  fold 0 (0.50+0.70)  KL=6.1578  running mean=6.1578
+  trial 191  fold 1 (0.70+0.75)  KL=4.7390  running mean=5.4484
+  trial 191  fold 2 (0.75+0.80)  KL=1.3796  running mean=4.0921
+  trial 191  fold 3 (0.80+0.82)  KL=2.1487  running mean=3.6063
+  trial 191  fold 4 (0.82+0.85)  KL=1.9166  running mean=3.2683
+  trial 191  fold 5 (0.85+0.88)  KL=2.5759  running mean=3.1529
+  trial 191  fold 6 (0.88+0.90)  KL=3.7238  running mean=3.2345
+  trial 191  fold 7 (0.90+0.93)  KL=5.2982  running mean=3.4924
+trial 192: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=1.47e-02  backmap_k=4
+  trial 192  fold 0 (0.50+0.70)  KL=6.1649  running mean=6.1649
+  trial 192  fold 1 (0.70+0.75)  KL=4.7358  running mean=5.4504
+  trial 192  fold 2 (0.75+0.80)  KL=1.3814  running mean=4.0941
+  trial 192  fold 3 (0.80+0.82)  KL=2.1403  running mean=3.6056
+  trial 192  fold 4 (0.82+0.85)  KL=1.9165  running mean=3.2678
+  trial 192  fold 5 (0.85+0.88)  KL=2.5545  running mean=3.1489
+  trial 192  fold 6 (0.88+0.90)  KL=3.7303  running mean=3.2320
+  trial 192  fold 7 (0.90+0.93)  KL=5.3025  running mean=3.4908
+trial 193: n_components=3  isomap_k=21  rbf_kernel=cubic  smoothing=1.51e-02  backmap_k=4
+  trial 193  fold 0 (0.50+0.70)  KL=5.6193  running mean=5.6193
+  trial 193  fold 1 (0.70+0.75)  KL=5.2650  running mean=5.4421
+  trial 193  fold 2 (0.75+0.80)  KL=1.5123  running mean=4.1322
+  trial 193  fold 3 (0.80+0.82)  KL=2.1643  running mean=3.6402
+  trial 193  fold 4 (0.82+0.85)  KL=2.3644  running mean=3.3850
+  trial 193: pruned after fold 4
+trial 194: n_components=3  isomap_k=38  rbf_kernel=cubic  smoothing=5.61e-02  backmap_k=4
+  trial 194  fold 0 (0.50+0.70)  KL=6.2116  running mean=6.2116
+  trial 194  fold 1 (0.70+0.75)  KL=4.7975  running mean=5.5046
+  trial 194  fold 2 (0.75+0.80)  KL=1.4187  running mean=4.1426
+  trial 194  fold 3 (0.80+0.82)  KL=2.0774  running mean=3.6263
+  trial 194  fold 4 (0.82+0.85)  KL=1.9707  running mean=3.2952
+  trial 194  fold 5 (0.85+0.88)  KL=2.5902  running mean=3.1777
+  trial 194  fold 6 (0.88+0.90)  KL=3.8037  running mean=3.2671
+  trial 194  fold 7 (0.90+0.93)  KL=5.2982  running mean=3.5210
+trial 195: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=1.41e-02  backmap_k=4
+  trial 195  fold 0 (0.50+0.70)  KL=6.0806  running mean=6.0806
+  trial 195  fold 1 (0.70+0.75)  KL=4.7079  running mean=5.3942
+  trial 195  fold 2 (0.75+0.80)  KL=1.3547  running mean=4.0477
+  trial 195  fold 3 (0.80+0.82)  KL=2.1061  running mean=3.5623
+  trial 195  fold 4 (0.82+0.85)  KL=1.9837  running mean=3.2466
+  trial 195  fold 5 (0.85+0.88)  KL=2.5611  running mean=3.1323
+  trial 195  fold 6 (0.88+0.90)  KL=3.7549  running mean=3.2213
+  trial 195  fold 7 (0.90+0.93)  KL=5.3404  running mean=3.4862
+trial 196: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=1.35e-02  backmap_k=4
+  trial 196  fold 0 (0.50+0.70)  KL=6.0779  running mean=6.0779
+  trial 196  fold 1 (0.70+0.75)  KL=4.7221  running mean=5.4000
+  trial 196  fold 2 (0.75+0.80)  KL=1.3555  running mean=4.0518
+  trial 196  fold 3 (0.80+0.82)  KL=2.0995  running mean=3.5637
+  trial 196  fold 4 (0.82+0.85)  KL=1.9927  running mean=3.2495
+  trial 196  fold 5 (0.85+0.88)  KL=2.5610  running mean=3.1348
+  trial 196  fold 6 (0.88+0.90)  KL=3.7548  running mean=3.2234
+  trial 196  fold 7 (0.90+0.93)  KL=5.3409  running mean=3.4881
+trial 197: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=1.19e-02  backmap_k=4
+  trial 197  fold 0 (0.50+0.70)  KL=6.0683  running mean=6.0683
+  trial 197  fold 1 (0.70+0.75)  KL=4.7209  running mean=5.3946
+  trial 197  fold 2 (0.75+0.80)  KL=1.3682  running mean=4.0525
+  trial 197  fold 3 (0.80+0.82)  KL=2.0775  running mean=3.5587
+  trial 197  fold 4 (0.82+0.85)  KL=1.9537  running mean=3.2377
+  trial 197  fold 5 (0.85+0.88)  KL=2.5609  running mean=3.1249
+  trial 197  fold 6 (0.88+0.90)  KL=3.7690  running mean=3.2169
+  trial 197  fold 7 (0.90+0.93)  KL=5.3515  running mean=3.4838
+trial 198: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=1.13e-02  backmap_k=4
+  trial 198  fold 0 (0.50+0.70)  KL=5.8988  running mean=5.8988
+  trial 198  fold 1 (0.70+0.75)  KL=4.6729  running mean=5.2858
+  trial 198  fold 2 (0.75+0.80)  KL=1.3657  running mean=3.9791
+  trial 198  fold 3 (0.80+0.82)  KL=2.1677  running mean=3.5263
+  trial 198  fold 4 (0.82+0.85)  KL=1.9695  running mean=3.2149
+  trial 198  fold 5 (0.85+0.88)  KL=2.5218  running mean=3.0994
+  trial 198  fold 6 (0.88+0.90)  KL=3.7273  running mean=3.1891
+  trial 198  fold 7 (0.90+0.93)  KL=5.3458  running mean=3.4587
+trial 199: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=1.19e-02  backmap_k=4
+  trial 199  fold 0 (0.50+0.70)  KL=5.8986  running mean=5.8986
+  trial 199  fold 1 (0.70+0.75)  KL=4.6734  running mean=5.2860
+  trial 199  fold 2 (0.75+0.80)  KL=1.3659  running mean=3.9793
+  trial 199  fold 3 (0.80+0.82)  KL=2.1678  running mean=3.5264
+  trial 199  fold 4 (0.82+0.85)  KL=1.9692  running mean=3.2150
+  trial 199  fold 5 (0.85+0.88)  KL=2.5216  running mean=3.0994
+  trial 199  fold 6 (0.88+0.90)  KL=3.7274  running mean=3.1891
+  trial 199  fold 7 (0.90+0.93)  KL=5.3425  running mean=3.4583
+trial 200: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=1.11e-02  backmap_k=3
+  trial 200  fold 0 (0.50+0.70)  KL=5.9023  running mean=5.9023
+  trial 200  fold 1 (0.70+0.75)  KL=4.6718  running mean=5.2870
+  trial 200  fold 2 (0.75+0.80)  KL=1.6216  running mean=4.0652
+  trial 200  fold 3 (0.80+0.82)  KL=2.4345  running mean=3.6575
+  trial 200  fold 4 (0.82+0.85)  KL=2.3495  running mean=3.3959
+  trial 200: pruned after fold 4
+trial 201: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=1.15e-02  backmap_k=4
+  trial 201  fold 0 (0.50+0.70)  KL=5.8987  running mean=5.8987
+  trial 201  fold 1 (0.70+0.75)  KL=4.6730  running mean=5.2859
+  trial 201  fold 2 (0.75+0.80)  KL=1.3658  running mean=3.9792
+  trial 201  fold 3 (0.80+0.82)  KL=2.1677  running mean=3.5263
+  trial 201  fold 4 (0.82+0.85)  KL=1.9694  running mean=3.2149
+  trial 201  fold 5 (0.85+0.88)  KL=2.5218  running mean=3.0994
+  trial 201  fold 6 (0.88+0.90)  KL=3.7274  running mean=3.1891
+  trial 201  fold 7 (0.90+0.93)  KL=5.3457  running mean=3.4587
+trial 202: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=1.06e-02  backmap_k=4
+  trial 202  fold 0 (0.50+0.70)  KL=5.9617  running mean=5.9617
+  trial 202  fold 1 (0.70+0.75)  KL=4.9030  running mean=5.4323
+  trial 202  fold 2 (0.75+0.80)  KL=1.3680  running mean=4.0776
+  trial 202  fold 3 (0.80+0.82)  KL=2.1616  running mean=3.5986
+  trial 202  fold 4 (0.82+0.85)  KL=1.9133  running mean=3.2615
+  trial 202  fold 5 (0.85+0.88)  KL=2.5295  running mean=3.1395
+  trial 202  fold 6 (0.88+0.90)  KL=3.8089  running mean=3.2352
+  trial 202  fold 7 (0.90+0.93)  KL=5.4170  running mean=3.5079
+trial 203: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=2.92e-02  backmap_k=4
+  trial 203  fold 0 (0.50+0.70)  KL=5.9796  running mean=5.9796
+  trial 203  fold 1 (0.70+0.75)  KL=4.7881  running mean=5.3839
+  trial 203  fold 2 (0.75+0.80)  KL=1.3615  running mean=4.0431
+  trial 203  fold 3 (0.80+0.82)  KL=2.1561  running mean=3.5714
+  trial 203  fold 4 (0.82+0.85)  KL=1.9167  running mean=3.2404
+  trial 203  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1166
+  trial 203  fold 6 (0.88+0.90)  KL=3.7271  running mean=3.2038
+  trial 203  fold 7 (0.90+0.93)  KL=5.3472  running mean=3.4718
+trial 204: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=2.79e-02  backmap_k=4
+  trial 204  fold 0 (0.50+0.70)  KL=5.9795  running mean=5.9795
+  trial 204  fold 1 (0.70+0.75)  KL=4.7881  running mean=5.3838
+  trial 204  fold 2 (0.75+0.80)  KL=1.3614  running mean=4.0430
+  trial 204  fold 3 (0.80+0.82)  KL=2.1558  running mean=3.5712
+  trial 204  fold 4 (0.82+0.85)  KL=1.9447  running mean=3.2459
+  trial 204  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1212
+  trial 204  fold 6 (0.88+0.90)  KL=3.7295  running mean=3.2081
+  trial 204  fold 7 (0.90+0.93)  KL=5.3476  running mean=3.4755
+trial 205: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.60e-02  backmap_k=4
+  trial 205  fold 0 (0.50+0.70)  KL=6.0148  running mean=6.0148
+  trial 205  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3946
+  trial 205  fold 2 (0.75+0.80)  KL=1.3759  running mean=4.0550
+  trial 205  fold 3 (0.80+0.82)  KL=2.1617  running mean=3.5817
+  trial 205  fold 4 (0.82+0.85)  KL=1.8964  running mean=3.2446
+  trial 205  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1201
+  trial 205  fold 6 (0.88+0.90)  KL=3.7335  running mean=3.2077
+  trial 205  fold 7 (0.90+0.93)  KL=5.3450  running mean=3.4749
+trial 206: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=2.82e-02  backmap_k=4
+  trial 206  fold 0 (0.50+0.70)  KL=5.9342  running mean=5.9342
+  trial 206  fold 1 (0.70+0.75)  KL=4.9836  running mean=5.4589
+  trial 206  fold 2 (0.75+0.80)  KL=1.3907  running mean=4.1028
+  trial 206  fold 3 (0.80+0.82)  KL=2.1741  running mean=3.6206
+  trial 206  fold 4 (0.82+0.85)  KL=1.8797  running mean=3.2725
+  trial 206  fold 5 (0.85+0.88)  KL=2.5066  running mean=3.1448
+  trial 206  fold 6 (0.88+0.90)  KL=3.7701  running mean=3.2341
+  trial 206  fold 7 (0.90+0.93)  KL=5.4103  running mean=3.5062
+trial 207: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=4.35e-02  backmap_k=4
+  trial 207  fold 0 (0.50+0.70)  KL=6.0057  running mean=6.0057
+  trial 207  fold 1 (0.70+0.75)  KL=4.7742  running mean=5.3899
+  trial 207  fold 2 (0.75+0.80)  KL=1.3859  running mean=4.0553
+  trial 207  fold 3 (0.80+0.82)  KL=2.1709  running mean=3.5842
+  trial 207  fold 4 (0.82+0.85)  KL=1.9170  running mean=3.2507
+  trial 207  fold 5 (0.85+0.88)  KL=2.4978  running mean=3.1252
+  trial 207  fold 6 (0.88+0.90)  KL=3.7266  running mean=3.2112
+  trial 207  fold 7 (0.90+0.93)  KL=5.3532  running mean=3.4789
+trial 208: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=6.77e-02  backmap_k=4
+  trial 208  fold 0 (0.50+0.70)  KL=6.0140  running mean=6.0140
+  trial 208  fold 1 (0.70+0.75)  KL=4.7742  running mean=5.3941
+  trial 208  fold 2 (0.75+0.80)  KL=1.3743  running mean=4.0542
+  trial 208  fold 3 (0.80+0.82)  KL=2.2265  running mean=3.5973
+  trial 208  fold 4 (0.82+0.85)  KL=1.9252  running mean=3.2628
+  trial 208  fold 5 (0.85+0.88)  KL=2.4766  running mean=3.1318
+  trial 208  fold 6 (0.88+0.90)  KL=3.8029  running mean=3.2277
+  trial 208  fold 7 (0.90+0.93)  KL=5.3424  running mean=3.4920
+trial 209: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.52e-02  backmap_k=4
+  trial 209  fold 0 (0.50+0.70)  KL=6.0147  running mean=6.0147
+  trial 209  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3946
+  trial 209  fold 2 (0.75+0.80)  KL=1.3758  running mean=4.0550
+  trial 209  fold 3 (0.80+0.82)  KL=2.1614  running mean=3.5816
+  trial 209  fold 4 (0.82+0.85)  KL=1.8963  running mean=3.2445
+  trial 209  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1200
+  trial 209  fold 6 (0.88+0.90)  KL=3.7334  running mean=3.2076
+  trial 209  fold 7 (0.90+0.93)  KL=5.3452  running mean=3.4748
+trial 210: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=4.40e-02  backmap_k=4
+  trial 210  fold 0 (0.50+0.70)  KL=5.9350  running mean=5.9350
+  trial 210  fold 1 (0.70+0.75)  KL=4.9781  running mean=5.4566
+  trial 210  fold 2 (0.75+0.80)  KL=1.3929  running mean=4.1020
+  trial 210  fold 3 (0.80+0.82)  KL=2.1683  running mean=3.6186
+  trial 210  fold 4 (0.82+0.85)  KL=1.8688  running mean=3.2686
+  trial 210  fold 5 (0.85+0.88)  KL=2.5084  running mean=3.1419
+  trial 210  fold 6 (0.88+0.90)  KL=3.7881  running mean=3.2342
+  trial 210  fold 7 (0.90+0.93)  KL=5.4015  running mean=3.5051
+trial 211: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.42e-02  backmap_k=4
+  trial 211  fold 0 (0.50+0.70)  KL=5.9804  running mean=5.9804
+  trial 211  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3774
+  trial 211  fold 2 (0.75+0.80)  KL=1.3757  running mean=4.0435
+  trial 211  fold 3 (0.80+0.82)  KL=2.1611  running mean=3.5729
+  trial 211  fold 4 (0.82+0.85)  KL=1.8961  running mean=3.2376
+  trial 211  fold 5 (0.85+0.88)  KL=2.4973  running mean=3.1142
+  trial 211  fold 6 (0.88+0.90)  KL=3.7280  running mean=3.2019
+  trial 211  fold 7 (0.90+0.93)  KL=5.3454  running mean=3.4698
+trial 212: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=9.02e-02  backmap_k=4
+  trial 212  fold 0 (0.50+0.70)  KL=6.0499  running mean=6.0499
+  trial 212  fold 1 (0.70+0.75)  KL=4.7751  running mean=5.4125
+  trial 212  fold 2 (0.75+0.80)  KL=1.3943  running mean=4.0731
+  trial 212  fold 3 (0.80+0.82)  KL=2.1875  running mean=3.6017
+  trial 212  fold 4 (0.82+0.85)  KL=1.9064  running mean=3.2626
+  trial 212  fold 5 (0.85+0.88)  KL=2.4734  running mean=3.1311
+  trial 212  fold 6 (0.88+0.90)  KL=3.8241  running mean=3.2301
+  trial 212  fold 7 (0.90+0.93)  KL=5.3485  running mean=3.4949
+trial 213: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=1.10e-06  backmap_k=4
+  trial 213  fold 0 (0.50+0.70)  KL=5.9312  running mean=5.9312
+  trial 213  fold 1 (0.70+0.75)  KL=4.7492  running mean=5.3402
+  trial 213  fold 2 (0.75+0.80)  KL=1.3897  running mean=4.0234
+  trial 213  fold 3 (0.80+0.82)  KL=2.2357  running mean=3.5765
+  trial 213  fold 4 (0.82+0.85)  KL=2.1396  running mean=3.2891
+  trial 213  fold 5 (0.85+0.88)  KL=2.5644  running mean=3.1683
+  trial 213  fold 6 (0.88+0.90)  KL=3.7388  running mean=3.2498
+  trial 213  fold 7 (0.90+0.93)  KL=5.4056  running mean=3.5193
+trial 214: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=5.89e-02  backmap_k=4
+  trial 214  fold 0 (0.50+0.70)  KL=5.9578  running mean=5.9578
+  trial 214  fold 1 (0.70+0.75)  KL=4.9739  running mean=5.4659
+  trial 214  fold 2 (0.75+0.80)  KL=1.3974  running mean=4.1097
+  trial 214  fold 3 (0.80+0.82)  KL=2.1766  running mean=3.6264
+  trial 214  fold 4 (0.82+0.85)  KL=1.8764  running mean=3.2764
+  trial 214  fold 5 (0.85+0.88)  KL=2.5051  running mean=3.1479
+  trial 214  fold 6 (0.88+0.90)  KL=3.8147  running mean=3.2431
+  trial 214  fold 7 (0.90+0.93)  KL=5.3975  running mean=3.5124
+trial 215: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.84e-02  backmap_k=4
+  trial 215  fold 0 (0.50+0.70)  KL=6.0150  running mean=6.0150
+  trial 215  fold 1 (0.70+0.75)  KL=4.7743  running mean=5.3946
+  trial 215  fold 2 (0.75+0.80)  KL=1.3762  running mean=4.0552
+  trial 215  fold 3 (0.80+0.82)  KL=2.1623  running mean=3.5819
+  trial 215  fold 4 (0.82+0.85)  KL=1.8829  running mean=3.2421
+  trial 215  fold 5 (0.85+0.88)  KL=2.4976  running mean=3.1180
+  trial 215  fold 6 (0.88+0.90)  KL=3.7339  running mean=3.2060
+  trial 215  fold 7 (0.90+0.93)  KL=5.3446  running mean=3.4734
+trial 216: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.94e-02  backmap_k=4
+  trial 216  fold 0 (0.50+0.70)  KL=6.0150  running mean=6.0150
+  trial 216  fold 1 (0.70+0.75)  KL=4.7743  running mean=5.3947
+  trial 216  fold 2 (0.75+0.80)  KL=1.3764  running mean=4.0552
+  trial 216  fold 3 (0.80+0.82)  KL=2.1625  running mean=3.5821
+  trial 216  fold 4 (0.82+0.85)  KL=1.8831  running mean=3.2423
+  trial 216  fold 5 (0.85+0.88)  KL=2.4976  running mean=3.1182
+  trial 216  fold 6 (0.88+0.90)  KL=3.7260  running mean=3.2050
+  trial 216  fold 7 (0.90+0.93)  KL=5.3445  running mean=3.4724
+trial 217: n_components=3  isomap_k=36  rbf_kernel=thin_plate_spline  smoothing=4.29e-02  backmap_k=4
+  trial 217  fold 0 (0.50+0.70)  KL=6.1974  running mean=6.1974
+  trial 217  fold 1 (0.70+0.75)  KL=4.7842  running mean=5.4908
+  trial 217  fold 2 (0.75+0.80)  KL=1.3721  running mean=4.1179
+  trial 217  fold 3 (0.80+0.82)  KL=2.1336  running mean=3.6218
+  trial 217  fold 4 (0.82+0.85)  KL=1.9130  running mean=3.2801
+  trial 217  fold 5 (0.85+0.88)  KL=2.4992  running mean=3.1499
+  trial 217  fold 6 (0.88+0.90)  KL=4.0319  running mean=3.2759
+  trial 217  fold 7 (0.90+0.93)  KL=5.2874  running mean=3.5274
+trial 218: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=3.30e-02  backmap_k=4
+  trial 218  fold 0 (0.50+0.70)  KL=5.9318  running mean=5.9318
+  trial 218  fold 1 (0.70+0.75)  KL=4.9768  running mean=5.4543
+  trial 218  fold 2 (0.75+0.80)  KL=1.3924  running mean=4.1003
+  trial 218  fold 3 (0.80+0.82)  KL=2.1857  running mean=3.6217
+  trial 218  fold 4 (0.82+0.85)  KL=1.8614  running mean=3.2696
+  trial 218  fold 5 (0.85+0.88)  KL=2.5063  running mean=3.1424
+  trial 218  fold 6 (0.88+0.90)  KL=3.7882  running mean=3.2347
+  trial 218  fold 7 (0.90+0.93)  KL=5.4091  running mean=3.5065
+trial 219: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=6.33e-02  backmap_k=4
+  trial 219  fold 0 (0.50+0.70)  KL=6.0137  running mean=6.0137
+  trial 219  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3940
+  trial 219  fold 2 (0.75+0.80)  KL=1.3736  running mean=4.0539
+  trial 219  fold 3 (0.80+0.82)  KL=2.1963  running mean=3.5895
+  trial 219  fold 4 (0.82+0.85)  KL=1.9276  running mean=3.2571
+  trial 219  fold 5 (0.85+0.88)  KL=2.4890  running mean=3.1291
+  trial 219  fold 6 (0.88+0.90)  KL=3.8023  running mean=3.2253
+  trial 219  fold 7 (0.90+0.93)  KL=5.3347  running mean=3.4889
+trial 220: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=4.57e-02  backmap_k=4
+  trial 220  fold 0 (0.50+0.70)  KL=6.0058  running mean=6.0058
+  trial 220  fold 1 (0.70+0.75)  KL=4.7741  running mean=5.3900
+  trial 220  fold 2 (0.75+0.80)  KL=1.3863  running mean=4.0554
+  trial 220  fold 3 (0.80+0.82)  KL=2.1715  running mean=3.5845
+  trial 220  fold 4 (0.82+0.85)  KL=1.9245  running mean=3.2525
+  trial 220  fold 5 (0.85+0.88)  KL=2.4974  running mean=3.1266
+  trial 220  fold 6 (0.88+0.90)  KL=3.7270  running mean=3.2124
+  trial 220  fold 7 (0.90+0.93)  KL=5.3529  running mean=3.4800
+trial 221: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=4.59e-02  backmap_k=4
+  trial 221  fold 0 (0.50+0.70)  KL=6.0058  running mean=6.0058
+  trial 221  fold 1 (0.70+0.75)  KL=4.7741  running mean=5.3900
+  trial 221  fold 2 (0.75+0.80)  KL=1.3864  running mean=4.0554
+  trial 221  fold 3 (0.80+0.82)  KL=2.1716  running mean=3.5845
+  trial 221  fold 4 (0.82+0.85)  KL=1.9245  running mean=3.2525
+  trial 221  fold 5 (0.85+0.88)  KL=2.4974  running mean=3.1266
+  trial 221  fold 6 (0.88+0.90)  KL=3.7270  running mean=3.2124
+  trial 221  fold 7 (0.90+0.93)  KL=5.3529  running mean=3.4800
+trial 222: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=4.71e-02  backmap_k=4
+  trial 222  fold 0 (0.50+0.70)  KL=5.9481  running mean=5.9481
+  trial 222  fold 1 (0.70+0.75)  KL=4.9880  running mean=5.4680
+  trial 222  fold 2 (0.75+0.80)  KL=1.3939  running mean=4.1100
+  trial 222  fold 3 (0.80+0.82)  KL=2.1684  running mean=3.6246
+  trial 222  fold 4 (0.82+0.85)  KL=1.8694  running mean=3.2736
+  trial 222  fold 5 (0.85+0.88)  KL=2.5085  running mean=3.1460
+  trial 222  fold 6 (0.88+0.90)  KL=3.8173  running mean=3.2419
+  trial 222  fold 7 (0.90+0.93)  KL=5.4013  running mean=3.5119
+trial 223: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.59e-02  backmap_k=4
+  trial 223  fold 0 (0.50+0.70)  KL=6.0148  running mean=6.0148
+  trial 223  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3946
+  trial 223  fold 2 (0.75+0.80)  KL=1.3759  running mean=4.0550
+  trial 223  fold 3 (0.80+0.82)  KL=2.1616  running mean=3.5817
+  trial 223  fold 4 (0.82+0.85)  KL=1.8964  running mean=3.2446
+  trial 223  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1201
+  trial 223  fold 6 (0.88+0.90)  KL=3.7335  running mean=3.2077
+  trial 223  fold 7 (0.90+0.93)  KL=5.3450  running mean=3.4749
+trial 224: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=7.85e-02  backmap_k=4
+  trial 224  fold 0 (0.50+0.70)  KL=6.0494  running mean=6.0494
+  trial 224  fold 1 (0.70+0.75)  KL=4.7762  running mean=5.4128
+  trial 224  fold 2 (0.75+0.80)  KL=1.3975  running mean=4.0744
+  trial 224  fold 3 (0.80+0.82)  KL=2.2094  running mean=3.6081
+  trial 224  fold 4 (0.82+0.85)  KL=1.8992  running mean=3.2663
+  trial 224  fold 5 (0.85+0.88)  KL=2.4773  running mean=3.1348
+  trial 224  fold 6 (0.88+0.90)  KL=3.8153  running mean=3.2320
+  trial 224  fold 7 (0.90+0.93)  KL=5.3420  running mean=3.4958
+trial 225: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=5.03e-02  backmap_k=4
+  trial 225  fold 0 (0.50+0.70)  KL=6.0062  running mean=6.0062
+  trial 225  fold 1 (0.70+0.75)  KL=4.7740  running mean=5.3901
+  trial 225  fold 2 (0.75+0.80)  KL=1.3864  running mean=4.0555
+  trial 225  fold 3 (0.80+0.82)  KL=2.1732  running mean=3.5849
+  trial 225  fold 4 (0.82+0.85)  KL=1.9254  running mean=3.2530
+  trial 225  fold 5 (0.85+0.88)  KL=2.4976  running mean=3.1271
+  trial 225  fold 6 (0.88+0.90)  KL=3.7277  running mean=3.2129
+  trial 225  fold 7 (0.90+0.93)  KL=5.3480  running mean=3.4798
+trial 226: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=4.65e-02  backmap_k=4
+  trial 226  fold 0 (0.50+0.70)  KL=6.0059  running mean=6.0059
+  trial 226  fold 1 (0.70+0.75)  KL=4.7741  running mean=5.3900
+  trial 226  fold 2 (0.75+0.80)  KL=1.3865  running mean=4.0555
+  trial 226  fold 3 (0.80+0.82)  KL=2.1717  running mean=3.5845
+  trial 226  fold 4 (0.82+0.85)  KL=1.9247  running mean=3.2526
+  trial 226  fold 5 (0.85+0.88)  KL=2.4974  running mean=3.1267
+  trial 226  fold 6 (0.88+0.90)  KL=3.7271  running mean=3.2125
+  trial 226  fold 7 (0.90+0.93)  KL=5.3528  running mean=3.4800
+trial 227: n_components=3  isomap_k=34  rbf_kernel=quintic  smoothing=9.63e-02  backmap_k=4
+  trial 227  fold 0 (0.50+0.70)  KL=8.0877  running mean=8.0877
+  trial 227  fold 1 (0.70+0.75)  KL=5.0080  running mean=6.5479
+  trial 227  fold 2 (0.75+0.80)  KL=1.4284  running mean=4.8414
+  trial 227: pruned after fold 2
+trial 228: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=5.04e-02  backmap_k=4
+  trial 228  fold 0 (0.50+0.70)  KL=5.9490  running mean=5.9490
+  trial 228  fold 1 (0.70+0.75)  KL=4.9723  running mean=5.4606
+  trial 228  fold 2 (0.75+0.80)  KL=1.3950  running mean=4.1054
+  trial 228  fold 3 (0.80+0.82)  KL=2.1685  running mean=3.6212
+  trial 228  fold 4 (0.82+0.85)  KL=1.8619  running mean=3.2693
+  trial 228  fold 5 (0.85+0.88)  KL=2.5085  running mean=3.1425
+  trial 228  fold 6 (0.88+0.90)  KL=3.8066  running mean=3.2374
+  trial 228  fold 7 (0.90+0.93)  KL=5.4011  running mean=3.5079
+trial 229: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.86e-02  backmap_k=3
+  trial 229  fold 0 (0.50+0.70)  KL=5.9667  running mean=5.9667
+  trial 229  fold 1 (0.70+0.75)  KL=4.7171  running mean=5.3419
+  trial 229  fold 2 (0.75+0.80)  KL=1.6198  running mean=4.1012
+  trial 229  fold 3 (0.80+0.82)  KL=2.4547  running mean=3.6896
+  trial 229: pruned after fold 3
+trial 230: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=5.80e-02  backmap_k=5
+  trial 230  fold 0 (0.50+0.70)  KL=6.0292  running mean=6.0292
+  trial 230  fold 1 (0.70+0.75)  KL=5.1203  running mean=5.5748
+  trial 230  fold 2 (0.75+0.80)  KL=1.4641  running mean=4.2045
+  trial 230: pruned after fold 2
+trial 231: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.06e-02  backmap_k=4
+  trial 231  fold 0 (0.50+0.70)  KL=5.9797  running mean=5.9797
+  trial 231  fold 1 (0.70+0.75)  KL=4.7881  running mean=5.3839
+  trial 231  fold 2 (0.75+0.80)  KL=1.3616  running mean=4.0431
+  trial 231  fold 3 (0.80+0.82)  KL=2.1575  running mean=3.5717
+  trial 231  fold 4 (0.82+0.85)  KL=1.9070  running mean=3.2388
+  trial 231  fold 5 (0.85+0.88)  KL=2.4974  running mean=3.1152
+  trial 231  fold 6 (0.88+0.90)  KL=3.7274  running mean=3.2027
+  trial 231  fold 7 (0.90+0.93)  KL=5.3469  running mean=3.4707
+trial 232: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.28e-02  backmap_k=12
+  trial 232  fold 0 (0.50+0.70)  KL=6.9280  running mean=6.9280
+  trial 232  fold 1 (0.70+0.75)  KL=5.2613  running mean=6.0947
+  trial 232  fold 2 (0.75+0.80)  KL=1.2902  running mean=4.4932
+  trial 232: pruned after fold 2
+trial 233: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=4.57e-02  backmap_k=4
+  trial 233  fold 0 (0.50+0.70)  KL=6.0058  running mean=6.0058
+  trial 233  fold 1 (0.70+0.75)  KL=4.7741  running mean=5.3900
+  trial 233  fold 2 (0.75+0.80)  KL=1.3863  running mean=4.0554
+  trial 233  fold 3 (0.80+0.82)  KL=2.1715  running mean=3.5845
+  trial 233  fold 4 (0.82+0.85)  KL=1.9245  running mean=3.2525
+  trial 233  fold 5 (0.85+0.88)  KL=2.4974  running mean=3.1266
+  trial 233  fold 6 (0.88+0.90)  KL=3.7270  running mean=3.2124
+  trial 233  fold 7 (0.90+0.93)  KL=5.3529  running mean=3.4800
+trial 234: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=4.97e-02  backmap_k=4
+  trial 234  fold 0 (0.50+0.70)  KL=6.0061  running mean=6.0061
+  trial 234  fold 1 (0.70+0.75)  KL=4.7740  running mean=5.3901
+  trial 234  fold 2 (0.75+0.80)  KL=1.3863  running mean=4.0555
+  trial 234  fold 3 (0.80+0.82)  KL=2.2027  running mean=3.5923
+  trial 234  fold 4 (0.82+0.85)  KL=1.9253  running mean=3.2589
+  trial 234  fold 5 (0.85+0.88)  KL=2.4976  running mean=3.1320
+  trial 234  fold 6 (0.88+0.90)  KL=3.7276  running mean=3.2171
+  trial 234  fold 7 (0.90+0.93)  KL=5.3480  running mean=3.4835
+trial 235: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=7.31e-02  backmap_k=4
+  trial 235  fold 0 (0.50+0.70)  KL=6.0260  running mean=6.0260
+  trial 235  fold 1 (0.70+0.75)  KL=4.7740  running mean=5.4000
+  trial 235  fold 2 (0.75+0.80)  KL=1.3757  running mean=4.0586
+  trial 235  fold 3 (0.80+0.82)  KL=2.2086  running mean=3.5961
+  trial 235  fold 4 (0.82+0.85)  KL=1.9269  running mean=3.2622
+  trial 235  fold 5 (0.85+0.88)  KL=2.4770  running mean=3.1314
+  trial 235  fold 6 (0.88+0.90)  KL=3.8232  running mean=3.2302
+  trial 235  fold 7 (0.90+0.93)  KL=5.3422  running mean=3.4942
+trial 236: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=5.13e-02  backmap_k=4
+  trial 236  fold 0 (0.50+0.70)  KL=5.9493  running mean=5.9493
+  trial 236  fold 1 (0.70+0.75)  KL=4.9715  running mean=5.4604
+  trial 236  fold 2 (0.75+0.80)  KL=1.3953  running mean=4.1054
+  trial 236  fold 3 (0.80+0.82)  KL=2.1685  running mean=3.6212
+  trial 236  fold 4 (0.82+0.85)  KL=1.8620  running mean=3.2693
+  trial 236  fold 5 (0.85+0.88)  KL=2.5086  running mean=3.1425
+  trial 236  fold 6 (0.88+0.90)  KL=3.8067  running mean=3.2374
+  trial 236  fold 7 (0.90+0.93)  KL=5.4010  running mean=3.5079
+trial 237: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.53e-02  backmap_k=4
+  trial 237  fold 0 (0.50+0.70)  KL=6.0147  running mean=6.0147
+  trial 237  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3946
+  trial 237  fold 2 (0.75+0.80)  KL=1.3758  running mean=4.0550
+  trial 237  fold 3 (0.80+0.82)  KL=2.1615  running mean=3.5816
+  trial 237  fold 4 (0.82+0.85)  KL=1.8963  running mean=3.2445
+  trial 237  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1200
+  trial 237  fold 6 (0.88+0.90)  KL=3.7334  running mean=3.2077
+  trial 237  fold 7 (0.90+0.93)  KL=5.3452  running mean=3.4748
+trial 238: n_components=3  isomap_k=34  rbf_kernel=cubic  smoothing=4.26e-02  backmap_k=4
+  trial 238  fold 0 (0.50+0.70)  KL=5.9896  running mean=5.9896
+  trial 238  fold 1 (0.70+0.75)  KL=5.0306  running mean=5.5101
+  trial 238  fold 2 (0.75+0.80)  KL=1.3996  running mean=4.1399
+  trial 238  fold 3 (0.80+0.82)  KL=2.0425  running mean=3.6156
+  trial 238  fold 4 (0.82+0.85)  KL=2.0323  running mean=3.2989
+  trial 238  fold 5 (0.85+0.88)  KL=2.5095  running mean=3.1674
+  trial 238  fold 6 (0.88+0.90)  KL=3.8113  running mean=3.2593
+  trial 238  fold 7 (0.90+0.93)  KL=5.4263  running mean=3.5302
+trial 239: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.52e-02  backmap_k=4
+  trial 239  fold 0 (0.50+0.70)  KL=6.0147  running mean=6.0147
+  trial 239  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3946
+  trial 239  fold 2 (0.75+0.80)  KL=1.3758  running mean=4.0550
+  trial 239  fold 3 (0.80+0.82)  KL=2.1614  running mean=3.5816
+  trial 239  fold 4 (0.82+0.85)  KL=1.8963  running mean=3.2445
+  trial 239  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1200
+  trial 239  fold 6 (0.88+0.90)  KL=3.7334  running mean=3.2076
+  trial 239  fold 7 (0.90+0.93)  KL=5.3452  running mean=3.4748
+trial 240: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.36e-02  backmap_k=4
+  trial 240  fold 0 (0.50+0.70)  KL=5.9837  running mean=5.9837
+  trial 240  fold 1 (0.70+0.75)  KL=4.7738  running mean=5.3788
+  trial 240  fold 2 (0.75+0.80)  KL=1.3757  running mean=4.0444
+  trial 240  fold 3 (0.80+0.82)  KL=2.1610  running mean=3.5736
+  trial 240  fold 4 (0.82+0.85)  KL=1.8960  running mean=3.2380
+  trial 240  fold 5 (0.85+0.88)  KL=2.4973  running mean=3.1146
+  trial 240  fold 6 (0.88+0.90)  KL=3.7279  running mean=3.2022
+  trial 240  fold 7 (0.90+0.93)  KL=5.3386  running mean=3.4692
+trial 241: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.68e-02  backmap_k=4
+  trial 241  fold 0 (0.50+0.70)  KL=6.0148  running mean=6.0148
+  trial 241  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3946
+  trial 241  fold 2 (0.75+0.80)  KL=1.3760  running mean=4.0551
+  trial 241  fold 3 (0.80+0.82)  KL=2.1619  running mean=3.5818
+  trial 241  fold 4 (0.82+0.85)  KL=1.8966  running mean=3.2447
+  trial 241  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1202
+  trial 241  fold 6 (0.88+0.90)  KL=3.7336  running mean=3.2078
+  trial 241  fold 7 (0.90+0.93)  KL=5.3449  running mean=3.4750
+trial 242: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.48e-02  backmap_k=4
+  trial 242  fold 0 (0.50+0.70)  KL=6.0147  running mean=6.0147
+  trial 242  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3945
+  trial 242  fold 2 (0.75+0.80)  KL=1.3758  running mean=4.0550
+  trial 242  fold 3 (0.80+0.82)  KL=2.1613  running mean=3.5816
+  trial 242  fold 4 (0.82+0.85)  KL=1.8962  running mean=3.2445
+  trial 242  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1200
+  trial 242  fold 6 (0.88+0.90)  KL=3.7333  running mean=3.2076
+  trial 242  fold 7 (0.90+0.93)  KL=5.3453  running mean=3.4748
+trial 243: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=3.13e-02  backmap_k=4
+  trial 243  fold 0 (0.50+0.70)  KL=5.9313  running mean=5.9313
+  trial 243  fold 1 (0.70+0.75)  KL=4.9770  running mean=5.4541
+  trial 243  fold 2 (0.75+0.80)  KL=1.3918  running mean=4.1000
+  trial 243  fold 3 (0.80+0.82)  KL=2.1736  running mean=3.6184
+  trial 243  fold 4 (0.82+0.85)  KL=1.8612  running mean=3.2670
+  trial 243  fold 5 (0.85+0.88)  KL=2.5064  running mean=3.1402
+  trial 243  fold 6 (0.88+0.90)  KL=3.7823  running mean=3.2319
+  trial 243  fold 7 (0.90+0.93)  KL=5.4094  running mean=3.5041
+trial 244: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.78e-02  backmap_k=4
+  trial 244  fold 0 (0.50+0.70)  KL=6.0149  running mean=6.0149
+  trial 244  fold 1 (0.70+0.75)  KL=4.7743  running mean=5.3946
+  trial 244  fold 2 (0.75+0.80)  KL=1.3761  running mean=4.0551
+  trial 244  fold 3 (0.80+0.82)  KL=2.1621  running mean=3.5819
+  trial 244  fold 4 (0.82+0.85)  KL=1.8828  running mean=3.2421
+  trial 244  fold 5 (0.85+0.88)  KL=2.4976  running mean=3.1180
+  trial 244  fold 6 (0.88+0.90)  KL=3.7338  running mean=3.2060
+  trial 244  fold 7 (0.90+0.93)  KL=5.3447  running mean=3.4733
+trial 245: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.64e-02  backmap_k=4
+  trial 245  fold 0 (0.50+0.70)  KL=6.0148  running mean=6.0148
+  trial 245  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3946
+  trial 245  fold 2 (0.75+0.80)  KL=1.3760  running mean=4.0551
+  trial 245  fold 3 (0.80+0.82)  KL=2.1618  running mean=3.5817
+  trial 245  fold 4 (0.82+0.85)  KL=1.8965  running mean=3.2447
+  trial 245  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1202
+  trial 245  fold 6 (0.88+0.90)  KL=3.7336  running mean=3.2078
+  trial 245  fold 7 (0.90+0.93)  KL=5.3450  running mean=3.4749
+trial 246: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=3.47e-02  backmap_k=4
+  trial 246  fold 0 (0.50+0.70)  KL=5.9335  running mean=5.9335
+  trial 246  fold 1 (0.70+0.75)  KL=4.9804  running mean=5.4569
+  trial 246  fold 2 (0.75+0.80)  KL=1.3930  running mean=4.1023
+  trial 246  fold 3 (0.80+0.82)  KL=2.1860  running mean=3.6232
+  trial 246  fold 4 (0.82+0.85)  KL=1.8384  running mean=3.2662
+  trial 246  fold 5 (0.85+0.88)  KL=2.5063  running mean=3.1396
+  trial 246  fold 6 (0.88+0.90)  KL=3.7884  running mean=3.2323
+  trial 246  fold 7 (0.90+0.93)  KL=5.4089  running mean=3.5044
+trial 247: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=7.20e-02  backmap_k=4
+  trial 247  fold 0 (0.50+0.70)  KL=6.0142  running mean=6.0142
+  trial 247  fold 1 (0.70+0.75)  KL=4.7741  running mean=5.3941
+  trial 247  fold 2 (0.75+0.80)  KL=1.3755  running mean=4.0546
+  trial 247  fold 3 (0.80+0.82)  KL=2.2084  running mean=3.5931
+  trial 247  fold 4 (0.82+0.85)  KL=1.9267  running mean=3.2598
+  trial 247  fold 5 (0.85+0.88)  KL=2.4769  running mean=3.1293
+  trial 247  fold 6 (0.88+0.90)  KL=3.8230  running mean=3.2284
+  trial 247  fold 7 (0.90+0.93)  KL=5.3423  running mean=3.4926
+trial 248: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.05e-02  backmap_k=4
+  trial 248  fold 0 (0.50+0.70)  KL=5.9797  running mean=5.9797
+  trial 248  fold 1 (0.70+0.75)  KL=4.7881  running mean=5.3839
+  trial 248  fold 2 (0.75+0.80)  KL=1.3616  running mean=4.0431
+  trial 248  fold 3 (0.80+0.82)  KL=2.1576  running mean=3.5718
+  trial 248  fold 4 (0.82+0.85)  KL=1.9070  running mean=3.2388
+  trial 248  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1153
+  trial 248  fold 6 (0.88+0.90)  KL=3.7274  running mean=3.2027
+  trial 248  fold 7 (0.90+0.93)  KL=5.3469  running mean=3.4707
+trial 249: n_components=3  isomap_k=35  rbf_kernel=linear  smoothing=3.09e-02  backmap_k=4
+  trial 249  fold 0 (0.50+0.70)  KL=6.1173  running mean=6.1173
+  trial 249  fold 1 (0.70+0.75)  KL=4.9954  running mean=5.5564
+  trial 249  fold 2 (0.75+0.80)  KL=1.4101  running mean=4.1743
+  trial 249  fold 3 (0.80+0.82)  KL=2.1377  running mean=3.6651
+  trial 249  fold 4 (0.82+0.85)  KL=1.9590  running mean=3.3239
+  trial 249  fold 5 (0.85+0.88)  KL=2.4592  running mean=3.1798
+  trial 249  fold 6 (0.88+0.90)  KL=4.3833  running mean=3.3517
+  trial 249  fold 7 (0.90+0.93)  KL=5.2123  running mean=3.5843
+trial 250: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.25e-02  backmap_k=4
+  trial 250  fold 0 (0.50+0.70)  KL=5.9836  running mean=5.9836
+  trial 250  fold 1 (0.70+0.75)  KL=4.7882  running mean=5.3859
+  trial 250  fold 2 (0.75+0.80)  KL=1.3756  running mean=4.0491
+  trial 250  fold 3 (0.80+0.82)  KL=2.1550  running mean=3.5756
+  trial 250  fold 4 (0.82+0.85)  KL=1.8904  running mean=3.2386
+  trial 250  fold 5 (0.85+0.88)  KL=2.4973  running mean=3.1150
+  trial 250  fold 6 (0.88+0.90)  KL=3.7277  running mean=3.2025
+  trial 250  fold 7 (0.90+0.93)  KL=5.3388  running mean=3.4696
+trial 251: n_components=3  isomap_k=34  rbf_kernel=cubic  smoothing=2.95e-02  backmap_k=4
+  trial 251  fold 0 (0.50+0.70)  KL=6.0454  running mean=6.0454
+  trial 251  fold 1 (0.70+0.75)  KL=5.0195  running mean=5.5324
+  trial 251  fold 2 (0.75+0.80)  KL=1.3983  running mean=4.1544
+  trial 251  fold 3 (0.80+0.82)  KL=2.0445  running mean=3.6269
+  trial 251  fold 4 (0.82+0.85)  KL=2.1290  running mean=3.3273
+  trial 251  fold 5 (0.85+0.88)  KL=2.5112  running mean=3.1913
+  trial 251  fold 6 (0.88+0.90)  KL=3.8294  running mean=3.2825
+  trial 251  fold 7 (0.90+0.93)  KL=5.4251  running mean=3.5503
+trial 252: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=3.51e-02  backmap_k=4
+  trial 252  fold 0 (0.50+0.70)  KL=5.9336  running mean=5.9336
+  trial 252  fold 1 (0.70+0.75)  KL=4.9804  running mean=5.4570
+  trial 252  fold 2 (0.75+0.80)  KL=1.3931  running mean=4.1024
+  trial 252  fold 3 (0.80+0.82)  KL=2.1860  running mean=3.6233
+  trial 252  fold 4 (0.82+0.85)  KL=1.8284  running mean=3.2643
+  trial 252  fold 5 (0.85+0.88)  KL=2.5063  running mean=3.1380
+  trial 252  fold 6 (0.88+0.90)  KL=3.7885  running mean=3.2309
+  trial 252  fold 7 (0.90+0.93)  KL=5.4088  running mean=3.5031
+trial 253: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=2.69e-02  backmap_k=4
+  trial 253  fold 0 (0.50+0.70)  KL=5.9763  running mean=5.9763
+  trial 253  fold 1 (0.70+0.75)  KL=4.7206  running mean=5.3484
+  trial 253  fold 2 (0.75+0.80)  KL=1.3511  running mean=4.0160
+  trial 253  fold 3 (0.80+0.82)  KL=2.1556  running mean=3.5509
+  trial 253  fold 4 (0.82+0.85)  KL=1.9445  running mean=3.2296
+  trial 253  fold 5 (0.85+0.88)  KL=2.4976  running mean=3.1076
+  trial 253  fold 6 (0.88+0.90)  KL=3.7428  running mean=3.1983
+  trial 253  fold 7 (0.90+0.93)  KL=5.3479  running mean=3.4670
+trial 254: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=2.82e-02  backmap_k=5
+  trial 254  fold 0 (0.50+0.70)  KL=6.0115  running mean=6.0115
+  trial 254  fold 1 (0.70+0.75)  KL=5.1288  running mean=5.5702
+  trial 254  fold 2 (0.75+0.80)  KL=1.4218  running mean=4.1874
+  trial 254: pruned after fold 2
+trial 255: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=2.64e-02  backmap_k=4
+  trial 255  fold 0 (0.50+0.70)  KL=5.9762  running mean=5.9762
+  trial 255  fold 1 (0.70+0.75)  KL=4.7205  running mean=5.3484
+  trial 255  fold 2 (0.75+0.80)  KL=1.3511  running mean=4.0159
+  trial 255  fold 3 (0.80+0.82)  KL=2.1554  running mean=3.5508
+  trial 255  fold 4 (0.82+0.85)  KL=1.9559  running mean=3.2318
+  trial 255  fold 5 (0.85+0.88)  KL=2.4976  running mean=3.1095
+  trial 255  fold 6 (0.88+0.90)  KL=3.7600  running mean=3.2024
+  trial 255  fold 7 (0.90+0.93)  KL=5.3481  running mean=3.4706
+trial 256: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=2.49e-02  backmap_k=10
+  trial 256  fold 0 (0.50+0.70)  KL=6.7831  running mean=6.7831
+  trial 256  fold 1 (0.70+0.75)  KL=5.1955  running mean=5.9893
+  trial 256  fold 2 (0.75+0.80)  KL=1.2953  running mean=4.4247
+  trial 256: pruned after fold 2
+trial 257: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=3.42e-02  backmap_k=4
+  trial 257  fold 0 (0.50+0.70)  KL=5.9333  running mean=5.9333
+  trial 257  fold 1 (0.70+0.75)  KL=4.9804  running mean=5.4569
+  trial 257  fold 2 (0.75+0.80)  KL=1.3928  running mean=4.1022
+  trial 257  fold 3 (0.80+0.82)  KL=2.1859  running mean=3.6231
+  trial 257  fold 4 (0.82+0.85)  KL=1.8383  running mean=3.2662
+  trial 257  fold 5 (0.85+0.88)  KL=2.5063  running mean=3.1395
+  trial 257  fold 6 (0.88+0.90)  KL=3.7884  running mean=3.2322
+  trial 257  fold 7 (0.90+0.93)  KL=5.4090  running mean=3.5043
+trial 258: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=2.60e-02  backmap_k=3
+  trial 258  fold 0 (0.50+0.70)  KL=5.9314  running mean=5.9314
+  trial 258  fold 1 (0.70+0.75)  KL=4.7188  running mean=5.3251
+  trial 258  fold 2 (0.75+0.80)  KL=1.6235  running mean=4.0912
+  trial 258  fold 3 (0.80+0.82)  KL=2.3924  running mean=3.6665
+  trial 258  fold 4 (0.82+0.85)  KL=2.3242  running mean=3.3980
+  trial 258: pruned after fold 4
+trial 259: n_components=3  isomap_k=34  rbf_kernel=thin_plate_spline  smoothing=6.21e-02  backmap_k=4
+  trial 259  fold 0 (0.50+0.70)  KL=6.2139  running mean=6.2139
+  trial 259  fold 1 (0.70+0.75)  KL=5.0315  running mean=5.6227
+  trial 259  fold 2 (0.75+0.80)  KL=1.3955  running mean=4.2137
+  trial 259: pruned after fold 2
+trial 260: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=3.63e-02  backmap_k=4
+  trial 260  fold 0 (0.50+0.70)  KL=5.9339  running mean=5.9339
+  trial 260  fold 1 (0.70+0.75)  KL=4.9808  running mean=5.4574
+  trial 260  fold 2 (0.75+0.80)  KL=1.3935  running mean=4.1028
+  trial 260  fold 3 (0.80+0.82)  KL=2.1799  running mean=3.6221
+  trial 260  fold 4 (0.82+0.85)  KL=1.8285  running mean=3.2633
+  trial 260  fold 5 (0.85+0.88)  KL=2.5063  running mean=3.1372
+  trial 260  fold 6 (0.88+0.90)  KL=3.7887  running mean=3.2302
+  trial 260  fold 7 (0.90+0.93)  KL=5.4087  running mean=3.5025
+trial 261: n_components=3  isomap_k=36  rbf_kernel=quintic  smoothing=2.55e-02  backmap_k=4
+  trial 261  fold 0 (0.50+0.70)  KL=8.3257  running mean=8.3257
+  trial 261  fold 1 (0.70+0.75)  KL=4.6885  running mean=6.5071
+  trial 261  fold 2 (0.75+0.80)  KL=1.3789  running mean=4.7977
+  trial 261: pruned after fold 2
+trial 262: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.58e-02  backmap_k=4
+  trial 262  fold 0 (0.50+0.70)  KL=6.0148  running mean=6.0148
+  trial 262  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3946
+  trial 262  fold 2 (0.75+0.80)  KL=1.3759  running mean=4.0550
+  trial 262  fold 3 (0.80+0.82)  KL=2.1616  running mean=3.5817
+  trial 262  fold 4 (0.82+0.85)  KL=1.8964  running mean=3.2446
+  trial 262  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1201
+  trial 262  fold 6 (0.88+0.90)  KL=3.7335  running mean=3.2077
+  trial 262  fold 7 (0.90+0.93)  KL=5.3450  running mean=3.4749
+trial 263: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=2.59e-02  backmap_k=4
+  trial 263  fold 0 (0.50+0.70)  KL=5.9284  running mean=5.9284
+  trial 263  fold 1 (0.70+0.75)  KL=4.9838  running mean=5.4561
+  trial 263  fold 2 (0.75+0.80)  KL=1.3898  running mean=4.1007
+  trial 263  fold 3 (0.80+0.82)  KL=2.1713  running mean=3.6183
+  trial 263  fold 4 (0.82+0.85)  KL=1.8795  running mean=3.2706
+  trial 263  fold 5 (0.85+0.88)  KL=2.5144  running mean=3.1445
+  trial 263  fold 6 (0.88+0.90)  KL=3.8146  running mean=3.2403
+  trial 263  fold 7 (0.90+0.93)  KL=5.4108  running mean=3.5116
+trial 264: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=6.52e-02  backmap_k=5
+  trial 264  fold 0 (0.50+0.70)  KL=6.3540  running mean=6.3540
+  trial 264  fold 1 (0.70+0.75)  KL=4.8463  running mean=5.6002
+  trial 264  fold 2 (0.75+0.80)  KL=1.4106  running mean=4.2036
+  trial 264: pruned after fold 2
+trial 265: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.45e-02  backmap_k=4
+  trial 265  fold 0 (0.50+0.70)  KL=5.9805  running mean=5.9805
+  trial 265  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3774
+  trial 265  fold 2 (0.75+0.80)  KL=1.3758  running mean=4.0435
+  trial 265  fold 3 (0.80+0.82)  KL=2.1613  running mean=3.5730
+  trial 265  fold 4 (0.82+0.85)  KL=1.8961  running mean=3.2376
+  trial 265  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1143
+  trial 265  fold 6 (0.88+0.90)  KL=3.7333  running mean=3.2027
+  trial 265  fold 7 (0.90+0.93)  KL=5.3453  running mean=3.4705
+trial 266: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=3.52e-02  backmap_k=3
+  trial 266  fold 0 (0.50+0.70)  KL=5.9188  running mean=5.9188
+  trial 266  fold 1 (0.70+0.75)  KL=4.8619  running mean=5.3903
+  trial 266  fold 2 (0.75+0.80)  KL=1.6059  running mean=4.1288
+  trial 266  fold 3 (0.80+0.82)  KL=2.7006  running mean=3.7718
+  trial 266: pruned after fold 3
+trial 267: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.61e-02  backmap_k=4
+  trial 267  fold 0 (0.50+0.70)  KL=6.0148  running mean=6.0148
+  trial 267  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3946
+  trial 267  fold 2 (0.75+0.80)  KL=1.3759  running mean=4.0550
+  trial 267  fold 3 (0.80+0.82)  KL=2.1617  running mean=3.5817
+  trial 267  fold 4 (0.82+0.85)  KL=1.8964  running mean=3.2446
+  trial 267  fold 5 (0.85+0.88)  KL=2.4975  running mean=3.1201
+  trial 267  fold 6 (0.88+0.90)  KL=3.7335  running mean=3.2078
+  trial 267  fold 7 (0.90+0.93)  KL=5.3450  running mean=3.4749
+trial 268: n_components=2  isomap_k=37  rbf_kernel=cubic  smoothing=2.37e-02  backmap_k=4
+  trial 268  fold 0 (0.50+0.70)  KL=5.9866  running mean=5.9866
+  trial 268  fold 1 (0.70+0.75)  KL=4.5230  running mean=5.2548
+  trial 268  fold 2 (0.75+0.80)  KL=1.5030  running mean=4.0042
+  trial 268  fold 3 (0.80+0.82)  KL=2.1370  running mean=3.5374
+  trial 268  fold 4 (0.82+0.85)  KL=1.9153  running mean=3.2129
+  trial 268  fold 5 (0.85+0.88)  KL=2.5113  running mean=3.0960
+  trial 268  fold 6 (0.88+0.90)  KL=4.0344  running mean=3.2301
+  trial 268  fold 7 (0.90+0.93)  KL=5.2317  running mean=3.4803
+trial 269: n_components=3  isomap_k=34  rbf_kernel=cubic  smoothing=1.00e-01  backmap_k=4
+  trial 269  fold 0 (0.50+0.70)  KL=6.0511  running mean=6.0511
+  trial 269  fold 1 (0.70+0.75)  KL=5.0309  running mean=5.5410
+  trial 269  fold 2 (0.75+0.80)  KL=1.4288  running mean=4.1702
+  trial 269  fold 3 (0.80+0.82)  KL=2.0290  running mean=3.6349
+  trial 269  fold 4 (0.82+0.85)  KL=1.9962  running mean=3.3072
+  trial 269  fold 5 (0.85+0.88)  KL=2.5107  running mean=3.1744
+  trial 269  fold 6 (0.88+0.90)  KL=3.9090  running mean=3.2794
+  trial 269  fold 7 (0.90+0.93)  KL=5.4144  running mean=3.5462
+trial 270: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=6.09e-02  backmap_k=4
+  trial 270  fold 0 (0.50+0.70)  KL=6.2762  running mean=6.2762
+  trial 270  fold 1 (0.70+0.75)  KL=4.8652  running mean=5.5707
+  trial 270  fold 2 (0.75+0.80)  KL=1.3692  running mean=4.1702
+  trial 270  fold 3 (0.80+0.82)  KL=2.0336  running mean=3.6360
+  trial 270  fold 4 (0.82+0.85)  KL=1.9813  running mean=3.3051
+  trial 270  fold 5 (0.85+0.88)  KL=2.5650  running mean=3.1817
+  trial 270  fold 6 (0.88+0.90)  KL=3.8008  running mean=3.2702
+  trial 270  fold 7 (0.90+0.93)  KL=5.3203  running mean=3.5265
+trial 271: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.75e-02  backmap_k=4
+  trial 271  fold 0 (0.50+0.70)  KL=6.0149  running mean=6.0149
+  trial 271  fold 1 (0.70+0.75)  KL=4.7744  running mean=5.3946
+  trial 271  fold 2 (0.75+0.80)  KL=1.3761  running mean=4.0551
+  trial 271  fold 3 (0.80+0.82)  KL=2.1620  running mean=3.5818
+  trial 271  fold 4 (0.82+0.85)  KL=1.8827  running mean=3.2420
+  trial 271  fold 5 (0.85+0.88)  KL=2.4976  running mean=3.1179
+  trial 271  fold 6 (0.88+0.90)  KL=3.7338  running mean=3.2059
+  trial 271  fold 7 (0.90+0.93)  KL=5.3448  running mean=3.4733
+trial 272: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=2.61e-02  backmap_k=5
+  trial 272  fold 0 (0.50+0.70)  KL=6.0245  running mean=6.0245
+  trial 272  fold 1 (0.70+0.75)  KL=5.1178  running mean=5.5712
+  trial 272  fold 2 (0.75+0.80)  KL=1.4210  running mean=4.1878
+  trial 272: pruned after fold 2
+trial 273: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=5.93e-02  backmap_k=4
+  trial 273  fold 0 (0.50+0.70)  KL=6.0134  running mean=6.0134
+  trial 273  fold 1 (0.70+0.75)  KL=4.7737  running mean=5.3935
+  trial 273  fold 2 (0.75+0.80)  KL=1.3730  running mean=4.0533
+  trial 273  fold 3 (0.80+0.82)  KL=2.1802  running mean=3.5850
+  trial 273  fold 4 (0.82+0.85)  KL=1.9270  running mean=3.2534
+  trial 273  fold 5 (0.85+0.88)  KL=2.4834  running mean=3.1251
+  trial 273  fold 6 (0.88+0.90)  KL=3.7290  running mean=3.2114
+  trial 273  fold 7 (0.90+0.93)  KL=5.3421  running mean=3.4777
+trial 274: n_components=3  isomap_k=37  rbf_kernel=linear  smoothing=2.36e-02  backmap_k=4
+  trial 274  fold 0 (0.50+0.70)  KL=6.1401  running mean=6.1401
+  trial 274  fold 1 (0.70+0.75)  KL=4.6892  running mean=5.4146
+  trial 274  fold 2 (0.75+0.80)  KL=1.4265  running mean=4.0853
+  trial 274  fold 3 (0.80+0.82)  KL=1.9931  running mean=3.5622
+  trial 274  fold 4 (0.82+0.85)  KL=1.9821  running mean=3.2462
+  trial 274  fold 5 (0.85+0.88)  KL=2.5068  running mean=3.1230
+  trial 274  fold 6 (0.88+0.90)  KL=4.4499  running mean=3.3125
+  trial 274  fold 7 (0.90+0.93)  KL=5.1754  running mean=3.5454
+trial 275: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=3.88e-02  backmap_k=3
+  trial 275  fold 0 (0.50+0.70)  KL=5.9187  running mean=5.9187
+  trial 275  fold 1 (0.70+0.75)  KL=4.8618  running mean=5.3902
+  trial 275  fold 2 (0.75+0.80)  KL=1.6071  running mean=4.1292
+  trial 275  fold 3 (0.80+0.82)  KL=2.7048  running mean=3.7731
+  trial 275: pruned after fold 3
+trial 276: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=5.10e-02  backmap_k=4
+  trial 276  fold 0 (0.50+0.70)  KL=6.0128  running mean=6.0128
+  trial 276  fold 1 (0.70+0.75)  KL=4.7739  running mean=5.3933
+  trial 276  fold 2 (0.75+0.80)  KL=1.3866  running mean=4.0578
+  trial 276  fold 3 (0.80+0.82)  KL=2.1777  running mean=3.5877
+  trial 276  fold 4 (0.82+0.85)  KL=1.9256  running mean=3.2553
+  trial 276  fold 5 (0.85+0.88)  KL=2.4976  running mean=3.1290
+  trial 276  fold 6 (0.88+0.90)  KL=3.7278  running mean=3.2146
+  trial 276  fold 7 (0.90+0.93)  KL=5.3479  running mean=3.4812
+trial 277: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.19e-02  backmap_k=4
+  trial 277  fold 0 (0.50+0.70)  KL=5.9798  running mean=5.9798
+  trial 277  fold 1 (0.70+0.75)  KL=4.7882  running mean=5.3840
+  trial 277  fold 2 (0.75+0.80)  KL=1.3755  running mean=4.0478
+  trial 277  fold 3 (0.80+0.82)  KL=2.1549  running mean=3.5746
+  trial 277  fold 4 (0.82+0.85)  KL=1.8999  running mean=3.2397
+  trial 277  fold 5 (0.85+0.88)  KL=2.4973  running mean=3.1159
+  trial 277  fold 6 (0.88+0.90)  KL=3.7276  running mean=3.2033
+  trial 277  fold 7 (0.90+0.93)  KL=5.3422  running mean=3.4707
+trial 278: n_components=3  isomap_k=33  rbf_kernel=cubic  smoothing=2.41e-02  backmap_k=4
+  trial 278  fold 0 (0.50+0.70)  KL=6.4008  running mean=6.4008
+  trial 278  fold 1 (0.70+0.75)  KL=5.0257  running mean=5.7133
+  trial 278  fold 2 (0.75+0.80)  KL=1.3574  running mean=4.2613
+  trial 278: pruned after fold 2
+trial 279: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=1.50e-07  backmap_k=4
+  trial 279  fold 0 (0.50+0.70)  KL=6.1007  running mean=6.1007
+  trial 279  fold 1 (0.70+0.75)  KL=4.9234  running mean=5.5121
+  trial 279  fold 2 (0.75+0.80)  KL=1.4054  running mean=4.1432
+  trial 279  fold 3 (0.80+0.82)  KL=2.1158  running mean=3.6363
+  trial 279  fold 4 (0.82+0.85)  KL=2.0797  running mean=3.3250
+  trial 279: pruned after fold 4
+trial 280: n_components=3  isomap_k=35  rbf_kernel=thin_plate_spline  smoothing=3.08e-02  backmap_k=5
+  trial 280  fold 0 (0.50+0.70)  KL=6.2575  running mean=6.2575
+  trial 280  fold 1 (0.70+0.75)  KL=5.1188  running mean=5.6881
+  trial 280  fold 2 (0.75+0.80)  KL=1.4135  running mean=4.2632
+  trial 280: pruned after fold 2
+trial 281: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=7.32e-02  backmap_k=4
+  trial 281  fold 0 (0.50+0.70)  KL=6.0260  running mean=6.0260
+  trial 281  fold 1 (0.70+0.75)  KL=4.7740  running mean=5.4000
+  trial 281  fold 2 (0.75+0.80)  KL=1.3758  running mean=4.0586
+  trial 281  fold 3 (0.80+0.82)  KL=2.2086  running mean=3.5961
+  trial 281  fold 4 (0.82+0.85)  KL=1.9269  running mean=3.2623
+  trial 281  fold 5 (0.85+0.88)  KL=2.4770  running mean=3.1314
+  trial 281  fold 6 (0.88+0.90)  KL=3.8232  running mean=3.2302
+  trial 281  fold 7 (0.90+0.93)  KL=5.3422  running mean=3.4942
+trial 282: n_components=3  isomap_k=34  rbf_kernel=cubic  smoothing=4.33e-02  backmap_k=3
+  trial 282  fold 0 (0.50+0.70)  KL=5.9774  running mean=5.9774
+  trial 282  fold 1 (0.70+0.75)  KL=4.8205  running mean=5.3990
+  trial 282  fold 2 (0.75+0.80)  KL=1.5984  running mean=4.1321
+  trial 282  fold 3 (0.80+0.82)  KL=2.4717  running mean=3.7170
+  trial 282: pruned after fold 3
+trial 283: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=2.27e-02  backmap_k=4
+  trial 283  fold 0 (0.50+0.70)  KL=6.1512  running mean=6.1512
+  trial 283  fold 1 (0.70+0.75)  KL=4.8268  running mean=5.4890
+  trial 283  fold 2 (0.75+0.80)  KL=1.3542  running mean=4.1107
+  trial 283  fold 3 (0.80+0.82)  KL=2.1063  running mean=3.6096
+  trial 283  fold 4 (0.82+0.85)  KL=1.9629  running mean=3.2803
+  trial 283  fold 5 (0.85+0.88)  KL=2.5649  running mean=3.1611
+  trial 283  fold 6 (0.88+0.90)  KL=3.7518  running mean=3.2454
+  trial 283  fold 7 (0.90+0.93)  KL=5.3263  running mean=3.5055
+trial 284: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=3.14e-02  backmap_k=4
+  trial 284  fold 0 (0.50+0.70)  KL=5.9798  running mean=5.9798
+  trial 284  fold 1 (0.70+0.75)  KL=4.7882  running mean=5.3840
+  trial 284  fold 2 (0.75+0.80)  KL=1.3754  running mean=4.0478
+  trial 284  fold 3 (0.80+0.82)  KL=2.1548  running mean=3.5745
+  trial 284  fold 4 (0.82+0.85)  KL=1.8998  running mean=3.2396
+  trial 284  fold 5 (0.85+0.88)  KL=2.4974  running mean=3.1159
+  trial 284  fold 6 (0.88+0.90)  KL=3.7275  running mean=3.2033
+  trial 284  fold 7 (0.90+0.93)  KL=5.3467  running mean=3.4712
+trial 285: n_components=3  isomap_k=34  rbf_kernel=cubic  smoothing=5.32e-02  backmap_k=4
+  trial 285  fold 0 (0.50+0.70)  KL=5.9910  running mean=5.9910
+  trial 285  fold 1 (0.70+0.75)  KL=5.0323  running mean=5.5117
+  trial 285  fold 2 (0.75+0.80)  KL=1.4127  running mean=4.1454
+  trial 285  fold 3 (0.80+0.82)  KL=2.0461  running mean=3.6205
+  trial 285  fold 4 (0.82+0.85)  KL=2.0135  running mean=3.2991
+  trial 285  fold 5 (0.85+0.88)  KL=2.5078  running mean=3.1672
+  trial 285  fold 6 (0.88+0.90)  KL=3.8125  running mean=3.2594
+  trial 285  fold 7 (0.90+0.93)  KL=5.4282  running mean=3.5305
+trial 286: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=2.22e-02  backmap_k=4
+  trial 286  fold 0 (0.50+0.70)  KL=5.9213  running mean=5.9213
+  trial 286  fold 1 (0.70+0.75)  KL=4.9842  running mean=5.4527
+  trial 286  fold 2 (0.75+0.80)  KL=1.3886  running mean=4.0980
+  trial 286  fold 3 (0.80+0.82)  KL=2.1706  running mean=3.6162
+  trial 286  fold 4 (0.82+0.85)  KL=1.8837  running mean=3.2697
+  trial 286  fold 5 (0.85+0.88)  KL=2.5057  running mean=3.1424
+  trial 286  fold 6 (0.88+0.90)  KL=3.8035  running mean=3.2368
+  trial 286  fold 7 (0.90+0.93)  KL=5.4178  running mean=3.5094
+trial 287: n_components=3  isomap_k=37  rbf_kernel=quintic  smoothing=3.00e-02  backmap_k=4
+  trial 287  fold 0 (0.50+0.70)  KL=8.7102  running mean=8.7102
+  trial 287  fold 1 (0.70+0.75)  KL=4.7228  running mean=6.7165
+  trial 287  fold 2 (0.75+0.80)  KL=1.3446  running mean=4.9259
+  trial 287: pruned after fold 2
+trial 288: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=4.36e-02  backmap_k=11
+  trial 288  fold 0 (0.50+0.70)  KL=6.8882  running mean=6.8882
+  trial 288  fold 1 (0.70+0.75)  KL=5.3183  running mean=6.1033
+  trial 288  fold 2 (0.75+0.80)  KL=1.2975  running mean=4.5014
+  trial 288: pruned after fold 2
+trial 289: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=2.23e-02  backmap_k=4
+  trial 289  fold 0 (0.50+0.70)  KL=5.9649  running mean=5.9649
+  trial 289  fold 1 (0.70+0.75)  KL=4.7197  running mean=5.3423
+  trial 289  fold 2 (0.75+0.80)  KL=1.3388  running mean=4.0078
+  trial 289  fold 3 (0.80+0.82)  KL=2.1688  running mean=3.5481
+  trial 289  fold 4 (0.82+0.85)  KL=1.9427  running mean=3.2270
+  trial 289  fold 5 (0.85+0.88)  KL=2.5047  running mean=3.1066
+  trial 289  fold 6 (0.88+0.90)  KL=3.7385  running mean=3.1969
+  trial 289  fold 7 (0.90+0.93)  KL=5.3430  running mean=3.4651
+trial 290: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=2.40e-02  backmap_k=5
+  trial 290  fold 0 (0.50+0.70)  KL=6.0238  running mean=6.0238
+  trial 290  fold 1 (0.70+0.75)  KL=5.1181  running mean=5.5709
+  trial 290  fold 2 (0.75+0.80)  KL=1.4182  running mean=4.1867
+  trial 290: pruned after fold 2
+trial 291: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=2.12e-02  backmap_k=4
+  trial 291  fold 0 (0.50+0.70)  KL=6.1512  running mean=6.1512
+  trial 291  fold 1 (0.70+0.75)  KL=4.8258  running mean=5.4885
+  trial 291  fold 2 (0.75+0.80)  KL=1.3539  running mean=4.1103
+  trial 291  fold 3 (0.80+0.82)  KL=2.0998  running mean=3.6077
+  trial 291  fold 4 (0.82+0.85)  KL=1.9635  running mean=3.2789
+  trial 291  fold 5 (0.85+0.88)  KL=2.5557  running mean=3.1583
+  trial 291  fold 6 (0.88+0.90)  KL=3.7515  running mean=3.2431
+  trial 291  fold 7 (0.90+0.93)  KL=5.3332  running mean=3.5043
+trial 292: n_components=3  isomap_k=12  rbf_kernel=cubic  smoothing=3.14e-02  backmap_k=3
+  trial 292  fold 0 (0.50+0.70)  KL=8.9991  running mean=8.9991
+  trial 292  fold 1 (0.70+0.75)  KL=5.1194  running mean=7.0592
+  trial 292  fold 2 (0.75+0.80)  KL=1.7141  running mean=5.2775
+  trial 292: pruned after fold 2
+trial 293: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=6.49e-02  backmap_k=4
+  trial 293  fold 0 (0.50+0.70)  KL=6.0138  running mean=6.0138
+  trial 293  fold 1 (0.70+0.75)  KL=4.7743  running mean=5.3940
+  trial 293  fold 2 (0.75+0.80)  KL=1.3738  running mean=4.0540
+  trial 293  fold 3 (0.80+0.82)  KL=2.1966  running mean=3.5896
+  trial 293  fold 4 (0.82+0.85)  KL=1.9278  running mean=3.2573
+  trial 293  fold 5 (0.85+0.88)  KL=2.4782  running mean=3.1274
+  trial 293  fold 6 (0.88+0.90)  KL=3.8025  running mean=3.2239
+  trial 293  fold 7 (0.90+0.93)  KL=5.3346  running mean=3.4877
+trial 294: n_components=3  isomap_k=16  rbf_kernel=cubic  smoothing=2.87e-02  backmap_k=4
+  trial 294  fold 0 (0.50+0.70)  KL=7.1552  running mean=7.1552
+  trial 294  fold 1 (0.70+0.75)  KL=5.0651  running mean=6.1101
+  trial 294  fold 2 (0.75+0.80)  KL=1.5973  running mean=4.6059
+  trial 294: pruned after fold 2
+trial 295: n_components=3  isomap_k=35  rbf_kernel=cubic  smoothing=5.10e-02  backmap_k=4
+  trial 295  fold 0 (0.50+0.70)  KL=5.9492  running mean=5.9492
+  trial 295  fold 1 (0.70+0.75)  KL=4.9715  running mean=5.4604
+  trial 295  fold 2 (0.75+0.80)  KL=1.3952  running mean=4.1053
+  trial 295  fold 3 (0.80+0.82)  KL=2.1685  running mean=3.6211
+  trial 295  fold 4 (0.82+0.85)  KL=1.8620  running mean=3.2693
+  trial 295  fold 5 (0.85+0.88)  KL=2.5085  running mean=3.1425
+  trial 295  fold 6 (0.88+0.90)  KL=3.8067  running mean=3.2374
+  trial 295  fold 7 (0.90+0.93)  KL=5.4010  running mean=3.5078
+trial 296: n_components=3  isomap_k=37  rbf_kernel=cubic  smoothing=2.11e-02  backmap_k=4
+  trial 296  fold 0 (0.50+0.70)  KL=6.1447  running mean=6.1447
+  trial 296  fold 1 (0.70+0.75)  KL=4.8257  running mean=5.4852
+  trial 296  fold 2 (0.75+0.80)  KL=1.3538  running mean=4.1081
+  trial 296  fold 3 (0.80+0.82)  KL=2.0997  running mean=3.6060
+  trial 296  fold 4 (0.82+0.85)  KL=1.9635  running mean=3.2775
+  trial 296  fold 5 (0.85+0.88)  KL=2.5557  running mean=3.1572
+  trial 296  fold 6 (0.88+0.90)  KL=3.7515  running mean=3.2421
+  trial 296  fold 7 (0.90+0.93)  KL=5.3332  running mean=3.5035
+trial 297: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=4.07e-02  backmap_k=5
+  trial 297  fold 0 (0.50+0.70)  KL=6.1124  running mean=6.1124
+  trial 297  fold 1 (0.70+0.75)  KL=4.9384  running mean=5.5254
+  trial 297  fold 2 (0.75+0.80)  KL=1.4183  running mean=4.1564
+  trial 297  fold 3 (0.80+0.82)  KL=2.1017  running mean=3.6427
+  trial 297  fold 4 (0.82+0.85)  KL=1.8370  running mean=3.2815
+  trial 297  fold 5 (0.85+0.88)  KL=2.6418  running mean=3.1749
+  trial 297  fold 6 (0.88+0.90)  KL=3.5654  running mean=3.2307
+  trial 297  fold 7 (0.90+0.93)  KL=5.4289  running mean=3.5055
+trial 298: n_components=3  isomap_k=36  rbf_kernel=cubic  smoothing=2.27e-02  backmap_k=4
+  trial 298  fold 0 (0.50+0.70)  KL=5.9649  running mean=5.9649
+  trial 298  fold 1 (0.70+0.75)  KL=4.7198  running mean=5.3423
+  trial 298  fold 2 (0.75+0.80)  KL=1.3522  running mean=4.0123
+  trial 298  fold 3 (0.80+0.82)  KL=2.1629  running mean=3.5499
+  trial 298  fold 4 (0.82+0.85)  KL=1.9487  running mean=3.2297
+  trial 298  fold 5 (0.85+0.88)  KL=2.5046  running mean=3.1088
+  trial 298  fold 6 (0.88+0.90)  KL=3.7385  running mean=3.1988
+  trial 298  fold 7 (0.90+0.93)  KL=5.3493  running mean=3.4676
+trial 299: n_components=3  isomap_k=34  rbf_kernel=linear  smoothing=2.11e-02  backmap_k=3
+  trial 299  fold 0 (0.50+0.70)  KL=6.1421  running mean=6.1421
+  trial 299  fold 1 (0.70+0.75)  KL=4.8535  running mean=5.4978
+  trial 299  fold 2 (0.75+0.80)  KL=1.5555  running mean=4.1837
+  trial 299: pruned after fold 2
+
+Best trial:
+  value (CV mean_KL): 3.45830
+  n_components: 3
+  isomap_k: 36
+  rbf_kernel: cubic
+  smoothing: 0.011859384388730963
+  backmap_k: 4
+
+300 trials total (78 pruned, 222 completed)
+
+Refitting on the full training set with the best hyperparameters...
+
+IsoMap+RBF (Optuna-tuned) -- Phase 1 (interpolation)
+  R2      : 0.986490
+  wrMAE   : 0.031805  (worst sim idx 22)
+  mean_KL : 0.835539  (worst sim idx 22, KL=3.983647)
+  score   : 9.773428
+
+IsoMap+RBF (Optuna-tuned) -- Phase 2 (extrapolation)
+  R2      : 0.857629
+  wrMAE   : 0.071986  (worst sim idx 70)
+  mean_KL : 6.665613  (worst sim idx 64, KL=9.063663)
+  score   : 8.928216
+
+Saved: /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/paper_isomap_rbf_optuna_tuned_y_pred1.npy, /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/paper_isomap_rbf_optuna_tuned_y_pred2.npy

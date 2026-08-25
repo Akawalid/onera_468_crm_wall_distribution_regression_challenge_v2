@@ -1,2 +1,0 @@
-/var/spool/slurmd/job407608/slurm_script: line 15: /home/tau/ochabane/.venvs/fpml/bin/activate: No such file or directory
-/home/tau/ochabane/onera_468_crm_wall_distribution_regression_challenge_v2/.venv/bin/python: Error while finding module specification for 'utils.train_offset_gnn' (ModuleNotFoundError: No module named 'utils')

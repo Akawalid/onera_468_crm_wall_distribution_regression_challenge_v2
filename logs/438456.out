@@ -35,6 +35,18 @@ Saved: /data/tau/iceberg_1/shared/ochabane/FILES_RHO_ALL_POINTS_reduitfloat32/pa
 
 
 
+============================================================
+NOTE (added retroactively, for report provenance): the table below is the
+source for the report's "IsoMap+RBF (submitted)" row (baseline comparison
+table, cited as logs/438456.out). The IsoMap+RBF run itself -- the paper's
+k-only backmapping procedure, via paper_isomap_rbf.py -- was executed
+separately; only its final Phase 1/Phase 2 numbers were appended below,
+next to this script's own POD+GP grid-search result, as a side-by-side
+sanity check at the time. The POD+GP columns above/below are NOT what the
+report uses for POD+GP (that model is Optuna-tuned instead, see
+logs/438767.out) -- only the IsoMap+RBF columns are the report's source.
+============================================================
+
 Metric	POD+GP — Phase 1	POD+GP — Phase 2	IsoMap+RBF — Phase 1	IsoMap+RBF — Phase 2
 R²	0.9803	0.8854	0.9864	0.8431
 wrMAE	0.0289	0.0853	0.0334	0.0708

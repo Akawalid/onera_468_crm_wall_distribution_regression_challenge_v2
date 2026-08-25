@@ -216,3 +216,30 @@ rather than treating the data as generic tabular/image input.
  - Talk about fine tunning with optuna, deephyper, local search 
 
 
+ ========================================== To improve ====================================
+ I read through the whole thing again end to end. Here's what stands out, roughly in order of importance:
+
+Likely factual error
+
+Line 263: $Q = cal(N)(0, 0.1 sigma_rho)$ ... where $sigma_rho$ is the mean $rho$ for the simulation in question. A variable named $\sigma_\rho$ almost certainly should be the standard deviation of $\rho$, not "the mean" — as written it's self-contradictory (σ-notation defined as a mean). This looks like a slip during one of your recent edits, worth double-checking against the actual scoring code.
+Related: the parenthetical right after ("the more the deviation of the error is close to 1% of the average value... the better") describes a 1%-of-mean reference, while the formula itself says 10%-of-σ ($0.1\sigma_\rho$). Those are two different reference scales unless $\sigma_\rho \approx 0.1 \times$ mean happens to hold — which, interestingly, is roughly what logs/436001.out's own sigma_ref = 1% of global mean print suggests is actually computed in code. Worth deciding which description (std-based or mean-based) is the one you actually want here, since right now the formula and its own explanation don't quite agree.
+Abstract is stale relative to the report's current scope
+It still frames the report as "two main baselines" and doesn't mention: the rebalanced split, the KL-metric redesign story, the differentiable-KL training loss, the PCA-slice diagnostics, or the four "Other Baselines." After all the restructuring, the abstract reads like a much smaller report than what follows.
+
+Structural/markup issue in Evaluation Metrics
+Line 263 starts the whole multi-paragraph KL-divergence discussion with a bare - (bullet marker), parallel to the two one-line bullets for R² and wrMAE above it. That's inconsistent — it's really a new subsection's worth of content, not a third list item, and may be rendering indented/bulleted when it shouldn't be.
+
+A gap worth addressing explicitly
+The Tuning section says POD+GP and IsoMap+RBF "being the best models... were tuned via Optuna" — but never explains why $\text{MLP}_\text{KLW}$, a Main Baseline, wasn't also Optuna-tuned. A reader will wonder. One sentence would close that.
+
+Ordering choice worth reconsidering
+The full differentiable-KL-loss derivation (soft binning → chain rule → Jacobian diagram) sits in Evaluation Metrics (§3.2), before $\text{MLP}_\text{KLW}$ itself is ever introduced (§3.3.1). A first-time reader hits several paragraphs of dense math for a model they haven't met yet. Either move the derivation after the baseline is introduced, or add a one-line forward-pointer at the top of §3.2.1.
+
+Still-open placeholder
+"Point-wise KNN: (placeholder, section reserved.)" — just a reminder it's still empty; the results table already reports real KNN numbers, so the description gap is a bit visible.
+
+Grammar/typos — there are a lot, scattered throughout (this content was written fast, in your own edits, across many sessions). A few representative ones: "aircrat" → aircraft, "Person's correclation" → Pearson's correlation, "intresting" → interesting, "Naivly" → Naively, "plotitng"/"mentionned"/"diviation"/"interresting" → plotting/mentioned/deviation/interesting, "these are regions are the most interresting ones" (garbled, duplicate "are"), "Two standard metrics were initially used... are:" (subject/verb mismatch), "described @klw_loss" missing "in". There are more I didn't list individually — a full copy-edit pass would catch a couple dozen like this.
+
+Want me to fix any of these? I'd suggest, in priority order: the σ_ρ definition (factual), the KL-metric bullet-markup fix, then a full typo/grammar pass, then the abstract rewrite — but happy to do all, some, or none, your call
+
+

@@ -1,4 +1,0 @@
-Loading data...
-n_train=324  CV folds=8 (leave-2-consecutive-Machs-out)
-Grid: variance_threshold in [0.97, 0.99, 0.995], kernel_nu in [1.5, 2.5, inf] (9 configs x 8 folds = 72 fits)
-
