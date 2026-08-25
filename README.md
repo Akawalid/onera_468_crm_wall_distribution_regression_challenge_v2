@@ -68,6 +68,51 @@ repository itself.
   zips which are intentionally shipped as zips (see the `!bundle/starting_kit/*.zip`
   exceptions).
 
+## Downloading the data
+
+The raw simulation arrays are not tracked in git; they are pulled from Codabench's stable
+per-dataset download endpoints (the same URLs used by
+`bundle/starting_kit/kit_utils/download.py`). Each endpoint 302-redirects to a freshly-signed
+URL every time it's hit, so the two links below don't expire even though the redirect target
+does.
+
+```bash
+mkdir -p data/splitv3
+cd data/splitv3
+
+# Phase 1 (interpolation): train_data.npy, train_labels.npy, test_data.npy (unlabeled),
+# component_labels_unique.npy, component_map.json
+wget -O feedback_phase_input_data.zip \
+  "https://www.codabench.org/datasets/download/6c284e9f-482b-4015-8c83-200b41f66674/"
+unzip -o feedback_phase_input_data.zip -d feedback_phase
+rm feedback_phase_input_data.zip
+
+# Phase 2 (extrapolation): same train_data.npy/train_labels.npy, plus its own test_data.npy
+wget -O final_phase_input_data.zip \
+  "https://www.codabench.org/datasets/download/e32b5c9b-dfd8-4f39-9a58-9fd5bc7af33d/"
+unzip -o final_phase_input_data.zip -d final_phase
+rm final_phase_input_data.zip
+
+# Lay both out to match the data/splitv3 naming used by utils/train_test_splitting_v3.py
+mv feedback_phase/train_data.npy train_data.npy
+mv feedback_phase/train_labels.npy train_labels.npy
+mv feedback_phase/test_data.npy test_phase1_data.npy
+mv final_phase/test_data.npy test_phase2_data.npy
+mv feedback_phase/component_labels_unique.npy component_labels_unique.npy
+mv feedback_phase/component_map.json component_map.json
+rm -r feedback_phase final_phase
+```
+
+This gives `data/splitv3/{train_data,train_labels,test_phase1_data,test_phase2_data,
+component_labels_unique}.npy` and `component_map.json`, which is what the baseline scripts
+under `utils/` and `bundle/starting_kit/` expect to load. One caveat: the two Codabench
+downloads intentionally withhold `test_phase1_labels.npy` and `test_phase2_labels.npy` (the
+test labels are held out server-side for scoring), along with the per-split `*_weights.npy`
+confidence weights and `component_nn_distances.npy`; those four files only exist in the
+internal copy of `data/splitv3/` used to produce the numbers in `report/main.pdf`, generated
+from the full raw dataset directly on the Margaret cluster (see
+`utils/train_test_splitting_v3.py`).
+
 ## Where to start
 
 - Read **[report/main.pdf](report/main.pdf)** for the full story.
