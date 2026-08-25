@@ -56,9 +56,6 @@ repository itself.
   simulation arrays, generated train/test splits, and model checkpoints are not tracked
   in git (see `.gitignore`); they live on the cluster / local disk only.
 
-- **`data_exploration_clean.ipynb`**: the canonical data-exploration notebook: loading,
-  train/test split visualization, 3-D density field rendering, baseline sanity checks.
-
 - **`bot.py`**: Discord bot assigning the profile-role buttons (researcher, PhD
   candidate, Master's student, ...) on the challenge's Discord server, used for
   participants to team up.
